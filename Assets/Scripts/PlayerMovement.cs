@@ -18,6 +18,11 @@ public class PlayerMovement : MonoBehaviour
     bool isJumping, canCheckJumping;
     [SerializeField] float upRaycastHight = 1.5f;
 
+    float acceleration = 70;
+    float deacceleration = 50;
+    float currentSpeed = 0;
+    float currentForwardDirection = 1;
+
 
     private void Start()
     {
@@ -35,6 +40,15 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+
+        //float targetSpeed = horizontal * speed;
+        //float speedDif = targetSpeed - rb.velocity.x;
+        //float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? AccelerationEvent : decceleration;
+
+        //float movement = math
+
+
+
     }
 
     private void Flip()
