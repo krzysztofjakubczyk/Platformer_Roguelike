@@ -313,6 +313,10 @@ MonoBehaviour:
   speed: 8
   jumpingPower: 16
   upRaycastHight: 1.5
+  currentSpeed: 0
+  currentForwardDirection: 1
+  fullTimeGo: 1
+  fullTimeStop: 1
 --- !u!61 &1070247196
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -815,8 +819,8 @@ Transform:
   m_GameObject: {fileID: 1963286457}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0563, y: -5.49, z: 0}
-  m_LocalScale: {x: 21.551071, y: 1, z: 1}
+  m_LocalPosition: {x: 66.3, y: -6.1, z: 0}
+  m_LocalScale: {x: 154.57613, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -879,20 +883,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1963286458}
     m_ColliderPaths:
-    - - X: 107755352
+    - - X: 772880640
         Y: 5000000
-      - X: -107755352
+      - X: -772880640
         Y: 5000000
-      - X: -107755352
+      - X: -772880640
         Y: -5000000
-      - X: 107755352
+      - X: 772880640
         Y: -5000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 10.775506, y: -0.5}
-      - {x: 10.775506, y: 0.5}
-      - {x: -10.775536, y: 0.4999707}
-      - {x: -10.775506, y: -0.5}
+    - - {x: 77.28803, y: -0.5}
+      - {x: 77.28803, y: 0.5}
+      - {x: -77.28806, y: 0.4999707}
+      - {x: -77.28803, y: -0.5}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0

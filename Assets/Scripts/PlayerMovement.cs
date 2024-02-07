@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,10 +19,15 @@ public class PlayerMovement : MonoBehaviour
     bool isJumping, canCheckJumping;
     [SerializeField] float upRaycastHight = 1.5f;
 
-    float acceleration = 70;
-    float deacceleration = 50;
-    float currentSpeed = 0;
-    float currentForwardDirection = 1;
+    //[SerializeField] float acceleration = 70;
+    //[SerializeField] float deacceleration = 50;
+    [SerializeField] float currentSpeed = 0;
+    [SerializeField] float currentForwardDirection = 1;
+    [SerializeField] float fullTimeGo = 1;
+    [SerializeField] float fullTimeStop = 1;
+
+    float targetSpeed;
+    float timer1;
 
 
     private void Start()
@@ -34,19 +40,35 @@ public class PlayerMovement : MonoBehaviour
     {
         GetInput();
         Flip();
+
+        if (Input.GetKey(KeyCode.RightArrow))
+            currentForwardDirection = 1;
+        else if(Input.GetKey(KeyCode.LeftArrow))
+            currentForwardDirection = -1;
+        else
+            currentForwardDirection = 0;
     }
 
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
 
-        //float targetSpeed = horizontal * speed;
-        //float speedDif = targetSpeed - rb.velocity.x;
-        //float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? AccelerationEvent : decceleration;
+        if (horizontal != 0)
+        {
+            if (timer1 < 1)
+                timer1 += Time.fixedDeltaTime * fullTimeGo;
 
-        //float movement = math
+            currentSpeed = (timer1);// * (timer1);
 
+            currentSpeed = Mathf.Clamp(currentSpeed * 8, 0, speed);
+
+            rb.velocity = new Vector2(currentSpeed * horizontal, rb.velocity.y);
+        }
+        if(horizontal == 0)
+        {
+            timer1 = 0;
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
 
 
     }
