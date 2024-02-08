@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
             if (timer1 < 1)
                 timer1 += Time.fixedDeltaTime * fullTimeGo;
 
-            currentSpeed = (timer1);// * (timer1);
+            currentSpeed = 1 - (1 - timer1) * (1 - timer1); //Mathf.Sqrt(timer1);// * timer1;
 
             currentSpeed = Mathf.Clamp(currentSpeed * 8, 0, speed);
 
@@ -69,7 +69,6 @@ public class PlayerMovement : MonoBehaviour
             timer1 = 0;
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
-
 
     }
 
