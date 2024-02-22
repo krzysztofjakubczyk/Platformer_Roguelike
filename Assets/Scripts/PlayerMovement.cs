@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     bool isJumping, canCheckJumping;
     [SerializeField] float upRaycastHight = 1.5f;
 
+    bool razStop = false;
+
     //[SerializeField] float acceleration = 70;
     //[SerializeField] float deacceleration = 50;
     [SerializeField] float currentSpeed = 0;
@@ -38,25 +40,30 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        //prevFrameDir = horizontal;
         GetInput();
         Flip();
 
-        if (Input.GetKey(KeyCode.RightArrow))
-            currentForwardDirection = 1;
-        else if(Input.GetKey(KeyCode.LeftArrow))
-            currentForwardDirection = -1;
-        else
-            currentForwardDirection = 0;
-    }
+        if ((currentForwardDirection == -1 && horizontal == 1 || currentForwardDirection == 1 && horizontal == -1) && !razStop)
+        {
+            timer1 = 0;
+            razStop = true;
+        }
 
-
-    private void FixedUpdate()
-    {
+        //if (horizontal == 1)
+        //    currentForwardDirection = 1;
+        //else if(horizontal == -1)
+        //    currentForwardDirection = -1;
 
         if (horizontal != 0)
         {
             if (timer1 < 1)
                 timer1 += Time.fixedDeltaTime * fullTimeGo;
+            else
+            {
+                currentForwardDirection = horizontal;
+                razStop = false;
+            }
 
             currentSpeed = 1 - (1 - timer1) * (1 - timer1); //Mathf.Sqrt(timer1);// * timer1;
 
@@ -64,11 +71,28 @@ public class PlayerMovement : MonoBehaviour
 
             rb.velocity = new Vector2(currentSpeed * horizontal, rb.velocity.y);
         }
-        if(horizontal == 0)
+        else
         {
-            timer1 = 0;
-            rb.velocity = new Vector2(0, rb.velocity.y);
+            //timer1 = 0;
+            //rb.velocity = new Vector2(0, rb.velocity.y);
+            if (timer1 > 0)
+                timer1 -= Time.fixedDeltaTime * fullTimeStop;
+            else
+                currentForwardDirection = 0;
+
+            currentSpeed = 1 - (1 - timer1) * (1 - timer1); //Mathf.Sqrt(timer1);// * timer1;
+
+            currentSpeed = Mathf.Clamp(currentSpeed * 8, 0, speed);
+
+            rb.velocity = new Vector2(currentSpeed * currentForwardDirection, rb.velocity.y);
         }
+    }
+
+
+    private void FixedUpdate()
+    {
+
+        
 
     }
 
@@ -94,8 +118,8 @@ public class PlayerMovement : MonoBehaviour
 
         // get input
         horizontal = Input.GetAxisRaw("Horizontal");
-        if (!isGrounded)
-            horizontal /= 1.3f;
+        //if (!isGrounded)
+           // horizontal /= 1.3f;
 
         if (isGrounded)
             isJumping = false;
