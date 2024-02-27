@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FollowTarget : MonoBehaviour
 {
-    private Vector3 offset = new Vector3(2.5f, 0, -10f);
+    private Vector3 offset = new Vector3(1f, 0, -10f);
     private Vector3 velocity = Vector3.zero;
 
     [SerializeField] float smoothTime = 0.15f;
@@ -13,6 +13,7 @@ public class FollowTarget : MonoBehaviour
 
     bool camSide;
     bool notYetChanged_Y;
+    bool notGrounded;
 
     private void Awake()
     {
@@ -25,17 +26,21 @@ public class FollowTarget : MonoBehaviour
 
         camSide = true;
         notYetChanged_Y = true;
+        notGrounded = true;
     }
 
     private void Update()
     {
-        if(target.GetComponent<PlayerMovement>().IsGrounded() && notYetChanged_Y)
+        if(target.GetComponent<PlayerMovement>().IsGrounded() && notGrounded)// && notYetChanged_Y)
         {
-            offset.y = target.transform.position.y + 2f;
-            notYetChanged_Y=false;
-            Invoke(nameof(Ychange), 0.3f);
+
+            Invoke(nameof(Ychange), 0.1f);
+            notGrounded = false;
+            Invoke(nameof(moznajuzskakacznowu), 0.1f);
 
         }
+
+       
         Vector3 targetPosition = new Vector3( target.position.x + offset.x,  offset.y, -10);
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
     }
@@ -46,9 +51,9 @@ public class FollowTarget : MonoBehaviour
         else if (camSide == false)  camSide = true;
 
         if (camSide)
-            offset += new Vector3(5, 0, 0);
+            offset += new Vector3(2, 0, 0);
         else
-            offset -= new Vector3(5, 0, 0);
+            offset -= new Vector3(2, 0, 0);
 
         //smoothTime = 0.5f;
         //Invoke(nameof(timeBack), 1f);
@@ -62,6 +67,11 @@ public class FollowTarget : MonoBehaviour
 
     void Ychange()
     {
-        notYetChanged_Y = true;
+        offset.y = target.transform.position.y + 2f;
+    }
+
+    void moznajuzskakacznowu()
+    {
+        notGrounded = true;
     }
 }
