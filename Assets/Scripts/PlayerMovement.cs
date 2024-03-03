@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    public event Action directionChange;
+
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] float speed = 8f;
     [SerializeField] float jumpingPower = 16f;
@@ -20,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float upRaycastHight = 1.5f;
 
     bool razStop = false;
+    bool wPrawo = true;
 
     //[SerializeField] float acceleration = 70;
     //[SerializeField] float deacceleration = 50;
@@ -44,16 +48,30 @@ public class PlayerMovement : MonoBehaviour
         GetInput();
         Flip();
 
+        //checking if direction changed:
+
+        if (wPrawo == true)
+        {
+            if (horizontal == -1)
+            {
+                directionChange();
+                wPrawo = false;
+            }
+        }
+        else if (wPrawo == false)
+        {
+            if (horizontal == 1)
+            {
+                directionChange();
+                wPrawo = true;
+            }
+        }
+
         if ((currentForwardDirection == -1 && horizontal == 1 || currentForwardDirection == 1 && horizontal == -1) && !razStop)
         {
             timer1 = 0;
             razStop = true;
         }
-
-        //if (horizontal == 1)
-        //    currentForwardDirection = 1;
-        //else if(horizontal == -1)
-        //    currentForwardDirection = -1;
 
         if (horizontal != 0)
         {
@@ -107,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
         return Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, .1f, groundLayer);
     }
