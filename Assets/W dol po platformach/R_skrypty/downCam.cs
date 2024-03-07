@@ -9,6 +9,7 @@ public class downCam : MonoBehaviour
 
     [SerializeField] float smoothTime = 0.15f;
     [SerializeField] Transform target;
+    [SerializeField] float yOffset;
 
     bool camSide;
     bool notYetChanged_Y;
@@ -37,7 +38,7 @@ public class downCam : MonoBehaviour
         }
 
 
-        Vector3 targetPosition = new Vector3(target.position.x + offset.x, offset.y, -10);
+        Vector3 targetPosition = new Vector3(0, offset.y, -10);
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
     }
 
@@ -49,7 +50,7 @@ public class downCam : MonoBehaviour
 
     void Ychange()
     {
-        offset.y = target.transform.position.y + 2f;
+        offset.y = target.transform.position.y + yOffset;
     }
 
     void moznajuzskakacznowu()
