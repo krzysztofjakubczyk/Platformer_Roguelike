@@ -13,24 +13,29 @@ public class mvmnt : MonoBehaviour
     BoxCollider2D boxCollider;
     bool coyoteTime;
     bool isJumping, willJump;
+    bool numbState;
+    [SerializeField] GameObject imageRed;
 
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+
+        numbState = false;
     }
 
     void Update()
     {
-        GetInput(); 
+        if(!numbState)
+            GetInput(); 
     }
 
     private void FixedUpdate()
     {
         //rb.AddForce(new Vector2(horizontal * speed, 0), ForceMode2D.Force);
-
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        if(!numbState)
+            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 
     public bool IsGrounded()
@@ -73,4 +78,37 @@ public class mvmnt : MonoBehaviour
         }
 
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag != "Enemy")
+            return;
+
+        // TO DO: normalize vector (ale zostawione tymczasowo)
+
+        Vector2 pushDir = transform.position - collision.transform.position;
+        rb.AddForce(pushDir * 20, ForceMode2D.Impulse);
+        numbState = true;
+        Invoke(nameof(noNumb), 0.2f);
+
+        blinksImage();
+
+    }
+
+    void noNumb()
+    {
+        numbState = false;
+    }
+
+    void blinksImage()
+    {
+        imageRed.SetActive(true);
+        Invoke(nameof(HideImage), 0.1f);
+    }
+
+    void HideImage()
+    {
+        imageRed.SetActive(false);
+    }
+
 }
