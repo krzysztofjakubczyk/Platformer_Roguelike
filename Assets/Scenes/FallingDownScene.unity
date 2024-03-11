@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 75950214}
   - component: {fileID: 75950216}
   - component: {fileID: 75950215}
+  - component: {fileID: 75950217}
   m_Layer: 0
   m_Name: Isometric Diamond (9)
   m_TagString: Untagged
@@ -253,6 +254,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &75950217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75950213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &96809766
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,6 +278,7 @@ GameObject:
   - component: {fileID: 96809767}
   - component: {fileID: 96809769}
   - component: {fileID: 96809768}
+  - component: {fileID: 96809770}
   m_Layer: 0
   m_Name: Isometric Diamond (23)
   m_TagString: Untagged
@@ -383,6 +398,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &96809770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96809766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &181296531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,6 +1202,7 @@ GameObject:
   - component: {fileID: 391723923}
   - component: {fileID: 391723925}
   - component: {fileID: 391723924}
+  - component: {fileID: 391723926}
   m_Layer: 0
   m_Name: Isometric Diamond (11)
   m_TagString: Untagged
@@ -1293,6 +1322,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &391723926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391723922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &405668572
 GameObject:
   m_ObjectHideFlags: 0
@@ -2066,6 +2108,7 @@ GameObject:
   - component: {fileID: 530028563}
   - component: {fileID: 530028565}
   - component: {fileID: 530028564}
+  - component: {fileID: 530028566}
   m_Layer: 0
   m_Name: Isometric Diamond (4)
   m_TagString: Untagged
@@ -2185,6 +2228,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &530028566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530028562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &532249085
 GameObject:
   m_ObjectHideFlags: 0
@@ -2295,6 +2351,7 @@ GameObject:
   - component: {fileID: 539028982}
   - component: {fileID: 539028984}
   - component: {fileID: 539028983}
+  - component: {fileID: 539028985}
   m_Layer: 0
   m_Name: Isometric Diamond (10)
   m_TagString: Untagged
@@ -2414,6 +2471,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &539028985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539028981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &559679562
 GameObject:
   m_ObjectHideFlags: 0
@@ -2425,7 +2495,7 @@ GameObject:
   - component: {fileID: 559679563}
   - component: {fileID: 559679565}
   - component: {fileID: 559679564}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (27)
   m_TagString: dontDestroy
   m_Icon: {fileID: 0}
@@ -2555,6 +2625,7 @@ GameObject:
   - component: {fileID: 570530009}
   - component: {fileID: 570530011}
   - component: {fileID: 570530010}
+  - component: {fileID: 570530012}
   m_Layer: 0
   m_Name: Isometric Diamond (5)
   m_TagString: Untagged
@@ -2674,6 +2745,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &570530012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570530008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &583115932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2914,6 +2998,7 @@ GameObject:
   - component: {fileID: 594470489}
   - component: {fileID: 594470491}
   - component: {fileID: 594470490}
+  - component: {fileID: 594470492}
   m_Layer: 0
   m_Name: Isometric Diamond (18)
   m_TagString: Untagged
@@ -3033,6 +3118,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &594470492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594470488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &601220298
 GameObject:
   m_ObjectHideFlags: 0
@@ -3273,6 +3371,7 @@ GameObject:
   - component: {fileID: 756160310}
   - component: {fileID: 756160312}
   - component: {fileID: 756160311}
+  - component: {fileID: 756160313}
   m_Layer: 0
   m_Name: Isometric Diamond (13)
   m_TagString: Untagged
@@ -3392,6 +3491,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &756160313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756160309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &761823277
 GameObject:
   m_ObjectHideFlags: 0
@@ -3404,7 +3516,7 @@ GameObject:
   - component: {fileID: 761823280}
   - component: {fileID: 761823279}
   - component: {fileID: 761823281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3579,7 +3691,7 @@ GameObject:
   - component: {fileID: 779207568}
   - component: {fileID: 779207570}
   - component: {fileID: 779207569}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: dontDestroy
   m_Icon: {fileID: 0}
@@ -3709,6 +3821,7 @@ GameObject:
   - component: {fileID: 797525558}
   - component: {fileID: 797525560}
   - component: {fileID: 797525559}
+  - component: {fileID: 797525561}
   m_Layer: 0
   m_Name: Isometric Diamond (19)
   m_TagString: Untagged
@@ -3828,6 +3941,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &797525561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797525557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &812895787
 GameObject:
   m_ObjectHideFlags: 0
@@ -4167,6 +4293,7 @@ GameObject:
   - component: {fileID: 878112229}
   - component: {fileID: 878112231}
   - component: {fileID: 878112230}
+  - component: {fileID: 878112232}
   m_Layer: 0
   m_Name: Isometric Diamond
   m_TagString: Untagged
@@ -4286,6 +4413,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &878112232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878112228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &881067878
 GameObject:
   m_ObjectHideFlags: 0
@@ -4297,6 +4437,7 @@ GameObject:
   - component: {fileID: 881067879}
   - component: {fileID: 881067881}
   - component: {fileID: 881067880}
+  - component: {fileID: 881067882}
   m_Layer: 0
   m_Name: Isometric Diamond (15)
   m_TagString: Untagged
@@ -4416,6 +4557,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &881067882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881067878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &891768873
 GameObject:
   m_ObjectHideFlags: 0
@@ -4427,6 +4581,7 @@ GameObject:
   - component: {fileID: 891768874}
   - component: {fileID: 891768876}
   - component: {fileID: 891768875}
+  - component: {fileID: 891768877}
   m_Layer: 0
   m_Name: Isometric Diamond (22)
   m_TagString: Untagged
@@ -4546,6 +4701,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &891768877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891768873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &904330626
 GameObject:
   m_ObjectHideFlags: 0
@@ -4901,6 +5069,7 @@ GameObject:
   - component: {fileID: 968460999}
   - component: {fileID: 968461001}
   - component: {fileID: 968461000}
+  - component: {fileID: 968461002}
   m_Layer: 0
   m_Name: Isometric Diamond (12)
   m_TagString: Untagged
@@ -5020,6 +5189,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &968461002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968460998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &1015848644
 GameObject:
   m_ObjectHideFlags: 0
@@ -5945,6 +6127,7 @@ GameObject:
   - component: {fileID: 1098632332}
   - component: {fileID: 1098632334}
   - component: {fileID: 1098632333}
+  - component: {fileID: 1098632335}
   m_Layer: 0
   m_Name: Isometric Diamond (16)
   m_TagString: Untagged
@@ -6064,6 +6247,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1098632335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098632331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &1111147212
 GameObject:
   m_ObjectHideFlags: 0
@@ -6075,6 +6271,7 @@ GameObject:
   - component: {fileID: 1111147213}
   - component: {fileID: 1111147215}
   - component: {fileID: 1111147214}
+  - component: {fileID: 1111147216}
   m_Layer: 0
   m_Name: Isometric Diamond (7)
   m_TagString: Untagged
@@ -6194,6 +6391,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1111147216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111147212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &1135156218
 GameObject:
   m_ObjectHideFlags: 0
@@ -6304,6 +6514,7 @@ GameObject:
   - component: {fileID: 1177790534}
   - component: {fileID: 1177790536}
   - component: {fileID: 1177790535}
+  - component: {fileID: 1177790537}
   m_Layer: 0
   m_Name: Isometric Diamond (24)
   m_TagString: Untagged
@@ -6423,6 +6634,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1177790537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177790533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &1288019143
 GameObject:
   m_ObjectHideFlags: 0
@@ -6663,6 +6887,7 @@ GameObject:
   - component: {fileID: 1372408289}
   - component: {fileID: 1372408291}
   - component: {fileID: 1372408290}
+  - component: {fileID: 1372408292}
   m_Layer: 0
   m_Name: Isometric Diamond (17)
   m_TagString: Untagged
@@ -6782,6 +7007,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1372408292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372408288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &1391294919
 GameObject:
   m_ObjectHideFlags: 0
@@ -6793,7 +7031,7 @@ GameObject:
   - component: {fileID: 1391294920}
   - component: {fileID: 1391294922}
   - component: {fileID: 1391294921}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (28)
   m_TagString: dontDestroy
   m_Icon: {fileID: 0}
@@ -6924,7 +7162,7 @@ GameObject:
   - component: {fileID: 1423616496}
   - component: {fileID: 1423616495}
   - component: {fileID: 1423616497}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7099,6 +7337,7 @@ GameObject:
   - component: {fileID: 1430476878}
   - component: {fileID: 1430476880}
   - component: {fileID: 1430476879}
+  - component: {fileID: 1430476881}
   m_Layer: 0
   m_Name: Isometric Diamond (6)
   m_TagString: Untagged
@@ -7218,6 +7457,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1430476881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430476877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &1442010062
 GameObject:
   m_ObjectHideFlags: 0
@@ -7229,6 +7481,7 @@ GameObject:
   - component: {fileID: 1442010063}
   - component: {fileID: 1442010065}
   - component: {fileID: 1442010064}
+  - component: {fileID: 1442010066}
   m_Layer: 0
   m_Name: Isometric Diamond (2)
   m_TagString: Untagged
@@ -7348,6 +7601,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1442010066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442010062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &1453914252
 GameObject:
   m_ObjectHideFlags: 0
@@ -7360,7 +7626,7 @@ GameObject:
   - component: {fileID: 1453914255}
   - component: {fileID: 1453914254}
   - component: {fileID: 1453914256}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7925,6 +8191,7 @@ GameObject:
   - component: {fileID: 1592772927}
   - component: {fileID: 1592772929}
   - component: {fileID: 1592772928}
+  - component: {fileID: 1592772930}
   m_Layer: 0
   m_Name: Isometric Diamond (20)
   m_TagString: Untagged
@@ -8044,6 +8311,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1592772930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592772926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &1601540236
 GameObject:
   m_ObjectHideFlags: 0
@@ -8227,6 +8507,7 @@ GameObject:
   - component: {fileID: 1627763170}
   - component: {fileID: 1627763172}
   - component: {fileID: 1627763171}
+  - component: {fileID: 1627763173}
   m_Layer: 0
   m_Name: Isometric Diamond (26)
   m_TagString: Untagged
@@ -8346,6 +8627,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1627763173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627763169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &1656504732
 GameObject:
   m_ObjectHideFlags: 0
@@ -8357,6 +8651,7 @@ GameObject:
   - component: {fileID: 1656504733}
   - component: {fileID: 1656504735}
   - component: {fileID: 1656504734}
+  - component: {fileID: 1656504736}
   m_Layer: 0
   m_Name: Isometric Diamond (8)
   m_TagString: Untagged
@@ -8476,6 +8771,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1656504736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656504732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &1674647044
 GameObject:
   m_ObjectHideFlags: 0
@@ -8617,6 +8925,7 @@ GameObject:
   - component: {fileID: 1690969326}
   - component: {fileID: 1690969328}
   - component: {fileID: 1690969327}
+  - component: {fileID: 1690969329}
   m_Layer: 0
   m_Name: Isometric Diamond (14)
   m_TagString: Untagged
@@ -8736,6 +9045,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1690969329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690969325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &1693242271
 GameObject:
   m_ObjectHideFlags: 0
@@ -8748,7 +9070,7 @@ GameObject:
   - component: {fileID: 1693242274}
   - component: {fileID: 1693242273}
   - component: {fileID: 1693242275}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8912,6 +9234,225 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1775306112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1775306117}
+  - component: {fileID: 1775306116}
+  - component: {fileID: 1775306115}
+  - component: {fileID: 1775306114}
+  - component: {fileID: 1775306118}
+  - component: {fileID: 1775306119}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1775306114
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775306112}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!50 &1775306115
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775306112}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
+--- !u!212 &1775306116
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775306112}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0.06797788, g: 0.283387, b: 0.6320754, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1775306117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775306112}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -61.6, y: 3, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1775306118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775306112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172c48aacacbf9d49a23cdffd24410d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  jumpForce: 10
+--- !u!61 &1775306119
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775306112}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000013113022, y: 0.0073032975}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.1752765, y: 1.1898819}
+  m_EdgeRadius: 0
 --- !u!1 &1779293852
 GameObject:
   m_ObjectHideFlags: 0
@@ -8923,6 +9464,7 @@ GameObject:
   - component: {fileID: 1779293853}
   - component: {fileID: 1779293855}
   - component: {fileID: 1779293854}
+  - component: {fileID: 1779293856}
   m_Layer: 0
   m_Name: Isometric Diamond (1)
   m_TagString: Untagged
@@ -9042,6 +9584,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1779293856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779293852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &1794638064
 GameObject:
   m_ObjectHideFlags: 0
@@ -9053,6 +9608,7 @@ GameObject:
   - component: {fileID: 1794638065}
   - component: {fileID: 1794638067}
   - component: {fileID: 1794638066}
+  - component: {fileID: 1794638068}
   m_Layer: 0
   m_Name: Isometric Diamond (25)
   m_TagString: Untagged
@@ -9172,6 +9728,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1794638068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794638064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &1802049834
 GameObject:
   m_ObjectHideFlags: 0
@@ -9204,7 +9773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0b525a0e8ef5a409e392eb951732d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 1000
+  force: 500
 --- !u!50 &1802049836
 Rigidbody2D:
   serializedVersion: 4
@@ -9475,6 +10044,7 @@ GameObject:
   - component: {fileID: 1827064490}
   - component: {fileID: 1827064492}
   - component: {fileID: 1827064491}
+  - component: {fileID: 1827064493}
   m_Layer: 0
   m_Name: Isometric Diamond (21)
   m_TagString: Untagged
@@ -9594,6 +10164,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1827064493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827064489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &1850377646
 GameObject:
   m_ObjectHideFlags: 0
@@ -9605,6 +10188,7 @@ GameObject:
   - component: {fileID: 1850377647}
   - component: {fileID: 1850377649}
   - component: {fileID: 1850377648}
+  - component: {fileID: 1850377650}
   m_Layer: 0
   m_Name: Isometric Diamond (3)
   m_TagString: Untagged
@@ -9724,6 +10308,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1850377650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850377646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &1857560675
 GameObject:
   m_ObjectHideFlags: 0
@@ -9866,7 +10463,7 @@ GameObject:
   - component: {fileID: 1993287264}
   - component: {fileID: 1993287263}
   - component: {fileID: 1993287265}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10042,6 +10639,7 @@ GameObject:
   - component: {fileID: 1999229169}
   - component: {fileID: 1999229168}
   - component: {fileID: 1999229171}
+  - component: {fileID: 1999229172}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -10167,6 +10765,20 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &1999229172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999229167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70ae4f0caecc884ab8e2d91f6d11bf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1775306117}
+  offset: {x: 2, y: 0, z: -15}
 --- !u!1 &2022630803
 GameObject:
   m_ObjectHideFlags: 0
@@ -10734,6 +11346,7 @@ GameObject:
   - component: {fileID: 2074494720}
   - component: {fileID: 2074494722}
   - component: {fileID: 2074494721}
+  - component: {fileID: 2074494723}
   m_Layer: 0
   m_Name: Isometric Diamond (28)
   m_TagString: Untagged
@@ -10853,6 +11466,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2074494723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074494719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1 &2076881035
 GameObject:
   m_ObjectHideFlags: 0
@@ -10864,6 +11490,7 @@ GameObject:
   - component: {fileID: 2076881036}
   - component: {fileID: 2076881038}
   - component: {fileID: 2076881037}
+  - component: {fileID: 2076881039}
   m_Layer: 0
   m_Name: Isometric Diamond (27)
   m_TagString: Untagged
@@ -10983,6 +11610,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2076881039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076881035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b851da7561d49824d902a9b77604b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -10994,3 +11634,4 @@ SceneRoots:
   - {fileID: 453756918}
   - {fileID: 1029317300}
   - {fileID: 2067492768}
+  - {fileID: 1775306117}
