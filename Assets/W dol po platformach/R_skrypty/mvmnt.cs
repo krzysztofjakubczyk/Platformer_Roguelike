@@ -92,7 +92,21 @@ public class mvmnt : MonoBehaviour
         Invoke(nameof(noNumb), 0.2f);
 
         blinksImage();
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.tag != "Enemy")
+            return;
+
+        // TO DO: normalize vector (ale zostawione tymczasowo)
+
+        Vector2 pushDir = transform.position - collision.transform.position;
+        rb.AddForce(pushDir * 20, ForceMode2D.Impulse);
+        numbState = true;
+        Invoke(nameof(noNumb), 0.2f);
+
+        blinksImage();
     }
 
     void noNumb()

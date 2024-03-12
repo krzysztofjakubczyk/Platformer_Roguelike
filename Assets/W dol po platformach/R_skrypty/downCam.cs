@@ -37,9 +37,13 @@ public class downCam : MonoBehaviour
 
         }
 
-
         Vector3 targetPosition = new Vector3(0, offset.y, -10);
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+
+        if(Mathf.Abs((transform.position - target.position).magnitude) > 15)
+        {
+            target.position = new Vector2(-4, 3);
+        }
     }
 
 

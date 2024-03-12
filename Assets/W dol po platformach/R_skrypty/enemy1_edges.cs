@@ -7,7 +7,7 @@ public class enemy1_edges : MonoBehaviour
 {
     [SerializeField] float speed;
     int horizontal;
-    bool wPrawo;
+    [SerializeField] bool startWPrawo;
     BoxCollider2D coll;
     Rigidbody2D rb;
     [SerializeField]LayerMask platformLayer;
@@ -19,34 +19,25 @@ public class enemy1_edges : MonoBehaviour
         zeroVel = false;
         coll = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
-        int los = Random.Range(1, 10);
-        if (los >= 5)
-        {
-            horizontal = 1;
-            wPrawo = true;
-        }
 
+        if (startWPrawo)
+            horizontal = 1;
         else
-        {
             horizontal = -1;
-            wPrawo = false;
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 borderL = new Vector2(coll.bounds.center.x - 0.5f, coll.bounds.center.y - 0.1f);
-        Vector2 borderR = new Vector2(coll.bounds.center.x + 0.5f, coll.bounds.center.y - 0.1f);
+        Vector2 borderL = new Vector2(coll.bounds.center.x - 0.5f, coll.bounds.center.y - 0.3f);
+        Vector2 borderR = new Vector2(coll.bounds.center.x + 0.5f, coll.bounds.center.y - 0.3f);
 
         // zeroVel - bo musi miec czas na oddalenie sie od krawedzi (zeby tylko raz ustawic velocity na 0) - do zmiany
         if (!Physics2D.BoxCast(borderL, coll.bounds.size, 0f, Vector2.left, .1f, platformLayer) && !zeroVel)
         {
             zeroVel = true;
             rb.velocity = Vector2.zero;
-            wPrawo = true;
             horizontal = 1;
-
             Invoke(nameof(zeroBack), 0.5f);
         }
 
@@ -54,9 +45,8 @@ public class enemy1_edges : MonoBehaviour
         {
             zeroVel = true;
             rb.velocity = Vector2.zero;
-            wPrawo = false;
             horizontal = -1;
-
+            
             Invoke(nameof(zeroBack), 0.5f);
         }
     }
