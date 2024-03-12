@@ -18,7 +18,7 @@ public class platformWalking : MonoBehaviour
     private void Update()
     {
         Vector2 rayOrigin = new Vector2(transform.position.x, transform.position.y);
-        if(!Physics2D.Raycast(rayOrigin, -transform.up, 1, platformLayer) && !timeOff)
+        if(!Physics2D.Raycast(rayOrigin, -transform.up, 1, platformLayer) && !timeOff) //dobry kod danielo 
         {
             timeOff = true;
 
