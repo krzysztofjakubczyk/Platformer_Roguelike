@@ -42,7 +42,7 @@ public class downCam : MonoBehaviour
 
         if(Mathf.Abs((transform.position - target.position).magnitude) > 15)
         {
-            target.position = new Vector2(-4, 3);
+            target.position = new Vector2(-5.5f, 3);
         }
     }
 

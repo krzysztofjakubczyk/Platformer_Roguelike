@@ -13,6 +13,7 @@ public class UnlockPlatforms : MonoBehaviour
     [SerializeField] GameObject Platform6;
     [SerializeField] GameObject Platform7;
     [SerializeField] GameObject Platform8;
+    [SerializeField] GameObject Platform9;
 
     List<GameObject> platforms = new List<GameObject>();
 
@@ -26,6 +27,7 @@ public class UnlockPlatforms : MonoBehaviour
         platforms.Add(Platform6);
         platforms.Add(Platform7);
         platforms.Add(Platform8);
+        platforms.Add(Platform9);
 
         foreach (GameObject platform in platforms)
         {
