@@ -6,8 +6,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public event Action directionChange;
-
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] float speed = 8f;
     [SerializeField] float jumpingPower = 16f;
@@ -54,7 +52,6 @@ public class PlayerMovement : MonoBehaviour
         {
             if (horizontal == -1)
             {
-                directionChange();
                 wPrawo = false;
             }
         }
@@ -62,7 +59,6 @@ public class PlayerMovement : MonoBehaviour
         {
             if (horizontal == 1)
             {
-                directionChange();
                 wPrawo = true;
             }
         }

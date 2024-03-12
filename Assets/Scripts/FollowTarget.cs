@@ -22,7 +22,6 @@ public class FollowTarget : MonoBehaviour
 
     private void Start()
     {
-        target.GetComponent<PlayerMovement>().directionChange += dirChange;
 
         camSide = true;
         notYetChanged_Y = true;
@@ -43,21 +42,6 @@ public class FollowTarget : MonoBehaviour
        
         Vector3 targetPosition = new Vector3( target.position.x + offset.x,  offset.y, -10);
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
-    }
-
-    void dirChange()
-    {
-        if (camSide == true)        camSide = false;
-        else if (camSide == false)  camSide = true;
-
-        if (camSide)
-            offset += new Vector3(2, 0, 0);
-        else
-            offset -= new Vector3(2, 0, 0);
-
-        //smoothTime = 0.5f;
-        //Invoke(nameof(timeBack), 1f);
-
     }
 
     void timeBack()

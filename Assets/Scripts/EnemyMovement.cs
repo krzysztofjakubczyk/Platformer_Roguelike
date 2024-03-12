@@ -1,14 +1,16 @@
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class EnemyMovement : EnemyMovementInterface
 {
-    [SerializeField] GameObject player;
+    GameObject player;
     Rigidbody2D _rb;
     float _movementSpeed = 3f;
 
     void Start()
     {
         _rb = gameObject.GetComponent<Rigidbody2D>();
+        player = GameObject.FindWithTag("Player");
     }
 
     private void FixedUpdate()
@@ -18,4 +20,3 @@ public class EnemyMovement : EnemyMovementInterface
     }
 }
 
-    
