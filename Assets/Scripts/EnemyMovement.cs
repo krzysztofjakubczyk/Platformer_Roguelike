@@ -5,7 +5,7 @@ public class EnemyMovement : EnemyMovementInterface
 {
     GameObject player;
     Rigidbody2D _rb;
-    float _movementSpeed = 3f;
+    float _movementSpeed = 1f;
 
     void Start()
     {
