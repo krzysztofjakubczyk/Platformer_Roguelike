@@ -1,0 +1,4351 @@
+fileFormatVersion: 2
+guid: ee34a4caac9ac1b4fb1a2cd45725786c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 528
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7232b25f32a1ec44b89343948fdbf729
+      internalID: -209952465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 528
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c9b01e7924bcd04a8b972b5026d13b7
+      internalID: 498912782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 528
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f918f4d9ce646a5439b17c8625402acc
+      internalID: -1678188878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 528
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf7f6912f83de0443b83ec95b8ce1d8b
+      internalID: 1338723279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 528
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079d6acf16d60cc4ba6fa284eade4c2e
+      internalID: 1428449936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 528
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 369c0948f00e81d4ea5c21ba27ccefae
+      internalID: 108771836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 528
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c8d1b58c699df4eac454e922180010
+      internalID: 1210326278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 528
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 487c24fb681d0104b868648db6c7f3ae
+      internalID: 1673287398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 528
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5eade5131a87b47a201f5676b242b9
+      internalID: 223156437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 528
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdf8f1664c7a69b4f900839efd32d61e
+      internalID: -393860741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_10
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 528
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fb57ff1031e231468fbef8b635cd9e1
+      internalID: -1276206208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_11
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 528
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f95de78bb2471e44b9df361a16122880
+      internalID: -564280826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_12
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 528
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b51534c070809d499bd046d05a0bd0a
+      internalID: -902956567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_13
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 528
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ced2626667988cc4c8166355a08e23d1
+      internalID: 1475660860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_14
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 528
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c95e96a73a58cca46873880e45726bda
+      internalID: -1003530603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_15
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 528
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a78aecebadbd5fd4e8d9ca7781db4a63
+      internalID: -1336925802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff315251fffc2f147b887779bf92a61c
+      internalID: 1645011668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_17
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 480
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 751031ff4d15600419cccfab2df87bcc
+      internalID: 1865298024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_18
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 480
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c51bbb97478205f4c9f8dd829c85c9f9
+      internalID: 1419294173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_19
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 480
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72ee040ff7a1d564e88149bb98d2f9d1
+      internalID: 1309766651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_20
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 480
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5a75b004922870419d2048b9296ac20
+      internalID: -1456568362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_21
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 480
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 708b9d8103084d346aabde47def9392d
+      internalID: -1779663784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_22
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 480
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: add586680bb50714e961b8ddca0340b2
+      internalID: -483440648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_23
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 480
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65dcaec069f90ba4991668e4774e03a5
+      internalID: 303273994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_24
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 480
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 185ed9f4e3dc5f94ca87d9b7fcdbf4b1
+      internalID: 433192240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_25
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 480
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e79b4075e5089ae4caca14d7735e9b60
+      internalID: -615704365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_26
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 480
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d75862d5530be14bbc67c3fa4c1ea2d
+      internalID: -1523025527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_27
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 480
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e5522d53623b9438bfbce1402ebefb
+      internalID: 1554669177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_28
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 480
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b8692c629e0c4f4cbddecf3f2f63b1c
+      internalID: 720575393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_29
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 480
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d15dbafb08a4214393f1305673ba4c4
+      internalID: -1388145150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_30
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 480
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d26869d44dc4a84ab7821e7aa94f657
+      internalID: -2075978548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_31
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 480
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e9fa37359bc3c546b1fb3eb3e48fd8b
+      internalID: -729583921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6225bc01ea8944489ad57b3e714a4ca
+      internalID: -1554935256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_33
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa29258d10d19304a880b5c48fed10a1
+      internalID: -547817071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_34
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c6bb110f67bdd442b23adcec8a8808d
+      internalID: 1878662558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_35
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 751f7bd1319c2ad41bd69cecab0e314b
+      internalID: 370016815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_36
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b167b8e6e1a772944b37e4b732f58de7
+      internalID: 231567878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_37
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4ccc45678718f84cb96d87c1c8aa7af
+      internalID: -1356032699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_38
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380317db992de814abc4978ae9d6b913
+      internalID: -1489429518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_39
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb1eb48280f94ae46b4a869c8ff09442
+      internalID: -610323944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_40
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b09391d4cda531e45a209f781e175da4
+      internalID: 1698143883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_41
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d4468c168c33ae4a82d032962e00634
+      internalID: -724124627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_42
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e013bd0507d19c341843aee68c5edf21
+      internalID: -607989237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_43
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5439d9fbff597fa45bda503be4416dbb
+      internalID: 1376121337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_44
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 172b09639c8e912459075d3555e95b30
+      internalID: -134238488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_45
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2375aee11d1e0da428f679c457c16e66
+      internalID: -678834164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_46
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d22dfcd8d174949ac2c3440b572f71
+      internalID: -862928890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_47
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 135a76c4064eea44ba76b7f887fdf8a1
+      internalID: 248991442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e4f7a2a1511c59468e8b0225e40f82a
+      internalID: 1560290650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_49
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 384
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a8e14dfa310ad04da33d9951e16be52
+      internalID: -1978305233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_50
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 384
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1146ccb64e3c1e488676f6abf35eaa8
+      internalID: 1595703556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_51
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 384
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f366249af1b1fbd499c7704c137a0330
+      internalID: 1559569488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_52
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12562eb0e80165e43b4470b71b01d710
+      internalID: -1377843371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_53
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 384
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 094ca9f615e6bc941bb70de7d0fccfad
+      internalID: -287046399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_54
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 384
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53bc17b65d00f548a010ba29b77433b
+      internalID: 1201006369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_55
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 384
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f09ad6d83fc2ecb4981ecbec80bd2d9e
+      internalID: 672310189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_56
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 252b9586c1159f44c813c3b952655e3e
+      internalID: -1286526545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_57
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 384
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 850b02ce93a06b843846cf066aae443a
+      internalID: 275238992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_58
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 384
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bd6ef7021deff244b6b1f5ddb789d5d
+      internalID: -388765355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_59
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 384
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629b5464ca74e084fbd09959ec83276f
+      internalID: -1794006289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_60
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 384
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 197aa094790f9ac4c81cc5cee9970f1d
+      internalID: 1498587496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_61
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 384
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61c00908fb59eba4dbc59c9d540e3dac
+      internalID: 2134613141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_62
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 384
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78c5acb49ab7f6842982ebb14bb30060
+      internalID: 1982262348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_63
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 384
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73f0071faeb1cbf4bb96b0d6c1df1e38
+      internalID: -1408194046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44a02b0093253f94f8c125aabd4b4e59
+      internalID: 1375670389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_65
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 336
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b83fa6eddc3dd0c418c1a8fe695d0fd6
+      internalID: -1532408055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_66
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 336
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c452986098aab647837e87c96b72a34
+      internalID: -346158725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_67
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 336
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1efd17b7340f1174fb4028b19e1bfa60
+      internalID: -2140895428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_68
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 336
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f75173426f8690498ed49190e5872d8
+      internalID: 1544947949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_69
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 336
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a529f9f80d9c0e848a459ceae9958ef4
+      internalID: -639681324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_70
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 336
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a07cddacbc823584a8ffd79416ecbccb
+      internalID: -2106637742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_71
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 336
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 990c9258c02f32d4bacb84d4a73f7e10
+      internalID: -52298116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_72
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 336
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 480989daf9e035f4a87fcb8bc96e5810
+      internalID: 1304116989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_73
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 336
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fb66d3f1054e7c4799f979da27be222
+      internalID: 1701317694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_74
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 336
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d378917c3b2e60042af605af4035419d
+      internalID: -657106300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_75
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 336
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b60cdb70ff7f5a049a0a5c4635f71399
+      internalID: 2067204854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_76
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 336
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a2d945aefed25945a0b6e21ace2a074
+      internalID: -722706912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_77
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 336
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6417c532284c2644b5bf08cfd11c5a8
+      internalID: -1235347968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_78
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 336
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a796950e008b1b4eb67b297c2146eb1
+      internalID: -1998495588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_79
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 336
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3948c428b2eec84482da2a60bc4468b
+      internalID: -741228758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3925248e275bf643b1cd55ce77bb360
+      internalID: -2133452319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_81
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe1e44755a385034faca5f75289254c9
+      internalID: 1314556015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_82
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c98d440bc094f9e4e89ba1540550df30
+      internalID: 77352518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_83
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c635389d544eef7469243a5a991f1a03
+      internalID: -349400754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_84
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99bf4ba14812e9e4783b128ac275b11a
+      internalID: -1476123794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_85
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13778092d3975ce47b4ac6643612eed5
+      internalID: 597287400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_86
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2615eb2e50c273347ab9b1e6ebb7d0fe
+      internalID: 442153850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_87
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 327ab3d31220855448d114ed8c4b2b29
+      internalID: -1944634518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_88
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f09a8fd40a2ae4fbb0f8166f2e02e5
+      internalID: -792832388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_89
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d151750625a01f4e85f1615a5983432
+      internalID: 747497008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_90
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7425bfa1f11aa694e98b1e8e3b3e25cd
+      internalID: 1492376849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_91
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8c63474ec33f484bb35e365171b2818
+      internalID: 2015103788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_92
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0803f7dcf3ac2747b3963273d56436b
+      internalID: -1696273096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_93
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5e88973ec06ed247add8782e29cfb7d
+      internalID: -1390725284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_94
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11b24727133414e4d81a02454f60ae47
+      internalID: -228533431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_95
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b043091032356ff42be75a9dba547f14
+      internalID: -446448227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64aaedcedba12a847b2ef84a11cdfd4e
+      internalID: -1454855887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_97
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32ce3a22c3d73a04fa3e03aec5472037
+      internalID: 1553081996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_98
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8233c45af6a1ee3439a876929cd367d8
+      internalID: -803865663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_99
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dd967f802db94d49af2647f3da35590
+      internalID: -1446056617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_100
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e792e3a432673f043895c57697f021fc
+      internalID: 439520995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_101
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 199b4905c8f694f41af2d70e1f117ce3
+      internalID: -458040067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_102
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e46101a68bd92194f8965c0b03471463
+      internalID: -992696939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_103
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c3771fc98db79a4faffaefc6536c900
+      internalID: -1485641583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_104
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0286d5796e7d9184d9afd93bb599775f
+      internalID: -325915604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_105
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2180cc631d1150e4e9d915659d3d78e5
+      internalID: 561776436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_106
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b1d56b54fc747c4fa4857d9ba5b94c5
+      internalID: -1734181433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_107
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe357ef5cdf769b4d93af39748798c13
+      internalID: 1166155794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_108
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c27b84144214ae4c9a34c1d76935299
+      internalID: 945988836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_109
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f01490008c792ea499927f4b330a5fd9
+      internalID: -1191289555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_110
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bfd51b50e0699244b25cc3e417f2bbc
+      internalID: 1495028480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_111
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9c2360eb97a86341865b43dc266caab
+      internalID: 1864799496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bfd600612195f34ba9611d53f6d7eb6
+      internalID: 1652605894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_113
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1520501bac3d91f43aafe5608f66e74b
+      internalID: -734918320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_114
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a6317338f8a2c4f849774a72bd2e66
+      internalID: 431814933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_115
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3d56afa68a6956439cc69ee966b7558
+      internalID: -18635294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_116
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deeea687fc1e48645bc47f794b5fc019
+      internalID: 1524908747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_117
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5e6d56fd0d741d4392b4e810faacef6
+      internalID: 498115771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_118
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7379d28692bf5f8438229f7863e7eb2b
+      internalID: 1365696915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_119
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa608a0f0b5acc14ea47d6a993ecbf79
+      internalID: 448189005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_120
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 401dc1492fe92b74ea45fb87854de43b
+      internalID: -1512577928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_121
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e027142caac2dab4f881d222bfa1bb89
+      internalID: 558278908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_122
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c92ad5fd0c9f00141a70e4c29b8358e6
+      internalID: 2126999744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_123
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73c6abac02a602a418be435308be6d2d
+      internalID: 1740949014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_124
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05611a2bdb553014bad3132e4b4490fe
+      internalID: 1874373838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_125
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b583286859bcc54ca529e2b62e29acd
+      internalID: 816168602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_126
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f0d39d0c5cf0b4398597049e8b74e5
+      internalID: 1623984597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_127
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86ada84a5d5ac2d4bb6b99c7512fc73f
+      internalID: 1933759951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_128
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19b8b542b0969874583a14b161c8b888
+      internalID: 1725756169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_129
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76edcfa664db8bf4882077fb6ee6e82a
+      internalID: -551603973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_130
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a28e8ef739f74ca4e849efa212aade71
+      internalID: -509245706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_131
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a57258c06d129c408c73291325797e5
+      internalID: -1410540061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_132
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ea6eb6f715d09d4d8521ca42fcb391a
+      internalID: -1905135551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_133
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b72d442aefdcf344293c1ebe7db19bcb
+      internalID: 1346992772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_134
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb19d5c16998b34c9cd6bbf8eddb94a
+      internalID: 1048493787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_135
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60eeb7de1ccb97941a56758861c86584
+      internalID: 127559916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_136
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa621604acd65e64d94a691eef6811ba
+      internalID: 1877026223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_137
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e41f0e283afa3774f9f72f9bcd5e193f
+      internalID: -613777622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_138
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3c646144d6fc54ab91cc1894b92f4c
+      internalID: 3927268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_139
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc57f595d07ecc34a8a0647b74d43523
+      internalID: -1191519401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_140
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bc036ac8bc728540b9c0edc27fd3a0b
+      internalID: 1640747337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_141
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e986f75987c99b479534a4d2bd31a9d
+      internalID: 2084100757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_142
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 660f0cea7cca6374684f246233a77548
+      internalID: -973142012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_143
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 131877858bee1304c96055b6b082203e
+      internalID: -1646297486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_144
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b248ffa3a64665438972ef742cd5f79
+      internalID: 348372648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_145
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66fb29f07e7e3ca44b337558f352b571
+      internalID: 1509567154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_146
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 667d484676fe39648b540801e1260608
+      internalID: -1694101833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_147
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f80989ddaae99484a83e10b455b65d41
+      internalID: -1693856250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_148
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c72324923431ad7429e3f7695162023f
+      internalID: -2101028856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_149
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93063e1cc43e7ca4a8caf190add7bb93
+      internalID: 1342343113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_150
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b299493c25765d948a2d5ed54cd06a74
+      internalID: 1569352313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_151
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f136fbb84fdeab46921ecc33af0b31e
+      internalID: -1855642709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_152
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de04f825c7083fd4f82b04f6f0d8bb8d
+      internalID: 64959081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_153
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be0b5eb00583944583fe3d14703af90
+      internalID: 743105824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_154
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b08a94a4c77e27f4781d745af84d5c06
+      internalID: 12133151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_155
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42d87bcc45c82d6489157113cb0f57df
+      internalID: -1333498748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_156
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 322c03a6432935740ae172117017a632
+      internalID: -1806575604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_157
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97e525b2a80abb7498f6282af39d1121
+      internalID: 559230813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_158
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611db40fffc2bef4c80e8cf7cd66f9ed
+      internalID: 1336593329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_159
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0ecb5420099566498c252df5cc502a9
+      internalID: 1392803598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_160
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d0460de37ddf5147a7329a918d44880
+      internalID: 1771039291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_161
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 586b6e32d9d0a1547a8528b0ca70c3c1
+      internalID: 1377586723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_162
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 128319c371322d440b2506ada45bace6
+      internalID: -828258288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_163
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99e7c017045ad374cbdc1e05529abbb5
+      internalID: 1491124476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_164
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beba38cb7e23ae34cb0d4f950e0b9627
+      internalID: -1382318684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_165
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 507df71fb78196b4bb3fe2d51c337f6a
+      internalID: -163362956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_166
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a578f57b1a3c0b8489c325be00075d7b
+      internalID: -2052486717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_167
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05df5ca041b6d4e44bca5134ce38a7ff
+      internalID: 1085883756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_168
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaac71f45a9b30c46929ad0aaaf273da
+      internalID: 1112361703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_169
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b758b938904bc784db07171aac76f1e4
+      internalID: 850524141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_170
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32575bb476eb3884aa99b5e0d6495d4a
+      internalID: -238180625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_171
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 125c614cde58a8049a21d4910385c553
+      internalID: -1188815131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_172
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbb10d7088e20154f821d6f65b77bcc1
+      internalID: 114456069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_173
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e1de5ae39122a34a91a49b754dc5009
+      internalID: 77273826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_174
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d70f47f20805b246a040ba0ef06e74c
+      internalID: -1720963078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_175
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4188d8ebfd6a84c4e8fb3e36d58da117
+      internalID: -1217489664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_176
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 795d5b4c7e76f7e46a0e2298c1623462
+      internalID: 1121111470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_177
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13ac0a4ececc2ae4e915aebe893ed56c
+      internalID: -1962045441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_178
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dedc1c922a8951e43b697dfdba0e6d07
+      internalID: -991211577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_179
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b635c1abcf6ed4448bdf2636737e19f0
+      internalID: 570289204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_180
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0b6bf003fb1e6c44a7f78f7fe84758f
+      internalID: -840949590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_181
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f402d5484bc964497d0269cd52b306
+      internalID: -1089461984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_182
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fec192e10890b542bb654de9ce46b78
+      internalID: -1387662353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_183
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a9a395dfa3cef64686166038deb6deb
+      internalID: 817373719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_184
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b15e677274efc5043aa5049912afb929
+      internalID: -874839810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_185
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362470dde077ffa448b6d7d23fff4057
+      internalID: -1307344050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_186
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fb0cc2afd20d77438a533af24dfee7b
+      internalID: 850684249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_187
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad7a9827d28660b409a62d45aad4ee4d
+      internalID: -1761283091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_188
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20a38662dbc98ea49964b6bbd39164b9
+      internalID: -801215033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_189
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b750bfc3a2cb10942a96533899758c3c
+      internalID: 1122879246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_190
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bf01ac14b9a3094eb6e927b0c522d10
+      internalID: -1400298760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_191
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 168f499702b83fc49968a714480f92af
+      internalID: 10767028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_0: -209952465
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_1: 498912782
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_10: -1276206208
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_100: 439520995
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_101: -458040067
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_102: -992696939
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_103: -1485641583
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_104: -325915604
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_105: 561776436
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_106: -1734181433
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_107: 1166155794
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_108: 945988836
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_109: -1191289555
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_11: -564280826
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_110: 1495028480
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_111: 1864799496
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_112: 1652605894
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_113: -734918320
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_114: 431814933
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_115: -18635294
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_116: 1524908747
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_117: 498115771
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_118: 1365696915
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_119: 448189005
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_12: -902956567
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_120: -1512577928
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_121: 558278908
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_122: 2126999744
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_123: 1740949014
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_124: 1874373838
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_125: 816168602
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_126: 1623984597
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_127: 1933759951
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_128: 1725756169
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_129: -551603973
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_13: 1475660860
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_130: -509245706
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_131: -1410540061
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_132: -1905135551
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_133: 1346992772
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_134: 1048493787
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_135: 127559916
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_136: 1877026223
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_137: -613777622
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_138: 3927268
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_139: -1191519401
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_14: -1003530603
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_140: 1640747337
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_141: 2084100757
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_142: -973142012
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_143: -1646297486
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_144: 348372648
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_145: 1509567154
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_146: -1694101833
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_147: -1693856250
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_148: -2101028856
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_149: 1342343113
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_15: -1336925802
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_150: 1569352313
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_151: -1855642709
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_152: 64959081
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_153: 743105824
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_154: 12133151
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_155: -1333498748
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_156: -1806575604
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_157: 559230813
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_158: 1336593329
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_159: 1392803598
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_16: 1645011668
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_160: 1771039291
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_161: 1377586723
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_162: -828258288
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_163: 1491124476
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_164: -1382318684
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_165: -163362956
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_166: -2052486717
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_167: 1085883756
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_168: 1112361703
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_169: 850524141
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_17: 1865298024
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_170: -238180625
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_171: -1188815131
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_172: 114456069
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_173: 77273826
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_174: -1720963078
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_175: -1217489664
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_176: 1121111470
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_177: -1962045441
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_178: -991211577
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_179: 570289204
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_18: 1419294173
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_180: -840949590
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_181: -1089461984
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_182: -1387662353
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_183: 817373719
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_184: -874839810
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_185: -1307344050
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_186: 850684249
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_187: -1761283091
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_188: -801215033
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_189: 1122879246
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_19: 1309766651
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_190: -1400298760
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_191: 10767028
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_2: -1678188878
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_20: -1456568362
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_21: -1779663784
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_22: -483440648
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_23: 303273994
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_24: 433192240
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_25: -615704365
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_26: -1523025527
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_27: 1554669177
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_28: 720575393
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_29: -1388145150
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_3: 1338723279
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_30: -2075978548
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_31: -729583921
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_32: -1554935256
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_33: -547817071
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_34: 1878662558
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_35: 370016815
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_36: 231567878
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_37: -1356032699
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_38: -1489429518
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_39: -610323944
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_4: 1428449936
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_40: 1698143883
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_41: -724124627
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_42: -607989237
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_43: 1376121337
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_44: -134238488
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_45: -678834164
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_46: -862928890
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_47: 248991442
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_48: 1560290650
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_49: -1978305233
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_5: 108771836
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_50: 1595703556
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_51: 1559569488
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_52: -1377843371
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_53: -287046399
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_54: 1201006369
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_55: 672310189
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_56: -1286526545
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_57: 275238992
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_58: -388765355
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_59: -1794006289
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_6: 1210326278
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_60: 1498587496
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_61: 2134613141
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_62: 1982262348
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_63: -1408194046
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_64: 1375670389
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_65: -1532408055
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_66: -346158725
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_67: -2140895428
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_68: 1544947949
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_69: -639681324
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_7: 1673287398
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_70: -2106637742
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_71: -52298116
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_72: 1304116989
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_73: 1701317694
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_74: -657106300
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_75: 2067204854
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_76: -722706912
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_77: -1235347968
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_78: -1998495588
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_79: -741228758
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_8: 223156437
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_80: -2133452319
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_81: 1314556015
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_82: 77352518
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_83: -349400754
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_84: -1476123794
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_85: 597287400
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_86: 442153850
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_87: -1944634518
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_88: -792832388
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_89: 747497008
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_9: -393860741
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_90: 1492376849
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_91: 2015103788
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_92: -1696273096
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_93: -1390725284
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_94: -228533431
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_95: -446448227
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_96: -1454855887
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_97: 1553081996
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_98: -803865663
+      AxiomythGames_GB_Pixel_Tileset_2DCave_Basics_99: -1446056617
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
