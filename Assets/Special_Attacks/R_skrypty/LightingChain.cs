@@ -36,13 +36,17 @@ public class LightingChain : MonoBehaviour
     {
         if(closestEnemy != null)
             dir = closestEnemy.transform.position - transform.position;
+
         rb.velocity = dir.normalized * speed * Time.deltaTime;
 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag != "Enemy")
+        if (collision.tag != "Enemy" && collision.tag != "Player")
+            Destroy(gameObject);
+
+        if (collision.tag != "Enemy")            
             return;
 
         foreach (string nm in attacked)
@@ -95,7 +99,6 @@ public class LightingChain : MonoBehaviour
             if ((transform.position - col.transform.position).magnitude < minDistance)
             {  
                 minDistance = (transform.position - col.transform.position).magnitude;
-                //dir = col.transform.position - transform.position;
                 closestEnemy = col;
                 
             }
