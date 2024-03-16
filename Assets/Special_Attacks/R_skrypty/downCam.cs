@@ -12,7 +12,6 @@ public class downCam : MonoBehaviour
     [SerializeField] float yOffset;
 
     bool camSide;
-    bool notYetChanged_Y;
     bool notGrounded;
 
     private void Awake()
@@ -22,7 +21,6 @@ public class downCam : MonoBehaviour
 
     private void Start()
     {
-        notYetChanged_Y = true;
         notGrounded = true;
     }
 
@@ -37,7 +35,7 @@ public class downCam : MonoBehaviour
 
         }
 
-        Vector3 targetPosition = new Vector3(0, offset.y, -10);
+        Vector3 targetPosition = new Vector3(target.position.x + offset.x, offset.y, -10);
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
 
         if(Mathf.Abs((transform.position - target.position).magnitude) > 15)

@@ -26,8 +26,6 @@ public class platformWalking : MonoBehaviour
 
             Invoke(nameof(noTimeOff), 0.8f);
         }
-        print(timeOff);
-        //print(Physics2D.Raycast(rayOrigin, -transform.up, 5, platformLayer).distance);
     }
     private void FixedUpdate()
     {
