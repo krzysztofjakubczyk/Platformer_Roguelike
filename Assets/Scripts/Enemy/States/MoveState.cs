@@ -5,8 +5,9 @@ using UnityEngine;
 public class MoveState : State
 {
     protected D_MoveState stateData;
-
+    [SerializeField]
     protected bool isDetectingWall;
+    [SerializeField]
     protected bool isDetectingLedge;
    public MoveState(Entity entity,BaseStateMachine stateMachine,string animBoolName,D_MoveState stateData): base(entity, stateMachine, animBoolName)
     {
@@ -16,7 +17,7 @@ public class MoveState : State
     public override void Enter()
     {
         base.Enter();
-        entity.SetVelocity(stateData.movementSpeed);
+        
 
         isDetectingLedge = entity.CheckLedge();
         isDetectingWall = entity.CheckWall();
@@ -30,12 +31,14 @@ public class MoveState : State
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        entity.SetVelocity(stateData.movementSpeed);
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-
+        Debug.Log(isDetectingLedge);
+        Debug.Log(isDetectingWall);
         isDetectingLedge = entity.CheckLedge();
         isDetectingWall = entity.CheckWall();
     }

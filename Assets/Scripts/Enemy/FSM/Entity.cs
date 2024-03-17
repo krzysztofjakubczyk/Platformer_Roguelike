@@ -29,6 +29,12 @@ public class Entity : MonoBehaviour
     public virtual void Update()
     {
         stateMachine.currentState.LogicUpdate();
+        Debug.Log(stateMachine.currentState);
+        Debug.Log(rb.velocity);
+    }
+    public virtual void FixedUpdate()
+    {
+        stateMachine.currentState.PhysicsUpdate();
     }
     public virtual void StateMachine()
     {
