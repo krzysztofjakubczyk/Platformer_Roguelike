@@ -100,10 +100,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  staminaCost: 0
+  cost: 40
   damage: 0
+  castDirection: {x: 1, y: 0}
+  rb: {fileID: 1409051048395732217}
   searchRadius: 15
-  jumpsNumberMax: 2
+  jumpsNumberMax: 5
   speed: 250
   enemyLayer:
     serializedVersion: 2

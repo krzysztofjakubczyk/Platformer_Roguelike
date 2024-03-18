@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spell : ScriptableObject
+public abstract class Spell : MonoBehaviour
 {
-    public string name;
+
+    [HideInInspector]public GameObject player;
     public float cost;
     public float damage;
+    [HideInInspector] public Vector2 castDirection;
+    [HideInInspector] public Rigidbody2D rb;
 
-    public virtual void Activate(GameObject parent) { }
+    public abstract void Attack();
 }

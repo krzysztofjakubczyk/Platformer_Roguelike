@@ -4,32 +4,46 @@ using UnityEngine;
 
 public class SpellManager : MonoBehaviour
 {
-    public Spell spell;
-    public GameObject activeSpell;
-
+    [SerializeField]GameObject activeSpell;
     StaminaControl StaminaControl;
 
     float cost;
-    float damage;
+    Vector2 throwDir;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         StaminaControl = GetComponent<StaminaControl>();
+
+        // TO DO:       ustawic dir podczas rzucania a nie w start
+        throwDir = transform.right;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        // TO DO:       zmienna zamiast keycode
+
+        if (Input.GetKeyDown(KeyCode.C) && activeSpell != null)
         {
-            if(StaminaControl.currentStamina > cost)
-                Instantiate(activeSpell);
+            cost = activeSpell.GetComponent<Spell>().cost;
+
+            if (StaminaControl.currentStamina > cost)
+            {
+                StaminaControl.SubStamina(cost)
+                    ;
+                activeSpell.GetComponent<Spell>().castDirection = throwDir;
+                activeSpell.GetComponent<Spell>().player = gameObject;
+                activeSpell.GetComponent<Spell>().rb = activeSpell.GetComponent<Rigidbody2D>();
+
+                Instantiate(activeSpell, transform.position,Quaternion.identity);
+
+            }
         }
     }
 
-    public void setSpell(int spellNumber)
+    public void setSpell(GameObject spell)
     {
-          
+          activeSpell = spell;
     }
 }

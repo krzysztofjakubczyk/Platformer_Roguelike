@@ -801,8 +801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4823619b9b96824439c93dcdd3af330f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spell: {fileID: 0}
-  activeSpell: {fileID: 0}
+  activeSpell: {fileID: 3151645623783271711, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
 --- !u!1 &432549814
 GameObject:
   m_ObjectHideFlags: 0
@@ -4880,6 +4879,10 @@ PrefabInstance:
     - target: {fileID: 7993795310370821829, guid: b6c5c8b4005b9ab44a05f5d26e7af1b0, type: 3}
       propertyPath: m_Name
       value: Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 7993795310370821829, guid: b6c5c8b4005b9ab44a05f5d26e7af1b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
