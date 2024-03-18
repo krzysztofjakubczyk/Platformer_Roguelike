@@ -23,14 +23,15 @@ public class Entity : MonoBehaviour
         anim = aliveGameObject.GetComponent<Animator>();
 
         stateMachine = new BaseStateMachine();
+
+        rb.gravityScale = 0;
        
     }
 
     public virtual void Update()
     {
         stateMachine.currentState.LogicUpdate();
-        Debug.Log(stateMachine.currentState);
-        Debug.Log(rb.velocity);
+
     }
     public virtual void FixedUpdate()
     {

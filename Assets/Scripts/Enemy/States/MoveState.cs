@@ -17,7 +17,6 @@ public class MoveState : State
     public override void Enter()
     {
         base.Enter();
-        
 
         isDetectingLedge = entity.CheckLedge();
         isDetectingWall = entity.CheckWall();
@@ -37,8 +36,6 @@ public class MoveState : State
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        Debug.Log(isDetectingLedge);
-        Debug.Log(isDetectingWall);
         isDetectingLedge = entity.CheckLedge();
         isDetectingWall = entity.CheckWall();
     }

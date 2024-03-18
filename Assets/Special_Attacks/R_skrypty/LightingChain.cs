@@ -43,8 +43,8 @@ public class LightingChain : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag != "Enemy" && collision.tag != "Player")
-            Destroy(gameObject);
+        //if (collision.tag != "Enemy" && collision.tag != "Player")
+            //Destroy(gameObject);
 
         if (collision.tag != "Enemy")            
             return;
