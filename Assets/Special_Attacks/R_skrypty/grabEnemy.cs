@@ -39,12 +39,15 @@ public class grabEnemy : MonoBehaviour
         if (collision.tag != "Enemy")
             return;
 
-        Vector2 dir2 = transform.position - collision.transform.position;
-        collision.GetComponent<Rigidbody2D>().AddForce(dir2 * pullForce, ForceMode2D.Impulse);
+        //Vector2 dir2 = transform.position - collision.transform.position;
+        //collision.GetComponent<Rigidbody2D>().AddForce(dir2 * pullForce, ForceMode2D.Impulse);
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
 
         // druga wersja - przyciagniecie do gracza
+
+
+        StartCoroutine(GoBackToPlayer(collision));
 
         /*
          * przyciagniecie do gracza
@@ -58,6 +61,25 @@ na koniec petli wlacza ruch przeciwnikowi*/
 
 
     }
+
+    IEnumerator GoBackToPlayer(Collider2D target)
+    {
+        Vector2 dir2 = transform.position - target.transform.position;
+
+        target.GetComponent<Rigidbody2D>().gravityScale = 0;
+
+        while (transform.position.x > player.transform.position.x + 1)
+        {
+            rb.velocity = (dir2 * speed) * Time.deltaTime;
+            target.GetComponent<Rigidbody2D>().velocity = (dir2 * speed) * Time.deltaTime;
+
+            yield return null;
+        }
+
+        target.GetComponent<Rigidbody2D>().gravityScale = 1;
+        Destroy(gameObject);
+    }
+    
 
     void PullAlittleToPlayer(float pullForce)
     {

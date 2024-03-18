@@ -81,7 +81,6 @@ public class mvmnt : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.transform.name);
         if (collision.transform.tag != "Obstacle" && collision.transform.tag != "Enemy")
             return;
 
