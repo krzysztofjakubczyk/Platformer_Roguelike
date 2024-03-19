@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - dontDestroy
   - Obstacle
+  - RotatedTraingleObstacle
+  - TriangleObstacle
+  - Platform
   layers:
   - Default
   - TransparentFX

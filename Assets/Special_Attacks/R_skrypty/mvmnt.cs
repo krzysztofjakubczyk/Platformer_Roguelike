@@ -81,11 +81,11 @@ public class mvmnt : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag != "Obstacle" && collision.transform.tag != "Enemy")
+        if (collision.transform.tag != "Enemy")
             return;
 
         // TO DO: normalize vector (ale zostawione tymczasowo)
-
+        Debug.Log("Odskok gracza");
         Vector2 pushDir = transform.position - collision.transform.position;
         rb.AddForce(pushDir * 20, ForceMode2D.Impulse);
         numbState = true;
