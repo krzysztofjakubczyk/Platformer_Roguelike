@@ -10,7 +10,7 @@ public class enemy1_edges : MonoBehaviour
     [SerializeField] bool startWPrawo;
     BoxCollider2D coll;
     Rigidbody2D rb;
-    [SerializeField]LayerMask platformLayer;
+    [SerializeField] LayerMask platformLayer;
 
     bool zeroVel;
 
@@ -32,7 +32,7 @@ public class enemy1_edges : MonoBehaviour
         Vector2 borderL = new Vector2(coll.bounds.center.x - 0.5f, coll.bounds.center.y - 0.3f);
         Vector2 borderR = new Vector2(coll.bounds.center.x + 0.5f, coll.bounds.center.y - 0.3f);
 
-        // zeroVel - bo musi miec czas na oddalenie sie od krawedzi (zeby tylko raz ustawic velocity na 0) - do zmiany
+
         if (!Physics2D.BoxCast(borderL, coll.bounds.size, 0f, Vector2.left, .1f, platformLayer) && !zeroVel)
         {
             zeroVel = true;
@@ -41,12 +41,12 @@ public class enemy1_edges : MonoBehaviour
             Invoke(nameof(zeroBack), 0.5f);
         }
 
-        if(!Physics2D.BoxCast(borderR, coll.bounds.size, 0f, Vector2.left, .1f, platformLayer) && !zeroVel)
+        if (!Physics2D.BoxCast(borderR, coll.bounds.size, 0f, Vector2.left, .1f, platformLayer) && !zeroVel)
         {
             zeroVel = true;
             rb.velocity = Vector2.zero;
             horizontal = -1;
-            
+
             Invoke(nameof(zeroBack), 0.5f);
         }
     }
@@ -61,4 +61,4 @@ public class enemy1_edges : MonoBehaviour
     {
         zeroVel = false;
     }
-}
+}       // zeroVel - bo musi miec czas na oddalenie sie od krawedzi (zeby tylko raz ustawic velocity na 0) - do zmiany
