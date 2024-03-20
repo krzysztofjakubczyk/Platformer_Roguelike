@@ -4,7 +4,8 @@ public class Spike : MonoBehaviour
 {
     [SerializeField] healthController health;
     private void OnTriggerEnter2D(Collider2D collision)
-    {
+    { 
+        //kodzik nie dzia³a przy spadaj¹cych kolcach do zrobienia jeszcze spawnowanie przy najblizszej pod³odze
         if (collision.transform.tag == "Player" && health.GetHealth() > 1)
         {
             Debug.Log("uderzono gracza");
@@ -16,7 +17,6 @@ public class Spike : MonoBehaviour
             health.RestartHealth();
             //PlayerTeleport(collision.transform);
         }
-        else Debug.Log("Nie udalo sie");
     }
     //private void PlayerTeleport(Transform playerTransform)
     //{

@@ -10,6 +10,7 @@ TagManager:
   - RotatedTraingleObstacle
   - TriangleObstacle
   - Platform
+  - ObstacleWall
   layers:
   - Default
   - TransparentFX
