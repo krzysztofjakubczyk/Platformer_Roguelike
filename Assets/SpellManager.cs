@@ -24,6 +24,20 @@ public class SpellManager : MonoBehaviour
     {
         // TO DO:       zmienna zamiast keycode
 
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            throwDir = transform.up;
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            throwDir = transform.right;
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            throwDir = -transform.right;
+        }
+
+
         if (Input.GetKeyDown(KeyCode.C) && activeSpell != null)
         {
             cost = activeSpell.GetComponent<Spell>().cost;

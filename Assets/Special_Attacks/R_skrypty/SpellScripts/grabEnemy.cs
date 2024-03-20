@@ -44,7 +44,7 @@ public class grabEnemy : Spell
     IEnumerator GoBackToPlayer(Collider2D target)
     {
         Vector2 dir2 = (transform.position - target.transform.position).normalized;
-
+        float gravityof = target.GetComponent<Rigidbody2D>().gravityScale;
         target.GetComponent<Rigidbody2D>().gravityScale = 0;
 
         shotAlready = true;
@@ -57,7 +57,7 @@ public class grabEnemy : Spell
             yield return null;
         }
 
-        target.GetComponent<Rigidbody2D>().gravityScale = 1;
+        target.GetComponent<Rigidbody2D>().gravityScale = gravityof;
         Destroy(gameObject);
     }
     
