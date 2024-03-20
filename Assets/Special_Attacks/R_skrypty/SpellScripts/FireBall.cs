@@ -1,55 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
-public class FireBall : MonoBehaviour
+
+public class FireBall : Spell
 {
-    [SerializeField] GameObject player;
-    [SerializeField] float staminaCost;
-    [SerializeField] float damage;
     [SerializeField] float damageOnExplode;
     [SerializeField] float pushbackForce;
     [SerializeField] float dmgRadius;
     [SerializeField] float speed;
     [SerializeField] LayerMask enemyLayer;
 
-    Vector2 dir;
-
-    Rigidbody2D rb;
-
-    void Start()
-    {
-        // TO DO ustawic kierunek rzucania
-
-        dir = player.transform.right;
-
-        rb = GetComponent<Rigidbody2D>();
-    }
-
-
 
     void Update()
     {
-        rb.velocity = dir.normalized * speed * Time.deltaTime;
+        rb.velocity = castDirection.normalized * speed * Time.deltaTime;
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag != "Enemy" && collision.tag != "Player")
-            BlowUpDamage();
-            // wybuch 
+            Attack();
 
 
         if (collision.tag != "Enemy")
             return;
 
 
-        // funkcja zadajaca dmg przeciwnikowi here
-        BlowUpDamage();
+        // zadanie dmg dla pierwszy target here
+
+        Attack();
 
     }
 
-    void BlowUpDamage()
+    public override void Attack()
     {
         Collider2D[] closeEnemies = Physics2D.OverlapCircleAll(transform.position, dmgRadius, enemyLayer);
 
@@ -59,8 +45,6 @@ public class FireBall : MonoBehaviour
             //odpychanie:
             Vector2 dir2 = c.transform.position - transform.position;
             c.GetComponent<Rigidbody2D>().AddForce(dir2 * pushbackForce, ForceMode2D.Impulse);
-
-            print(c.name);
         }
 
         Destroy(gameObject);

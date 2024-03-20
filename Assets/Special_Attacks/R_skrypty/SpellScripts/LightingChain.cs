@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class LightingChain : MonoBehaviour
+public class LightingChain : Spell
 {
-    [SerializeField]GameObject player;
-    [SerializeField] float staminaCost;
-    [SerializeField] float damage;
     [SerializeField] float searchRadius;
     [SerializeField] float jumpsNumberMax;
     [SerializeField] float speed;
@@ -15,29 +12,18 @@ public class LightingChain : MonoBehaviour
 
     [SerializeField]float jumpsNumberCurrent;
 
-    Vector2 dir;
-
     List<string> attacked = new List<string>();
-
-    Rigidbody2D rb;
 
     Collider2D closestEnemy = null;
 
-    void Start()
-    {
-        dir = Vector2.right;
-
-        rb = GetComponent<Rigidbody2D>();
-    }
-
-
+    // TO DO        PIERWSZY ENEMY TEZ WYSZUKIWANY (LUB NIE)
 
     void Update()
     {
         if(closestEnemy != null)
-            dir = closestEnemy.transform.position - transform.position;
+            castDirection = closestEnemy.transform.position - transform.position;
 
-        rb.velocity = dir.normalized * speed * Time.deltaTime;
+        rb.velocity = castDirection.normalized * speed * Time.deltaTime;
 
     }
 
@@ -106,7 +92,7 @@ public class LightingChain : MonoBehaviour
 
     }
 
-    void ChainAttacks()
+    public override void Attack()
     {
         // tutaj funkcja z OnTrigger
     }

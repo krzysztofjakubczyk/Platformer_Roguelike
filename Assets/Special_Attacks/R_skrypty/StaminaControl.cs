@@ -6,7 +6,7 @@ using UnityEngine;
 public class StaminaControl : MonoBehaviour
 {
     [SerializeField] float maxStamina = 100;
-    [SerializeField] float currentStamina = 0;
+    public float currentStamina;
     [SerializeField] float recoverTime = 0.3f;
     
     [SerializeField] bool staminaRecover = true;
