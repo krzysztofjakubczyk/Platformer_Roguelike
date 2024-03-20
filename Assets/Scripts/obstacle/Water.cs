@@ -1,27 +1,35 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Water : MonoBehaviour
 {
     [SerializeField] healthController health;
-    private void OnCollisionEnter2D(Collision2D collision)
+    bool isPosioned = false;
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-    if(collision.transform.name == "Player")
+        if (collision.transform.name == "Player")
         {
+            isPosioned = true;
             StartCoroutine(ApplyDamageOverTime());
-        }      
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        // SprawdŸ, czy gracz wyszed³ z wody
+        if (collision.transform.name == "Player")
+        {
+            isPosioned = false;
+            // Zatrzymaj korutynê odjêcia ¿ycia w wodzie
+            StopCoroutine(ApplyDamageOverTime());
+        }
     }
     private IEnumerator ApplyDamageOverTime()
     {
-        // Pêtla nieskoñczona
-        while (true)
+        while (isPosioned == true) 
         {
-            // Odczekaj okreœlony czas
-            yield return new WaitForSeconds(1);
-
             // Odjêcie ¿ycia gracza
             health.MinusHP(1);
-        }   
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 }

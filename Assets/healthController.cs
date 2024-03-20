@@ -5,7 +5,7 @@ using UnityEngine;
 public class healthController : MonoBehaviour
 {
 
-    int m_health = 2;
+    int m_health = 10;
     [SerializeField]
     int health;
     private void Start()
