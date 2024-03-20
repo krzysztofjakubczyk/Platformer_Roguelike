@@ -5,11 +5,11 @@ using UnityEngine;
 public class MoveState : State
 {
     protected D_MoveState stateData;
-    [SerializeField]
+
     protected bool isDetectingWall;
-    [SerializeField]
     protected bool isDetectingLedge;
-   public MoveState(Entity entity,BaseStateMachine stateMachine,string animBoolName,D_MoveState stateData): base(entity, stateMachine, animBoolName)
+    protected bool isPlayerInMinAgroRange;
+    public MoveState(Entity entity,BaseStateMachine stateMachine,string animBoolName,D_MoveState stateData): base(entity, stateMachine, animBoolName)
     {
         this.stateData = stateData;
     }
@@ -20,6 +20,7 @@ public class MoveState : State
 
         isDetectingLedge = entity.CheckLedge();
         isDetectingWall = entity.CheckWall();
+        isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
     }
 
     public override void Exit()
@@ -30,7 +31,7 @@ public class MoveState : State
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        entity.SetVelocity(stateData.movementSpeed);
+        
     }
 
     public override void PhysicsUpdate()
@@ -38,5 +39,7 @@ public class MoveState : State
         base.PhysicsUpdate();
         isDetectingLedge = entity.CheckLedge();
         isDetectingWall = entity.CheckWall();
+        isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
+        entity.SetVelocity(stateData.movementSpeed);
     }
 }
