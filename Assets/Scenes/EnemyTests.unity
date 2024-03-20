@@ -1100,6 +1100,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightingChainPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 3151645623783271711, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7169107655553939552, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
       propertyPath: player
       value: 
@@ -1128,7 +1132,7 @@ GameObject:
   - component: {fileID: 1962535176}
   - component: {fileID: 1962535175}
   - component: {fileID: 1962535174}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1416,8 +1420,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.7, y: -33.5, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 4}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 383591942}
   m_Father: {fileID: 0}
