@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerDetected : State
 {
     protected D_PlayerDetected stateData;
+    protected bool isPlayerInMinAgroRange;
+    protected bool isPlayerInMaxAgroRange;
     public PlayerDetected(Entity entity, BaseStateMachine stateMachine, string animBoolName, D_PlayerDetected stateData) : base(entity, stateMachine, animBoolName)
     {
         this.stateData = stateData;
@@ -13,6 +15,9 @@ public class PlayerDetected : State
     public override void Enter()
     {
         base.Enter();
+        entity.SetVelocity(0f);
+        isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
+        isPlayerInMaxAgroRange = entity.CheckPlayerInMaxAgroRange();
     }
 
     public override void Exit()
@@ -28,5 +33,7 @@ public class PlayerDetected : State
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
+        isPlayerInMaxAgroRange = entity.CheckPlayerInMaxAgroRange();
     }
 }
