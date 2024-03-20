@@ -109,4 +109,4 @@ MonoBehaviour:
   platformLayer:
     serializedVersion: 2
     m_Bits: 512
-  delay: 1
+  delay: 0

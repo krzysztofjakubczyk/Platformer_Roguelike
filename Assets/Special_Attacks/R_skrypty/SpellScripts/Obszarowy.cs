@@ -22,7 +22,9 @@ public class Obszarowy : Spell
 
         foreach (Collider2D target in targets)
         {
-            print(target.name);
+            Vector2 pushdir = target.transform.position - player.transform.position;
+
+            target.GetComponent<Rigidbody2D>().AddForce(pushdir.normalized * 30, ForceMode2D.Impulse);
         }
 
         Destroy(gameObject);

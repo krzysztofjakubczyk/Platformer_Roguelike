@@ -102,7 +102,7 @@ MonoBehaviour:
   damage: 1
   castDirection: {x: 1, y: 0}
   rb: {fileID: 0}
-  delay: 0.2
+  delay: 0
   radius: 2
   enemieLayer:
     serializedVersion: 2

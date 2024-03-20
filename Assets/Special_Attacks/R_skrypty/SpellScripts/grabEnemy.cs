@@ -10,6 +10,12 @@ public class grabEnemy : Spell
     [SerializeField] bool maxVersion;
     bool shotAlready;
 
+    Vector2 stopPos;
+
+    private void Start()
+    {
+        stopPos = player.transform.position;
+    }
 
     void Update()
     {
@@ -49,7 +55,7 @@ public class grabEnemy : Spell
 
         shotAlready = true;
 
-        while (transform.position.x > player.transform.position.x + 1)
+        while (Mathf.Abs(target.transform.position.x - stopPos.x) > 1)
         {
             rb.velocity = (dir2 * speed) * Time.deltaTime;
             target.GetComponent<Rigidbody2D>().velocity = (dir2 * speed) * Time.deltaTime;
