@@ -14,6 +14,8 @@ public class downCam : MonoBehaviour
     bool camSide;
     bool notGrounded;
 
+    bool canCheck;
+
     private void Awake()
     {
         Application.targetFrameRate = 120;
@@ -22,6 +24,8 @@ public class downCam : MonoBehaviour
     private void Start()
     {
         notGrounded = true;
+
+        Invoke(nameof(camCancheck), 1);
     }
 
     private void Update()
@@ -38,8 +42,14 @@ public class downCam : MonoBehaviour
         Vector3 targetPosition = new Vector3(target.position.x + offset.x, offset.y, -10);
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
 
-        if(Mathf.Abs((transform.position - target.position).magnitude) > 50)
+        Vector2 camPos = transform.position;
+        Vector2 playPos = target.position;
+
+        if(Mathf.Abs((camPos - playPos).magnitude) > 15 && canCheck)
         {
+            print(transform.position + " cam poz");
+            print(target.position + " player poz");
+            print((transform.position - target.position).magnitude);
             target.position = new Vector2(-5.5f, 3);
         }
     }
@@ -58,5 +68,10 @@ public class downCam : MonoBehaviour
     void moznajuzskakacznowu()
     {
         notGrounded = true;
+    }
+
+    void camCancheck()
+    {
+        canCheck = true;
     }
 }
