@@ -101,15 +101,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(currentSpeed * currentForwardDirection, rb.velocity.y);
         }
     }
-
-
-    private void FixedUpdate()
-    {
-
-        
-
-    }
-
+     
     private void Flip()
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
@@ -125,6 +117,8 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, .1f, groundLayer);
     }
+
+
 
     void GetInput()
     {

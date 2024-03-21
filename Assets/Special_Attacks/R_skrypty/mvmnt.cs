@@ -93,7 +93,10 @@ public class mvmnt : MonoBehaviour
 
         blinksImage();
     }
-
+    public void ChangePlayerSpeed(float sp)
+    {
+        speed = sp;
+    }
     void noNumb()
     {
         numbState = false;
