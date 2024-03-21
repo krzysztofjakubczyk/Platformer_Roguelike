@@ -24,9 +24,10 @@ public class E1_ChargeState : Charge
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        Debug.Log(isChargeTimeOver);
         if(!isDetectingLedge || isDetectingWall)
         {
-            //TODO: connect to look for player
+            stateMachine.ChangeState(enemy.lookForPlayerState);
         }
         else if (isChargeTimeOver)
         {

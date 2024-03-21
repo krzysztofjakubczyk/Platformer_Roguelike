@@ -23,10 +23,14 @@ public class E1_PlayerDetectedState : PlayerDetected
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        Debug.Log(performLongRangeAction);
         if (performLongRangeAction)
         {
-            enemy.idleState.SetFlipAfterIdle(false);
             stateMachine.ChangeState(enemy.chargeState);
+        }
+        else if (!isPlayerInMaxAgroRange)
+        {
+            stateMachine.ChangeState(enemy.lookForPlayerState);
         }
     }
 
