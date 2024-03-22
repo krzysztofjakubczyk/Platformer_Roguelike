@@ -1,8 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Spike : MonoBehaviour
 {
     [SerializeField] healthController health;
+    [SerializeField] SpawnSpike spike;
     private void OnTriggerEnter2D(Collider2D collision)
     { 
         //kodzik nie dzia³a przy spadaj¹cych kolcach do zrobienia jeszcze spawnowanie przy najblizszej pod³odze
@@ -15,15 +17,7 @@ public class Spike : MonoBehaviour
         {
             health.MinusHP(1);
             health.RestartHealth();
-            //PlayerTeleport(collision.transform);
+            //TO DO: co po zgnieciu
         }
     }
-    //private void PlayerTeleport(Transform playerTransform)
-    //{
-    //    RaycastHit hit;
-    //    if (Physics.Raycast(playerTransform.position, Vector3.down, out hit))
-    //    {
-    //        playerTransform.position = hit.point + Vector3.up * playerTransform.GetComponent<Collider>().bounds.extents.y;
-    //    }
-    //}
 }

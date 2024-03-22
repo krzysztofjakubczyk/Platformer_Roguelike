@@ -7,7 +7,7 @@ public class DestroyWall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawRay((transform.position + transform.right), transform.right, Color.red, 0.2f);
+        Debug.DrawRay((transform.position + (new Vector3(1,0,0))), transform.right, Color.red, 0.2f);
         if (Input.GetKeyDown(KeyCode.Q))
         {
             RaycastHit2D hit = Physics2D.Raycast((transform.position + transform.right), transform.right, 0.2f);
