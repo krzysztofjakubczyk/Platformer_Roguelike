@@ -70,7 +70,7 @@ public class mvmnt : MonoBehaviour
             isJumping = true;
             willJump = false;
         }
-
+        print(rb.velocity.y);
         // lower jump velocity when jump key up
         if (Input.GetKeyUp(KeyCode.Z) && rb.velocity.y > 0f)
         {
