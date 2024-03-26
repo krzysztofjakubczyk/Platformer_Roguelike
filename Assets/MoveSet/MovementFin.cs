@@ -44,6 +44,19 @@ public class MovementFin : MonoBehaviour
         // moving player horizontally:
         if(!isDashing && !sideJump)
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+
+        if (isJumpingLeft)
+        {
+            rb.velocity = new Vector2(-jumpingPower, jumpingPower);
+            isJumpingLeft = false;
+            Invoke(nameof(EndSideJump), 0.1f);
+        }
+        else if (isJumpingRight)
+        {
+            rb.velocity = new Vector2(jumpingPower, jumpingPower);
+            isJumpingRight = false;
+            Invoke(nameof(EndSideJump), 0.1f);
+        }
     }
 
 
@@ -127,24 +140,14 @@ public class MovementFin : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             isJumping=false;
         }
-        else if (isJumpingLeft)
-        {
-            rb.velocity = new Vector2(-jumpingPower, jumpingPower);
-            isJumpingLeft = false;
-            Invoke(nameof(EndSideJump), 0.1f);
-        }
-        else if (isJumpingRight)
-        {
-            rb.velocity = new Vector2(jumpingPower, jumpingPower);
-            isJumpingRight = false;
-            Invoke(nameof(EndSideJump), 0.1f);
-        }
+
 
         if (isDashing)
         {
             rb.AddForce(new Vector2(lastDirection * dashPower, 0),ForceMode2D.Impulse);
             boxCollider.excludeLayers = enemyLayer;
             Invoke(nameof(EndDash), 0.1f);
+            print(lastDirection);
         }
     }
 
