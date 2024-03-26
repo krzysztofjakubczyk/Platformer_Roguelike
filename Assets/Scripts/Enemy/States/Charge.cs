@@ -9,6 +9,7 @@ public class Charge : State
     protected bool isDetectingWall;
     protected bool isDetectingLedge;
     protected bool isChargeTimeOver;
+    protected bool performCloseRangeAction;
     public Charge(Entity entity, BaseStateMachine stateMachine, string animBoolName, D_ChargeState stateData) : base(entity, stateMachine, animBoolName)
     {
         this.stateData = stateData;
@@ -20,6 +21,8 @@ public class Charge : State
         isDetectingLedge = entity.CheckLedge();
         isDetectingWall = entity.CheckWall();
         isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
+
+        performCloseRangeAction = entity.CheckPlayerInCloseRangeAction();
     }
 
     public override void Enter()

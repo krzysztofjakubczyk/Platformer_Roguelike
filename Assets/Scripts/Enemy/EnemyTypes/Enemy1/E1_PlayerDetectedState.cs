@@ -23,8 +23,11 @@ public class E1_PlayerDetectedState : PlayerDetected
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        Debug.Log(performLongRangeAction);
-        if (performLongRangeAction)
+        if (performCloseRangeAction)
+        {
+            stateMachine.ChangeState(enemy.meleeAttackState);
+        }
+        else if (performLongRangeAction)
         {
             stateMachine.ChangeState(enemy.chargeState);
         }
@@ -32,6 +35,8 @@ public class E1_PlayerDetectedState : PlayerDetected
         {
             stateMachine.ChangeState(enemy.lookForPlayerState);
         }
+
+        
     }
 
     public override void PhysicsUpdate()

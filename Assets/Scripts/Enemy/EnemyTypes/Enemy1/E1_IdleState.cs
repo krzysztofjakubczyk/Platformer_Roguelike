@@ -30,7 +30,6 @@ public class E1_IdleState : IdleState
         }
         else if (isIdleTimeOver)
         {
-            
             stateMachine.ChangeState(enemy.moveState);
         }
     }
