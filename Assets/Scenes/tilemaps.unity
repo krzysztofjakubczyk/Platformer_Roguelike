@@ -42726,7 +42726,7 @@ GameObject:
   - component: {fileID: 1688002432}
   - component: {fileID: 1688002431}
   m_Layer: 0
-  m_Name: Virtual Camera
+  m_Name: MainCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
