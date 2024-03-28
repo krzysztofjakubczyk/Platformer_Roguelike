@@ -50,7 +50,8 @@ public class SpellManager : MonoBehaviour
                 activeSpell.GetComponent<Spell>().player = gameObject;
                 activeSpell.GetComponent<Spell>().rb = activeSpell.GetComponent<Rigidbody2D>();
 
-                Instantiate(activeSpell, transform.position,Quaternion.identity);
+                Vector2 startPos = new Vector2(transform.position.x, transform.position.y + 0.5f);
+                Instantiate(activeSpell, startPos,Quaternion.identity);
 
             }
         }
