@@ -33,7 +33,7 @@ public class E1_MeleeAttackState : MeleeAttackState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if (isAnimationFInished)
+        if (isAnimationFinished)
         {
             if (isPlayerInMinAgrRange) stateMachine.ChangeState(enemy.playerDetectedState);
             else stateMachine.ChangeState(enemy.lookForPlayerState);

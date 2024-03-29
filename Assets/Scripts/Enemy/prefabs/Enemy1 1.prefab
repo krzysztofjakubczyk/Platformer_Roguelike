@@ -118,7 +118,7 @@ Transform:
   m_GameObject: {fileID: 4199393055648235950}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.641, y: 0.069, z: 0}
+  m_LocalPosition: {x: 0.139, y: 0.031, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -176,14 +176,15 @@ MonoBehaviour:
   wallCheck: {fileID: 1465315033337709714}
   LedgeCheck: {fileID: 7502312938437503993}
   playerCheck: {fileID: 1547120370587225272}
-  groundCheck: {fileID: 0}
+  groundCheck: {fileID: 3591639384719369564}
   idleStateData: {fileID: 11400000, guid: c5345661b1abfac4db458e486211cff6, type: 2}
   moveStateData: {fileID: 11400000, guid: 0090b2320ba3f4c4d9b2f6c66467fed6, type: 2}
   playerDetectedData: {fileID: 11400000, guid: 98d6ab579e490a14b93050498d94f027, type: 2}
   chargeStateData: {fileID: 11400000, guid: 8b347989b7fb2f8489fbf0f8289ab74b, type: 2}
   lookForPlayerStateData: {fileID: 11400000, guid: c7359d8fce3feef4c905a0183e7d1bb7, type: 2}
   meleeAttackStateData: {fileID: 11400000, guid: 4de71fb8a28010d468f4828973c936b6, type: 2}
-  stunStateData: {fileID: 0}
+  stunStateData: {fileID: 11400000, guid: 01f98b41367cec64099deab1c322239b, type: 2}
+  deathStateData: {fileID: 11400000, guid: f936b9ad926b8924e99b444846f239cc, type: 2}
   meleeAttackPosition: {fileID: 797736176964421095}
 --- !u!1 &7510277339889150181
 GameObject:
@@ -394,7 +395,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.008422732, y: 0.0206054}
+  m_Offset: {x: -0.0816355, y: -0.17372929}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -405,7 +406,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9063693, y: 0.64442396}
+  m_Size: {x: 0.63145596, y: 0.25575462}
   m_EdgeRadius: 0
 --- !u!114 &635921239849971926
 MonoBehaviour:

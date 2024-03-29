@@ -6,7 +6,7 @@ public class AttackState : State
 {
     protected Transform attackPosition;
 
-    protected bool isAnimationFInished;
+    protected bool isAnimationFinished;
     protected bool isPlayerInMinAgrRange;
 
     public AttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition) : base(entity, stateMachine, animBoolName)
@@ -25,7 +25,7 @@ public class AttackState : State
     {
         base.Enter();
         entity.atsm.attackState = this;
-        isAnimationFInished = false;
+        isAnimationFinished = false;
         entity.SetVelocity(0f);
     }
 
@@ -49,6 +49,6 @@ public class AttackState : State
     }
     public virtual void FinishAttack()
     {
-        isAnimationFInished = true;
+        isAnimationFinished = true;
     }
 }

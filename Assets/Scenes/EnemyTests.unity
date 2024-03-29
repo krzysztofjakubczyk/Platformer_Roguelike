@@ -672,18 +672,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 354205955790295203, guid: fe712c0af49ca6d4d964e01e40c63f73, type: 3}
-      propertyPath: groundCheck
-      value: 
-      objectReference: {fileID: 1452626819}
-    - target: {fileID: 354205955790295203, guid: fe712c0af49ca6d4d964e01e40c63f73, type: 3}
-      propertyPath: stunStateData
-      value: 
-      objectReference: {fileID: 11400000, guid: 01f98b41367cec64099deab1c322239b, type: 2}
-    - target: {fileID: 354205955790295203, guid: fe712c0af49ca6d4d964e01e40c63f73, type: 3}
-      propertyPath: deathStateData
-      value: 
-      objectReference: {fileID: 11400000, guid: f936b9ad926b8924e99b444846f239cc, type: 2}
     - target: {fileID: 6772924919566777245, guid: fe712c0af49ca6d4d964e01e40c63f73, type: 3}
       propertyPath: m_Name
       value: Enemy1 1
@@ -693,11 +681,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe712c0af49ca6d4d964e01e40c63f73, type: 3}
---- !u!4 &1452626819 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3591639384719369564, guid: fe712c0af49ca6d4d964e01e40c63f73, type: 3}
-  m_PrefabInstance: {fileID: 1452626818}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1769172335
 GameObject:
   m_ObjectHideFlags: 0
