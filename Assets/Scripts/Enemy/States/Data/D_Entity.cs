@@ -9,7 +9,7 @@ public class D_Entity : ScriptableObject
     public float damageHopSpeed = 10f;
 
     public float wallCheckDistance = 0.2f;
-    public float LedgeCheckDistance= 0.4f;
+    public float LedgeCheckDistance= 1f;
     public float groundCheckRadius = 0.3f;
 
     public float minAgroDistance = 7f;
@@ -18,6 +18,8 @@ public class D_Entity : ScriptableObject
     public float stunResistance = 3f;
     public float stunRecoveryTime = 2f;
     public float closeRangeActionDistance = 4f;
+
+    public GameObject hitParticle;
 
     public LayerMask WhatIsGround;
     public LayerMask WhatIsPlayer;

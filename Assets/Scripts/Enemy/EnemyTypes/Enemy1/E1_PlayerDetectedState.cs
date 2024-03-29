@@ -23,20 +23,14 @@ public class E1_PlayerDetectedState : PlayerDetected
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if (performCloseRangeAction)
+        if (performCloseRangeAction) stateMachine.ChangeState(enemy.meleeAttackState);
+        else if (performLongRangeAction) stateMachine.ChangeState(enemy.chargeState);
+        else if (!isPlayerInMaxAgroRange) stateMachine.ChangeState(enemy.lookForPlayerState);
+        else if (!isDetectingLedge)
         {
-            stateMachine.ChangeState(enemy.meleeAttackState);
+            entity.Flip();
+            stateMachine.ChangeState(enemy.moveState);
         }
-        else if (performLongRangeAction)
-        {
-            stateMachine.ChangeState(enemy.chargeState);
-        }
-        else if (!isPlayerInMaxAgroRange)
-        {
-            stateMachine.ChangeState(enemy.lookForPlayerState);
-        }
-
-        
     }
 
     public override void PhysicsUpdate()

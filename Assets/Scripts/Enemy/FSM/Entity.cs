@@ -21,6 +21,7 @@ public class Entity : MonoBehaviour
     private Vector2 velocityWorkspace;
 
     protected bool isStunned;
+    protected bool isDeath;
 
     [SerializeField] private Transform wallCheck;
     [SerializeField] private Transform LedgeCheck;
@@ -102,6 +103,8 @@ public class Entity : MonoBehaviour
         currentStunResistance -= attackDetails.stunDamageAmount;
 
         DamageHop(entityData.damageHopSpeed);
+
+        Instantiate(entityData.hitParticle, aliveGameObject.transform.position, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
         if(attackDetails.position.x > aliveGameObject.transform.position.x)
         {
             lastDamageDirection = -1;
@@ -110,10 +113,9 @@ public class Entity : MonoBehaviour
         {
             lastDamageDirection = 1;
         }
-        if (currentStunResistance <= 0)
-        {
-            isStunned = true;
-        }
+        if (currentStunResistance <= 0) isStunned = true;
+
+        if (currentHealth <= 0) isDeath = true;
     }
     public virtual void Flip()
     {

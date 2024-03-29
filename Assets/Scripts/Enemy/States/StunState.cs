@@ -9,6 +9,8 @@ public class StunState : State
     protected bool isStunTimeOver;
     protected bool isGrounded;
     protected bool isMovementStopped;
+    protected bool performCloseRangeAction;
+    protected bool isPlayerInMinAgroRange;
     public StunState(Entity entity, BaseStateMachine stateMachine, string animBoolName, D_StunStateData stateData) : base(entity, stateMachine, animBoolName)
     {
         this.stateData = stateData;
@@ -19,6 +21,8 @@ public class StunState : State
         base.DoChecks();
 
         isGrounded = entity.CheckGround();
+        performCloseRangeAction = entity.CheckPlayerInCloseRangeAction();
+        isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
     }
 
     public override void Enter()
@@ -33,6 +37,7 @@ public class StunState : State
     public override void Exit()
     {
         base.Exit();
+        entity.ResetStunResistance();
     }
 
     public override void LogicUpdate()
