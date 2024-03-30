@@ -11,6 +11,9 @@ TagManager:
   - TriangleObstacle
   - Platform
   - ObstacleWall
+  - FxTemporaire
+  - StartCameraMoveDown
+  - EndCameraMoveDown
   layers:
   - Default
   - TransparentFX
