@@ -12,12 +12,12 @@ public class FallingDownTriangle : MonoBehaviour
     private void Update()
     {
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, Vector2.down, 20);
-        Debug.DrawRay(transform.position, Vector2.down * 20, Color.green);
+        Debug.DrawRay(transform.position, new Vector2(0f,-20f), Color.green);
         foreach (RaycastHit2D hit in hits)
         {
             if (hit.collider.gameObject.name == "Player" && rb.tag == "RotatedTraingleObstacle")
             {
-                rb.gravityScale = 1f;
+                rb.gravityScale = 3f;
             }
             else continue;
         }
