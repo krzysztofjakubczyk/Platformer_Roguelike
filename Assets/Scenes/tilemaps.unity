@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -205,7 +205,6 @@ GameObject:
   m_Component:
   - component: {fileID: 57369617}
   - component: {fileID: 57369620}
-  - component: {fileID: 57369619}
   - component: {fileID: 57369618}
   m_Layer: 0
   m_Name: CameraTriggerDown
@@ -281,20 +280,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &57369619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 57369616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a8d629b4a541b440aa942cd77844885, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1688002425}
-  CameraDown: {fileID: 39534312}
 --- !u!61 &57369620
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1089,7 +1074,7 @@ MonoBehaviour:
   brain: {fileID: 579001333}
   ClickedObjectOffset: -8
   DefaultObjectOffsetOnSecondCamera: -2
-  flag: {fileID: 1356837082}
+  flag: {fileID: 1842608433}
 --- !u!1 &584903085 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3251467882275024298, guid: edb88d29fd0c0c04cb2d754aafe611ad, type: 3}
@@ -1367,7 +1352,6 @@ GameObject:
   m_Component:
   - component: {fileID: 732376739}
   - component: {fileID: 732376742}
-  - component: {fileID: 732376741}
   - component: {fileID: 732376740}
   m_Layer: 0
   m_Name: 'EndCameraTriggerDown '
@@ -1443,20 +1427,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &732376741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 732376738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a8d629b4a541b440aa942cd77844885, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1688002425}
-  CameraDown: {fileID: 39534312}
 --- !u!61 &732376742
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3454,7 +3424,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1137952686}
   - component: {fileID: 1137952685}
-  - component: {fileID: 1137952684}
   - component: {fileID: 1137952683}
   m_Layer: 0
   m_Name: 'EndCameraTriggerDown '
@@ -3515,20 +3484,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1137952684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1137952682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a8d629b4a541b440aa942cd77844885, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1688002425}
-  CameraDown: {fileID: 39534312}
 --- !u!61 &1137952685
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5792,7 +5747,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1356837084}
   - component: {fileID: 1356837083}
-  - component: {fileID: 1356837082}
   - component: {fileID: 1356837085}
   m_Layer: 0
   m_Name: CameraTriggerDown
@@ -5801,20 +5755,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1356837082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1356837081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a8d629b4a541b440aa942cd77844885, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1688002425}
-  CameraDown: {fileID: 39534312}
 --- !u!61 &1356837083
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46182,9 +46122,10 @@ GameObject:
   - component: {fileID: 1842608426}
   - component: {fileID: 1842608428}
   - component: {fileID: 1842608429}
-  - component: {fileID: 1842608430}
   - component: {fileID: 1842608431}
   - component: {fileID: 1842608432}
+  - component: {fileID: 1842608433}
+  - component: {fileID: 1842608434}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -46331,24 +46272,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1842608430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1842608424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b6e04b127210c54898a3bbbddfb9f3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  speed: 8
-  jumpingPower: 16
-  imageRed: {fileID: 0}
 --- !u!114 &1842608431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46374,6 +46297,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6eda8b9e0beae46b9dc77fd1432695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1842608433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842608424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a8d629b4a541b440aa942cd77844885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1688002425}
+  CameraDown: {fileID: 39534312}
+--- !u!114 &1842608434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842608424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172c48aacacbf9d49a23cdffd24410d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  jumpForce: 10
 --- !u!1 &1961212787
 GameObject:
   m_ObjectHideFlags: 0
@@ -46766,7 +46717,7 @@ PrefabInstance:
     - target: {fileID: 2088014683239584847, guid: edb88d29fd0c0c04cb2d754aafe611ad, type: 3}
       propertyPath: playerMovement
       value: 
-      objectReference: {fileID: 1842608430}
+      objectReference: {fileID: 0}
     - target: {fileID: 3251467882275024298, guid: edb88d29fd0c0c04cb2d754aafe611ad, type: 3}
       propertyPath: m_Name
       value: SlowFloor

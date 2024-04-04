@@ -8,12 +8,12 @@ public class GetCameraDown : MonoBehaviour
     bool isTriggered = true;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && gameObject.CompareTag("StartCameraMoveDown"))
-        {
+        if (collision.CompareTag("StartCameraMoveDown") && gameObject.CompareTag("Player"))
+        {   
             changeCamera();
             isTriggered = false;
         }
-        else if (collision.CompareTag("Player") && gameObject.CompareTag("EndCameraMoveDown"))
+        else if (collision.CompareTag("EndCameraMoveDown") && gameObject.CompareTag("Player"))
         {
             backCamera();
             isTriggered = true;
@@ -30,7 +30,7 @@ public class GetCameraDown : MonoBehaviour
         mainCamera.gameObject.SetActive(true);
         CameraDown.gameObject.SetActive(false);
     }
-   public bool GetIsTriggered()
+    public bool GetIsTriggered()
     {
         return isTriggered;
     }
