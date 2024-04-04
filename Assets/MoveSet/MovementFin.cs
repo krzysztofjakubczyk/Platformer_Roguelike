@@ -6,7 +6,7 @@ public class MovementFin : MonoBehaviour
 {
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask enemyLayer;
-    [SerializeField] private LayerMask pustwarstwa;
+    LayerMask pustwarstwa;
     [SerializeField] float speed = 4f;
     [SerializeField] float jumpingPower = 7f;
     [SerializeField] float dashPower = 5f;

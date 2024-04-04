@@ -4999,7 +4999,7 @@ MonoBehaviour:
   damageOnExplode: 0
   pushbackForce: 50
   dmgRadius: 0.5
-  speed: 1500
+  speed: 900
   enemyLayer:
     serializedVersion: 2
     m_Bits: 1024
