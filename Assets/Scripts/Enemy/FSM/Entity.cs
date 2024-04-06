@@ -41,13 +41,15 @@ public class Entity : MonoBehaviour
         stateMachine = new BaseStateMachine();
         
 
-        rb.gravityScale = 0;
        
     }
 
     public virtual void Update()
     {
         stateMachine.currentState.LogicUpdate();
+
+        //anim.SetFloat("yVelocity", rb.velocity.y); do animacji dodgowania w góre albo w dó³, tymczasowo puste
+
         if(Time.time >=lastDamageTime + entityData.stunRecoveryTime)
         {
             ResetStunResistance();
@@ -119,7 +121,7 @@ public class Entity : MonoBehaviour
     }
     public virtual void Flip()
     {
-        Debug.Log("obrót");
+        
         facingDirection *= -1;
         aliveGameObject.transform.Rotate(0f,180f,0f);
     }

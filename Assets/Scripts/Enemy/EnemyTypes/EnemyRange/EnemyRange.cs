@@ -10,8 +10,9 @@ public class EnemyRange : Entity
     public ER_MeleeAttackState meleeAttackState { get; private set; }
     public ER_LookForPlayerState lookForPlayerState { get; private set; }
     public ER_StunState stunState { get; private set; }
-
+    public ER_DodgeState dodgeState { get; private set; }
     public ER_DeathState deathstate { get; private set; }
+    public ER_RangedAttackState rangedAttackState { get; private set; }
 
     [SerializeField]
     private D_MoveState moveStateData;
@@ -27,9 +28,15 @@ public class EnemyRange : Entity
     private D_StunStateData stunStateData;
     [SerializeField]
     private D_DeathState deathStateData;
-    
+    [SerializeField]
+    public D_DodgeState dodgeStateData;//{ get; private set; }
+    [SerializeField]
+    private D_RangedAttackStateData rangedAttackStateData;
+
     [SerializeField]
     private Transform meleeAttackPosition;
+    [SerializeField]
+    private Transform rangedAttackPosition;
     public override void Start()
     {
         base.Start();
@@ -41,6 +48,8 @@ public class EnemyRange : Entity
         lookForPlayerState = new ER_LookForPlayerState(this, stateMachine, "lookForPlayer", lookForPlayerStateData, this);
         stunState = new ER_StunState(this, stateMachine, "stun", stunStateData, this);
         deathstate = new ER_DeathState(this, stateMachine, "death", deathStateData, this);
+        dodgeState = new ER_DodgeState(this, stateMachine, "dodge", dodgeStateData, this);
+        rangedAttackState = new ER_RangedAttackState(this, stateMachine, "rangedAttack", rangedAttackPosition, rangedAttackStateData, this);
 
         stateMachine.Initialize(moveState);
     }
@@ -50,6 +59,7 @@ public class EnemyRange : Entity
         base.DamageGet(attackDetails);
         if (isDeath) stateMachine.ChangeState(deathstate);
         else if (isStunned && stateMachine.currentState != stunState) stateMachine.ChangeState(stunState);
+        else if (CheckPlayerInMinAgroRange()) stateMachine.ChangeState(rangedAttackState);
         else if (!CheckPlayerInMinAgroRange())
         {
             lookForPlayerState.SetTurnImmediately(true);

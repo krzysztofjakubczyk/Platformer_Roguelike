@@ -1,0 +1,42 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ER_RangedAttackState : RangedAttackState
+{
+    private EnemyRange enemy;
+
+    public ER_RangedAttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition, D_RangedAttackStateData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, attackPosition, stateData)
+    {
+        this.enemy = enemy;
+    }
+
+    public override void DoChecks()
+    {
+        base.DoChecks();
+    }
+
+    public override void Enter()
+    {
+        base.Enter();
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+    }
+
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+
+        if (isAnimationFinished)
+            if (isPlayerInMinAgrRange) stateMachine.ChangeState(enemy.playerDetectedState);
+            else stateMachine.ChangeState(enemy.lookForPlayerState);
+    }
+
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
+    }
+}

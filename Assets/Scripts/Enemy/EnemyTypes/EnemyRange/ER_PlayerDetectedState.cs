@@ -29,9 +29,14 @@ public class ER_PlayerDetectedState : PlayerDetected
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        Debug.Log("czy widzi przeciwnika w melee" + performCloseRangeAction);
-        if (performCloseRangeAction) stateMachine.ChangeState(enemy.meleeAttackState);
-        else if (isPlayerInMaxAgroRange) stateMachine.ChangeState(enemy.lookForPlayerState);
+        if (performCloseRangeAction)
+        {
+            if (Time.time >= enemy.dodgeState.startTime + enemy.dodgeStateData.dodgeCooldown)
+                stateMachine.ChangeState(enemy.dodgeState);
+            else stateMachine.ChangeState(enemy.meleeAttackState);
+        }
+        else if (performLongRangeAction) stateMachine.ChangeState(enemy.rangedAttackState);
+        else if (!isPlayerInMaxAgroRange) stateMachine.ChangeState(enemy.lookForPlayerState);
     }
 
     public override void PhysicsUpdate()

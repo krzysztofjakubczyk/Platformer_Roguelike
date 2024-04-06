@@ -17,7 +17,7 @@ public class FlyingEnemy : Entity
     public override void Start()
     {
         base.Start();
-
+        rb.gravityScale = 0;
         moveState = new FE_MoveState(this, stateMachine, "move", moveStateData, this);
         idleState = new FE_IdleState(this, stateMachine, "idle", idleStateData, this);
         playerDetectedState = new FE_PlayerDetectedState(this, stateMachine, "playerDetected", playerDetectedData, this);
