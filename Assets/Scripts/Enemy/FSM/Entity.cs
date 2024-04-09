@@ -129,6 +129,10 @@ public class Entity : MonoBehaviour
     {
         return Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.minAgroDistance, entityData.WhatIsPlayer);
     }
+    public virtual bool CheckEnemyInRange()
+    {
+        return Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.minAgroDistance, entityData.WhatIsEnemy);
+    }
     public virtual bool CheckPlayerInMaxAgroRange()
     {
         return Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.maxAgroDistance, entityData.WhatIsPlayer);

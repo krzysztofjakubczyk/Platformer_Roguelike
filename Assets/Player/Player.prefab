@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 1047161192265587553}
   - component: {fileID: 6950269741658589546}
   - component: {fileID: 5218684886587850686}
-  - component: {fileID: 7637571837138002130}
   - component: {fileID: 6923881462213241714}
   - component: {fileID: 8583345509394804866}
   - component: {fileID: 8333321115401119770}
-  - component: {fileID: 1476227665016586448}
+  - component: {fileID: 1742612945584171002}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -163,24 +162,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.82151985, y: 1.3784647}
   m_EdgeRadius: 0
---- !u!114 &7637571837138002130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1268156588509960342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b6e04b127210c54898a3bbbddfb9f3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 576
-  speed: 4
-  jumpingPower: 7
-  imageRed: {fileID: 0}
 --- !u!96 &6923881462213241714
 TrailRenderer:
   serializedVersion: 3
@@ -323,7 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeSpell: {fileID: 8333201292758725811, guid: b899952662807734b9243b2cc70dee15, type: 3}
---- !u!114 &1476227665016586448
+--- !u!114 &1742612945584171002
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -332,10 +313,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1268156588509960342}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a4ef74aeeb159b49a956ef6e134d3c7, type: 3}
+  m_Script: {fileID: 11500000, guid: f34203bde8a741843a1e760308b300b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemie1: {fileID: 0}
-  enemie2: {fileID: 0}
-  enemie3: {fileID: 0}
-  enemie4: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  speed: 4
+  jumpingPower: 7
+  dashPower: 5
+  coyoteTimeDuration: 1

@@ -23,6 +23,11 @@ public class E1_MoveState : MoveState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        if (isEnemyInRange)
+        {
+            enemy.idleState.SetFlipAfterIdle(true);
+            stateMachine.ChangeState(enemy.idleState);
+        }
         if (isPlayerInMinAgroRange)
         {
             stateMachine.ChangeState(enemy.playerDetectedState);

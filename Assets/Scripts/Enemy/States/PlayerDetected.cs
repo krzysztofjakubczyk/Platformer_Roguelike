@@ -9,6 +9,7 @@ public class PlayerDetected : State
     protected bool isPlayerInMaxAgroRange;
     protected bool performLongRangeAction;
     protected bool performCloseRangeAction;
+    protected bool isEnemyInRange;
     protected bool isDetectingLedge;
 
     public PlayerDetected(Entity entity, BaseStateMachine stateMachine, string animBoolName, D_PlayerDetected stateData) : base(entity, stateMachine, animBoolName)
@@ -23,6 +24,8 @@ public class PlayerDetected : State
         isPlayerInMaxAgroRange = entity.CheckPlayerInMaxAgroRange();
         isDetectingLedge = entity.CheckLedge();
         performCloseRangeAction = entity.CheckPlayerInCloseRangeAction();
+        isEnemyInRange = entity.CheckEnemyInRange();
+
     }
 
     public override void Enter()

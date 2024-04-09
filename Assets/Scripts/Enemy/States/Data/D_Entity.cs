@@ -23,4 +23,5 @@ public class D_Entity : ScriptableObject
 
     public LayerMask WhatIsGround;
     public LayerMask WhatIsPlayer;
+    public LayerMask WhatIsEnemy;
 }

@@ -29,6 +29,7 @@ public class ER_PlayerDetectedState : PlayerDetected
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+       
         if (performCloseRangeAction)
         {
             if (Time.time >= enemy.dodgeState.startTime + enemy.dodgeStateData.dodgeCooldown)
