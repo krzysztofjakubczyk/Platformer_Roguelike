@@ -17,11 +17,11 @@ MonoBehaviour:
   wallCheckDistance: 1
   LedgeCheckDistance: 1
   groundCheckRadius: 0.3
-  minAgroDistance: 8
+  minAgroDistance: 5
   maxAgroDistance: 20
   stunResistance: 3
   stunRecoveryTime: 2
-  closeRangeActionDistance: 2
+  closeRangeActionDistance: 0.5
   hitParticle: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7, type: 3}
   WhatIsGround:
     serializedVersion: 2
@@ -29,3 +29,6 @@ MonoBehaviour:
   WhatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
+  WhatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 1024

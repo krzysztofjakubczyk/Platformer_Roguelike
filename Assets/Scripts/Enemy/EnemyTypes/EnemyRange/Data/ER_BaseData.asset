@@ -29,3 +29,6 @@ MonoBehaviour:
   WhatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
+  WhatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 1024
