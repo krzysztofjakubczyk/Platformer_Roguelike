@@ -102,6 +102,7 @@ public class Entity : MonoBehaviour
         lastDamageTime = Time.time;
 
         currentHealth -= attackDetails.damageAmount;
+        print("powinno dzialac");
         currentStunResistance -= attackDetails.stunDamageAmount;
 
         DamageHop(entityData.damageHopSpeed);

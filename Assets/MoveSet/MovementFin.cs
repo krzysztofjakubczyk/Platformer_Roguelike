@@ -10,9 +10,15 @@ public class MovementFin : MonoBehaviour
     [SerializeField] float speed = 4f;
     [SerializeField] float jumpingPower = 7f;
     [SerializeField] float dashPower = 5f;
+    [SerializeField] float leftWallJump = 0.5f;
+    [SerializeField] float rightWallJump = 0.5f;
 
     Rigidbody2D rb;
     BoxCollider2D boxCollider;
+
+    //wall jumps colliders
+    [SerializeField] GameObject WJleft;
+    [SerializeField] GameObject WJright;
     float horizontal;
     float lastDirection;
 
@@ -35,7 +41,6 @@ public class MovementFin : MonoBehaviour
     {
         GetInput();
         MoveAccordingly();
-
     }
 
 
@@ -117,14 +122,15 @@ public class MovementFin : MonoBehaviour
         #endregion
 
         //wall jump
-        if (Physics2D.Raycast(transform.position, Vector2.right, .4f, groundLayer) && !isGrounded && ZPressed)
+        //if (Physics2D.Raycast(transform.position, Vector2.right, leftWallJump, groundLayer) && !isGrounded && ZPressed)
+        if (WJleft.GetComponent<ifboxtriggered>().isTriggered && !isGrounded && ZPressed)
         {
             isJumpingLeft = true;
             sideJump = true;
         }
 
 
-        if (Physics2D.Raycast(transform.position, Vector2.left, .4f, groundLayer) && !isGrounded && ZPressed)
+        if (WJright.GetComponent<ifboxtriggered>().isTriggered && !isGrounded && ZPressed)
         {
             isJumpingRight = true;
             sideJump = true;
