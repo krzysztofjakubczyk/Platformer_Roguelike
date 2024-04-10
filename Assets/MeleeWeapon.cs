@@ -18,7 +18,7 @@ public class MeleeWeapon : MonoBehaviour
         attackDetails.damageAmount = 5;
         attackDetails.stunDamageAmount = 5;
 
-        collision.GetComponent<Entity>().DamageGet(attackDetails);
+        collision.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
     }
 
 }

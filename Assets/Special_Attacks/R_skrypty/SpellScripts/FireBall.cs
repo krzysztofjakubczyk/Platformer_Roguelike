@@ -22,7 +22,11 @@ public class FireBall : Spell
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag != "Enemy" && collision.tag != "Player")
+        {
             Attack();
+
+            return;
+        }
 
 
         if (collision.tag != "Enemy")
@@ -30,7 +34,6 @@ public class FireBall : Spell
 
 
         // zadanie dmg dla pierwszy target here
-
         Attack();
 
     }
@@ -39,14 +42,17 @@ public class FireBall : Spell
     {
         Collider2D[] closeEnemies = Physics2D.OverlapCircleAll(transform.position, dmgRadius, enemyLayer);
 
+        // przykladowe wartosci
+        AttackDetails attackDetails = new AttackDetails();
+        attackDetails.position = transform.position;
+        attackDetails.damageAmount = 5;
+        attackDetails.stunDamageAmount = 5;
+
         foreach (Collider2D c in closeEnemies)
         {
-            // zadawanie obrazen oraz
-            //odpychanie:
-            Vector2 dir2 = c.transform.position - transform.position;
-            c.GetComponent<Rigidbody2D>().AddForce(dir2 * pushbackForce, ForceMode2D.Impulse);
+            c.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
         }
-
+        
         Destroy(gameObject);
     }
 }
