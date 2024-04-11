@@ -6,6 +6,7 @@ public class grabEnemy : Spell
 {
     [SerializeField] float pullForce;
     [SerializeField] float speed;
+    [SerializeField] float stopXDys;
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] bool maxVersion;
     bool shotAlready;
@@ -31,14 +32,6 @@ public class grabEnemy : Spell
         if (collision.tag != "Enemy")
             return;
 
-        //Vector2 dir2 = transform.position - collision.transform.position;
-        //collision.GetComponent<Rigidbody2D>().AddForce(dir2 * pullForce, ForceMode2D.Impulse);
-
-        //Destroy(gameObject);
-
-        // druga wersja - przyciagniecie do gracza
-
-
         StartCoroutine(GoBackToPlayer(collision));
 
     }
@@ -49,13 +42,14 @@ public class grabEnemy : Spell
     }
     IEnumerator GoBackToPlayer(Collider2D target)
     {
-        Vector2 dir2 = (transform.position - target.transform.position).normalized;
+        Vector2 dir2 = new Vector2(transform.position.x - target.transform.position.x, 0).normalized;
+       
         float gravityof = target.GetComponent<Rigidbody2D>().gravityScale;
         target.GetComponent<Rigidbody2D>().gravityScale = 0;
 
         shotAlready = true;
 
-        while (Mathf.Abs(target.transform.position.x - stopPos.x) > 1)
+        while (Mathf.Abs(target.transform.position.x - stopPos.x) > stopXDys)
         {
             rb.velocity = (dir2 * speed) * Time.deltaTime;
             target.GetComponent<Rigidbody2D>().velocity = (dir2 * speed) * Time.deltaTime;
@@ -64,6 +58,7 @@ public class grabEnemy : Spell
         }
 
         target.GetComponent<Rigidbody2D>().gravityScale = gravityof;
+        target.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         Destroy(gameObject);
     }
     

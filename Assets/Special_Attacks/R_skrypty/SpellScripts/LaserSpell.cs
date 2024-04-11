@@ -27,7 +27,10 @@ public class LaserSpell : Spell
         {
             RaycastHit2D wall = Physics2D.Raycast(player.transform.position, castDirection, maxDistance, platformLayer);
 
-            wallDistance = Mathf.Abs(wall.transform.position.x - player.transform.position.x);
+           // print(wall.transform.name);
+            //wallDistance = Mathf.Abs(wall.transform.position.x - player.transform.position.x);
+            wallDistance = wall.distance;
+
         }
 
         RaycastHit2D[] laserShoted = Physics2D.RaycastAll(player.transform.position, castDirection, wallDistance, enemyLayer);
@@ -40,6 +43,5 @@ public class LaserSpell : Spell
 
         Destroy(gameObject);
     }
-
 
 }

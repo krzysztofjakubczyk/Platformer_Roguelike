@@ -20,8 +20,11 @@ public class LightingChain : Spell
 
     void Update()
     {
-        if(closestEnemy != null)
+        if (closestEnemy != null)
+        {
             castDirection = closestEnemy.transform.position - transform.position;
+            print("awd");
+        }
 
         rb.velocity = castDirection.normalized * speed * Time.deltaTime;
 
@@ -30,8 +33,8 @@ public class LightingChain : Spell
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //if (collision.tag != "Enemy" && collision.tag != "Player")
-            //Destroy(gameObject);
-
+        //Destroy(gameObject);
+        
         if (collision.tag != "Enemy")            
             return;
 
@@ -39,10 +42,7 @@ public class LightingChain : Spell
         {
             if (collision.name == nm)
             {
-                print(nm);
                 return;
-
-                
             }
         }
 
@@ -67,11 +67,13 @@ public class LightingChain : Spell
 
         foreach (Collider2D col in closeEnemies)
         {
+            //print("hre");
             foreach (string nm in attacked)
             {
                 if (col.name == nm)
                 {
                     goOn = true;
+                    print(col.name);
                     break;
                 }      
             }
@@ -81,9 +83,10 @@ public class LightingChain : Spell
                 goOn = false;
                 continue;
             }
-
+            print(minDistance);
             if ((transform.position - col.transform.position).magnitude < minDistance)
-            {  
+            {
+                print("ad");
                 minDistance = (transform.position - col.transform.position).magnitude;
                 closestEnemy = col;
                 
