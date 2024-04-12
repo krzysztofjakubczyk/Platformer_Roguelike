@@ -12,7 +12,7 @@ public class LightingChain : Spell
 
     [SerializeField]float jumpsNumberCurrent;
 
-    List<string> attacked = new List<string>();
+    List<int> attacked = new List<int>();
 
     Collider2D closestEnemy = null;
 
@@ -23,7 +23,7 @@ public class LightingChain : Spell
         if (closestEnemy != null)
         {
             castDirection = closestEnemy.transform.position - transform.position;
-            print("awd");
+            //print(closestEnemy.transform.parent.name);
         }
 
         rb.velocity = castDirection.normalized * speed * Time.deltaTime;
@@ -38,10 +38,11 @@ public class LightingChain : Spell
         if (collision.tag != "Enemy")            
             return;
 
-        foreach (string nm in attacked)
+        foreach (int nm in attacked)
         {
-            if (collision.name == nm)
+            if (collision.GetInstanceID() == nm)
             {
+                
                 return;
             }
         }
@@ -54,10 +55,9 @@ public class LightingChain : Spell
             return;
         }
 
-
         // funkcja zadajaca dmg przeciwnikowi here
 
-        attacked.Add(collision.name);
+        attacked.Add(collision.GetInstanceID());
 
         Collider2D[] closeEnemies = Physics2D.OverlapCircleAll(transform.position, searchRadius, enemyLayer);
 
@@ -68,12 +68,11 @@ public class LightingChain : Spell
         foreach (Collider2D col in closeEnemies)
         {
             //print("hre");
-            foreach (string nm in attacked)
+            foreach (int nm in attacked)
             {
-                if (col.name == nm)
+                if (col.GetInstanceID() == nm)
                 {
                     goOn = true;
-                    print(col.name);
                     break;
                 }      
             }
@@ -86,7 +85,6 @@ public class LightingChain : Spell
             print(minDistance);
             if ((transform.position - col.transform.position).magnitude < minDistance)
             {
-                print("ad");
                 minDistance = (transform.position - col.transform.position).magnitude;
                 closestEnemy = col;
                 
