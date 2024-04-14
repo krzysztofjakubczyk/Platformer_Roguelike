@@ -26,9 +26,12 @@ public class grabEnemy : Spell
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //dzia³a przez œciany 
+        Debug.Log(collision.tag);
         if (collision.tag != "Enemy" && collision.tag != "Player")
-            Destroy(gameObject);
-
+            Destroy(gameObject); //niby ma niszczyæ wszystko poza tagiem enemy i player ale untagged go nie niszczy
+                                 //po zmianie taga tilemapy dalej przechodzi mo¿e to wina w³asnie tilemapy
+                                 // mo¿e lepiej to wykrywaæ po layerach
         if (collision.tag != "Enemy")
             return;
 
@@ -42,6 +45,13 @@ public class grabEnemy : Spell
     }
     IEnumerator GoBackToPlayer(Collider2D target)
     {
+        AttackDetails attackDetails = new AttackDetails();
+        attackDetails.position = transform.position;
+        attackDetails.damageAmount = 5;
+        attackDetails.stunDamageAmount = 105;
+        //to powy¿ej fajnie jakby by³o w funkcji ataku
+
+        target.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
         Vector2 dir2 = new Vector2(transform.position.x - target.transform.position.x, 0).normalized;
        
         float gravityof = target.GetComponent<Rigidbody2D>().gravityScale;
@@ -53,7 +63,7 @@ public class grabEnemy : Spell
         {
             rb.velocity = (dir2 * speed) * Time.deltaTime;
             target.GetComponent<Rigidbody2D>().velocity = (dir2 * speed) * Time.deltaTime;
-
+            //strasznie szybko leci mo¿na coœ pobowiæ siê z wartoœciami
             yield return null;
         }
 

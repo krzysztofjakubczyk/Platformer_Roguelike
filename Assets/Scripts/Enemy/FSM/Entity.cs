@@ -127,19 +127,24 @@ public class Entity : MonoBehaviour
     }
     public virtual bool CheckPlayerInMinAgroRange()
     {
-        return Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.minAgroDistance, entityData.WhatIsPlayer);
+        RaycastHit2D hitGround = Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.minAgroDistance, entityData.WhatIsGround);
+        RaycastHit2D hitPlayer = Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.minAgroDistance, entityData.WhatIsPlayer);
+        if (hitGround.distance < hitPlayer.distance) return false;
+        else return Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.minAgroDistance, entityData.WhatIsPlayer);
     }
-    public virtual bool CheckEnemyInRange()
-    {
-        return Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.minAgroDistance, entityData.WhatIsEnemy);
-    }
+
     public virtual bool CheckPlayerInMaxAgroRange()
     {
+       
         return Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.maxAgroDistance, entityData.WhatIsPlayer);
     }
     public virtual bool CheckPlayerInCloseRangeAction()
     {
         return Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.closeRangeActionDistance, entityData.WhatIsPlayer);
+    }
+    public virtual bool CheckEnemyInRange()
+    {
+        return Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.minAgroDistance, entityData.WhatIsEnemy);
     }
     public virtual void OnDrawGizmos()
     {
