@@ -4,32 +4,35 @@ using UnityEngine.UI;
 
 public class HealthBarController : MonoBehaviour
 {
-    [SerializeField] Image _greenImage;
-    [SerializeField] Image _redImage;
-    [SerializeField] healthController _healthController;
-    [SerializeField] HealthBarController _healthBarController;
-    [SerializeField] float _health;
-    [SerializeField] float _maxHealth;
-    [Range(0f,3f)][SerializeField] float _timeForRedImage;
+    /*[SerializeField] Image _blueImage;
+    [SerializeField] Image _yellowImage;
+    [SerializeField] healthController staminaController;
+
+    float stamina;
+    float maxStamina;
+
+    [Range(0f, 3f)][SerializeField] float timeForRedImage;
+
 
     private void Start()
     {
-        _health = _healthController.GetHealth();
-        _maxHealth = _healthController.GetMaxHealth();
-        healthController.DiscardHP += setLessHP;
+        StaminaControl.FillAmountStaminaChange += setCurrentAmount;
     }
 
-    private void setLessHP()
+
+    private void setCurrentAmount()
     {
-        _health = _healthController.GetHealth();
-        _maxHealth = _healthController.GetMaxHealth();
-        _greenImage.fillAmount = _health / _maxHealth;
-        StartCoroutine(RedImageNotVisible());
+        stamina = staminaController.GetStamina();
+        maxStamina = staminaController.GetMaxStamina();
+
+        _blueImage.fillAmount = stamina / maxStamina;
+
+        Invoke(nameof(YellowImageNotVisible), timeForRedImage);
     }
 
-    private IEnumerator RedImageNotVisible()
+
+    private void YellowImageNotVisible()
     {
-        yield return new WaitForSeconds(_timeForRedImage);
-        _redImage.fillAmount = _health / _maxHealth;
-    }
+        _yellowImage.fillAmount = stamina / maxStamina;
+    }*/
 }

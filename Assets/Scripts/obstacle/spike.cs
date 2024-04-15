@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Spike : MonoBehaviour
 {
-    [SerializeField] healthController health;
+    /*[SerializeField] healthController health;
     [SerializeField] SpawnSpike spike;
     private void OnTriggerEnter2D(Collider2D collision)
     { 
@@ -19,5 +19,5 @@ public class Spike : MonoBehaviour
             health.RestartHealth();
             //TO DO: co po zgnieciu
         }
-    }
+    }*/
 }

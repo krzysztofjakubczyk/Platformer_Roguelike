@@ -6,30 +6,33 @@ public class StaminaBarControl : MonoBehaviour
 {
     [SerializeField] Image _blueImage;
     [SerializeField] Image _yellowImage;
-    [SerializeField] StaminaControl _staminaController;
-    [SerializeField] StaminaBarControl _staminaBarController;
-    [SerializeField] float _stamina;
-    [SerializeField] float _maxStamina;
-    [Range(0f, 3f)][SerializeField] float _timeForRedImage;
+    [SerializeField] StatConroller statController;
+
+    float stamina;
+    float maxStamina;
+
+    [Range(0f, 3f)][SerializeField] float timeForRedImage;
+
 
     private void Start()
     {
-        _stamina = _staminaController.GetStamina();
-        _maxStamina = _staminaController.GetMaxStamina();
-        healthController.DiscardHP += setLessHP;
+        StaminaControl.BothBarsCheck += setCurrentAmount;
     }
 
-    private void setLessHP()
+
+    private void setCurrentAmount()
     {
-        _stamina = _staminaController.GetStamina();
-        _maxStamina = _staminaController.GetMaxStamina();
-        _blueImage.fillAmount = _stamina / _maxStamina;
-        StartCoroutine(YellowImageNotVisible());
+        stamina = statController.GetCurrentAmount();
+        maxStamina = statController.GetMaxAmount();
+
+        _blueImage.fillAmount = stamina / maxStamina;
+
+        Invoke(nameof(YellowImageNotVisible), timeForRedImage);
     }
 
-    private IEnumerator YellowImageNotVisible()
+
+    private void YellowImageNotVisible()
     {
-        yield return new WaitForSeconds(_timeForRedImage);
-        _yellowImage.fillAmount = _stamina / _maxStamina;
+        _yellowImage.fillAmount = stamina / maxStamina;
     }
 }

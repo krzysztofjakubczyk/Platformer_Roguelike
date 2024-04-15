@@ -28,7 +28,6 @@ public class ER_MoveState : MoveState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        Debug.Log(isPlayerInMinAgroRange);
         if (isPlayerInMinAgroRange) stateMachine.ChangeState(enemy.playerDetectedState);
         else if (isEnemyInRange)
         {

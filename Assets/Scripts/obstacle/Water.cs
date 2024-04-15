@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Water : MonoBehaviour
 {
-    [SerializeField] healthController health;
+    /*[SerializeField] healthController health;
     bool isPosioned = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -31,5 +31,5 @@ public class Water : MonoBehaviour
             health.MinusHP(1);
             yield return new WaitForSeconds(1.5f);
         }
-    }
+    }*/
 }

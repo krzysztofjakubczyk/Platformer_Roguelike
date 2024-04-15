@@ -42,7 +42,7 @@ public class SpellManager : MonoBehaviour
         {
             cost = activeSpell.GetComponent<Spell>().cost;
 
-            if (StaminaControl.currentStamina > cost)
+            if (StaminaControl.GetCurrentAmount() > cost)
             {
                 StaminaControl.SubStamina(cost)
                     ;
