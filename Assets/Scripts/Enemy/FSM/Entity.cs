@@ -129,7 +129,7 @@ public class Entity : MonoBehaviour
     {
         RaycastHit2D hitGround = Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.minAgroDistance, entityData.WhatIsGround);
         RaycastHit2D hitPlayer = Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.minAgroDistance, entityData.WhatIsPlayer);
-        if (hitGround.distance < hitPlayer.distance) return false;
+        if (hitGround && hitGround.distance < hitPlayer.distance) return false;
         else return Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.minAgroDistance, entityData.WhatIsPlayer);
     }
 
