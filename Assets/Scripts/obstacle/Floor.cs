@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Floor : MonoBehaviour
 {
-    [SerializeField] mvmnt playerMovement;
+    [SerializeField] move playerMovement;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

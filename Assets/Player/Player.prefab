@@ -325,4 +325,8 @@ MonoBehaviour:
   speed: 4
   jumpingPower: 7
   dashPower: 5
+  leftWallJump: 0.5
+  rightWallJump: 0.5
+  WJleft: {fileID: 0}
+  WJright: {fileID: 0}
   coyoteTimeDuration: 1

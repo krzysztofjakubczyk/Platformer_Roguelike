@@ -25,11 +25,11 @@ public class Water : MonoBehaviour
     }
     private IEnumerator ApplyDamageOverTime()
     {
-        while (isPosioned == true) 
+        while (isPosioned == true)
         {
             // Odjêcie ¿ycia gracza
             health.MinusHP(1);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1.5f);
         }
     }
 }

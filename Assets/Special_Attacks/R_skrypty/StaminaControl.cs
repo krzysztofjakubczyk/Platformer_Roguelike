@@ -74,5 +74,6 @@ public class StaminaControl : MonoBehaviour
         maxStamina -= amount;
     }
 
-
+    public float GetMaxStamina() { return maxStamina; }
+    public float GetStamina() { return currentStamina; }
 }

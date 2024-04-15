@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1726,8 +1726,9 @@ GameObject:
   - component: {fileID: 946090579}
   - component: {fileID: 946090581}
   - component: {fileID: 946090580}
+  - component: {fileID: 946090582}
   m_Layer: 0
-  m_Name: 04_7 (1)
+  m_Name: StaminaController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1745,8 +1746,8 @@ RectTransform:
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1141193408}
   - {fileID: 2002210472}
+  - {fileID: 1141193408}
   m_Father: {fileID: 43964792}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1792,6 +1793,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 946090578}
   m_CullTransparentMesh: 1
+--- !u!114 &946090582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946090578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b57ec040909541e4287e88388b81975c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _blueImage: {fileID: 1141193409}
+  _yellowImage: {fileID: 2002210473}
+  _staminaController: {fileID: 1842608436}
+  _staminaBarController: {fileID: 946090582}
+  _stamina: 0
+  _maxStamina: 0
+  _timeForRedImage: 3
 --- !u!1 &981039980
 GameObject:
   m_ObjectHideFlags: 0
@@ -1803,8 +1823,9 @@ GameObject:
   - component: {fileID: 981039981}
   - component: {fileID: 981039983}
   - component: {fileID: 981039982}
+  - component: {fileID: 981039984}
   m_Layer: 5
-  m_Name: Image
+  m_Name: HpController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1822,8 +1843,8 @@ RectTransform:
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1863403229}
   - {fileID: 1342698406}
+  - {fileID: 1863403229}
   m_Father: {fileID: 43964792}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1869,6 +1890,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981039980}
   m_CullTransparentMesh: 1
+--- !u!114 &981039984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981039980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1ab34163d3277e4f8a945fcd92f199f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _greenImage: {fileID: 1863403230}
+  _redImage: {fileID: 1342698407}
+  _healthController: {fileID: 1842608431}
+  _healthBarController: {fileID: 981039984}
+  _health: 0
+  _maxHealth: 0
+  _timeForRedImage: 3
 --- !u!1 &981240010
 GameObject:
   m_ObjectHideFlags: 0
@@ -3912,7 +3952,7 @@ GameObject:
   - component: {fileID: 1141193410}
   - component: {fileID: 1141193409}
   m_Layer: 0
-  m_Name: BlueHpBar
+  m_Name: BlueStaminaBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3934,8 +3974,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000050426, y: 0}
-  m_SizeDelta: {x: 48, y: 11}
+  m_AnchoredPosition: {x: 0.15796, y: -0.06215}
+  m_SizeDelta: {x: 41.71558, y: 5.15597}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1141193409
 MonoBehaviour:
@@ -6202,8 +6242,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.22996826, y: -0.03}
-  m_SizeDelta: {x: 48, y: 11}
+  m_AnchoredPosition: {x: -0.2693, y: 0.04868}
+  m_SizeDelta: {x: 41.78545, y: 5.02146}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1342698407
 MonoBehaviour:
@@ -6230,7 +6270,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.5
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -46632,6 +46672,7 @@ GameObject:
   - component: {fileID: 1842608432}
   - component: {fileID: 1842608433}
   - component: {fileID: 1842608434}
+  - component: {fileID: 1842608436}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -46831,6 +46872,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpForce: 10
+--- !u!114 &1842608436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842608424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d20b2a1d5888824b8dae3ad35994b7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxStamina: 100
+  currentStamina: 0
+  recoverTime: 0.3
+  staminaRecover: 1
 --- !u!1 &1863403228
 GameObject:
   m_ObjectHideFlags: 0
@@ -46865,8 +46922,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.22996826, y: -0.03}
-  m_SizeDelta: {x: 48, y: 11}
+  m_AnchoredPosition: {x: -0.2693, y: 0.04868}
+  m_SizeDelta: {x: 41.78545, y: 5.02146}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1863403230
 MonoBehaviour:
@@ -46955,7 +47012,7 @@ GameObject:
   - component: {fileID: 2002210474}
   - component: {fileID: 2002210473}
   m_Layer: 0
-  m_Name: YellowHpBar
+  m_Name: YellowStaminaBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46977,8 +47034,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000050426, y: 0}
-  m_SizeDelta: {x: 48, y: 11}
+  m_AnchoredPosition: {x: 0.15796, y: -0.06215}
+  m_SizeDelta: {x: 41.71564, y: 5.15597}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2002210473
 MonoBehaviour:
@@ -47005,7 +47062,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.511
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0

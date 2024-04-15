@@ -32,4 +32,8 @@ public class move : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
+    public void ChangePlayerSpeed(float sp)
+    {
+        speed = sp;
+    }
 }
