@@ -168,7 +168,7 @@ MonoBehaviour:
   rb: {fileID: 295874814376067257}
   pullForce: 50
   speed: 600
-  stopXDys: 1.8
+  stopXDys: 2
   enemyLayer:
     serializedVersion: 2
     m_Bits: 1024

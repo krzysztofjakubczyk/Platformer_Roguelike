@@ -29,9 +29,8 @@ public class grabEnemy : Spell
         //dzia³a przez œciany 
         Debug.Log(collision.tag);
         if (collision.tag != "Enemy" && collision.tag != "Player")
-            Destroy(gameObject); //niby ma niszczyæ wszystko poza tagiem enemy i player ale untagged go nie niszczy
-                                 //po zmianie taga tilemapy dalej przechodzi mo¿e to wina w³asnie tilemapy
-                                 // mo¿e lepiej to wykrywaæ po layerach
+            Destroy(gameObject); 
+                                 // mo¿e lepiej to wykrywaæ po layerach bo by³ za szybki
         if (collision.tag != "Enemy")
             return;
 
@@ -70,6 +69,7 @@ public class grabEnemy : Spell
         target.GetComponent<Rigidbody2D>().gravityScale = gravityof;
         target.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         Destroy(gameObject);
+       
     }
     
 }

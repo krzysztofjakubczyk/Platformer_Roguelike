@@ -40,7 +40,7 @@ public class StatConroller : MonoBehaviour
     }
 
 
-    public virtual bool SubStamina(float amount)
+    public virtual bool SubAmount(float amount)
     {
         if (currentAmount < amount)
             return false;
@@ -80,6 +80,10 @@ public class StatConroller : MonoBehaviour
         BothBarsCheck?.Invoke();
     }
 
+    public virtual void SetRecoverTime(float time)
+    {
+        recoverTime = time;
+    }
     public float GetMaxAmount() { return maxAmount; }
     public float GetCurrentAmount() { return currentAmount; }
 

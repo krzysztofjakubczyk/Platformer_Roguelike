@@ -44,7 +44,7 @@ public class SpellManager : MonoBehaviour
 
             if (StaminaControl.GetCurrentAmount() > cost)
             {
-                StaminaControl.SubStamina(cost)
+                StaminaControl.SubAmount(cost)
                     ;
                 activeSpell.GetComponent<Spell>().castDirection = throwDir;
                 activeSpell.GetComponent<Spell>().player = gameObject;
