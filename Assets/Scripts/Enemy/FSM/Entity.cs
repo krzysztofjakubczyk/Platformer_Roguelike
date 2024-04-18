@@ -13,6 +13,7 @@ public class Entity : MonoBehaviour
     public GameObject aliveGameObject { get; private set; }
     public AnimationToStateMachine atsm { get; private set; }
     public int lastDamageDirection { get; private set; }
+    public Transform playerTransform { get; private set; }
 
     public float currentHealth;
     public float currentStunResistance;
@@ -27,6 +28,7 @@ public class Entity : MonoBehaviour
     [SerializeField] private Transform LedgeCheck;
     [SerializeField] private Transform playerCheck;
     [SerializeField] private Transform groundCheck;
+    
     public virtual void Start()
     {
         facingDirection = 1;
@@ -127,20 +129,20 @@ public class Entity : MonoBehaviour
     }
     public virtual bool CheckPlayerInMinAgroRange()
     {
-        RaycastHit2D hitGround = Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.minAgroDistance, entityData.WhatIsGround);
-        RaycastHit2D hitPlayer = Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.minAgroDistance, entityData.WhatIsPlayer);
-        if (hitGround && hitGround.distance < hitPlayer.distance) return false;
-        else return Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.minAgroDistance, entityData.WhatIsPlayer);
+        RaycastHit2D hitGround = Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right,entityData.minAgroDistance, entityData.WhatIsGround);
+        Collider2D hitPlayer = Physics2D.OverlapCircle(playerCheck.position, entityData.minAgroDistance, entityData.WhatIsPlayer);
+        if(hitPlayer) playerTransform = hitPlayer.transform;
+        if (hitGround && hitPlayer && hitGround.distance < Mathf.Abs(transform.position.x - hitPlayer.transform.position.x)) return false;
+        else return Physics2D.OverlapCircle(playerCheck.position,  entityData.minAgroDistance, entityData.WhatIsPlayer);
     }
 
     public virtual bool CheckPlayerInMaxAgroRange()
     {
-       
-        return Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.maxAgroDistance, entityData.WhatIsPlayer);
+        return Physics2D.OverlapCircle(playerCheck.position, entityData.maxAgroDistance, entityData.WhatIsPlayer);
     }
     public virtual bool CheckPlayerInCloseRangeAction()
     {
-        return Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.closeRangeActionDistance, entityData.WhatIsPlayer);
+        return Physics2D.OverlapCircle(playerCheck.position, entityData.closeRangeActionDistance, entityData.WhatIsPlayer);
     }
     public virtual bool CheckEnemyInRange()
     {

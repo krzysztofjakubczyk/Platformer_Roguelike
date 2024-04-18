@@ -19,10 +19,11 @@
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if (!isPlayerInMaxAgroRange)
+        if (performCloseRangeAction) stateMachine.ChangeState(enemy.meleeAttackState);
+        else if (performLongRangeAction) stateMachine.ChangeState(enemy.chargeState);
+        else if (!isPlayerInMaxAgroRange)
         {
-            enemy.idleState.SetFlipAfterIdle(false);
-            stateMachine.ChangeState(enemy.idleState);
+             stateMachine.ChangeState(enemy.lookForPlayerState);
         }
     }
 

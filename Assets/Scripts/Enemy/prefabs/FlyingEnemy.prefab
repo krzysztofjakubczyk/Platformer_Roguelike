@@ -46,12 +46,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityData: {fileID: 11400000, guid: 50c4b8e6ca774534a8afe1d8d0f0ed04, type: 2}
+  currentHealth: 0
+  currentStunResistance: 0
+  lastDamageTime: 0
   wallCheck: {fileID: 3734742966458259361}
   LedgeCheck: {fileID: 2053869208075788244}
   playerCheck: {fileID: 2366675068536784159}
+  groundCheck: {fileID: 0}
   idleStateData: {fileID: 11400000, guid: 66ead33b11907024fa2e7a73b90dcbbe, type: 2}
   moveStateData: {fileID: 11400000, guid: 320f7608d38b25c4abf7ea6a80eba9ff, type: 2}
   playerDetectedData: {fileID: 11400000, guid: 6017f5e719a9aac4186541a7d1e0c158, type: 2}
+  chargeStateData: {fileID: 11400000, guid: 9be9e523bc72ac3409e2d5180d373105, type: 2}
+  meleeAttackStateData: {fileID: 11400000, guid: 956e42c8ed226e64f8d0c52a11aaa6bf, type: 2}
+  lookForPlayerStateData: {fileID: 11400000, guid: e48e61b00fd0cbd4b9454b5344b23b3d, type: 2}
+  meleeAtackPos: {fileID: 0}
 --- !u!1 &2010990632287464163
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,6 +148,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.395, y: -0.03, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5825999793130477881}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7658170322783308552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7997648960153653883}
+  m_Layer: 0
+  m_Name: attackPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7997648960153653883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7658170322783308552}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.31, y: -0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -237,6 +276,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7878350319992209165, guid: 7c5a6ff0f04901048b1283b70b7a384a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2366675068536784159}
+    - targetCorrespondingSourceObject: {fileID: 7878350319992209165, guid: 7c5a6ff0f04901048b1283b70b7a384a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7997648960153653883}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 7c5a6ff0f04901048b1283b70b7a384a, type: 3}
       insertIndex: -1
