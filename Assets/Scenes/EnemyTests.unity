@@ -258,11 +258,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7997648960153653883, guid: 1031ba68c5908cd4e91895931045e7be, type: 3}
   m_PrefabInstance: {fileID: 100571048070169426}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &383591942 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2908547755061986655, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
-  m_PrefabInstance: {fileID: 1839311318}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &703224690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,75 +1017,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1001 &1839311318
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1962535180}
-    m_Modifications:
-    - target: {fileID: 2908547755061986655, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2908547755061986655, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2908547755061986655, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2908547755061986655, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2908547755061986655, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2908547755061986655, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2908547755061986655, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2908547755061986655, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2908547755061986655, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2908547755061986655, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3151645623783271711, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
-      propertyPath: m_Name
-      value: LightingChainPrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 3151645623783271711, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7169107655553939552, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1962535173}
-    - target: {fileID: 7169107655553939552, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
-      propertyPath: jumpsNumberMax
-      value: 6
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
 --- !u!1 &1885907699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1526,8 +1452,7 @@ Transform:
   m_LocalPosition: {x: -26.7, y: -32.8, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 4}
   m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 383591942}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2042866339 stripped
@@ -1547,6 +1472,14 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 1639284683926148803, guid: 1031ba68c5908cd4e91895931045e7be, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639284683926148803, guid: 1031ba68c5908cd4e91895931045e7be, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1694702205508009172, guid: 1031ba68c5908cd4e91895931045e7be, type: 3}
       propertyPath: m_Name
       value: FlyingEnemy
@@ -1554,6 +1487,10 @@ PrefabInstance:
     - target: {fileID: 1694702205508009172, guid: 1031ba68c5908cd4e91895931045e7be, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241622923636082088, guid: 1031ba68c5908cd4e91895931045e7be, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5029275636431294842, guid: 1031ba68c5908cd4e91895931045e7be, type: 3}
       propertyPath: groundCheck

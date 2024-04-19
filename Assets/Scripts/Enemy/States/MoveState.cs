@@ -6,6 +6,7 @@ public class MoveState : State
 {
     protected D_MoveState stateData;
 
+    protected bool groundCheck;
     protected bool isDetectingWall;
     protected bool isDetectingLedge;
     protected bool isPlayerInMinAgroRange;
@@ -19,6 +20,7 @@ public class MoveState : State
     {
         base.DoChecks();
 
+        groundCheck = entity.CheckGround();
         isDetectingLedge = entity.CheckLedge();
         isDetectingWall = entity.CheckWall();
         isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();

@@ -13,11 +13,13 @@ public class FE_MeleeAttackState : MeleeAttackState
     public override void Enter()
     {
         base.Enter();
+        entity.rb.constraints = RigidbodyConstraints2D.FreezePositionY;
     }
 
     public override void Exit()
     {
         base.Exit();
+        entity.rb.constraints = RigidbodyConstraints2D.None;
     }
 
     public override void FinishAttack()
