@@ -51,21 +51,22 @@ public class FE_ChargeState : Charge
 
     public override void PhysicsUpdate()
     {
-        Debug.Log(entity.playerTransform.position);
         Vector2 direction = (entity.playerTransform.position - entity.aliveGameObject.transform.position);
         float lengthToPlayer = direction.magnitude;
-        Debug.Log(lengthToPlayer);
         if (lengthToPlayer < stateData.distanceToStop) entity.SetVelocity(0f);
         else {
-            Debug.Log("player" + entity.playerTransform.position.x + "enemy" + entity.transform.position.x);
+            
             if (entity.aliveGameObject.transform.position.x < entity.playerTransform.position.x)
             {
-                if (entity.facingDirection != 1) entity.Flip();
-                entity.SetVelocity(stateData.chargeSpeed, direction, entity.facingDirection);
+                if (entity.facingDirection == 1) Debug.Log(entity.facingDirection+" facing direction");//entity.Flip();
+              //  entity.SetVelocity(stateData.chargeSpeed, direction, entity.facingDirection);
+                entity.aliveGameObject.transform.position = Vector2.MoveTowards(entity.aliveGameObject.transform.position, entity.playerTransform.position, stateData.chargeSpeed*Time.deltaTime);
             }
             else if(entity.aliveGameObject.transform.position.x > entity.playerTransform.position.x)
             {
-                entity.SetVelocity(stateData.chargeSpeed, direction, -entity.facingDirection);
+                if (entity.facingDirection != 1) //entity.Flip();
+                //  entity.SetVelocity(stateData.chargeSpeed, direction, -entity.facingDirection);
+                entity.aliveGameObject.transform.position = Vector2.MoveTowards(entity.aliveGameObject.transform.position, entity.playerTransform.position, stateData.chargeSpeed * Time.deltaTime);
             }
                
         }

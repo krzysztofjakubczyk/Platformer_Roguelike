@@ -20,6 +20,7 @@ public class FE_MeleeAttackState : MeleeAttackState
     {
         base.Exit();
         entity.rb.constraints = RigidbodyConstraints2D.None;
+        entity.rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     public override void FinishAttack()
