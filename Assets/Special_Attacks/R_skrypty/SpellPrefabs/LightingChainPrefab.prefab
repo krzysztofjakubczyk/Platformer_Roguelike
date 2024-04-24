@@ -100,9 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  cost: 2
-  damage: 0
-  stunDamage: 0
+  cost: 20
+  damage: 5
+  stunDamage: 5
+  reachargeTime: 1
   castDirection: {x: 1, y: 0}
   rb: {fileID: 1409051048395732217}
   searchRadius: 15
@@ -113,7 +114,7 @@ MonoBehaviour:
     m_Bits: 1024
   wallLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   jumpsNumberCurrent: 0
 --- !u!50 &1409051048395732217
 Rigidbody2D:

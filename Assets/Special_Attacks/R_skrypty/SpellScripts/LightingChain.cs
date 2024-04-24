@@ -39,8 +39,8 @@ public class LightingChain : Spell
         if (collision.tag != "Enemy")
             return;
 
-        //edge case ktory nie powinien wystapic (wiec nie obslugiwany):
-        //miedzy przeciwnikami moze pojawic sie przeciwnik, ktory wczesniej byl juz trafiony - w takim wymadku ignorowac kolizje z nim (niezaimplementowane)
+        //edge case, ktory nie powinien wystapic (wiec nie obslugiwany):
+        //miedzy przeciwnikami moze pojawic sie przeciwnik, ktory wczesniej byl juz trafiony - w takim wypadku ignorowac kolizje z nim (niezaimplementowane)
 
         AttackDetails attackDetails = new AttackDetails();
         attackDetails.position = transform.position;
@@ -62,10 +62,10 @@ public class LightingChain : Spell
 
         float minDistance = 100;
         bool skip = false;
-        
+        bool foundOne = false;
         foreach (Collider2D col in closeEnemies)
         {
-            foreach (int name in alreadyAttacked)
+            foreach (int name in alreadyAttacked)       // spr czy enemy byl juz atakowany
             {
                 if (col.GetInstanceID() == name)
                 {
@@ -73,12 +73,10 @@ public class LightingChain : Spell
                     break;
                 }      
             }
-            // uzyc linecast zamiast raycast
-            if (Physics2D.Raycast(transform.position, col.transform.position - transform.position, wallLayer))
+
+            if (Physics2D.Linecast(transform.position, col.transform.position, wallLayer))      // spr czy miedzy pociskiem a enemy jest sciana
             {
-                print(col.transform.position - transform.position);
                 skip = true;
-                print("wall");
             }
 
             if (skip)
@@ -86,6 +84,8 @@ public class LightingChain : Spell
                 skip = false;
                 continue;
             }
+            else
+                foundOne = true;
 
             if ((transform.position - col.transform.position).magnitude < minDistance)
             {
@@ -94,6 +94,8 @@ public class LightingChain : Spell
                 
             }
         }
+        // jesli nie wykryto nowego przeciwnika to usun pocisk
+        if (!foundOne) Destroy(gameObject);
 
     }
 

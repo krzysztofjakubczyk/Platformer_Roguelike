@@ -8,6 +8,7 @@ public abstract class Spell : MonoBehaviour
     public float cost;
     public float damage;
     public float stunDamage;
+    public float reachargeTime;
     [HideInInspector] public Vector2 castDirection;
     [HideInInspector] public Rigidbody2D rb;
 

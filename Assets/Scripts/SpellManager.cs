@@ -9,6 +9,7 @@ public class SpellManager : MonoBehaviour
 
     float cost;
     Vector2 throwDir;
+    bool canCast;
 
 
     void Start()
@@ -17,6 +18,8 @@ public class SpellManager : MonoBehaviour
 
         // TO DO:       ustawic dir podczas rzucania a nie w start
         throwDir = transform.right;
+
+        canCast = true;
     }
 
 
@@ -38,14 +41,18 @@ public class SpellManager : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.C) && activeSpell != null)
+        if (Input.GetKeyDown(KeyCode.C) && activeSpell != null && canCast)
         {
+            canCast = false;
+            float chargeTime = activeSpell.GetComponent<Spell>().reachargeTime;
+            Invoke(nameof(CanCastAgain), chargeTime);
+
             cost = activeSpell.GetComponent<Spell>().cost;
 
             if (StaminaControl.GetCurrentAmount() > cost)
             {
-                StaminaControl.SubAmount(cost)
-                    ;
+                StaminaControl.SubAmount(cost);
+                    
                 activeSpell.GetComponent<Spell>().castDirection = throwDir;
                 activeSpell.GetComponent<Spell>().player = gameObject;
                 activeSpell.GetComponent<Spell>().rb = activeSpell.GetComponent<Rigidbody2D>();
@@ -60,5 +67,10 @@ public class SpellManager : MonoBehaviour
     public void setSpell(GameObject spell)
     {
           activeSpell = spell;
+    }
+
+    void CanCastAgain()
+    {
+        canCast = true;
     }
 }

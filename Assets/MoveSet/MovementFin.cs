@@ -150,6 +150,7 @@ public class MovementFin : MonoBehaviour
 
         if (isDashing)
         {
+            rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(new Vector2(lastDirection * dashPower, 0),ForceMode2D.Impulse);
             boxCollider.excludeLayers = enemyLayer;
             Invoke(nameof(EndDash), 0.1f);

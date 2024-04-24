@@ -26,11 +26,9 @@ public class grabEnemy : Spell
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //dzia³a przez œciany 
-        Debug.Log(collision.tag);
         if (collision.tag != "Enemy" && collision.tag != "Player")
             Destroy(gameObject); 
-                                 // mo¿e lepiej to wykrywaæ po layerach bo by³ za szybki
+       
         if (collision.tag != "Enemy")
             return;
 
