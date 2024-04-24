@@ -54,7 +54,11 @@ public class Enemy1 : Entity
 
         Gizmos.DrawWireSphere(meleeAttackPosition.position, meleeAttackStateData.attackRadius);
     }
-
+    public override bool CheckPlayerInMinAgroRange()
+    {
+       // return base.CheckPlayerInMinAgroRange();
+        return Physics2D.Raycast(playerCheck.position,Vector2.right, entityData.minAgroDistance, entityData.WhatIsPlayer);
+    }
     public override void DamageGet(AttackDetails attackDetails)
     {
         base.DamageGet(attackDetails);
