@@ -1,6 +1,6 @@
 
 
-public class healthController : StatConroller
+public class HealthController : StatConroller
 {
     
 }

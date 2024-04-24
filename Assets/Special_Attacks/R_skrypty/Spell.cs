@@ -4,10 +4,10 @@ using UnityEngine;
 
 public abstract class Spell : MonoBehaviour
 {
-
     [HideInInspector]public GameObject player;
     public float cost;
     public float damage;
+    public float stunDamage;
     [HideInInspector] public Vector2 castDirection;
     [HideInInspector] public Rigidbody2D rb;
 

@@ -102,6 +102,7 @@ MonoBehaviour:
   player: {fileID: 0}
   cost: 2
   damage: 0
+  stunDamage: 0
   castDirection: {x: 1, y: 0}
   rb: {fileID: 1409051048395732217}
   searchRadius: 15
@@ -110,6 +111,9 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 1024
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
   jumpsNumberCurrent: 0
 --- !u!50 &1409051048395732217
 Rigidbody2D:
