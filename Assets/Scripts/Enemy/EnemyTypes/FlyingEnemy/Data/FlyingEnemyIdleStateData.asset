@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2eb1e4fadb647494c84bc982fa98b870, type: 3}
-  m_Name: FE_IdleStateData
+  m_Name: FlyingEnemyIdleStateData
   m_EditorClassIdentifier: 
   minIdleTime: 1
   maxIdleTime: 2

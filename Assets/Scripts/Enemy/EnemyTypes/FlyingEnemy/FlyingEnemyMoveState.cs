@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FE_IdleState : IdleState
+public class FlyingEnemyMoveState : MoveState
 {
     FlyingEnemy enemy;
-    public FE_IdleState(Entity entity, BaseStateMachine stateMachine, string animBoolName, D_IdleState stateData, FlyingEnemy enemy) : base(entity, stateMachine, animBoolName, stateData)
+    public FlyingEnemyMoveState(Entity entity, BaseStateMachine stateMachine, string animBoolName, D_MoveState stateData, FlyingEnemy enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }
@@ -27,9 +27,10 @@ public class FE_IdleState : IdleState
         {
             stateMachine.ChangeState(enemy.playerDetectedState);
         }
-        if (isIdleTimeOver)
+        if (isDetectingWall)
         {
-            stateMachine.ChangeState(enemy.moveState);
+            enemy.idleState.SetFlipAfterIdle(true);
+            stateMachine.ChangeState(enemy.idleState);
         }
     }
 

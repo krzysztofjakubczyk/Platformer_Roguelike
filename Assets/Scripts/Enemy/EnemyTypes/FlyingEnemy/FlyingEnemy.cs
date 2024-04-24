@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class FlyingEnemy : Entity
 {
-    public FE_IdleState idleState { get; private set; }
-    public FE_MoveState moveState { get; private set; }
-    public FE_PlayerDetectedState playerDetectedState { get; private set; }
-    public FE_ChargeState chargeState { get; private set; }
-    public FE_MeleeAttackState meleeAttackState {get ;private set; }
-    public FE_LookForPlayerState lookForPlayerState { get; private set; }
+    public FlyingEnemyIdleState idleState { get; private set; }
+    public FlyingEnemyMoveState moveState { get; private set; }
+    public FlyingEnemyPlayerDetectedState playerDetectedState { get; private set; }
+    public FlyingEnemyChargeState chargeState { get; private set; }
+    public FlyingEnemyMeleeAttackState meleeAttackState {get ;private set; }
+    public FlyingEnemyLookForPlayerState lookForPlayerState { get; private set; }
+    public FlyingEnemyBackToPatrolState backToPatrolState { get; private set; }
 
     [SerializeField]
     private D_IdleState idleStateData;
@@ -23,6 +24,8 @@ public class FlyingEnemy : Entity
     private D_MeleeAttack meleeAttackStateData;
     [SerializeField]
     private D_LookForPlayerState lookForPlayerStateData;
+    [SerializeField]
+    private BackToPatrolStateData BackToPatrolStateData;
 
     [SerializeField]
     private Transform meleeAtackPos;
@@ -30,12 +33,13 @@ public class FlyingEnemy : Entity
     {
         base.Start();
         rb.gravityScale = 0;
-        moveState = new FE_MoveState(this, stateMachine, "move", moveStateData, this);
-        idleState = new FE_IdleState(this, stateMachine, "idle", idleStateData, this);
-        playerDetectedState = new FE_PlayerDetectedState(this, stateMachine, "playerDetected", playerDetectedData, this);
-        chargeState = new FE_ChargeState(this, stateMachine, "charge", chargeStateData, this);
-        meleeAttackState = new FE_MeleeAttackState(this, stateMachine, "meleeAttack", meleeAtackPos, meleeAttackStateData, this);
-        lookForPlayerState = new FE_LookForPlayerState(this, stateMachine, "lookForPlayer", lookForPlayerStateData, this);
+        moveState = new FlyingEnemyMoveState(this, stateMachine, "move", moveStateData, this);
+        idleState = new FlyingEnemyIdleState(this, stateMachine, "idle", idleStateData, this);
+        playerDetectedState = new FlyingEnemyPlayerDetectedState(this, stateMachine, "playerDetected", playerDetectedData, this);
+        chargeState = new FlyingEnemyChargeState(this, stateMachine, "charge", chargeStateData, this);
+        meleeAttackState = new FlyingEnemyMeleeAttackState(this, stateMachine, "meleeAttack", meleeAtackPos, meleeAttackStateData, this);
+        lookForPlayerState = new FlyingEnemyLookForPlayerState(this, stateMachine, "lookForPlayer", lookForPlayerStateData, this);
+        backToPatrolState = new FlyingEnemyBackToPatrolState(this, stateMachine, "backToPatrol", BackToPatrolStateData, this);
         stateMachine.Initialize(moveState);
     }
 }

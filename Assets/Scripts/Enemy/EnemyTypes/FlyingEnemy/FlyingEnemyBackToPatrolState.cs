@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FE_LookForPlayerState : LookForPlayerState
+public class FlyingEnemyBackToPatrolState : BackToPatrolState
 {
     private FlyingEnemy enemy;
-
-    public FE_LookForPlayerState(Entity entity, BaseStateMachine stateMachine, string animBoolName, D_LookForPlayerState stateData, FlyingEnemy enemy) : base(entity, stateMachine, animBoolName, stateData)
+    public FlyingEnemyBackToPatrolState(Entity entity, BaseStateMachine stateMachine, string animBoolName, BackToPatrolStateData stateData, FlyingEnemy enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }
@@ -29,9 +28,7 @@ public class FE_LookForPlayerState : LookForPlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if (isPlayerInMinAgroRange) stateMachine.ChangeState(enemy.playerDetectedState);
-        else if (isAllTurnsTimeDone) stateMachine.ChangeState(enemy.moveState);
-
+        if (entity.aliveGameObject.transform.position == stateData.patrolPoint) stateMachine.ChangeState(enemy.moveState);
     }
 
     public override void PhysicsUpdate()

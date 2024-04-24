@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a40e7dec1ed74614eb988735436a510e, type: 3}
-  m_Name: FE_ChargeStateData
+  m_Script: {fileID: 11500000, guid: 97d4461cd0de0224cb2bcd242c4ab126, type: 3}
+  m_Name: FlyingEnemyLookForPlayerData
   m_EditorClassIdentifier: 
-  chargeSpeed: 6
-  chargeTime: 2.5
-  distanceToStop: 3
+  amountOfTurns: 3
+  timeBetweenTurns: 0.75
