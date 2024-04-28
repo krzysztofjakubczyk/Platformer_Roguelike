@@ -30,6 +30,13 @@ public class MovementFin : MonoBehaviour
     bool sideJump;
 
     bool isJumpingRight, isJumpingLeft;
+
+    KeyCode jumpKey = KeyCode.Z;
+    KeyCode dashKey = KeyCode.LeftShift;
+    //KeyCode spellKey = KeyCode.X;
+    //KeyCode meleeKey = KeyCode.C;
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -77,17 +84,17 @@ public class MovementFin : MonoBehaviour
         if (horizontal != 0)
             lastDirection = horizontal;
         isGrounded = IsGrounded();
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(jumpKey))
             ZPressed = true;
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(dashKey))
         {
 
             isDashing = true;
         }
 
         // if player run out of platform (but didnt jump) activate coyoteTime
-        if (!isGrounded && wasGrounded && !Input.GetKey(KeyCode.Z))
+        if (!isGrounded && wasGrounded && !Input.GetKey(jumpKey))
         {
             coyoteTime = true;
             Invoke(nameof(EndCoyoteTime), coyoteTimeDuration);
@@ -154,7 +161,6 @@ public class MovementFin : MonoBehaviour
             rb.AddForce(new Vector2(lastDirection * dashPower, 0),ForceMode2D.Impulse);
             boxCollider.excludeLayers = enemyLayer;
             Invoke(nameof(EndDash), 0.1f);
-            print(lastDirection);
         }
     }
 

@@ -41,7 +41,7 @@ public class SpellManager : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.C) && activeSpell != null && canCast)
+        if (Input.GetKeyDown(KeyCode.X) && activeSpell != null && canCast)
         {
             canCast = false;
             float chargeTime = activeSpell.GetComponent<Spell>().reachargeTime;
