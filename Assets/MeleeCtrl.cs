@@ -27,10 +27,11 @@ public class MeleeCtrl : MonoBehaviour
     void OffWeapon()
     {
         weapon.SetActive(false);
+        animator.SetBool("isAttacking", false);
     }
 
     void endAttackAnim()
     {
-        animator.SetBool("isAttacking", false);
+        
     }
 }
