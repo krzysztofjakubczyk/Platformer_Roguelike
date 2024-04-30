@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpellManager : MonoBehaviour
 {
     [SerializeField]GameObject activeSpell;
+    [SerializeField]float yOffset;
     StaminaControl StaminaControl;
 
     float cost;
@@ -57,7 +58,7 @@ public class SpellManager : MonoBehaviour
                 activeSpell.GetComponent<Spell>().player = gameObject;
                 activeSpell.GetComponent<Spell>().rb = activeSpell.GetComponent<Rigidbody2D>();
 
-                Vector2 startPos = new Vector2(transform.position.x, transform.position.y);
+                Vector2 startPos = new Vector2(transform.position.x, transform.position.y + yOffset);
                 Instantiate(activeSpell, startPos,Quaternion.identity);
 
             }
