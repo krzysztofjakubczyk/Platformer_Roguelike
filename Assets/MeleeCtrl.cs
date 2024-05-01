@@ -19,7 +19,7 @@ public class MeleeCtrl : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.C))
         {
             weapon.SetActive(true);
-            animator.SetBool("isAttacking", true);
+            //animator.SetBool("isAttacking", true);
             Invoke(nameof(OffWeapon), 0.1f);
         }
     }
@@ -27,7 +27,9 @@ public class MeleeCtrl : MonoBehaviour
     void OffWeapon()
     {
         weapon.SetActive(false);
-        animator.SetBool("isAttacking", false);
+        //animator.SetBool("isAttacking", false);
+        //animator.SetTrigger("New Trigger");
+       
     }
 
     void endAttackAnim()
