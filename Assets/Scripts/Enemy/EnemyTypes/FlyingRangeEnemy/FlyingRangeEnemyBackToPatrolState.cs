@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ER_DeathState : DeathState
+public class FlyingRangeEnemyBackToPatrolState : BackToPatrolState
 {
-    private EnemyRange enemy;
+    private FlyingRangeEnemy enemy;
 
-    public ER_DeathState(Entity entity, BaseStateMachine stateMachine, string animBoolName, DeathStateData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, stateData)
+    public FlyingRangeEnemyBackToPatrolState(Entity entity, BaseStateMachine stateMachine, string animBoolName, BackToPatrolStateData stateData, FlyingRangeEnemy enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }
@@ -29,6 +29,7 @@ public class ER_DeathState : DeathState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        if (entity.aliveGameObject.transform.position == stateData.patrolPoint) stateMachine.ChangeState(enemy.moveState);
     }
 
     public override void PhysicsUpdate()

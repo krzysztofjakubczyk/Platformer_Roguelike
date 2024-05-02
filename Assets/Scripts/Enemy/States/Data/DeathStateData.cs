@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "newDeathStateData", menuName = "Data/State Data/Death State Data")]
 
-public class D_DeathState :ScriptableObject
+public class DeathStateData :ScriptableObject
 {
     public GameObject deathChunkParticle;
     public GameObject deathBloodParticle;

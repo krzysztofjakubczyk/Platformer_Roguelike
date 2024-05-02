@@ -47,13 +47,15 @@ public class FlyingRangeEnemyRangedAttackState : RangedAttackState
     public override void TriggerAttack()
     {
         //base.TriggerAttack();
-        Vector3 playerPos = new Vector3(entity.playerTransform.position.x, entity.playerTransform.position.y + 1, entity.playerTransform.position.z);
+        Vector2 playerPos = entity.playerTransform.position - entity.aliveGameObject.transform.position;
+        Vector2 playerRot = entity.aliveGameObject.transform.position - entity.playerTransform.position;
 
-        // Aim bullet in player's direction.
-        attackPosition.rotation = Quaternion.LookRotation(playerPos);
+        float angle = Mathf.Atan2(playerRot.y, playerRot.x) * Mathf.Rad2Deg; // Calculate the angle between the attack position and the player position
+
+        attackPosition.rotation = Quaternion.Euler(new Vector3(0, 0, angle)); // Rotate the attack position towards the player position
 
         projectile = GameObject.Instantiate(stateData.projectile, attackPosition.position, attackPosition.rotation);
         projectileScript = projectile.GetComponent<Projectile>();
-        projectileScript.FireProjectile(stateData.projectileSpeed, stateData.projectileTravelDistance, stateData.projectileDamage);
+        projectileScript.FireProjectile(stateData.projectileSpeed, stateData.projectileTravelDistance, stateData.projectileDamage, playerPos);
     }
 }

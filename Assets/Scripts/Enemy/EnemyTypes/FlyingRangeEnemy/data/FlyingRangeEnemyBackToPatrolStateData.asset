@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e4ab56784e24b749b409a5884ae14a6, type: 3}
-  m_Name: FlyingRangeEnemyRangedAttackStateData
+  m_Script: {fileID: 11500000, guid: 2b668f5869cf53846bdf5e7315b87b61, type: 3}
+  m_Name: FlyingRangeEnemyBackToPatrolStateData
   m_EditorClassIdentifier: 
-  projectile: {fileID: 8217084789341752204, guid: 296a3c91604d7404fae7e92538da3aa7, type: 3}
-  projectileDamage: 10
-  projectileSpeed: 1
-  projectileTravelDistance: 0
+  patrolPoint: {x: -6, y: -27, z: 0}
+  backSpeed: 5

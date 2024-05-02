@@ -53,7 +53,7 @@ MonoBehaviour:
   LedgeCheck: {fileID: 2053869208075788244}
   playerCheck: {fileID: 2366675068536784159}
   groundCheck: {fileID: 2053869208075788244}
-  idleStateData: {fileID: 11400000, guid: 66ead33b11907024fa2e7a73b90dcbbe, type: 2}
+  idleStateData: {fileID: 11400000, guid: 861128bb82914e049abdc7702542f4d7, type: 2}
   moveStateData: {fileID: 11400000, guid: 320f7608d38b25c4abf7ea6a80eba9ff, type: 2}
   playerDetectedData: {fileID: 11400000, guid: 6017f5e719a9aac4186541a7d1e0c158, type: 2}
   chargeStateData: {fileID: 11400000, guid: 9be9e523bc72ac3409e2d5180d373105, type: 2}

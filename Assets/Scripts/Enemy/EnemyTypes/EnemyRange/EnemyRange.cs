@@ -23,11 +23,11 @@ public class EnemyRange : Entity
     [SerializeField]
     private D_MeleeAttack meleeAttackStateData;
     [SerializeField]
-    private D_LookForPlayerState lookForPlayerStateData;
+    private LookForPlayerStateData lookForPlayerStateData;
     [SerializeField]
-    private D_StunStateData stunStateData;
+    private StunStateData stunStateData;
     [SerializeField]
-    private D_DeathState deathStateData;
+    private DeathStateData deathStateData;
     [SerializeField]
     public D_DodgeState dodgeStateData;//{ get; private set; }
     [SerializeField]

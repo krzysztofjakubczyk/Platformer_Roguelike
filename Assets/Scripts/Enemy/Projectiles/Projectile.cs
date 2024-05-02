@@ -9,6 +9,7 @@ public class Projectile : MonoBehaviour
     private float speed;
     private float travelDistance;
     private float xStartPos;
+    private Vector2 direction;
 
     [SerializeField]
     private float gravity;
@@ -31,7 +32,7 @@ public class Projectile : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0.0f;
-        rb.velocity = transform.right * speed;
+        rb.velocity = direction * speed;
 
         isGravityOn = false;
         xStartPos = transform.position.x;
@@ -73,10 +74,11 @@ public class Projectile : MonoBehaviour
         }
        
     }
-    public void FireProjectile(float speed,float travelDistance, float damage)
+    public void FireProjectile(float speed,float travelDistance, float damage, Vector2 direction)
     {
         this.speed = speed;
         this.travelDistance = travelDistance;
+        this.direction = direction;
         attackDetails.damageAmount = damage;
     }
     private void OnDrawGizmos()

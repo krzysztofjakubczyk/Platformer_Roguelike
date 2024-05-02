@@ -6,7 +6,7 @@ public class ER_StunState : StunState
 {
     private EnemyRange enemy;
 
-    public ER_StunState(Entity entity, BaseStateMachine stateMachine, string animBoolName, D_StunStateData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, stateData)
+    public ER_StunState(Entity entity, BaseStateMachine stateMachine, string animBoolName, StunStateData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }

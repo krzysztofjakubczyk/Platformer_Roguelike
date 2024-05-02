@@ -6,7 +6,7 @@ public class ER_LookForPlayerState : LookForPlayerState
 {
     private EnemyRange enemy;
 
-    public ER_LookForPlayerState(Entity entity, BaseStateMachine stateMachine, string animBoolName, D_LookForPlayerState stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, stateData)
+    public ER_LookForPlayerState(Entity entity, BaseStateMachine stateMachine, string animBoolName, LookForPlayerStateData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }

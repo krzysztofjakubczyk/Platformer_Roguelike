@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LookForPlayerState : State
 {
-    D_LookForPlayerState stateData;
+    LookForPlayerStateData stateData;
 
     protected bool turnImmediately;
     protected bool isPlayerInMinAgroRange;
@@ -14,7 +14,7 @@ public class LookForPlayerState : State
     protected float lastTurnTime;
 
     protected int amountOfTurnsDone;
-    public LookForPlayerState(Entity entity, BaseStateMachine stateMachine, string animBoolName, D_LookForPlayerState stateData) : base(entity, stateMachine, animBoolName)
+    public LookForPlayerState(Entity entity, BaseStateMachine stateMachine, string animBoolName, LookForPlayerStateData stateData) : base(entity, stateMachine, animBoolName)
     {
         this.stateData = stateData;
         

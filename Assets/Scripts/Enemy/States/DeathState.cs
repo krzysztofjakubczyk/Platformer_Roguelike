@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DeathState : State
 {
-    D_DeathState stateData;
-    public DeathState(Entity entity, BaseStateMachine stateMachine, string animBoolName, D_DeathState stateData) : base(entity, stateMachine, animBoolName)
+    DeathStateData stateData;
+    public DeathState(Entity entity, BaseStateMachine stateMachine, string animBoolName, DeathStateData stateData) : base(entity, stateMachine, animBoolName)
     {
         this.stateData = stateData;
     }

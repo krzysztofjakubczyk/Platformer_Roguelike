@@ -292,7 +292,11 @@ MonoBehaviour:
   moveStateData: {fileID: 11400000, guid: 581d732dac1dcb54891d159413364ee7, type: 2}
   playerDetectedData: {fileID: 11400000, guid: 163d8c6710da2ed499da282fb53d2d0b, type: 2}
   rangedAttackStateData: {fileID: 11400000, guid: b780cb8a178a26b4ebba40f415d7ca91, type: 2}
+  stunStateData: {fileID: 11400000, guid: 8213dd1a28a6eb84ba1423a0e984d669, type: 2}
+  deathStateData: {fileID: 11400000, guid: 06288b1b3ad413a409394b589434eddf, type: 2}
   attackPos: {fileID: 564425039}
+  lookForPlayerStateData: {fileID: 11400000, guid: dba04007cc63d6a4490cf7c956e7d296, type: 2}
+  BackToPatrolStateData: {fileID: 11400000, guid: 1424a6f0a61813f44b13bbc75d1516c2, type: 2}
 --- !u!1 &703224690
 GameObject:
   m_ObjectHideFlags: 0

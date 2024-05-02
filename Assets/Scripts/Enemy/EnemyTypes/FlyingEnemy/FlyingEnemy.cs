@@ -23,7 +23,7 @@ public class FlyingEnemy : Entity
     [SerializeField]
     private D_MeleeAttack meleeAttackStateData;
     [SerializeField]
-    private D_LookForPlayerState lookForPlayerStateData;
+    private LookForPlayerStateData lookForPlayerStateData;
     [SerializeField]
     private BackToPatrolStateData BackToPatrolStateData;
 

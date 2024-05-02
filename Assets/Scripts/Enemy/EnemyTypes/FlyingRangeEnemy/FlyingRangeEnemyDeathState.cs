@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ER_DeathState : DeathState
+public class FlyingRangeEnemyDeathState : DeathState
 {
-    private EnemyRange enemy;
+    private FlyingRangeEnemy enemy;
 
-    public ER_DeathState(Entity entity, BaseStateMachine stateMachine, string animBoolName, DeathStateData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, stateData)
+    public FlyingRangeEnemyDeathState(Entity entity, BaseStateMachine stateMachine, string animBoolName, DeathStateData stateData, FlyingRangeEnemy enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }

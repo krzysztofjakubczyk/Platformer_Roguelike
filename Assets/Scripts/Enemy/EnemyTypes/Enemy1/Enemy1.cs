@@ -22,13 +22,13 @@ public class Enemy1 : Entity
     [SerializeField]
     private D_ChargeState chargeStateData;
     [SerializeField]
-    private D_LookForPlayerState lookForPlayerStateData;
+    private LookForPlayerStateData lookForPlayerStateData;
     [SerializeField]
     private D_MeleeAttack meleeAttackStateData;
     [SerializeField]
-    private D_StunStateData stunStateData;
+    private StunStateData stunStateData;
     [SerializeField]
-    private D_DeathState deathStateData;
+    private DeathStateData deathStateData;
 
     [SerializeField]
     private Transform meleeAttackPosition;

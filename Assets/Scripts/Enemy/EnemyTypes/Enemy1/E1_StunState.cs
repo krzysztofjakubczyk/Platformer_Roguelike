@@ -6,7 +6,7 @@ public class E1_StunState :StunState
 {
     Enemy1 enemy;
 
-    public E1_StunState(Entity entity, BaseStateMachine stateMachine, string animBoolName, D_StunStateData stateData, Enemy1 enemy) : base(entity, stateMachine, animBoolName, stateData)
+    public E1_StunState(Entity entity, BaseStateMachine stateMachine, string animBoolName, StunStateData stateData, Enemy1 enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }

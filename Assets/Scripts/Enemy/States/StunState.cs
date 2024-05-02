@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class StunState : State
 {
-    protected D_StunStateData stateData;
+    protected StunStateData stateData;
     
     protected bool isStunTimeOver;
     protected bool isGrounded;
     protected bool isMovementStopped;
     protected bool performCloseRangeAction;
     protected bool isPlayerInMinAgroRange;
-    public StunState(Entity entity, BaseStateMachine stateMachine, string animBoolName, D_StunStateData stateData) : base(entity, stateMachine, animBoolName)
+    public StunState(Entity entity, BaseStateMachine stateMachine, string animBoolName, StunStateData stateData) : base(entity, stateMachine, animBoolName)
     {
         this.stateData = stateData;
     }
