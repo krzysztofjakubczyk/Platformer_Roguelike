@@ -1,7 +1,7 @@
 ﻿public class FlyingEnemyPlayerDetectedState : PlayerDetected
 {
     FlyingEnemy enemy;
-    public FlyingEnemyPlayerDetectedState(Entity entity, BaseStateMachine stateMachine, string animBoolName, D_PlayerDetected stateData,FlyingEnemy enemy) : base(entity, stateMachine, animBoolName, stateData)
+    public FlyingEnemyPlayerDetectedState(Entity entity, BaseStateMachine stateMachine, string animBoolName, PlayerDetectedData stateData,FlyingEnemy enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }

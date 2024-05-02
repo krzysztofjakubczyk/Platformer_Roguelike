@@ -15,11 +15,11 @@ public class EnemyRange : Entity
     public ER_RangedAttackState rangedAttackState { get; private set; }
 
     [SerializeField]
-    private D_MoveState moveStateData;
+    private MoveStateData moveStateData;
     [SerializeField]
-    private D_IdleState idleStateData;
+    private IdleStateData idleStateData;
     [SerializeField]
-    private D_PlayerDetected playerDetectedStateData;
+    private PlayerDetectedData playerDetectedStateData;
     [SerializeField]
     private D_MeleeAttack meleeAttackStateData;
     [SerializeField]
@@ -31,7 +31,7 @@ public class EnemyRange : Entity
     [SerializeField]
     public D_DodgeState dodgeStateData;//{ get; private set; }
     [SerializeField]
-    private D_RangedAttackStateData rangedAttackStateData;
+    private RangedAttackStateData rangedAttackStateData;
 
     [SerializeField]
     private Transform meleeAttackPosition;

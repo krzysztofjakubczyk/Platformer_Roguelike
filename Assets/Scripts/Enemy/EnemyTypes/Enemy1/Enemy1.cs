@@ -14,11 +14,11 @@ public class Enemy1 : Entity
     public E1_DeathState deathState { get; private set; }
 
     [SerializeField]
-    private D_IdleState idleStateData;
+    private IdleStateData idleStateData;
     [SerializeField]
-    private D_MoveState moveStateData;
+    private MoveStateData moveStateData;
     [SerializeField]
-    private D_PlayerDetected playerDetectedData;
+    private PlayerDetectedData playerDetectedData;
     [SerializeField]
     private D_ChargeState chargeStateData;
     [SerializeField]

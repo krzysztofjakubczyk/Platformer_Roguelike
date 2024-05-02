@@ -6,7 +6,7 @@ public class ER_PlayerDetectedState : PlayerDetected
 {
     private EnemyRange enemy;
 
-    public ER_PlayerDetectedState(Entity entity, BaseStateMachine stateMachine, string animBoolName, D_PlayerDetected stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, stateData)
+    public ER_PlayerDetectedState(Entity entity, BaseStateMachine stateMachine, string animBoolName, PlayerDetectedData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }

@@ -6,7 +6,7 @@ public class ER_RangedAttackState : RangedAttackState
 {
     private EnemyRange enemy;
 
-    public ER_RangedAttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition, D_RangedAttackStateData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, attackPosition, stateData)
+    public ER_RangedAttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition, RangedAttackStateData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, attackPosition, stateData)
     {
         this.enemy = enemy;
     }

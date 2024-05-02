@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IdleState : State
 {
-    protected D_IdleState stateData;
+    protected IdleStateData stateData;
 
     protected bool flipAfterIdle;
 
@@ -12,7 +12,7 @@ public class IdleState : State
     protected bool isPlayerInMinAgroRange;
 
     protected float idleTime;
-    public IdleState(Entity entity, BaseStateMachine stateMachine, string animBoolName, D_IdleState stateData) : base(entity, stateMachine, animBoolName)
+    public IdleState(Entity entity, BaseStateMachine stateMachine, string animBoolName, IdleStateData stateData) : base(entity, stateMachine, animBoolName)
     {
         this.stateData = stateData;
     }

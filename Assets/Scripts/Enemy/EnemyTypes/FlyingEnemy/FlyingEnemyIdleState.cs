@@ -5,7 +5,7 @@ using UnityEngine;
 public class FlyingEnemyIdleState : IdleState
 {
     FlyingEnemy enemy;
-    public FlyingEnemyIdleState(Entity entity, BaseStateMachine stateMachine, string animBoolName, D_IdleState stateData, FlyingEnemy enemy) : base(entity, stateMachine, animBoolName, stateData)
+    public FlyingEnemyIdleState(Entity entity, BaseStateMachine stateMachine, string animBoolName, IdleStateData stateData, FlyingEnemy enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }

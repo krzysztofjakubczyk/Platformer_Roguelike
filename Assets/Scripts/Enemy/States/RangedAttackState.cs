@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class RangedAttackState : AttackState
 {
-    protected D_RangedAttackStateData stateData;
+    protected RangedAttackStateData stateData;
     protected GameObject projectile;
     protected Projectile projectileScript;
-    public RangedAttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition, D_RangedAttackStateData stateData) : base(entity, stateMachine, animBoolName, attackPosition)
+    public RangedAttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition, RangedAttackStateData stateData) : base(entity, stateMachine, animBoolName, attackPosition)
     {
         this.stateData = stateData;
     }

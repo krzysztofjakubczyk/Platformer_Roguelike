@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerDetected : State
 {
-    protected D_PlayerDetected stateData;
+    protected PlayerDetectedData stateData;
     protected bool isPlayerInMinAgroRange;
     protected bool isPlayerInMaxAgroRange;
     protected bool performLongRangeAction;
@@ -12,7 +12,7 @@ public class PlayerDetected : State
     protected bool isEnemyInRange;
     protected bool isDetectingLedge;
 
-    public PlayerDetected(Entity entity, BaseStateMachine stateMachine, string animBoolName, D_PlayerDetected stateData) : base(entity, stateMachine, animBoolName)
+    public PlayerDetected(Entity entity, BaseStateMachine stateMachine, string animBoolName, PlayerDetectedData stateData) : base(entity, stateMachine, animBoolName)
     {
         this.stateData = stateData;
     }
