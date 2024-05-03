@@ -315,14 +315,14 @@ MonoBehaviour:
   playerCheck: {fileID: 2025202515262647534}
   groundCheck: {fileID: 5234898225415409557}
   moveStateData: {fileID: 11400000, guid: f5e00fcd795b2dc47a463c095b08e5ea, type: 2}
-  idleStateData: {fileID: 11400000, guid: 46c1cb6d2ebb29e459bfb7633015e810, type: 2}
+  idleStateData: {fileID: 11400000, guid: 5a192745f8113dd42a6bc979c9f6557b, type: 2}
   playerDetectedStateData: {fileID: 11400000, guid: b76ec61a3bcad3045adb7f0ebeabbab0, type: 2}
   meleeAttackStateData: {fileID: 11400000, guid: 624722219e95fea449394277b02a0c63, type: 2}
   lookForPlayerStateData: {fileID: 11400000, guid: f4b3d6c0861b41d458b56382374ef34b, type: 2}
   stunStateData: {fileID: 11400000, guid: 949d4a9c45714064996400ba0f45a2b1, type: 2}
   deathStateData: {fileID: 11400000, guid: 18425062191640c4da64da8e7a5d0fea, type: 2}
   dodgeStateData: {fileID: 11400000, guid: 122f9de932b4e4c4eb80ead93111779c, type: 2}
-  rangedAttackStateData: {fileID: 11400000, guid: 6df7591b05d28bf45aea6d9d98012351, type: 2}
+  rangedAttackStateData: {fileID: 11400000, guid: e066d39a72dd3514eb66337c92838f76, type: 2}
   meleeAttackPosition: {fileID: 2045910965686248656}
   rangedAttackPosition: {fileID: 948129527297697511}
 --- !u!1 &5295124948619160544
@@ -381,7 +381,7 @@ Transform:
   m_GameObject: {fileID: 5342792702374243549}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6, y: -1.19, z: 0}
+  m_LocalPosition: {x: 1.6, y: -0.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

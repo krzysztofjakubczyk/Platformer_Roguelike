@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd4ac2fd276a96647a2c01fc865f0ac5, type: 3}
-  m_Name: ER_RangedAttackState
+  m_Script: {fileID: 11500000, guid: 6e4ab56784e24b749b409a5884ae14a6, type: 3}
+  m_Name: EnemyRangeRangedAttackStateData
   m_EditorClassIdentifier: 
-  projectile: {fileID: 1792260318659423276, guid: e9c74c7f3059c30458e3dc02e6b779b2, type: 3}
+  projectile: {fileID: 8217084789341752204, guid: 296a3c91604d7404fae7e92538da3aa7, type: 3}
   projectileDamage: 10
   projectileSpeed: 12
-  projectileTravelDistance: 10
+  projectileTravelDistance: 0

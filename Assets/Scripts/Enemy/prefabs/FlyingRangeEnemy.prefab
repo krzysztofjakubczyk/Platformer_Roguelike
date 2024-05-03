@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 2023421909229723528}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.49, y: -0.14, z: 0}
+  m_LocalPosition: {x: 0.15, y: -0.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -71,6 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6721515728155552687}
+  - component: {fileID: 3121975133648234529}
   m_Layer: 0
   m_Name: FlyingRangeEnemy
   m_TagString: Untagged
@@ -94,6 +95,35 @@ Transform:
   - {fileID: 5723567973933692230}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3121975133648234529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054476372818957918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e739a0489c2c6bd48adfcafca47f09db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityData: {fileID: 11400000, guid: d9ed82eacda3a8a4b898853eebdca8e9, type: 2}
+  currentHealth: 100
+  currentStunResistance: 100
+  lastDamageTime: 0
+  wallCheck: {fileID: 2180629407978816194}
+  LedgeCheck: {fileID: 855294354338013804}
+  playerCheck: {fileID: 5296140006204036333}
+  groundCheck: {fileID: 1650452200447941125}
+  idleStateData: {fileID: 11400000, guid: 6c0c70ac94431c240823eeefa26cc120, type: 2}
+  moveStateData: {fileID: 11400000, guid: 581d732dac1dcb54891d159413364ee7, type: 2}
+  playerDetectedData: {fileID: 11400000, guid: 163d8c6710da2ed499da282fb53d2d0b, type: 2}
+  rangedAttackStateData: {fileID: 11400000, guid: b780cb8a178a26b4ebba40f415d7ca91, type: 2}
+  stunStateData: {fileID: 11400000, guid: 8213dd1a28a6eb84ba1423a0e984d669, type: 2}
+  deathStateData: {fileID: 11400000, guid: 06288b1b3ad413a409394b589434eddf, type: 2}
+  attackPos: {fileID: 5296140006204036333}
+  lookForPlayerStateData: {fileID: 11400000, guid: dba04007cc63d6a4490cf7c956e7d296, type: 2}
+  BackToPatrolStateData: {fileID: 11400000, guid: 1424a6f0a61813f44b13bbc75d1516c2, type: 2}
 --- !u!1 &6162559233390823135
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,7 +180,7 @@ Transform:
   m_GameObject: {fileID: 8401796254917455007}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.395, y: -0.03, z: 0}
+  m_LocalPosition: {x: 0.54, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -181,7 +211,7 @@ Transform:
   m_GameObject: {fileID: 9011483826655215371}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.265, z: 0}
+  m_LocalPosition: {x: 0, y: -0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
