@@ -17,4 +17,11 @@ public class HealthController : StatConroller
 
         }
     }
+
+    private void DamagePlayer(float amount)
+    {
+        SubAmount(amount);
+
+        // wywolanie animacji
+    }
 }
