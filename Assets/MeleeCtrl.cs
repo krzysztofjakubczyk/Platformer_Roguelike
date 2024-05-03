@@ -18,22 +18,16 @@ public class MeleeCtrl : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.C))
         {
-            weapon.SetActive(true);
-            //animator.SetBool("isAttacking", true);
+            weapon.GetComponent<BoxCollider2D>().enabled = true;
+            animator.SetTrigger("Attacking");
             Invoke(nameof(OffWeapon), 0.1f);
         }
     }
 
     void OffWeapon()
     {
-        weapon.SetActive(false);
-        //animator.SetBool("isAttacking", false);
-        //animator.SetTrigger("New Trigger");
-       
+        weapon.GetComponent<BoxCollider2D>().enabled = false;
+
     }
 
-    void endAttackAnim()
-    {
-        
-    }
 }

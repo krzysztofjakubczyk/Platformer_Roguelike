@@ -4,21 +4,44 @@ using UnityEngine;
 
 public class MeleeWeapon : MonoBehaviour
 {
+    [SerializeField] float damage;
+    [SerializeField] float stunDamage;
+    [SerializeField] float attackRate;
+    [SerializeField] float attackDelay;
+
+    bool canAttack = true;
+    AttackDetails attackDetails = new AttackDetails();
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag != "Enemy")
+        if(collision.tag != "Enemy" || !canAttack)
         {
             return;
         }
 
-        // przykladowe wartosci
-        AttackDetails attackDetails = new AttackDetails();
+        canAttack = false;
+        Invoke(nameof(allowAttack), attackRate);
+        
+        
         attackDetails.position = transform.position;
-        attackDetails.damageAmount = 5;
-        attackDetails.stunDamageAmount = 5;
+        attackDetails.damageAmount = damage;
+        attackDetails.stunDamageAmount = stunDamage;
+        print(0);
+        StartCoroutine(Attack(collision));
+    }
 
-        collision.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
+    void allowAttack()
+    {
+        canAttack = true;
+    }
+
+    IEnumerator Attack(Collider2D col)
+    {
+        print(1);
+        yield return new WaitForSeconds(attackDelay);
+        print(2);
+        col.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
     }
 
 }

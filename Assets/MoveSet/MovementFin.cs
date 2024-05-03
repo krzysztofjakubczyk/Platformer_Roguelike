@@ -15,6 +15,8 @@ public class MovementFin : MonoBehaviour
 
     Rigidbody2D rb;
     BoxCollider2D boxCollider;
+    Animator animator;
+    Transform sword;
 
     //wall jumps colliders
     [SerializeField] GameObject WJleft;
@@ -41,6 +43,9 @@ public class MovementFin : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+        animator = GetComponent<Animator>();
+        sword = transform.GetChild(0);
+
         Application.targetFrameRate = 120;
     }
 
@@ -56,6 +61,14 @@ public class MovementFin : MonoBehaviour
         // moving player horizontally:
         if(!isDashing && !sideJump)
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+
+        if (Mathf.Abs(horizontal * speed) > 0.1f)
+            animator.SetBool("isRunning", true);
+        else
+        {
+            animator.SetBool("isRunning", false);
+            //print(horizontal * speed);
+        }
 
         if (isJumpingLeft)
         {
@@ -85,6 +98,8 @@ public class MovementFin : MonoBehaviour
         if (horizontal != 0)
             lastDirection = horizontal;
         isGrounded = IsGrounded();
+        animator.SetBool("isGrounded", isGrounded);
+
         if (Input.GetKeyDown(jumpKey))
             ZPressed = true;
 
@@ -149,6 +164,20 @@ public class MovementFin : MonoBehaviour
 
     void MoveAccordingly()
     {
+        if(horizontal > 0)
+            transform.GetComponent<SpriteRenderer>().flipX = true;
+        else if (horizontal < 0)
+            transform.GetComponent<SpriteRenderer>().flipX = false;
+
+        if(horizontal == 0 && rb.velocity.x > 0.1f)
+            transform.GetComponent<SpriteRenderer>().flipX = true;
+        else if (horizontal == 0 && rb.velocity.x < -0.1f)
+            transform.GetComponent<SpriteRenderer>().flipX = false;
+
+        if (transform.GetComponent<SpriteRenderer>().flipX)
+            sword.localPosition = new Vector2(0.55f, 0);
+        else sword.localPosition = new Vector2(-1.2f, 0);
+
         if (isJumping)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
