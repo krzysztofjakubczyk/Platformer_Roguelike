@@ -49,6 +49,7 @@ public class AttackState : State
     }
     public virtual void FinishAttack()
     {
+
         isAnimationFinished = true;
     }
 }

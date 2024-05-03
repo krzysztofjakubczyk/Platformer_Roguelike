@@ -253,50 +253,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &472851492 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1650452200447941125, guid: 52dfdd81613393c468f9da81ce93a134, type: 3}
-  m_PrefabInstance: {fileID: 8429908456714851835}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &564425039 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5296140006204036333, guid: 52dfdd81613393c468f9da81ce93a134, type: 3}
-  m_PrefabInstance: {fileID: 8429908456714851835}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &588041105 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2054476372818957918, guid: 52dfdd81613393c468f9da81ce93a134, type: 3}
-  m_PrefabInstance: {fileID: 8429908456714851835}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &588041106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588041105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e739a0489c2c6bd48adfcafca47f09db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entityData: {fileID: 11400000, guid: d9ed82eacda3a8a4b898853eebdca8e9, type: 2}
-  currentHealth: 100
-  currentStunResistance: 100
-  lastDamageTime: 0
-  wallCheck: {fileID: 1493488833}
-  LedgeCheck: {fileID: 1013972480}
-  playerCheck: {fileID: 564425039}
-  groundCheck: {fileID: 472851492}
-  idleStateData: {fileID: 11400000, guid: 6c0c70ac94431c240823eeefa26cc120, type: 2}
-  moveStateData: {fileID: 11400000, guid: 581d732dac1dcb54891d159413364ee7, type: 2}
-  playerDetectedData: {fileID: 11400000, guid: 163d8c6710da2ed499da282fb53d2d0b, type: 2}
-  rangedAttackStateData: {fileID: 11400000, guid: b780cb8a178a26b4ebba40f415d7ca91, type: 2}
-  stunStateData: {fileID: 11400000, guid: 8213dd1a28a6eb84ba1423a0e984d669, type: 2}
-  deathStateData: {fileID: 11400000, guid: 06288b1b3ad413a409394b589434eddf, type: 2}
-  attackPos: {fileID: 564425039}
-  lookForPlayerStateData: {fileID: 11400000, guid: dba04007cc63d6a4490cf7c956e7d296, type: 2}
-  BackToPatrolStateData: {fileID: 11400000, guid: 1424a6f0a61813f44b13bbc75d1516c2, type: 2}
 --- !u!1 &703224690
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,11 +605,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1013972480 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 855294354338013804, guid: 52dfdd81613393c468f9da81ce93a134, type: 3}
-  m_PrefabInstance: {fileID: 8429908456714851835}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1122129857
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,11 +735,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!4 &1493488833 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2180629407978816194, guid: 52dfdd81613393c468f9da81ce93a134, type: 3}
-  m_PrefabInstance: {fileID: 8429908456714851835}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1769172335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,21 +1464,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 365421757151342676, guid: 52dfdd81613393c468f9da81ce93a134, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1650452200447941125, guid: 52dfdd81613393c468f9da81ce93a134, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.15
-      objectReference: {fileID: 0}
     - target: {fileID: 2054476372818957918, guid: 52dfdd81613393c468f9da81ce93a134, type: 3}
       propertyPath: m_Name
       value: FlyingRangeEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 2180629407978816194, guid: 52dfdd81613393c468f9da81ce93a134, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.54
       objectReference: {fileID: 0}
     - target: {fileID: 6721515728155552687, guid: 52dfdd81613393c468f9da81ce93a134, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1577,10 +1511,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2054476372818957918, guid: 52dfdd81613393c468f9da81ce93a134, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 588041106}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52dfdd81613393c468f9da81ce93a134, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
