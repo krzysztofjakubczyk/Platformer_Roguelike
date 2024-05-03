@@ -29,6 +29,14 @@ public class ER_RangedAttackState : RangedAttackState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        if (entity.aliveGameObject.transform.position.x < entity.playerTransform.position.x)
+        {
+            if (entity.facingDirection != 1) entity.Flip();
+        }
+        else if (entity.aliveGameObject.transform.position.x > entity.playerTransform.position.x)
+        {
+            if (entity.facingDirection == 1) entity.Flip();
+        }
 
         if (isAnimationFinished)
             if (isPlayerInMinAgrRange) stateMachine.ChangeState(enemy.playerDetectedState);

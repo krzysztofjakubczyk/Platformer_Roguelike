@@ -36,7 +36,7 @@ public class FlyingRangeEnemyRangedAttackState : RangedAttackState
         base.LogicUpdate();
         if (isAnimationFinished)
             if (isPlayerInMinAgrRange) stateMachine.ChangeState(enemy.playerDetectedState);
-            //else stateMachine.ChangeState(enemy.lookForPlayerState);
+            else stateMachine.ChangeState(enemy.lookForPlayerState);
     }
 
     public override void PhysicsUpdate()

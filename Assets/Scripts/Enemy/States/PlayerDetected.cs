@@ -40,11 +40,13 @@ public class PlayerDetected : State
     public override void Exit()
     {
         base.Exit();
+        performLongRangeAction = false;
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
 
         if (Time.time >= startTime + stateData.longRangeActionTime)
         {

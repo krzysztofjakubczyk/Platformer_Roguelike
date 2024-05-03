@@ -29,16 +29,7 @@ public class FlyingRangeEnemyPlayerDetectedState : PlayerDetected
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if (entity.aliveGameObject.transform.position.x < entity.playerTransform.position.x)
-        {
-            if (entity.facingDirection != 1) entity.Flip();
-
-
-        }
-        else if (entity.aliveGameObject.transform.position.x > entity.playerTransform.position.x)
-        {
-            if (entity.facingDirection == 1) entity.Flip();
-        }
+        entity.CheckFlipToPlayer();
         //if (performCloseRangeAction) stateMachine.ChangeState(enemy.meleeAttackState);
         if (performLongRangeAction) stateMachine.ChangeState(enemy.rangedAttackState);
         else if (!isPlayerInMaxAgroRange)

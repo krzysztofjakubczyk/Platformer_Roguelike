@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chargeSpeed: 5
   chargeTime: 3
+  distanceToStop: 0.2

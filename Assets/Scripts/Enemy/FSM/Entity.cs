@@ -35,7 +35,7 @@ public class Entity : MonoBehaviour
         facingDirection = 1;
         currentHealth = entityData.maxHealth;
         currentStunResistance = entityData.stunResistance;
-
+        player = GameObject.Find("Player");
         playerHp = player.GetComponent<HealthController>();
         aliveGameObject = transform.Find("Alive").gameObject; //znalezienie ¿ywego przeciwnika ale co jak bêdzie ich wiêcej, czyli do zmiany, wiêc zabieg Danielowy czyli  tymczasowy
         rb = aliveGameObject.GetComponent<Rigidbody2D>();
@@ -156,5 +156,17 @@ public class Entity : MonoBehaviour
         Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.minAgroDistance), 0.2f);
         Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.maxAgroDistance), 0.2f);
     }
-    
+    public virtual void CheckFlipToPlayer()
+    {
+        if (aliveGameObject.transform.position.x < playerTransform.position.x)
+        {
+            if (facingDirection != 1) Flip();
+        }
+        else if (aliveGameObject.transform.position.x > playerTransform.position.x)
+        {
+            if (facingDirection == 1) Flip();
+        }
+    }
+   
+
 }

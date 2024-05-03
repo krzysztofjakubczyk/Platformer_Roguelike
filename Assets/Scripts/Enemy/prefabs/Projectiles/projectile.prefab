@@ -161,7 +161,7 @@ MonoBehaviour:
   damageRadius: 0.15
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 576
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128

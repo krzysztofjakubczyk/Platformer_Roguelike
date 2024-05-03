@@ -22,6 +22,6 @@ public class HealthController : StatConroller
     {
         SubAmount(amount);
 
-        // wywolanie animacji
+        animator.SetTrigger("Hurting");
     }
 }
