@@ -18,7 +18,7 @@ public class HealthController : StatConroller
         }
     }
 
-    private void DamagePlayer(float amount)
+    public void DamagePlayer(float amount)
     {
         SubAmount(amount);
 

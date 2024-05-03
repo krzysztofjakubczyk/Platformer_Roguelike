@@ -14,7 +14,8 @@ public class Entity : MonoBehaviour
     public AnimationToStateMachine atsm { get; private set; }
     public int lastDamageDirection { get; private set; }
     public Transform playerTransform { get; private set; }
-
+    [SerializeField] private GameObject player;
+    public HealthController playerHp;
     public float currentHealth;
     public float currentStunResistance;
     public float lastDamageTime;
@@ -35,15 +36,13 @@ public class Entity : MonoBehaviour
         currentHealth = entityData.maxHealth;
         currentStunResistance = entityData.stunResistance;
 
+        playerHp = player.GetComponent<HealthController>();
         aliveGameObject = transform.Find("Alive").gameObject; //znalezienie ¿ywego przeciwnika ale co jak bêdzie ich wiêcej, czyli do zmiany, wiêc zabieg Danielowy czyli  tymczasowy
         rb = aliveGameObject.GetComponent<Rigidbody2D>();
         anim = aliveGameObject.GetComponent<Animator>();
         atsm = aliveGameObject.GetComponent<AnimationToStateMachine>();
 
         stateMachine = new BaseStateMachine();
-        
-
-       
     }
 
     public virtual void Update()

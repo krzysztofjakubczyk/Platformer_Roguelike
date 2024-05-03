@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     private AttackDetails attackDetails;
-    
+    private Entity entity;
     private float speed;
     private float travelDistance;
     private float xStartPos;
@@ -27,6 +27,7 @@ public class Projectile : MonoBehaviour
     private LayerMask whatIsPlayer;
     [SerializeField]
     private Transform damagePosition;
+
 
     private void Start()
     {
@@ -57,6 +58,7 @@ public class Projectile : MonoBehaviour
             if (damageHit)
             {
                 //damageHit.transform.SendMessage("Damage", attackDetails);
+                entity.playerHp.DamagePlayer(attackDetails.damageAmount);//ale jest to strasznie nieresponsywne ale nie wiem czy eventy w tym przypadku to dobry pomys³
                 Destroy(gameObject);
             }
             if (groundHit)
@@ -74,11 +76,12 @@ public class Projectile : MonoBehaviour
         }
        
     }
-    public void FireProjectile(float speed,float travelDistance, float damage, Vector2 direction)
+    public void FireProjectile(float speed,float travelDistance, float damage, Vector2 direction, Entity entity)
     {
         this.speed = speed;
         this.travelDistance = travelDistance;
         this.direction = direction;
+        this.entity = entity;
         attackDetails.damageAmount = damage;
     }
     private void OnDrawGizmos()
