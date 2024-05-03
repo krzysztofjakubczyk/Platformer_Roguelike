@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityData: {fileID: 11400000, guid: 50c4b8e6ca774534a8afe1d8d0f0ed04, type: 2}
+  player: {fileID: 1922316363251511598, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
+  playerHp: {fileID: 0}
   currentHealth: 0
   currentStunResistance: 0
   lastDamageTime: 0
