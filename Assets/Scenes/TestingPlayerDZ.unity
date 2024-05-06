@@ -5388,7 +5388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9162844508501202121, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
       propertyPath: attackRate
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9162844508501202121, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
       propertyPath: stunDamage
