@@ -59,7 +59,13 @@ public class SpellManager : MonoBehaviour
                 activeSpell.GetComponent<Spell>().rb = activeSpell.GetComponent<Rigidbody2D>();
 
                 Vector2 startPos = new Vector2(transform.position.x, transform.position.y + yOffset);
-                Instantiate(activeSpell, startPos,Quaternion.identity);
+                GameObject newSpell = Instantiate(activeSpell, startPos,Quaternion.identity);
+
+                if (throwDir.y == transform.up.y)
+                    newSpell.transform.localRotation = Quaternion.Euler(0, 0, 90);
+                else if (throwDir.x == -transform.right.x)
+                    newSpell.GetComponent<SpriteRenderer>().flipX = true;
+
 
             }
         }
