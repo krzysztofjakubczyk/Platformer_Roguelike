@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,7 +30,8 @@ public class Entity : MonoBehaviour
     [SerializeField] private Transform LedgeCheck;
     [SerializeField] public Transform playerCheck;
     [SerializeField] private Transform groundCheck;
-    
+
+    public static event Action OnEnemyDeath;
     public virtual void Start()
     {
         facingDirection = 1;
@@ -107,7 +109,7 @@ public class Entity : MonoBehaviour
 
         DamageHop(entityData.damageHopSpeed);
 
-        Instantiate(entityData.hitParticle, aliveGameObject.transform.position, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
+        Instantiate(entityData.hitParticle, aliveGameObject.transform.position, Quaternion.Euler(0f, 0f, UnityEngine.Random.Range(0f, 360f)));
         if(attackDetails.position.x > aliveGameObject.transform.position.x)
         {
             lastDamageDirection = -1;
@@ -118,7 +120,11 @@ public class Entity : MonoBehaviour
         }
         if (currentStunResistance <= 0) isStunned = true;
 
-        if (currentHealth <= 0) isDeath = true;
+        if (currentHealth <= 0)
+        {
+            isDeath = true;
+            OnEnemyDeath();
+        }
     }
     public virtual void Flip()
     {

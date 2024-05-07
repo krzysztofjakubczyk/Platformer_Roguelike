@@ -209,4 +209,8 @@ public class MovementFin : MonoBehaviour
     {
         sideJump = false;
     }
+    public void changeSpeed(int howMany)
+    {
+        speed = howMany; 
+    }
 }

@@ -17,6 +17,7 @@ TagManager:
   - Ground
   - Undefined
   - enemyBullet
+  - TransitionTrigger
   layers:
   - Default
   - TransparentFX

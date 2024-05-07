@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Floor : MonoBehaviour
 {
-    [SerializeField] move playerMovement;
+    [SerializeField] MovementFin playerMovement;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            playerMovement.ChangePlayerSpeed(2);
+            playerMovement.changeSpeed(2);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        playerMovement.ChangePlayerSpeed(8);
+        playerMovement.changeSpeed(8);
     }
 }
