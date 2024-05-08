@@ -191,6 +191,7 @@ public class MovementFin : MonoBehaviour
             rb.AddForce(new Vector2(lastDirection * dashPower, 0),ForceMode2D.Impulse);
             boxCollider.excludeLayers = enemyLayer;
             Invoke(nameof(EndDash), 0.1f);
+            Invoke(nameof(EndDashArmor), 0.5f);
         }
     }
 
@@ -202,6 +203,10 @@ public class MovementFin : MonoBehaviour
     void EndDash()
     {
         isDashing = false;
+    }
+
+    void EndDashArmor()
+    {
         boxCollider.excludeLayers = pustwarstwa;
     }
 

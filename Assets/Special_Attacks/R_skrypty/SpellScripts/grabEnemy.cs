@@ -13,6 +13,8 @@ public class grabEnemy : Spell
 
     Vector2 stopPos;
 
+    bool hasTimeLeft;
+
     private void Start()
     {
         stopPos = player.transform.position;
@@ -56,7 +58,10 @@ public class grabEnemy : Spell
 
         shotAlready = true;
 
-        while (Mathf.Abs(target.transform.position.x - stopPos.x) > stopXDys)
+        hasTimeLeft = true;
+        Invoke(nameof(TimeEnd), 3);
+
+        while (Mathf.Abs(target.transform.position.x - stopPos.x) > stopXDys && hasTimeLeft)
         {
             rb.velocity = (dir2 * speed) * Time.deltaTime;
             target.GetComponent<Rigidbody2D>().velocity = (dir2 * speed) * Time.deltaTime;
@@ -68,6 +73,11 @@ public class grabEnemy : Spell
         target.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         Destroy(gameObject);
        
+    }
+
+    void TimeEnd()
+    {
+        hasTimeLeft = false;
     }
     
 }

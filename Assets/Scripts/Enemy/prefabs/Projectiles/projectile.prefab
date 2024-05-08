@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1078298796681985706}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: damagePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 5928608175603086102}
   - component: {fileID: -6060810899099053396}
   - component: {fileID: 4718452872007570890}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -123,7 +123,7 @@ public class Entity : MonoBehaviour
         if (currentHealth <= 0)
         {
             isDeath = true;
-            OnEnemyDeath();
+            OnEnemyDeath?.Invoke();
         }
     }
     public virtual void Flip()
