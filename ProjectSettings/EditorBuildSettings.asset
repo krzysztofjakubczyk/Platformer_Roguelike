@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/KJ.unity
     guid: a0b740454e6a84b4c8177d27863cab18
+  - enabled: 1
+    path: Assets/Scenes/room2.unity
+    guid: 71552a2695ae09c449021ce388aec957
   m_configObjects: {}
