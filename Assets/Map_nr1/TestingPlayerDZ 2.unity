@@ -19750,10 +19750,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyRange
       objectReference: {fileID: 0}
-    - target: {fileID: 4905171580431181393, guid: 5d6b707bf5d79824ea8f1ca04d467ba7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19806,6 +19802,14 @@ PrefabInstance:
     - target: {fileID: 847116538993975793, guid: 5d6b707bf5d79824ea8f1ca04d467ba7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947390405006505509, guid: 5d6b707bf5d79824ea8f1ca04d467ba7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947390405006505509, guid: 5d6b707bf5d79824ea8f1ca04d467ba7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.01
       objectReference: {fileID: 0}
     - target: {fileID: 4905171580431181393, guid: 5d6b707bf5d79824ea8f1ca04d467ba7, type: 3}
       propertyPath: m_Name
@@ -20068,7 +20072,7 @@ Transform:
   m_GameObject: {fileID: 1826102826}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.6845417, y: 4.101949, z: -12.155027}
+  m_LocalPosition: {x: -7.8218126, y: 4.101959, z: -12.155027}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
