@@ -53,6 +53,10 @@ public class MovementFin : MonoBehaviour
     {
         GetInput();
         MoveAccordingly();
+
+        if (Input.GetKey(KeyCode.O)){
+            animator.SetTrigger("upTest");
+        }
     }
 
 

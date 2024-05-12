@@ -223,20 +223,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 115821386}
     m_ColliderPaths:
-    - - X: -1932678
+    - - X: -21048012
         Y: 149122256
-      - X: -283508576
+      - X: -263628656
         Y: 149122256
-      - X: -283508576
+      - X: -263628656
         Y: 1905584
-      - X: -1932678
+      - X: -21048012
         Y: 1905584
   m_CompositePaths:
     m_Paths:
-    - - {x: -0.1932971, y: 0.1905584}
-      - {x: -0.1932971, y: 14.912226}
-      - {x: -28.350859, y: 14.912197}
-      - {x: -28.35083, y: 0.1905584}
+    - - {x: -2.1048305, y: 0.1905584}
+      - {x: -2.1048305, y: 14.912226}
+      - {x: -26.362865, y: 14.912197}
+      - {x: -26.362837, y: 0.1905584}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -273,7 +273,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: -14.272062, y: 7.551392}
+  m_Offset: {x: -14.233833, y: 7.551392}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -284,7 +284,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 28.157589, y: 14.721667}
+  m_Size: {x: 24.258064, y: 14.721667}
   m_EdgeRadius: 0
 --- !u!1 &205604261
 GameObject:
@@ -19668,7 +19668,7 @@ Transform:
   m_GameObject: {fileID: 1826102826}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.287883, y: 1.3561492, z: -12.155027}
+  m_LocalPosition: {x: -7.299874, y: 1.3561492, z: -12.155027}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19773,7 +19773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 24bc8bf7f8e54ce43923e0a33053e41b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 2.2096996
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 24bc8bf7f8e54ce43923e0a33053e41b, type: 3}
       propertyPath: m_LocalScale.y
@@ -19781,7 +19781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 24bc8bf7f8e54ce43923e0a33053e41b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.2
+      value: -3.9784
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 24bc8bf7f8e54ce43923e0a33053e41b, type: 3}
       propertyPath: m_LocalPosition.y
