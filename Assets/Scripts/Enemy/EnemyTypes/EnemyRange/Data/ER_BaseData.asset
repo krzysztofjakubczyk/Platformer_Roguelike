@@ -17,7 +17,7 @@ MonoBehaviour:
   wallCheckDistance: 1
   LedgeCheckDistance: 2
   groundCheckRadius: 1
-  minAgroDistance: 8
+  minAgroDistance: 12
   maxAgroDistance: 20
   stunResistance: 3
   stunRecoveryTime: 2

@@ -14,6 +14,7 @@ public class FlyingEnemyMeleeAttackState : MeleeAttackState
     {
         base.Enter();
         entity.rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+        entity.rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     public override void Exit()

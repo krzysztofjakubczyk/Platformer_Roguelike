@@ -134,12 +134,14 @@ public class Entity : MonoBehaviour
     }
     public virtual bool CheckPlayerInMinAgroRange()
     {
-        RaycastHit2D hitGround = Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right,entityData.minAgroDistance, entityData.WhatIsGround);
+        RaycastHit2D hitGround = Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.minAgroDistance, entityData.WhatIsGround);
         Collider2D hitPlayer = Physics2D.OverlapCircle(playerCheck.position, entityData.minAgroDistance, entityData.WhatIsPlayer);
         if (hitPlayer)
         {
             playerTransform = hitPlayer.transform;
+            hitGround = Physics2D.Raycast(playerCheck.position, playerTransform.position - transform.position, entityData.minAgroDistance, entityData.WhatIsGround);
         }
+
         if (hitGround && hitPlayer && hitGround.distance < Mathf.Abs(transform.position.x - hitPlayer.transform.position.x)) return false;
         else return Physics2D.OverlapCircle(playerCheck.position,  entityData.minAgroDistance, entityData.WhatIsPlayer);
     }

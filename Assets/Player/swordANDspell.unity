@@ -724,10 +724,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingRangeEnemy
       objectReference: {fileID: 0}
-    - target: {fileID: 2054476372818957918, guid: 52dfdd81613393c468f9da81ce93a134, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 6721515728155552687, guid: 52dfdd81613393c468f9da81ce93a134, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.7904639
@@ -18996,7 +18992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 847116538993975793, guid: 5d6b707bf5d79824ea8f1ca04d467ba7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.93
+      value: 1.58
       objectReference: {fileID: 0}
     - target: {fileID: 847116538993975793, guid: 5d6b707bf5d79824ea8f1ca04d467ba7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19033,10 +19029,6 @@ PrefabInstance:
     - target: {fileID: 4905171580431181393, guid: 5d6b707bf5d79824ea8f1ca04d467ba7, type: 3}
       propertyPath: m_Name
       value: EnemyRange
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905171580431181393, guid: 5d6b707bf5d79824ea8f1ca04d467ba7, type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19377,7 +19369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 847116538993975793, guid: 5d6b707bf5d79824ea8f1ca04d467ba7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.97
+      value: 1.54
       objectReference: {fileID: 0}
     - target: {fileID: 847116538993975793, guid: 5d6b707bf5d79824ea8f1ca04d467ba7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19410,6 +19402,10 @@ PrefabInstance:
     - target: {fileID: 847116538993975793, guid: 5d6b707bf5d79824ea8f1ca04d467ba7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025202515262647534, guid: 5d6b707bf5d79824ea8f1ca04d467ba7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 4905171580431181393, guid: 5d6b707bf5d79824ea8f1ca04d467ba7, type: 3}
       propertyPath: m_Name
@@ -19668,7 +19664,7 @@ Transform:
   m_GameObject: {fileID: 1826102826}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.299874, y: 1.3561492, z: -12.155027}
+  m_LocalPosition: {x: -7.276002, y: 1.3561492, z: -12.155027}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19685,22 +19681,6 @@ PrefabInstance:
     - target: {fileID: 1694702205508009172, guid: 1031ba68c5908cd4e91895931045e7be, type: 3}
       propertyPath: m_Name
       value: FlyingEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 1694702205508009172, guid: 1031ba68c5908cd4e91895931045e7be, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2010990632287464163, guid: 1031ba68c5908cd4e91895931045e7be, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2447132126226876775, guid: 1031ba68c5908cd4e91895931045e7be, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6717085301959635292, guid: 1031ba68c5908cd4e91895931045e7be, type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7262285337188888081, guid: 1031ba68c5908cd4e91895931045e7be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19741,14 +19721,6 @@ PrefabInstance:
     - target: {fileID: 7262285337188888081, guid: 1031ba68c5908cd4e91895931045e7be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7638819829511033720, guid: 1031ba68c5908cd4e91895931045e7be, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7658170322783308552, guid: 1031ba68c5908cd4e91895931045e7be, type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

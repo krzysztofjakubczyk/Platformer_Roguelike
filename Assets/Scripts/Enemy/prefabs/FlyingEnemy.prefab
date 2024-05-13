@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7262285337188888081}
   - component: {fileID: 5029275636431294842}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FlyingEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2053869208075788244}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ Transform:
   m_GameObject: {fileID: 2010990632287464163}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.268, y: -0.246, z: 0}
+  m_LocalPosition: {x: -0.003, y: -0.075, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2366675068536784159}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ Transform:
   m_GameObject: {fileID: 2447132126226876775}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.17, z: 0}
+  m_LocalPosition: {x: 0.066, y: -0.053, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -134,7 +134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3734742966458259361}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 7638819829511033720}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.395, y: -0.03, z: 0}
+  m_LocalPosition: {x: 0.089, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -165,7 +165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7997648960153653883}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: attackPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ Transform:
   m_GameObject: {fileID: 7658170322783308552}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.31, y: -0.16, z: 0}
+  m_LocalPosition: {x: -0.004, y: -0.036, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -198,6 +198,14 @@ PrefabInstance:
     - target: {fileID: -2253911629886400664, guid: 7c5a6ff0f04901048b1283b70b7a384a, type: 3}
       propertyPath: m_Name
       value: Alive
+      objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: 7c5a6ff0f04901048b1283b70b7a384a, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: 7c5a6ff0f04901048b1283b70b7a384a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1160356261127867848, guid: 7c5a6ff0f04901048b1283b70b7a384a, type: 3}
       propertyPath: m_Controller
@@ -329,7 +337,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!61 &4241622923636082088
 BoxCollider2D:
   m_ObjectHideFlags: 0
