@@ -33,6 +33,8 @@ public class MovementFin : MonoBehaviour
 
     bool isJumpingRight, isJumpingLeft;
 
+    bool upPressed;
+
     KeyCode jumpKey = KeyCode.Z;
     KeyCode dashKey = KeyCode.LeftShift;
     //KeyCode spellKey = KeyCode.X;
@@ -108,10 +110,11 @@ public class MovementFin : MonoBehaviour
             ZPressed = true;
 
         if (Input.GetKeyDown(dashKey))
-        {
-
             isDashing = true;
-        }
+
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+            upPressed = true;
+
 
         // if player run out of platform (but didnt jump) activate coyoteTime
         if (!isGrounded && wasGrounded && !Input.GetKey(jumpKey))
@@ -179,8 +182,33 @@ public class MovementFin : MonoBehaviour
             transform.GetComponent<SpriteRenderer>().flipX = false;
 
         if (transform.GetComponent<SpriteRenderer>().flipX)
-            sword.localPosition = new Vector2(0.55f, 0);
-        else sword.localPosition = new Vector2(-1.2f, 0);
+        {
+            sword.GetComponent<SpriteRenderer>().flipX = true;
+            if (upPressed)
+            {
+                sword.localPosition = new Vector2(1.5f, 2);
+                upPressed = false;
+            }
+            else
+            {
+
+                sword.localPosition = new Vector2(1.5f, 1);
+            }
+        }
+        else
+        {
+            sword.GetComponent<SpriteRenderer>().flipX = false;
+            if (upPressed)
+            {
+                sword.localPosition = new Vector2(-1.5f, 2);
+                upPressed = false;
+            }
+            else
+            {
+
+                sword.localPosition = new Vector2(-1.5f, 1);
+            }
+        }
 
         if (isJumping)
         {

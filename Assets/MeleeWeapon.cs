@@ -14,6 +14,7 @@ public class MeleeWeapon : MonoBehaviour
 
     GameObject player;
     Animator animator;
+    Animator animatorSword;
 
     AttackDetails attackDetails = new AttackDetails();
 
@@ -22,7 +23,10 @@ public class MeleeWeapon : MonoBehaviour
         player = transform.parent.gameObject;
         animator = player.GetComponent<Animator>();
 
+        animatorSword = GetComponent<Animator>();
+
         GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 
 
@@ -30,8 +34,12 @@ public class MeleeWeapon : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.C))
         {
-            if(canAttack)
+            if (canAttack)
+            {
+                GetComponent<SpriteRenderer>().enabled = true;
                 animator.SetTrigger("Attacking");
+                animatorSword.SetTrigger("AttackingRn");
+            }
 
             Invoke(nameof(OnWeapon), attackDelay);
         }
@@ -53,7 +61,6 @@ public class MeleeWeapon : MonoBehaviour
 
         collision.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
 
-        //StartCoroutine(Attack(collision));
     }
 
     void allowAttack()
@@ -73,12 +80,3 @@ public class MeleeWeapon : MonoBehaviour
     }
 
 }
-/*
-IEnumerator Attack(Collider2D col)
-{
-    yield return new WaitForSeconds(attackDelay);
-    col.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
-
-
-}
-*/
