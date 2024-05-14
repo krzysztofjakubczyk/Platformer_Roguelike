@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5354904505096124608}
   - component: {fileID: 4924503599912042665}
   - component: {fileID: 6621371230715735204}
+  - component: {fileID: 2911053144402841834}
   m_Layer: 7
   m_Name: PlayerinTests
   m_TagString: Player
@@ -232,8 +233,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   speed: 5
-  jumpingPower: 12
-  dashPower: 5
+  jumpingPower: 14
+  dashPower: 8
   leftWallJump: 0.5
   rightWallJump: 0.5
   WJleft: {fileID: 9197745978974536674}
@@ -274,6 +275,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _doors: {fileID: 0}
   howManyEnemies: 0
+--- !u!114 &2911053144402841834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922316363251511598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f41e4488d8d761947ab1351c79b80b52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1922316363251511598}
+  spell1: {fileID: 7846823468872101394, guid: 55644b8d26e9af245b1c001153d90156, type: 3}
+  spell2: {fileID: 4837390724998732666, guid: 6ee1ee8cd2be17a4d9af7174fbf49a38, type: 3}
+  spell3: {fileID: 7993795310370821829, guid: b6c5c8b4005b9ab44a05f5d26e7af1b0, type: 3}
+  spell4: {fileID: 3151645623783271711, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
+  spell5: {fileID: 8333201292758725811, guid: b899952662807734b9243b2cc70dee15, type: 3}
 --- !u!1 &6096011072974974785
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,7 +304,7 @@ GameObject:
   - component: {fileID: 8007786682920379070}
   - component: {fileID: 4547061261557950437}
   - component: {fileID: 2747500537461330950}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: WallJumpRangeLEFT
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -377,6 +396,7 @@ GameObject:
   - component: {fileID: 2890578866504267161}
   - component: {fileID: 2173818099252849436}
   - component: {fileID: 9162844508501202121}
+  - component: {fileID: 603975824873387187}
   m_Layer: 7
   m_Name: Sword
   m_TagString: Player
@@ -393,8 +413,8 @@ Transform:
   m_GameObject: {fileID: 7385582388993710778}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2, y: -0.06, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.51, y: 1.15, z: 0}
+  m_LocalScale: {x: 1, y: 1.54, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5104819628213200034}
@@ -406,7 +426,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7385582388993710778}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -440,7 +460,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 2130768818, guid: 65d11e3b1cce5e84eb3fbdec22c125d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -483,18 +503,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.28136158, y: 1.3061831}
+  m_Offset: {x: -0.39288282, y: 0.45835996}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.1805477, y: 1.8772454}
+  m_Size: {x: 2.363246, y: 1.8297248}
   m_EdgeRadius: 0
 --- !u!114 &9162844508501202121
 MonoBehaviour:
@@ -512,6 +532,27 @@ MonoBehaviour:
   stunDamage: 5
   attackRate: 0.5
   attackDelay: 0.05
+--- !u!95 &603975824873387187
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7385582388993710778}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 002f184a22fd42c468cebf495797add1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9197745978974536674
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +564,7 @@ GameObject:
   - component: {fileID: 6712862397684919439}
   - component: {fileID: 631399654869773645}
   - component: {fileID: 1253586604232447656}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: WallJumpRangeRIGHT
   m_TagString: Player
   m_Icon: {fileID: 0}
