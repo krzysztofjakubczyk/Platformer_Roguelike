@@ -442,8 +442,8 @@ GameObject:
   - component: {fileID: 115821381}
   - component: {fileID: 115821385}
   - component: {fileID: 115821384}
-  - component: {fileID: 115821383}
   - component: {fileID: 115821386}
+  - component: {fileID: 115821383}
   m_Layer: 11
   m_Name: ColliderForCameras
   m_TagString: Untagged
@@ -460,7 +460,7 @@ Transform:
   m_GameObject: {fileID: 115821380}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.078246, y: 8.024182, z: -10.2699375}
+  m_LocalPosition: {x: 14.4, y: 8.024182, z: -10.2699375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -585,11 +585,25 @@ CompositeCollider2D:
         Y: -3503046
       - X: 497849728
         Y: -3503046
+  - m_Collider: {fileID: 115821386}
+    m_ColliderPaths:
+    - - X: 78108200
+        Y: 149122256
+      - X: -298487456
+        Y: 149122256
+      - X: -298487456
+        Y: 1905584
+      - X: 78108200
+        Y: 1905584
   m_CompositePaths:
     m_Paths:
     - - {x: 49.784946, y: -0.3503046}
       - {x: 49.784946, y: 14.908816}
-      - {x: 7.803379, y: 14.908788}
+      - {x: 7.81082, y: 14.908845}
+      - {x: 7.8107905, y: 14.912226}
+      - {x: -29.848745, y: 14.912197}
+      - {x: -29.848717, y: 0.1905584}
+      - {x: 7.803379, y: 0.190529}
       - {x: 7.803409, y: -0.3503046}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
@@ -626,7 +640,7 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: -11.018963, y: 7.551392}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -21100,7 +21114,7 @@ Transform:
   m_GameObject: {fileID: 1826102826}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 26.86634, y: 0.8152793, z: -12.155027}
+  m_LocalPosition: {x: -10.464018, y: 1.3561392, z: -12.155027}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
