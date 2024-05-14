@@ -139,10 +139,10 @@ public class Entity : MonoBehaviour
         if (hitPlayer)
         {
             playerTransform = hitPlayer.transform;
-            hitGround = Physics2D.Raycast(playerCheck.position, playerTransform.position - transform.position, entityData.minAgroDistance, entityData.WhatIsGround);
+            hitGround = Physics2D.Raycast(playerCheck.position, playerTransform.position - aliveGameObject.transform.position, entityData.minAgroDistance, entityData.WhatIsGround);
         }
 
-        if (hitGround && hitPlayer && hitGround.distance < Mathf.Abs(transform.position.x - hitPlayer.transform.position.x)) return false;
+        if (hitGround && hitPlayer && hitGround.distance < Mathf.Abs(aliveGameObject.transform.position.x - playerTransform.position.x)) return false;
         else return Physics2D.OverlapCircle(playerCheck.position,  entityData.minAgroDistance, entityData.WhatIsPlayer);
     }
 
