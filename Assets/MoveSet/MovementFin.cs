@@ -33,8 +33,6 @@ public class MovementFin : MonoBehaviour
 
     bool isJumpingRight, isJumpingLeft;
 
-    bool upPressed;
-
     KeyCode jumpKey = KeyCode.Z;
     KeyCode dashKey = KeyCode.LeftShift;
     //KeyCode spellKey = KeyCode.X;
@@ -90,8 +88,6 @@ public class MovementFin : MonoBehaviour
         }
     }
 
-    
-
     public bool IsGrounded()
     {
         return Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, .1f, groundLayer);
@@ -111,9 +107,6 @@ public class MovementFin : MonoBehaviour
 
         if (Input.GetKeyDown(dashKey))
             isDashing = true;
-
-        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-            upPressed = true;
 
 
         // if player run out of platform (but didnt jump) activate coyoteTime
@@ -181,34 +174,6 @@ public class MovementFin : MonoBehaviour
         else if (horizontal == 0 && rb.velocity.x < -0.1f)
             transform.GetComponent<SpriteRenderer>().flipX = false;
 
-        if (transform.GetComponent<SpriteRenderer>().flipX)
-        {
-            sword.GetComponent<SpriteRenderer>().flipX = true;
-            if (upPressed)
-            {
-                sword.localPosition = new Vector2(1.5f, 2);
-                upPressed = false;
-            }
-            else
-            {
-
-                sword.localPosition = new Vector2(1.5f, 1);
-            }
-        }
-        else
-        {
-            sword.GetComponent<SpriteRenderer>().flipX = false;
-            if (upPressed)
-            {
-                sword.localPosition = new Vector2(-1.5f, 2);
-                upPressed = false;
-            }
-            else
-            {
-
-                sword.localPosition = new Vector2(-1.5f, 1);
-            }
-        }
 
         if (isJumping)
         {
