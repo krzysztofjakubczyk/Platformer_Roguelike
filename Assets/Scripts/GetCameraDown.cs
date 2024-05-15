@@ -8,12 +8,14 @@ public class GetCameraDown : MonoBehaviour
     bool isTriggered = true;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("StartCameraMoveDown") && gameObject.CompareTag("Player"))
-        {   
+        Debug.Log(collision.name);
+        if (collision.CompareTag("Player") && gameObject.CompareTag("StartCameraMoveDown"))
+        {
+
             changeCamera();
             isTriggered = false;
         }
-        else if (collision.CompareTag("EndCameraMoveDown") && gameObject.CompareTag("Player"))
+        else if (collision.CompareTag("Player") && gameObject.CompareTag("EndCameraMoveDown"))
         {
             backCamera();
             isTriggered = true;
