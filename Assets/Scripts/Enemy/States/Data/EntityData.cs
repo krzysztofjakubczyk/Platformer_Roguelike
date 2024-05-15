@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "newEntityData",menuName = "Data/Entity Data/Base Data")]
-public class D_Entity : ScriptableObject
+public class EntityData : ScriptableObject
 {
     public float maxHealth = 30f;
 
@@ -13,6 +13,7 @@ public class D_Entity : ScriptableObject
     public float groundCheckRadius = 0.3f;
 
     public float minAgroDistance = 7f;
+    public float minEnemyAgroDistance = 3f;
     public float maxAgroDistance = 8f;
 
     public float stunResistance = 3f;

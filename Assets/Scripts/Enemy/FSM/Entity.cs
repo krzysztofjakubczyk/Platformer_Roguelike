@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    public D_Entity entityData;
+    public EntityData entityData;
 
     public BaseStateMachine stateMachine;
     public int facingDirection { get; private set; }
@@ -142,7 +142,7 @@ public class Entity : MonoBehaviour
             hitGround = Physics2D.Raycast(playerCheck.position, playerTransform.position - aliveGameObject.transform.position, entityData.minAgroDistance, entityData.WhatIsGround);
         }
 
-        if (hitGround && hitPlayer && hitGround.distance < Mathf.Abs(aliveGameObject.transform.position.x - playerTransform.position.x)) return false;
+        if (hitGround && hitPlayer && hitGround.distance < Mathf.Abs((aliveGameObject.transform.position - playerTransform.position).magnitude)) return false;
         else return Physics2D.OverlapCircle(playerCheck.position,  entityData.minAgroDistance, entityData.WhatIsPlayer);
     }
 
@@ -156,7 +156,7 @@ public class Entity : MonoBehaviour
     }
     public virtual bool CheckEnemyInRange()
     {
-        return Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.minAgroDistance, entityData.WhatIsEnemy);
+        return Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.minEnemyAgroDistance, entityData.WhatIsEnemy);
     }
     public virtual void OnDrawGizmos()
     {
@@ -166,6 +166,7 @@ public class Entity : MonoBehaviour
         Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.closeRangeActionDistance), 0.2f);
         Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.minAgroDistance), 0.2f);
         Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.maxAgroDistance), 0.2f);
+       if(playerTransform) Gizmos.DrawLine(playerCheck.position, playerCheck.position + playerTransform.position - aliveGameObject.transform.position);
     }
     public virtual void CheckFlipToPlayer()
     {
