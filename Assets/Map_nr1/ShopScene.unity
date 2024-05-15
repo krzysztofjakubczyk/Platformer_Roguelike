@@ -6899,7 +6899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3985340409233497530, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5104819628213200034, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
       propertyPath: m_LocalScale.x
@@ -6997,7 +6997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 255857135440741248, guid: 7247bb75fdccb5a4fbee81607c2253de, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 255857135440741251, guid: 7247bb75fdccb5a4fbee81607c2253de, type: 3}
       propertyPath: m_LocalScale.x
@@ -7051,7 +7051,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doctor_02
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 680136085476582432, guid: 7247bb75fdccb5a4fbee81607c2253de, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 680136085476582432, guid: 7247bb75fdccb5a4fbee81607c2253de, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7112,15 +7117,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7202225746671875291, guid: d6507d04ffaa9984fb9bbd781963b518, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7202225746671875293, guid: d6507d04ffaa9984fb9bbd781963b518, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7202225746671875295, guid: d6507d04ffaa9984fb9bbd781963b518, type: 3}
       propertyPath: m_Name
       value: Doctor_01
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7202225746671875291, guid: d6507d04ffaa9984fb9bbd781963b518, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
