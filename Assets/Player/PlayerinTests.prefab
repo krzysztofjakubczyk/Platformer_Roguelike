@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 4924503599912042665}
   - component: {fileID: 6621371230715735204}
   - component: {fileID: 2911053144402841834}
+  - component: {fileID: 8150317003648923188}
   m_Layer: 7
   m_Name: PlayerinTests
   m_TagString: Player
@@ -293,6 +294,18 @@ MonoBehaviour:
   spell3: {fileID: 7993795310370821829, guid: b6c5c8b4005b9ab44a05f5d26e7af1b0, type: 3}
   spell4: {fileID: 3151645623783271711, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
   spell5: {fileID: 8333201292758725811, guid: b899952662807734b9243b2cc70dee15, type: 3}
+--- !u!114 &8150317003648923188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922316363251511598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b054a047295cd4d8809f28b8ea5998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6096011072974974785
 GameObject:
   m_ObjectHideFlags: 0

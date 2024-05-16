@@ -5,11 +5,14 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour
 {
     [SerializeField] GameObject _doors;
+    MoneyManager moneyManager;
+    int howMoneyFromEnemy;
     [SerializeField]int howManyEnemies;
     private void Start()
     { 
         Entity.OnEnemyDeath += killAnEnemy;
         howManyEnemies = (GameObject.FindGameObjectsWithTag("Enemy").Length) / 2;
+        moneyManager = FindAnyObjectByType<MoneyManager>();
     }
     void killAnEnemy()
     {
@@ -18,6 +21,7 @@ public class NewBehaviourScript : MonoBehaviour
         if (howManyEnemies == 0)
         {
             _doors.SetActive(false);
+            moneyManager.AddMoney(howMoneyFromEnemy);
         }
     }
 }
