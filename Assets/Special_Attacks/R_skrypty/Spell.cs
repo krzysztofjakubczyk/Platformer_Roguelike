@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Spell : MonoBehaviour
 {
-    [HideInInspector]public GameObject player;
+    [HideInInspector]public GameObject player; // przypisywany w spellManager przed rzuceniem spella
     public float cost;
     public float damage;
     public float stunDamage;
