@@ -100,6 +100,8 @@ MonoBehaviour:
   player: {fileID: 0}
   cost: 2
   damage: 1
+  stunDamage: 0
+  reachargeTime: 0
   castDirection: {x: 1, y: 0}
   rb: {fileID: 0}
   maxDistance: 20

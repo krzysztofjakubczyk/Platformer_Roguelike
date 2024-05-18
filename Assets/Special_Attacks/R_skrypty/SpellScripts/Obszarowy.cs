@@ -6,9 +6,9 @@ public class Obszarowy : Spell
 {
     [SerializeField] float delay;
     [SerializeField] float radius;
-    [SerializeField] LayerMask enemieLayer;
     [SerializeField] float maxThrowPower;
     [SerializeField] float loadPowerSpeed;
+    [SerializeField] LayerMask enemyLayer;
     Vector2 throwDir;
     
     float throwPower = 1;
@@ -33,9 +33,19 @@ public class Obszarowy : Spell
             doneOnce = true;
             GetComponent<SpriteRenderer>().enabled = true;
             transform.position = new Vector2(player.transform.position.x, player.transform.position.y + 1);
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 1) * throwPower, ForceMode2D.Impulse);
-            print(throwPower);
-            Invoke(nameof(kill), 3);
+
+            Vector2 throwDir;
+            if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+                throwDir = new Vector2(0, 2);
+            else if(player.GetComponent<SpriteRenderer>().flipX)
+                throwDir = new Vector2(1, 1);
+            else
+                throwDir = new Vector2(-1, 1);
+
+
+            GetComponent<Rigidbody2D>().AddForce(throwDir * throwPower, ForceMode2D.Impulse);
+
+            Invoke(nameof(Explode), 3);
         }
     }
 
@@ -64,8 +74,18 @@ public class Obszarowy : Spell
         }
     }
 
-    void kill()
+    void Explode()
     {
+        Collider2D[] closeEnemies = Physics2D.OverlapCircleAll(transform.position, radius, enemyLayer);
+        foreach(Collider2D enemy in closeEnemies)
+        {
+            AttackDetails attackDetails = new AttackDetails();
+            attackDetails.position = transform.position;
+            attackDetails.damageAmount = damage;
+            attackDetails.stunDamageAmount = stunDamage;
+            enemy.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
+
+        }
         Destroy(gameObject);
     }
 }
