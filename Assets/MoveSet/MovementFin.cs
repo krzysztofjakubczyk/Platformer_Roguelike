@@ -211,8 +211,18 @@ public class MovementFin : MonoBehaviour
     {
         sideJump = false;
     }
-    public void changeSpeed(int howMany)
+    public void changeSpeed(float howMany)
     {
         speed = howMany; 
+    }
+
+    public void ChangeJump(float jump)
+    {
+        jumpingPower += jump;
+    }
+
+    public void ChangeDash(float dash)
+    {
+        dashPower += dash;
     }
 }
