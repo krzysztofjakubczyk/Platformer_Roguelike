@@ -65,12 +65,13 @@ public class StatConroller : MonoBehaviour
         return true;
     }
 
-    public virtual void AddMaxAmount(float amount)
+    public virtual float AddMaxAmount(float amount)
     {
         maxAmount += amount;
 
         if (!RecoverIsRunning)
             StartCoroutine(RecoverNew());
+        return maxAmount;
     }
 
     public virtual void SubMaxAmount(float amount)

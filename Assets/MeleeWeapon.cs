@@ -129,14 +129,25 @@ public class MeleeWeapon : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
     }
 
-    public void ChangeDamage(float amount)
+    public float ChangeDamage(float amount)
     {
         damage += amount;
+        return damage;
+    }
+    public float GetDamage()
+    {
+        return damage;
     }
 
-    public void ChangeAttackSpeed(float amount)
+    public float ChangeAttackSpeed(float amount)
     {
         attackRate += amount;
+        return attackRate;
     }
+    public float GetAs()
+    {
+        return attackRate;
+    }
+
 
 }

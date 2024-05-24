@@ -211,18 +211,27 @@ public class MovementFin : MonoBehaviour
     {
         sideJump = false;
     }
-    public void changeSpeed(float howMany)
+    public float changeSpeed(float howMany) 
     {
-        speed = howMany; 
+        speed += howMany;
+        return speed;
     }
 
-    public void ChangeJump(float jump)
-    {
+    public float ChangeJump(float jump) 
+    { 
         jumpingPower += jump;
+        return jumpingPower;
     }
 
-    public void ChangeDash(float dash)
-    {
+    public float ChangeDash(float dash) 
+    { 
         dashPower += dash;
+        return dashPower;
     }
+
+    public float GetJump() { return jumpingPower; }
+
+    public float GetDash() { return dashPower; }
+
+    public float GetMovement() { return speed; }
 }
