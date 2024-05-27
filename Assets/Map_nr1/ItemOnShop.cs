@@ -1,23 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ItemOnShop : MonoBehaviour
 {
     [SerializeField] Items m_ScriptableObject;
     MoneyManager m_MoneyManager;
+    TMP_Text name, description;
+    GameObject image;
     private int costOfItem;
+    SpriteRenderer spriteRenderer;
     bool isItemBoughtByPlayer = false;
     private void Start()
     {
         costOfItem = m_ScriptableObject.Cost;
         m_MoneyManager=FindAnyObjectByType<MoneyManager>();
+        name = GameObject.Find("NameOfItemInShop").GetComponent<TMP_Text>();
+        description = GameObject.Find("DescriptionOfItemInShop").GetComponent<TMP_Text>();
+        image = GameObject.Find("ImageOfItemInShop");
+        spriteRenderer = image.GetComponent<SpriteRenderer>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision != null && collision.CompareTag("Player") && isItemBoughtByPlayer == false) //jezeli to player i nie ma kupionego przedmiotu to wyswietl jego opis
         {
-            //odpal na kompue opis
+            name.text = m_ScriptableObject.Name;
+            description.text = m_ScriptableObject.Description;
+            spriteRenderer.sprite = m_ScriptableObject.ImageItem;
         }
         else if (collision != null && collision.CompareTag("Player") && Input.GetKey(KeyCode.B) && isItemBoughtByPlayer == false)//jezeli kliknie b to zabierz kaske i
         {                                                                                                   //daj flage na true
