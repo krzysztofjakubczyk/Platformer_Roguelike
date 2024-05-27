@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 421296}
   - component: {fileID: 21227866}
   - component: {fileID: 5572773025019546666}
+  - component: {fileID: 3159602226823887870}
   m_Layer: 0
-  m_Name: box
+  m_Name: Hp_Potion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,3 +131,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &3159602226823887870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0250691079a48a04bb0d5ce1d3c0049b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ScriptableObject: {fileID: 11400000, guid: 68c38bf4fe12bab4696de55da9035900, type: 2}

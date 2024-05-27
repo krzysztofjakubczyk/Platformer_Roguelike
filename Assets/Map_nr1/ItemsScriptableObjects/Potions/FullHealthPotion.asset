@@ -16,4 +16,5 @@ MonoBehaviour:
   Description: "Potion kt\xF3ry przywraca ca\u0142e \u017Cycie graczowi"
   Cost: 2
   ImageItem: {fileID: 0}
+  power: 20
   type: 1

@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ItemOnShop : MonoBehaviour
+public abstract class ItemOnShop : MonoBehaviour
 {
-    [SerializeField] Items m_ScriptableObject;
-    MoneyManager m_MoneyManager;
-    TMP_Text name, description;
-    GameObject image;
-    private int costOfItem;
-    SpriteRenderer spriteRenderer;
-    bool isItemBoughtByPlayer = false;
-    bool playerIsClose;
-
+    [SerializeField] protected Items m_ScriptableObject;
+    protected MoneyManager m_MoneyManager;
+    protected TMP_Text name, description;
+    protected GameObject image;
+    protected int costOfItem;
+    protected SpriteRenderer spriteRenderer;
+    protected float power;
+    protected bool isItemBoughtByPlayer = false;
+    protected bool playerIsClose;
+    protected GameObject player;
 
     private void Start()
     {
@@ -22,45 +23,35 @@ public class ItemOnShop : MonoBehaviour
         name = GameObject.Find("NameOfItemInShop").GetComponent<TMP_Text>();
         description = GameObject.Find("DescriptionOfItemInShop").GetComponent<TMP_Text>();
         image = GameObject.Find("ImageOfItemInShop");
+        player = GameObject.Find("Player");
         spriteRenderer = image.GetComponent<SpriteRenderer>();
+        power = m_ScriptableObject.power;
     }
 
     private void Update()
     {
-        if(playerIsClose)
-            if (Input.GetKeyDown(KeyCode.B))
-            {
-                if (CheckIfEnoughMoney(m_ScriptableObject))
-                {
-                    m_MoneyManager.SubMoney(costOfItem);
-                    //opcjonalnie dodaj do inventory- polaczenie z Dawidem
-                    Destroy(gameObject);
-                }
-                else
-                {
-                    print("Player doesnt have enough money to buy it"); //koncowo wyswietla sie na kompie
-                }
-            }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (!collision.CompareTag("Player"))
+        if(!playerIsClose)
             return;
 
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            if (CheckIfEnoughMoney(m_ScriptableObject))
+            {
+                m_MoneyManager.SubMoney(costOfItem);
 
-        playerIsClose = true;
-
-        name.text = m_ScriptableObject.Name;
-        name.text += "  Cost: " + m_ScriptableObject.Cost.ToString();
-        description.text = m_ScriptableObject.Description;
-        spriteRenderer.sprite = m_ScriptableObject.ImageItem;
+                // wywolanie uzycia przedmiotu
+                UseFunction(power);
+                    
+                Destroy(gameObject);
+                //opcjonalnie dodaj do inventory- polaczenie z Dawidem
+            }
+            else
+            {
+                print("Player doesnt have enough money to buy it"); //koncowo wyswietla sie na kompie
+            }
+        }
     }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if(collision.CompareTag("Player"))
-            playerIsClose = false;
-    }
+    
 
     bool CheckIfEnoughMoney(Items SOtoComparison)
     {
@@ -69,4 +60,6 @@ public class ItemOnShop : MonoBehaviour
         else 
             return true;
     }
+
+    public abstract void UseFunction(float x);
 }
