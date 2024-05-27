@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class MoneyManager : MonoBehaviour
 {
-    private int money;
+    [SerializeField] int money;
 
-    public void AddMoney(int howAdd) 
+    public void AddMoney(int Add) 
     { 
-        money += howAdd; 
+        money += Add; 
     }
 
-    public void SubMoney(int howSubstract) { 
-        money -= howSubstract; 
+    public void SubMoney(int Substract) { 
+        money -= Substract; 
     }
 
     public int GetMoney() { return money; }

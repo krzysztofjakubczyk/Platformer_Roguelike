@@ -8991,6 +8991,10 @@ PrefabInstance:
       propertyPath: _doors
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8150317003648923188, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
+      propertyPath: money
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9197745978974536674, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -9315,8 +9319,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.9255719, y: 0.9312974}
-  m_SizeDelta: {x: 5.04576, y: 0.5211}
+  m_AnchoredPosition: {x: 0.4941, y: 0.9312974}
+  m_SizeDelta: {x: 7.8851, y: 0.5211}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1860689219
 MonoBehaviour:

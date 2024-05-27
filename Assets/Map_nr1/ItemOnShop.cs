@@ -12,6 +12,9 @@ public class ItemOnShop : MonoBehaviour
     private int costOfItem;
     SpriteRenderer spriteRenderer;
     bool isItemBoughtByPlayer = false;
+    bool playerIsClose;
+
+
     private void Start()
     {
         costOfItem = m_ScriptableObject.Cost;
@@ -21,36 +24,49 @@ public class ItemOnShop : MonoBehaviour
         image = GameObject.Find("ImageOfItemInShop");
         spriteRenderer = image.GetComponent<SpriteRenderer>();
     }
+
+    private void Update()
+    {
+        if(playerIsClose)
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                if (CheckIfEnoughMoney(m_ScriptableObject))
+                {
+                    m_MoneyManager.SubMoney(costOfItem);
+                    //opcjonalnie dodaj do inventory- polaczenie z Dawidem
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    print("Player doesnt have enough money to buy it"); //koncowo wyswietla sie na kompie
+                }
+            }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision != null && collision.CompareTag("Player") && isItemBoughtByPlayer == false) //jezeli to player i nie ma kupionego przedmiotu to wyswietl jego opis
-        {
-            name.text = m_ScriptableObject.Name;
-            description.text = m_ScriptableObject.Description;
-            spriteRenderer.sprite = m_ScriptableObject.ImageItem;
-        }
-        else if (collision != null && collision.CompareTag("Player") && Input.GetKey(KeyCode.B) && isItemBoughtByPlayer == false)//jezeli kliknie b to zabierz kaske i
-        {                                                                                                   //daj flage na true
-            if (hasPlayerEnoughMoney(m_ScriptableObject))
-            {
-                m_MoneyManager.SubMoney(costOfItem);
-                isItemBoughtByPlayer=true;
-                //opcjonalnie dodaj do inventory- polaczenie z Dawidem
-            }
-            else
-            {
-                Debug.Log("Player doesnt have enough money for buy it"); //koncowo w grze jest to ze na kompie sie wyswietli napis ze juz to masz
-            }
-        }
-        else if(collision != null && collision.CompareTag("Player") && Input.GetKey(KeyCode.B) && isItemBoughtByPlayer == true)
-        {
-            //na kompie pojawia sie ze masz juz ten przedmiot
-        }
+        if (!collision.CompareTag("Player"))
+            return;
+
+
+        playerIsClose = true;
+
+        name.text = m_ScriptableObject.Name;
+        name.text += "  Cost: " + m_ScriptableObject.Cost.ToString();
+        description.text = m_ScriptableObject.Description;
+        spriteRenderer.sprite = m_ScriptableObject.ImageItem;
     }
-    bool hasPlayerEnoughMoney(Items SOtoComparison)
+
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        int _playersMoney = m_MoneyManager.GetMoney();
-        if (SOtoComparison.Cost > _playersMoney) { return false; }
-        else { return true; }
+        if(collision.CompareTag("Player"))
+            playerIsClose = false;
+    }
+
+    bool CheckIfEnoughMoney(Items SOtoComparison)
+    {
+        if (SOtoComparison.Cost > m_MoneyManager.GetMoney())
+            return false;
+        else 
+            return true;
     }
 }

@@ -46,6 +46,8 @@ public class MeleeWeapon : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.C))
         {
+            canAttack = false;
+            Invoke(nameof(allowAttack), attackRate);
             if (player.GetComponent<SpriteRenderer>().flipX)
             {
                 GetComponent<SpriteRenderer>().flipX = true;
@@ -86,9 +88,9 @@ public class MeleeWeapon : MonoBehaviour
             }
 
             
-                GetComponent<SpriteRenderer>().enabled = true;
-                animator.SetTrigger("Attacking");
-                animatorSword.SetTrigger("AttackingRn");
+            GetComponent<SpriteRenderer>().enabled = true;
+            animator.SetTrigger("Attacking");
+            animatorSword.SetTrigger("AttackingRn");
             
 
             Invoke(nameof(OnWeapon), attackDelay);
@@ -97,13 +99,10 @@ public class MeleeWeapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag != "Enemy" || !canAttack)
+        if(collision.tag != "Enemy")
         {
             return;
         }
-
-        canAttack = false;
-        Invoke(nameof(allowAttack), attackRate);
         
         attackDetails.position = transform.position;
         attackDetails.damageAmount = damage;
