@@ -164,7 +164,7 @@ public class Entity : MonoBehaviour
         Gizmos.DrawLine(LedgeCheck.position, LedgeCheck.position + (Vector3)(Vector2.down* entityData.LedgeCheckDistance));
 
         Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.closeRangeActionDistance), 0.2f);
-        Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.minAgroDistance), 0.2f);
+        if(playerTransform)Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(aliveGameObject.transform.position - playerTransform.position * entityData.minAgroDistance), 0.2f);
         Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.maxAgroDistance), 0.2f);
        if(playerTransform) Gizmos.DrawLine(playerCheck.position, playerCheck.position + playerTransform.position - aliveGameObject.transform.position);
     }

@@ -28,6 +28,9 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     private Transform damagePosition;
 
+    float angle;
+    float angleBeforeHit;
+
 
     private void Start()
     {
@@ -37,17 +40,26 @@ public class Projectile : MonoBehaviour
 
         isGravityOn = false;
         xStartPos = transform.position.x;
+
+        //Vector3 directionToShoot = entity.aliveGameObject.transform.position - transform.position;
     }
     private void Update()
     {
-        if (!hasHitGround)
+        if (!hasHitGround) {
             attackDetails.position = transform.position;
-            transform.forward = rb.velocity;
-            if (isGravityOn) 
-            { 
-                float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x)* Mathf.Rad2Deg;
+
+            angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
+
+            if (isGravityOn)
+            {
                 transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             }
+            else
+            {
+                transform.rotation = Quaternion.Euler(0, 0, angle);
+            }
+        }
+           
     }
     private void FixedUpdate()
     {
@@ -67,7 +79,11 @@ public class Projectile : MonoBehaviour
             {
                 hasHitGround = true;
                 rb.gravityScale = 0f;
+                angleBeforeHit = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
+                rb.constraints = RigidbodyConstraints2D.FreezeAll;
                 rb.velocity = Vector2.zero;
+                rb.isKinematic = true;
+                
             }
 
             if (Mathf.Abs(xStartPos - transform.position.x) >= travelDistance && !isGravityOn)
@@ -76,7 +92,7 @@ public class Projectile : MonoBehaviour
                 rb.gravityScale = gravity;
             }
         }
-       
+        //Rotate(angleBeforeHit);
     }
     public void FireProjectile(float speed,float travelDistance, float damage, Vector3 direction, Entity entity)
     {
@@ -89,5 +105,16 @@ public class Projectile : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(damagePosition.position, damageRadius);
+    }
+    private void Rotate(float angle)
+    {
+        Debug.Log(angle + " angle");
+
+        if (angle != 0) {
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
+        
+
+        Debug.Log(angle + " angle after");
     }
 }
