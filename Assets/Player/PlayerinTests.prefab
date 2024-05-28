@@ -38,7 +38,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.660987, y: -2.772645, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.8, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9019799905905105793}
@@ -235,7 +235,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   speed: 5
-  jumpingPower: 16
+  jumpingPower: 14
   dashPower: 8
   leftWallJump: 0.5
   rightWallJump: 0.5
@@ -275,7 +275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6d74f37b74b874793f1984b8993861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _doors: {fileID: 0}
   howManyEnemies: 0
 --- !u!114 &2911053144402841834
 MonoBehaviour:
