@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa57c45af4d2204191e5e80c75911d8, type: 3}
   m_Name: FlyingRangeEnemyMoveStateData
   m_EditorClassIdentifier: 
-  movementSpeed: 3
+  movementSpeed: 4

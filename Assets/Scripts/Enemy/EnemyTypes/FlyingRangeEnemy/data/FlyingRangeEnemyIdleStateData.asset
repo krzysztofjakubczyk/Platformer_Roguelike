@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a63f4516b936a914a904d6299bd1dee5, type: 3}
   m_Name: FlyingRangeEnemyIdleStateData
   m_EditorClassIdentifier: 
-  minIdleTime: 1
-  maxIdleTime: 2
+  minIdleTime: 0.5
+  maxIdleTime: 1

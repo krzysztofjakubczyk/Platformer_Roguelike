@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
     private float speed;
     private float travelDistance;
     private float xStartPos;
-    private Vector2 direction;
+    private Vector3 direction;
 
     [SerializeField]
     private float gravity;
@@ -42,6 +42,7 @@ public class Projectile : MonoBehaviour
     {
         if (!hasHitGround)
             attackDetails.position = transform.position;
+            transform.forward = rb.velocity;
             if (isGravityOn) 
             { 
                 float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x)* Mathf.Rad2Deg;
@@ -77,7 +78,7 @@ public class Projectile : MonoBehaviour
         }
        
     }
-    public void FireProjectile(float speed,float travelDistance, float damage, Vector2 direction, Entity entity)
+    public void FireProjectile(float speed,float travelDistance, float damage, Vector3 direction, Entity entity)
     {
         this.speed = speed;
         this.travelDistance = travelDistance;
