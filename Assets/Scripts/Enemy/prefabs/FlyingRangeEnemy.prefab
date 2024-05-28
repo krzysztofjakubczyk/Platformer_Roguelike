@@ -115,7 +115,7 @@ MonoBehaviour:
   lastDamageTime: 0
   wallCheck: {fileID: 2180629407978816194}
   LedgeCheck: {fileID: 855294354338013804}
-  playerCheck: {fileID: 5296140006204036333}
+  playerCheck: {fileID: 365421757151342676}
   groundCheck: {fileID: 1650452200447941125}
   idleStateData: {fileID: 11400000, guid: 6c0c70ac94431c240823eeefa26cc120, type: 2}
   moveStateData: {fileID: 11400000, guid: 581d732dac1dcb54891d159413364ee7, type: 2}
@@ -265,11 +265,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 7c5a6ff0f04901048b1283b70b7a384a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.88
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 7c5a6ff0f04901048b1283b70b7a384a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.77
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 7c5a6ff0f04901048b1283b70b7a384a, type: 3}
       propertyPath: m_LocalPosition.z

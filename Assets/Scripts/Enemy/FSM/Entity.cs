@@ -141,7 +141,6 @@ public class Entity : MonoBehaviour
             playerTransform = hitPlayer.transform;
             hitGround = Physics2D.Raycast(playerCheck.position, playerTransform.position - aliveGameObject.transform.position, entityData.minAgroDistance, entityData.WhatIsGround);
         }
-
         if (hitGround && hitPlayer && hitGround.distance < Mathf.Abs((aliveGameObject.transform.position - playerTransform.position).magnitude)) return false;
         else return Physics2D.OverlapCircle(playerCheck.position,  entityData.minAgroDistance, entityData.WhatIsPlayer);
     }
@@ -157,6 +156,10 @@ public class Entity : MonoBehaviour
     public virtual bool CheckEnemyInRange()
     {
         return Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.minEnemyAgroDistance, entityData.WhatIsEnemy);
+    }
+    public virtual bool CheckEnemyInRangeToCharge()
+    {
+        return Physics2D.Raycast(playerCheck.position, aliveGameObject.transform.right, entityData.minAgroDistance, entityData.WhatIsEnemy);
     }
     public virtual void OnDrawGizmos()
     {

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b668f5869cf53846bdf5e7315b87b61, type: 3}
   m_Name: FlyingRangeEnemyBackToPatrolStateData
   m_EditorClassIdentifier: 
-  patrolPoint: {x: -7, y: 11, z: 0}
+  patrolPoint: {x: -4, y: 9, z: 0}
   backSpeed: 5

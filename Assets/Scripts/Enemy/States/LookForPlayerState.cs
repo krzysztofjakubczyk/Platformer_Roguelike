@@ -10,7 +10,7 @@ public class LookForPlayerState : State
     protected bool isPlayerInMinAgroRange;
     protected bool isAllTurnsDone;
     protected bool isAllTurnsTimeDone;
-
+    protected bool isEnemyInRange;
     protected float lastTurnTime;
 
     protected int amountOfTurnsDone;
@@ -24,6 +24,7 @@ public class LookForPlayerState : State
     {
         base.DoChecks();
         isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
+        isEnemyInRange = entity.CheckEnemyInRange();
     }
 
     public override void Enter()

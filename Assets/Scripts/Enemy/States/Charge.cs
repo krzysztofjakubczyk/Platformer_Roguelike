@@ -6,6 +6,7 @@ public class Charge : State
 {
     protected D_ChargeState stateData;
     protected bool isPlayerInMinAgroRange;
+    protected bool isEnemyInMinAgroRange;
     protected bool isDetectingWall;
     protected bool isDetectingLedge;
     protected bool isChargeTimeOver;
@@ -21,7 +22,7 @@ public class Charge : State
         isDetectingLedge = entity.CheckLedge();
         isDetectingWall = entity.CheckWall();
         isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
-
+        isEnemyInMinAgroRange = entity.CheckEnemyInRange();
         performCloseRangeAction = entity.CheckPlayerInCloseRangeAction();
     }
 
