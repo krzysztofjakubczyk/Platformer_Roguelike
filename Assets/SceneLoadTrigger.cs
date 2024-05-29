@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoadTrigger : MonoBehaviour
 { //oczywiscie sceny do zaladowania beda wybierane losowo, na czas testow sa wybierane przez nazwe podana w inspektorze
-    [SerializeField]MapTranistion mapInstance;
+    [SerializeField] MapTranistion mapInstance;
     [Header("Name of scenes to make visible or not")]
     [SerializeField] string[] _scenesToLoad;
     [SerializeField] string[] _scenesToUnLoad;
@@ -23,13 +23,14 @@ public class SceneLoadTrigger : MonoBehaviour
         if (collision.CompareTag("Player") && gameObject.name == "LoadRoomTrigger")
         {//jezeli jest to gracz i jest to tiger ladujacy pokoj
             LoadScene();
+
         }
         else if (collision.CompareTag("Player") && gameObject.name == "UnLoadRoomTrigger")
         {//jezeli jest to gracz i jest to tiger odladowujacy pokoj
             UnLoadScene();
+
         }
     }
-
     private void UnLoadScene()
     {
         _InsideDoors.SetActive(true); //wlacz drzwi zeby nie mozna bylo sie cofnac
@@ -64,7 +65,13 @@ public class SceneLoadTrigger : MonoBehaviour
             if (!isSceneLoaded)
             {
                 SceneManager.LoadSceneAsync(_scenesToLoad[i], LoadSceneMode.Additive);
-            }   
+            }
+            if (isSceneLoaded)
+            {
+                Scene loadedScene = SceneManager.GetSceneByName(_scenesToLoad[i]);
+                SceneManager.SetActiveScene(loadedScene);
+                Debug.Log(SceneManager.GetActiveScene());
+            }
         }
     }
 }
