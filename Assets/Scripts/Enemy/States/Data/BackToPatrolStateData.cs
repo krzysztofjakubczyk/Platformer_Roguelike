@@ -6,6 +6,5 @@ using UnityEngine;
 
 public class BackToPatrolStateData : ScriptableObject
 {
-    public Vector3 patrolPoint;
     public float backSpeed;
 }

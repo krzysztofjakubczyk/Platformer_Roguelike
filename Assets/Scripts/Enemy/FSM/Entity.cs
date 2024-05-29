@@ -16,6 +16,9 @@ public class Entity : MonoBehaviour
     public int lastDamageDirection { get; private set; }
     public Transform playerTransform { get; private set; }
     [SerializeField] private GameObject player;
+    
+    [SerializeField] public Vector3 patrolPoint;
+
     public HealthController playerHp;
     public float currentHealth;
     public float currentStunResistance;
@@ -170,6 +173,7 @@ public class Entity : MonoBehaviour
         if(playerTransform)Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(aliveGameObject.transform.position - playerTransform.position * entityData.minAgroDistance), 0.2f);
         Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.maxAgroDistance), 0.2f);
        if(playerTransform) Gizmos.DrawLine(playerCheck.position, playerCheck.position + playerTransform.position - aliveGameObject.transform.position);
+        Gizmos.DrawLine(playerCheck.position, playerCheck.position + (Vector3)(Vector2.right * facingDirection * entityData.minAgroDistance));
     }
     public virtual void CheckFlipToPlayer()
     {

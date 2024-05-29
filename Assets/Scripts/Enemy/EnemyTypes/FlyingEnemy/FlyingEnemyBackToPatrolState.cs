@@ -28,7 +28,7 @@ public class FlyingEnemyBackToPatrolState : BackToPatrolState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if (entity.aliveGameObject.transform.position == stateData.patrolPoint) stateMachine.ChangeState(enemy.moveState);
+        if (entity.aliveGameObject.transform.position == entity.patrolPoint) stateMachine.ChangeState(enemy.moveState);
     }
 
     public override void PhysicsUpdate()

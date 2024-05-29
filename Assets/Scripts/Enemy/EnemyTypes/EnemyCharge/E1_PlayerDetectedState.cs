@@ -23,6 +23,7 @@ public class E1_PlayerDetectedState : PlayerDetected
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        Debug.Log(isEnemyInRangeToCharge + " czy przeciwnik jest w zasiêgu ataku");
        if(isEnemyInRange)
         {
             entity.Flip();
@@ -36,11 +37,7 @@ public class E1_PlayerDetectedState : PlayerDetected
             entity.Flip();
             stateMachine.ChangeState(enemy.moveState);
         }
-        else
-        {
-            entity.Flip();
-            stateMachine.ChangeState(enemy.moveState);
-        }
+
     }
 
     public override void PhysicsUpdate()

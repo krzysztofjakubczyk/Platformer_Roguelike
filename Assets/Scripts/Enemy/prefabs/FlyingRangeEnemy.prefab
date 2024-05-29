@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityData: {fileID: 11400000, guid: d9ed82eacda3a8a4b898853eebdca8e9, type: 2}
   player: {fileID: 1922316363251511598, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
+  patrolPoint: {x: -4, y: 9, z: 0}
   playerHp: {fileID: 0}
   currentHealth: 100
   currentStunResistance: 100
@@ -265,11 +266,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 7c5a6ff0f04901048b1283b70b7a384a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.88
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 7c5a6ff0f04901048b1283b70b7a384a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.77
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 7c5a6ff0f04901048b1283b70b7a384a, type: 3}
       propertyPath: m_LocalPosition.z

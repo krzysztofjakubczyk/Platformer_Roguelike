@@ -11,6 +11,7 @@ public class MoveState : State
     protected bool isDetectingLedge;
     protected bool isPlayerInMinAgroRange;
     protected bool isEnemyInRange;
+    protected bool isEnemyInRangeToCharge;
     public MoveState(Entity entity,BaseStateMachine stateMachine,string animBoolName,MoveStateData stateData): base(entity, stateMachine, animBoolName)
     {
         this.stateData = stateData;
@@ -25,6 +26,7 @@ public class MoveState : State
         isDetectingWall = entity.CheckWall();
         isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
         isEnemyInRange = entity.CheckEnemyInRange();
+        isEnemyInRangeToCharge = entity.CheckEnemyInRangeToCharge();
 }
 
     public override void Enter()

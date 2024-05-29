@@ -29,7 +29,7 @@ public class E1_MoveState : MoveState
             enemy.idleState.SetFlipAfterIdle(true);
             stateMachine.ChangeState(enemy.idleState);
         }
-        else if (isPlayerInMinAgroRange)
+        else if (isPlayerInMinAgroRange && !isEnemyInRangeToCharge)
         {
             stateMachine.ChangeState(enemy.playerDetectedState);
         }
