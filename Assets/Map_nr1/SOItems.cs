@@ -10,9 +10,15 @@ public class Items : ScriptableObject
     public string Description; //opis przedmiotu
     public int Cost; //koszt przedmiotu
     public Sprite ImageItem; //obrazek przedmiotu
+
+    public PlayerStatEnum stat;
     public float power; // ile dodaje
-    public enum Type { Default, Potion, UpgradeSpell, Herbs, Armor } //utworzony wlasny typ do wyboru jakiego typu jest to przedmiot
+
+
+
+
+    //public enum Type { Default, Potion, UpgradeSpell, Herbs, Armor } //utworzony wlasny typ do wyboru jakiego typu jest to przedmiot
                                                                      //(eliksir/ulepszenie/zio³a(ulepsze statysyk gracza(AS/AD))/Zbroja)
-    public Type type = Type.Default; //ustawienie domyœlnego typu na podstawowy
+    //public Type type = Type.Default; //ustawienie domyœlnego typu na podstawowy
 
 }

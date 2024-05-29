@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public abstract class ItemOnShop : MonoBehaviour
+public class ItemOnShop : MonoBehaviour
 {
     [SerializeField] protected Items m_ScriptableObject;
     protected MoneyManager m_MoneyManager;
@@ -83,5 +83,8 @@ public abstract class ItemOnShop : MonoBehaviour
             return true;
     }
 
-    public abstract void UseFunction(float x);
+    public void UseFunction(float x)
+    {
+
+    }
 }

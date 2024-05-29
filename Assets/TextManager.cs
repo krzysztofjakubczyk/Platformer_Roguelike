@@ -5,6 +5,7 @@ using TMPro;
 
 public class TextManager : MonoBehaviour
 {
+    /*
     [SerializeField]
     GameObject inventory;
     [SerializeField]
@@ -70,4 +71,5 @@ public class TextManager : MonoBehaviour
             updateGUI();
         }
     }
+    */
 }
