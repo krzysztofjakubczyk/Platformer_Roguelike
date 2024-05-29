@@ -16,6 +16,7 @@ public abstract class ItemOnShop : MonoBehaviour
     protected bool playerIsClose;
     protected GameObject player;
 
+
     private void Start()
     {
         costOfItem = m_ScriptableObject.Cost;
@@ -26,7 +27,8 @@ public abstract class ItemOnShop : MonoBehaviour
         player = GameObject.Find("Player");
         spriteRenderer = image.GetComponent<SpriteRenderer>();
         power = m_ScriptableObject.power;
-    }
+        
+}
 
     private void Update()
     {

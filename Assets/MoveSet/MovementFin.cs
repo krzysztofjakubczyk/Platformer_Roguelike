@@ -7,6 +7,9 @@ public class MovementFin : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask enemyLayer;
     LayerMask pustwarstwa;
+
+    [SerializeField] PlayerStatsv2 playerStats;
+
     [SerializeField] float speed = 4f;
     [SerializeField] float jumpingPower = 7f;
     [SerializeField] float dashPower = 5f;
@@ -45,6 +48,10 @@ public class MovementFin : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         sword = transform.GetChild(0);
+
+        speed = playerStats.moveSpeed;
+
+
 
         Application.targetFrameRate = 120;
     }
