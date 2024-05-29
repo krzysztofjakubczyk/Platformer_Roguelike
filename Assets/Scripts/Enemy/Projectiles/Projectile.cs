@@ -71,7 +71,6 @@ public class Projectile : MonoBehaviour
             if (damageHit)
             {
                 //damageHit.transform.SendMessage("Damage", attackDetails);
-                print(damageHit.name);
                 entity.playerHp.DamagePlayer(attackDetails.damageAmount);//ale jest to strasznie nieresponsywne ale nie wiem czy eventy w tym przypadku to dobry pomys³
                 Destroy(gameObject);
             }
