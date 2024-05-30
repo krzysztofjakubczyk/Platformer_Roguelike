@@ -9,21 +9,15 @@ public class StatConroller : MonoBehaviour
     public delegate void AmountChange();
     public static event AmountChange BothBarsCheck;
 
-    [SerializeField] float maxAmount = 100;
-    [SerializeField] float currentAmount;
-    [SerializeField] float recoverTime = 0;
-    [SerializeField] bool canRecover = false;
-
+    [SerializeField] protected float maxAmount = 100;
+    [SerializeField] protected float currentAmount;
+    [SerializeField] protected float recoverTime = 0;
+    [SerializeField] protected bool canRecover = false;
 
     bool RecoverIsRunning;
 
 
-    public virtual void Start()
-    {
-        StartCoroutine(RecoverNew());
-    }
-
-    IEnumerator RecoverNew()
+    public IEnumerator RecoverNew()
     {
         RecoverIsRunning = true;
 
@@ -39,6 +33,7 @@ public class StatConroller : MonoBehaviour
         RecoverIsRunning = false;
     }
 
+   
 
     public virtual bool SubAmount(float amount)
     {

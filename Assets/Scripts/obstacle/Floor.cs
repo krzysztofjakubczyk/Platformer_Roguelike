@@ -9,11 +9,11 @@ public class Floor : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            playerMovement.changeSpeed(2);
+            //playerMovement.changeSpeed(2);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        playerMovement.changeSpeed(8);
+        //playerMovement.changeSpeed(8);
     }
 }

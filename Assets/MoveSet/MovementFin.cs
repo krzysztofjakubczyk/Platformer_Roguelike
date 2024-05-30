@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 public class MovementFin : MonoBehaviour
 {
-    [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private LayerMask enemyLayer;
+    [SerializeField] private LayerMask groundLayer, enemyLayer;
     LayerMask pustwarstwa;
 
+    PlayerStatsFin playerStats;
 
     [SerializeField] float speed = 4f;
     [SerializeField] float jumpingPower = 7f;
@@ -23,6 +24,7 @@ public class MovementFin : MonoBehaviour
     //wall jumps colliders
     [SerializeField] GameObject WJleft;
     [SerializeField] GameObject WJright;
+
     float horizontal;
     float lastDirection;
 
@@ -43,22 +45,21 @@ public class MovementFin : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = 120;
+
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         sword = transform.GetChild(0);
 
-        Application.targetFrameRate = 120;
+        playerStats = GetComponent<PlayerStatsManager>().playerStats;
+        UpdateAllStats();
     }
 
     void Update()
     {
         GetInput();
         MoveAccordingly();
-
-        if (Input.GetKey(KeyCode.O)){
-            animator.SetTrigger("upTest");
-        }
     }
 
 
@@ -71,10 +72,8 @@ public class MovementFin : MonoBehaviour
         if (Mathf.Abs(horizontal * speed) > 0.1f)
             animator.SetBool("isRunning", true);
         else
-        {
             animator.SetBool("isRunning", false);
-            //print(horizontal * speed);
-        }
+        
 
         if (isJumpingLeft)
         {
@@ -99,8 +98,10 @@ public class MovementFin : MonoBehaviour
     {
         bool ZPressed = false;
         horizontal = Input.GetAxisRaw("Horizontal");
+
         if (horizontal != 0)
             lastDirection = horizontal;
+
         isGrounded = IsGrounded();
         animator.SetBool("isGrounded", isGrounded);
 
@@ -111,7 +112,7 @@ public class MovementFin : MonoBehaviour
             isDashing = true;
 
 
-        // if player run out of platform (but didnt jump) activate coyoteTime
+        // coyoteTime
         if (!isGrounded && wasGrounded && !Input.GetKey(jumpKey))
         {
             coyoteTime = true;
@@ -120,13 +121,10 @@ public class MovementFin : MonoBehaviour
 
         #region JUMP
 
-        // jump works even when player is 0.5 above the ground to eliminate need for pixel perfect jumps
         if (ZPressed && !isGrounded && !coyoteTime)
         {
             if (Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, 0.5f, groundLayer))
-            {
                 willJump = true;
-            }
         }
         else if (ZPressed && (isGrounded || coyoteTime))
         {
@@ -147,13 +145,11 @@ public class MovementFin : MonoBehaviour
         #endregion
 
         //wall jump
-        //if (Physics2D.Raycast(transform.position, Vector2.right, leftWallJump, groundLayer) && !isGrounded && ZPressed)
         if (WJleft.GetComponent<ifboxtriggered>().isTriggered && !isGrounded && ZPressed)
         {
             isJumpingLeft = true;
             sideJump = true;
         }
-
 
         if (WJright.GetComponent<ifboxtriggered>().isTriggered && !isGrounded && ZPressed)
         {
@@ -176,13 +172,11 @@ public class MovementFin : MonoBehaviour
         else if (horizontal == 0 && rb.velocity.x < -0.1f)
             transform.GetComponent<SpriteRenderer>().flipX = false;
 
-
         if (isJumping)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             isJumping=false;
         }
-
 
         if (isDashing)
         {
@@ -191,6 +185,25 @@ public class MovementFin : MonoBehaviour
             boxCollider.excludeLayers = enemyLayer;
             Invoke(nameof(EndDash), 0.1f);
             Invoke(nameof(EndDashArmor), 0.5f);
+        }
+    }
+
+    public void UpdateAllStats()
+    {
+        foreach (var stat in playerStats.stats)
+        {
+            switch (stat.statName)
+            {
+                case PlayerStatEnum.moveSpeed:
+                    speed = stat.value;
+                    break;
+                case PlayerStatEnum.dashPower:
+                    dashPower = stat.value;
+                    break;
+                case PlayerStatEnum.jumpPower:
+                    jumpingPower = stat.value;
+                    break;
+            }
         }
     }
 
@@ -212,23 +225,6 @@ public class MovementFin : MonoBehaviour
     void EndSideJump()
     {
         sideJump = false;
-    }
-    public float changeSpeed(float howMany) 
-    {
-        speed += howMany;
-        return speed;
-    }
-
-    public float ChangeJump(float jump) 
-    { 
-        jumpingPower += jump;
-        return jumpingPower;
-    }
-
-    public float ChangeDash(float dash) 
-    { 
-        dashPower += dash;
-        return dashPower;
     }
 
     public float GetJump() { return jumpingPower; }

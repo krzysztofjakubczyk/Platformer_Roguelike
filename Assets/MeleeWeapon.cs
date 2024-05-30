@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Player_Anim_State;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class MeleeWeapon : MonoBehaviour
@@ -9,6 +10,8 @@ public class MeleeWeapon : MonoBehaviour
     [SerializeField] float stunDamage;
     [SerializeField] float attackRate;
     [SerializeField] float attackDelay;
+
+    PlayerStatsFin playerStats;
 
     bool canAttack = true;
 
@@ -29,6 +32,9 @@ public class MeleeWeapon : MonoBehaviour
 
         GetComponent<BoxCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
+
+        playerStats = transform.parent.GetComponent<PlayerStatsManager>().playerStats;
+        UpdateAllStats();
     }
 
 
@@ -112,6 +118,25 @@ public class MeleeWeapon : MonoBehaviour
 
     }
 
+    public void UpdateAllStats()
+    {
+        foreach (var stat in playerStats.stats)
+        {
+            switch (stat.statName)
+            {
+                case PlayerStatEnum.damage:
+                    damage = stat.value;
+                    break;
+                case PlayerStatEnum.stunDamage:
+                    stunDamage = stat.value;
+                    break;
+                case PlayerStatEnum.attackSpeed:
+                    attackRate = stat.value;
+                    break;
+            }
+        }
+    }
+
     void allowAttack()
     {
         canAttack = true;
@@ -127,26 +152,5 @@ public class MeleeWeapon : MonoBehaviour
     {
         GetComponent<BoxCollider2D>().enabled = false;
     }
-
-    public float ChangeDamage(float amount)
-    {
-        damage += amount;
-        return damage;
-    }
-    public float GetDamage()
-    {
-        return damage;
-    }
-
-    public float ChangeAttackSpeed(float amount)
-    {
-        attackRate += amount;
-        return attackRate;
-    }
-    public float GetAs()
-    {
-        return attackRate;
-    }
-
 
 }

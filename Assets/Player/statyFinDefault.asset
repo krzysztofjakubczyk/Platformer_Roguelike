@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97a4d13de0ebe6147af6e5b3dba3727f, type: 3}
-  m_Name: statyFin
+  m_Name: statyFinDefault
   m_EditorClassIdentifier: 
   stats:
   - statName: 0

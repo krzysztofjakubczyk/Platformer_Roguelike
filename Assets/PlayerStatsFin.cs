@@ -18,12 +18,11 @@ public enum PlayerStatEnum
 {
     hpMax, hpCurrent, hpRecoverTime,
     manaMax, manaCurrent, manaRecoverTime,
-    damage, attackSpeed,
-    fireballDmg, fireballSpeed,
-    lightningDmg, lightningSpeed,
-    grabDmg, grabSpeed,
-    laserDmg, laserSpeed,
-    grenadeDmg, grenadeSpeed,
-    jumpHeight, moveSpeed,
-    dashPower
+    damage, attackSpeed, stunDamage,
+    fireballDmg,
+    lightningDmg,
+    grabDmg,
+    laserDmg,
+    grenadeDmg,
+    jumpPower, moveSpeed, dashPower
 }
