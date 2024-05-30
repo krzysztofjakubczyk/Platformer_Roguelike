@@ -1,77 +1,100 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class SceneLoadTrigger : MonoBehaviour
-{ //oczywiscie sceny do zaladowania beda wybierane losowo, na czas testow sa wybierane przez nazwe podana w inspektorze
+{
     [SerializeField] MapTranistion mapInstance;
-    [Header("Name of scenes to make visible or not")]
-    [SerializeField] string[] _scenesToLoad;
-    [SerializeField] string[] _scenesToUnLoad;
-    GameObject _OutsideDoors; //drzwi umozliwiajace graczowi przejscie do nastepnego pokoju
-    GameObject _InsideDoors; //drzwi uniemozliwiajace graczowi przejscie do poprzedniego pokoju
+    [SerializeField] int indexOfSceneLoadedNow;
+    [SerializeField] int indexOfSceneToSpawn;
+    [SerializeField] int indexOfSceneToUnload;
+    [SerializeField] int howManyScenesOnBuild;
+    [SerializeField] List<int> ExcludedIndexesOfScenes;
+    GameObject _OutsideDoors;
+    GameObject _InsideDoors;
     private GameObject _player;
 
     void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
         _OutsideDoors = GameObject.Find("OutDoors");
-        _InsideDoors = mapInstance.FindDisabledObjectByName<Transform>("InDoors")?.gameObject; //to pewnie nie za dziala jak nie bedzie inside i wywali blad
+        if (mapInstance != null)
+        {
+            _InsideDoors = mapInstance.FindDisabledObjectByName<Transform>("InDoors")?.gameObject;
+        }
+        howManyScenesOnBuild = SceneManager.sceneCountInBuildSettings;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && gameObject.name == "LoadRoomTrigger")
-        {//jezeli jest to gracz i jest to tiger ladujacy pokoj
-            LoadScene();
-
-        }
-        else if (collision.CompareTag("Player") && gameObject.name == "UnLoadRoomTrigger")
-        {//jezeli jest to gracz i jest to tiger odladowujacy pokoj
-            UnLoadScene();
-
-        }
-    }
-    private void UnLoadScene()
-    {
-        _InsideDoors.SetActive(true); //wlacz drzwi zeby nie mozna bylo sie cofnac
-        for (int i = 0; i < _scenesToUnLoad.Length; i++) //wylacz scene poprzednia (narazie statycznie podana)
+        if (collision.CompareTag("Player"))
         {
-            for (int j = 0; j < SceneManager.sceneCount; j++)
+            if (gameObject.name == "LoadRoomTrigger")
             {
-                Scene loadedScene = SceneManager.GetSceneAt(j);
-                if (loadedScene.name == _scenesToUnLoad[i])
+                indexOfSceneLoadedNow = SceneManager.GetActiveScene().buildIndex;
+                indexOfSceneToSpawn = 4;//Random.Range(0, howManyScenesOnBuild);
+                while (ExcludedIndexesOfScenes.Contains(indexOfSceneToSpawn) || indexOfSceneToSpawn == indexOfSceneLoadedNow)
                 {
-                    SceneManager.UnloadSceneAsync(_scenesToUnLoad[i]);
+                    indexOfSceneToSpawn = Random.Range(0, howManyScenesOnBuild);
+                }
+                LoadScene(indexOfSceneLoadedNow, indexOfSceneToSpawn);
+            }
+            else if (gameObject.name == "UnLoadRoomTrigger")
+            {
+                indexOfSceneLoadedNow = SceneManager.GetActiveScene().buildIndex;
+                foreach (var scene in SceneManager.GetAllScenes())//przejdz po wszystkich scenach i te ktore sa nie aktywne to sa do odladowania- oczywiscie beda max dwie sceny
+                {
+                    if (scene != SceneManager.GetActiveScene())
+                    {
+                        indexOfSceneToUnload = scene.buildIndex; //do pozniejszego odladowania
+                    }
+                    UnLoadScene(indexOfSceneLoadedNow, indexOfSceneToUnload);
                 }
             }
         }
     }
 
-    private void LoadScene()
+    private void LoadScene(int indexOfSceneLoadedNow, int indexOfSceneToSpawn)
     {
-        _OutsideDoors.SetActive(false); //wylacz drzwi zeby mozna bylo przejsc dalej
-        for (int i = 0; i < _scenesToLoad.Length; i++)//dograj scene nastepna
+        _OutsideDoors.SetActive(false); // wy³¹cz drzwi, ¿eby mo¿na by³o przejœæ dalej
+        StartCoroutine(LoadAndSetActiveScene(indexOfSceneToSpawn));
+    }
+
+    private IEnumerator LoadAndSetActiveScene(int indexOfSceneToSpawn)
+    {
+        // SprawdŸ, czy scena jest ju¿ za³adowana
+        if (!IsSceneLoaded(indexOfSceneToSpawn))
         {
-            bool isSceneLoaded = false;
-            for (int j = 0; j < SceneManager.sceneCount; j++)
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(indexOfSceneToSpawn, LoadSceneMode.Additive);
+            yield return new WaitUntil(() => asyncLoad.isDone);
+        }
+        Debug.Log("Ustaw aktywna");
+        // Ustaw za³adowan¹ scenê jako aktywn¹
+        Scene loadedScene = SceneManager.GetSceneByBuildIndex(indexOfSceneToSpawn);
+        SceneManager.SetActiveScene(loadedScene);
+        Debug.Log("Active Scene: " + SceneManager.GetActiveScene().name);
+        Destroy(gameObject);
+    }
+    private void UnLoadScene(int indexOfSceneLoadedNow, int indexOfSceneToUnload)
+    {
+        if (_InsideDoors != null)
+        {
+            _InsideDoors.SetActive(true); // w³¹cz drzwi, ¿eby nie mo¿na by³o siê cofn¹æ
+        }
+        SceneManager.UnloadSceneAsync(indexOfSceneToUnload);
+        Destroy(gameObject);
+    }
+    private bool IsSceneLoaded(int buildIndex)
+    {
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            Scene scene = SceneManager.GetSceneAt(i);
+            if (scene.buildIndex == buildIndex)
             {
-                Scene loadScene = SceneManager.GetSceneAt(j);
-                if (loadScene.name == _scenesToLoad[i])
-                {
-                    isSceneLoaded = true;
-                    break;
-                }
-            }
-            if (!isSceneLoaded)
-            {
-                SceneManager.LoadSceneAsync(_scenesToLoad[i], LoadSceneMode.Additive);
-            }
-            if (isSceneLoaded)
-            {
-                Scene loadedScene = SceneManager.GetSceneByName(_scenesToLoad[i]);
-                SceneManager.SetActiveScene(loadedScene);
-                Debug.Log(SceneManager.GetActiveScene());
+                return true;
             }
         }
+        return false;
     }
 }
