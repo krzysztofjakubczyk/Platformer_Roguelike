@@ -38,7 +38,7 @@ public class BoundingShapeScripts : MonoBehaviour
             SetBoundingShape(mainCameraConfiner,GetCollider("ColliderForCamera"));
             Destroy(gameObject);
         }
-        else if(collision.CompareTag("Player") && gameObject.name == "LoadCameraTrigger")
+        else if(collision.CompareTag("Player") && gameObject.name == "LoadTranisitionCameraTrigger")
         {
             SetBoundingShape(mainCameraConfiner, GetCollider("TransitionCameraCollider"));
             Destroy(gameObject);
