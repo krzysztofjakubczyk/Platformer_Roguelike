@@ -19,6 +19,11 @@ TagManager:
   - enemyBullet
   - TransitionTrigger
   - NameOfItem
+  - fireball
+  - grabSpell
+  - grenadeSpell
+  - lightningSpell
+  - laserSpell
   layers:
   - Default
   - TransparentFX

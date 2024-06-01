@@ -33,6 +33,7 @@ public class PlayerStatsManager : MonoBehaviour
                 sword.GetComponent<MeleeWeapon>().UpdateAllStats();
                 player.GetComponent<StaminaControl>().UpdateAllStats();
                 player.GetComponent<HealthController>().UpdateAllStats();
+                player.GetComponent<SpellManager>().UpdateAllStats();
 
 
                 return;

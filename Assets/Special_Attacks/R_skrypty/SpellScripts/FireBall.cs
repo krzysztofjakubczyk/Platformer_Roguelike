@@ -55,4 +55,9 @@ public class FireBall : Spell
         
         Destroy(gameObject);
     }
+
+    public void moreDMG( float m)
+    {
+        damage += m;
+    }
 }
