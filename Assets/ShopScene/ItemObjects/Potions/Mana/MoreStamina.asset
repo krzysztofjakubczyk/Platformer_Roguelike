@@ -15,5 +15,6 @@ MonoBehaviour:
   Name: More Stamina
   Description: "Zwi\u0119ksza ilo\u015B\u0107 maksymalnej staminy graczowi"
   Cost: 3
-  ImageItem: {fileID: 0}
-  type: 1
+  ImageItem: {fileID: 117338573, guid: 032bbb426d9ef7e44abe338c035fb028, type: 3}
+  stat: 3
+  power: 20

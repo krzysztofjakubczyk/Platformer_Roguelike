@@ -59,12 +59,6 @@ public class SpellManager : MonoBehaviour
             throwDir = -transform.right;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            UpdateAllStats();
-        }
-
-
         if (Input.GetKeyDown(KeyCode.X) && activeSpell != null && canCast)
         {
             canCast = false;

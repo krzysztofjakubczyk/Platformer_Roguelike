@@ -59,6 +59,12 @@ public class MovementFin : MonoBehaviour
     void Update()
     {
         GetInput();
+
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            GetComponent<PlayerStatsManager>().ResetStats();
+        }
+
         MoveAccordingly();
     }
 

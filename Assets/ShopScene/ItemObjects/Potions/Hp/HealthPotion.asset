@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HealthPotion
   m_EditorClassIdentifier: 
   Name: Health Potion
-  Description: Potion zwracajacy okreslona wartosc hp
+  Description: "Potion zwi\u0119kszaj\u0105cy max HP"
   Cost: 5
   ImageItem: {fileID: 5642884455452387023, guid: 54f8df368b881894a9d5bb4c2c4bbdaa, type: 3}
   stat: 0

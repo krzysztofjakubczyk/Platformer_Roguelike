@@ -15,5 +15,6 @@ MonoBehaviour:
   Name: 'Attack Damage Upgrade '
   Description: "Zio\u0142owy napar zwi\u0119kszajacy obra\u017Cenia ataku gracza"
   Cost: 5
-  ImageItem: {fileID: 0}
-  type: 3
+  ImageItem: {fileID: -1597035515, guid: 032bbb426d9ef7e44abe338c035fb028, type: 3}
+  stat: 6
+  power: 3

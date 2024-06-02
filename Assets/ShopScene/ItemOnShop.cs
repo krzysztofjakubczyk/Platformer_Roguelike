@@ -30,7 +30,8 @@ public class ItemOnShop : MonoBehaviour
         itemName = m_ScriptableObject.Name;
         itemDescription = m_ScriptableObject.Description;
         playerStat = m_ScriptableObject.stat;
-        power = m_ScriptableObject.power; 
+        power = m_ScriptableObject.power;
+        itemCost = m_ScriptableObject.Cost;
     }
 
     private void Update()

@@ -16,5 +16,5 @@ MonoBehaviour:
   Description: Ulepszenie umiejetnosci gracza rzucania granatem
   Cost: 3
   ImageItem: {fileID: 21300000, guid: 1d36495befd973543a7dff1883388829, type: 3}
-  stat: 0
-  power: 0
+  stat: 13
+  power: 5
