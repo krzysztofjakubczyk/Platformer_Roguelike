@@ -15,5 +15,6 @@ MonoBehaviour:
   Name: pull upgrade
   Description: "Ulepszenie umiejetnosci gracza przyci\u0105gania "
   Cost: 3
-  ImageItem: {fileID: 0}
-  type: 2
+  ImageItem: {fileID: 1721035858, guid: 032bbb426d9ef7e44abe338c035fb028, type: 3}
+  stat: 0
+  power: 0

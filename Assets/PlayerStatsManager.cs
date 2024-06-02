@@ -12,6 +12,7 @@ public class PlayerStatsManager : MonoBehaviour
     [SerializeField]PlayerStatsFin playerStatsDefault;
     GameObject player;
     GameObject sword;
+    public Action updateGUI;
 
     private void Start()
     {
@@ -34,12 +35,12 @@ public class PlayerStatsManager : MonoBehaviour
                 player.GetComponent<StaminaControl>().UpdateAllStats();
                 player.GetComponent<HealthController>().UpdateAllStats();
                 player.GetComponent<SpellManager>().UpdateAllStats();
-
+                
 
                 return;
             }
         }
-
+        updateGUI?.Invoke();
         Debug.LogWarning($"Stat {statName} not found!");
     }
 
@@ -54,5 +55,6 @@ public class PlayerStatsManager : MonoBehaviour
                 return;
             }
         }
+        updateGUI?.Invoke();
     }
 }

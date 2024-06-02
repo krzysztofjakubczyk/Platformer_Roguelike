@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: Health Potion
   Description: Potion zwracajacy okreslona wartosc hp
   Cost: 5
-  ImageItem: {fileID: 21300000, guid: 233f14bad976c754886d7359e1d5030b, type: 3}
+  ImageItem: {fileID: 5642884455452387023, guid: 54f8df368b881894a9d5bb4c2c4bbdaa, type: 3}
   stat: 0
   power: 10

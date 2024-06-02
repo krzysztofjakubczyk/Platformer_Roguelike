@@ -4998,6 +4998,7 @@ MonoBehaviour:
   reachargeTime: 0
   castDirection: {x: 1, y: 0}
   rb: {fileID: 3365534036523940703}
+  spellData: {fileID: 11400000, guid: e5335d64f98029443849e463b5655553, type: 2}
   damageOnExplode: 0
   pushbackForce: 50
   dmgRadius: 0.5

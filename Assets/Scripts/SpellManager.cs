@@ -5,11 +5,11 @@ using static Player_Anim_State;
 
 public class SpellManager : MonoBehaviour
 {
-    [SerializeField] GameObject fireBall;
-    [SerializeField] GameObject lightning;
-    [SerializeField] GameObject grabSpell;
-    [SerializeField] GameObject laserSpell;
-    [SerializeField] GameObject grenadeSpell;
+    //[SerializeField] GameObject fireBall;
+    //[SerializeField] GameObject lightning;
+    //[SerializeField] GameObject grabSpell;
+    //[SerializeField] GameObject laserSpell;
+    //[SerializeField] GameObject grenadeSpell;
 
     [SerializeField] GameObject activeSpell;
     [SerializeField] float yOffset;
@@ -25,16 +25,20 @@ public class SpellManager : MonoBehaviour
     float cost;
     Vector2 throwDir;
     bool canCast;
+    [SerializeField]
+    public GameObject[] spells;
 
 
     void Start()
     {
+        
         StaminaControl = GetComponent<StaminaControl>();
 
         canCast = true;
 
         playerStats = GetComponent<PlayerStatsManager>().playerStats;
         UpdateAllStats();
+
     }
 
 

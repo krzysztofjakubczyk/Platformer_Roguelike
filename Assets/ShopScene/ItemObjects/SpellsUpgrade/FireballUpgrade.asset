@@ -15,5 +15,6 @@ MonoBehaviour:
   Name: Firebal upgrade
   Description: Ulepszenie umiejetnosci gracza rzucania fireballem
   Cost: 3
-  ImageItem: {fileID: 0}
-  type: 2
+  ImageItem: {fileID: 21300000, guid: 596f7b667e383704fbc4d31ab1530102, type: 3}
+  stat: 0
+  power: 0

@@ -104,6 +104,7 @@ MonoBehaviour:
   reachargeTime: 0
   castDirection: {x: 1, y: 0}
   rb: {fileID: 0}
+  spellData: {fileID: 11400000, guid: 4c6cd1961621257458204a3ce86b8763, type: 2}
   maxDistance: 20
   enemyLayer:
     serializedVersion: 2

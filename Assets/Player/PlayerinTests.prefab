@@ -38,7 +38,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.660987, y: -2.772645, z: 0}
-  m_LocalScale: {x: 0.8, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9019799905905105793}
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: f2ed27d6c1c3ccc48959bcca269d88f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -214,7 +214,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4823619b9b96824439c93dcdd3af330f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeSpell: {fileID: 8333201292758725811, guid: b899952662807734b9243b2cc70dee15, type: 3}
+  fireBall: {fileID: 7846823468872101394, guid: 55644b8d26e9af245b1c001153d90156, type: 3}
+  lightning: {fileID: 3151645623783271711, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
+  grabSpell: {fileID: 4837390724998732666, guid: 6ee1ee8cd2be17a4d9af7174fbf49a38, type: 3}
+  laserSpell: {fileID: 7993795310370821829, guid: b6c5c8b4005b9ab44a05f5d26e7af1b0, type: 3}
+  grenadeSpell: {fileID: 8333201292758725811, guid: b899952662807734b9243b2cc70dee15, type: 3}
+  activeSpell: {fileID: 7846823468872101394, guid: 55644b8d26e9af245b1c001153d90156, type: 3}
   yOffset: 1
 --- !u!114 &5354904505096124608
 MonoBehaviour:
@@ -306,7 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b054a047295cd4d8809f28b8ea5998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 0
+  money: 22
 --- !u!114 &5995267144880173407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: c1b7cef115e01f64c8248f7d089275a0, type: 2}
+  playerStatsDefault: {fileID: 0}
 --- !u!1 &6096011072974974785
 GameObject:
   m_ObjectHideFlags: 0

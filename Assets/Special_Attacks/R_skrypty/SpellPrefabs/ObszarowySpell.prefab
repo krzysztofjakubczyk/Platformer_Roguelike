@@ -106,6 +106,7 @@ MonoBehaviour:
   reachargeTime: 0
   castDirection: {x: 1, y: 0}
   rb: {fileID: -4139253590238007361}
+  spellData: {fileID: 11400000, guid: e712918e3166b9848a86e2aa3acb3f49, type: 2}
   delay: 0
   radius: 3
   maxThrowPower: 10

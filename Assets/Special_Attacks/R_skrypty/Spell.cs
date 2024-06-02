@@ -11,6 +11,7 @@ public abstract class Spell : MonoBehaviour
     public float reachargeTime;
     [HideInInspector] public Vector2 castDirection;
     [HideInInspector] public Rigidbody2D rb;
+    [SerializeField] public Items spellData;
 
     public abstract void Attack();
 }
