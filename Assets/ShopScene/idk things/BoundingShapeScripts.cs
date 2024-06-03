@@ -32,19 +32,14 @@ public class BoundingShapeScripts : MonoBehaviour
     {
         if (collision.CompareTag("Player") && gameObject.name == "CameraLoadTrigger")
         {
-            Debug.Log("wykryto gracza w kamerze drugiego pokoju");
-            Debug.Log(mainCameraConfiner.name);
-            Debug.Log(GetCollider("ColliderForCamera").name);
-            SetBoundingShape(mainCameraConfiner,GetCollider("ColliderForCamera"));
+            SetBoundingShape(mainCameraConfiner,GetCollider("ColliderForNewCamera"));
+            GetCollider("ColliderForNewCamera").name = "ColliderForCamera";
             Destroy(gameObject);
         }
         else if(collision.CompareTag("Player") && gameObject.name == "LoadTranisitionCameraTrigger")
         {
             SetBoundingShape(mainCameraConfiner, GetCollider("TransitionCameraCollider"));
             Destroy(gameObject);
-            Debug.Log("wykryto gracza w kamerze miedzy pokojami");
-            Debug.Log(mainCameraConfiner.name);
-            Debug.Log(GetCollider("ColliderForCamera").name);
         }
     }
 }

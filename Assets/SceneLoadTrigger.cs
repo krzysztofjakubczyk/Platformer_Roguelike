@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class SceneLoadTrigger : MonoBehaviour
 {
@@ -10,7 +11,11 @@ public class SceneLoadTrigger : MonoBehaviour
     [SerializeField] int indexOfSceneToSpawn;
     [SerializeField] int indexOfSceneToUnload;
     [SerializeField] int howManyScenesOnBuild;
-    [SerializeField] List<int> ExcludedIndexesOfScenes;
+    [SerializeField] int indexOfShopAtFirstFloor;
+    [SerializeField] int indexOfShopAtSecondFloor;
+    [SerializeField] List<int> IndexesOfScenesAtFirstFloor;
+    [SerializeField] List<int> IndexesOfScenesAtSecondFloor;
+    [SerializeField] bool isThisFirstFloor;
     GameObject _OutsideDoors;
     GameObject _InsideDoors;
     private GameObject _player;
@@ -24,6 +29,7 @@ public class SceneLoadTrigger : MonoBehaviour
             _InsideDoors = mapInstance.FindDisabledObjectByName<Transform>("InDoors")?.gameObject;
         }
         howManyScenesOnBuild = SceneManager.sceneCountInBuildSettings;
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -33,10 +39,15 @@ public class SceneLoadTrigger : MonoBehaviour
             if (gameObject.name == "LoadRoomTrigger")
             {
                 indexOfSceneLoadedNow = SceneManager.GetActiveScene().buildIndex;
-                indexOfSceneToSpawn = 4;//Random.Range(0, howManyScenesOnBuild);
-                while (ExcludedIndexesOfScenes.Contains(indexOfSceneToSpawn) || indexOfSceneToSpawn == indexOfSceneLoadedNow)
+                if (isThisFirstFloor)
                 {
-                    indexOfSceneToSpawn = Random.Range(0, howManyScenesOnBuild);
+                    indexOfSceneToSpawn = Random.Range(IndexesOfScenesAtFirstFloor.First(), IndexesOfScenesAtFirstFloor.Last());
+                    IndexesOfScenesAtFirstFloor.Remove(indexOfSceneToSpawn);
+                }
+                else
+                {
+                    indexOfSceneToSpawn = Random.Range(IndexesOfScenesAtSecondFloor.First(), IndexesOfScenesAtSecondFloor.Last());
+                    IndexesOfScenesAtFirstFloor.Remove(indexOfSceneToSpawn);
                 }
                 LoadScene(indexOfSceneLoadedNow, indexOfSceneToSpawn);
             }

@@ -889,7 +889,7 @@ GameObject:
   - component: {fileID: 441703951}
   - component: {fileID: 441703950}
   m_Layer: 11
-  m_Name: ColliderForCamera
+  m_Name: ColliderForNewCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17805,7 +17805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3483620533141171333, guid: f3daec46ff4fe774ca7502276f299c2a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.37
+      value: 21.65
       objectReference: {fileID: 0}
     - target: {fileID: 3483620533141171333, guid: f3daec46ff4fe774ca7502276f299c2a, type: 3}
       propertyPath: m_LocalPosition.y
