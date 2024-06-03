@@ -51,10 +51,17 @@ public class PlayerStatsManager : MonoBehaviour
             foreach(var statD in playerStatsDefault.stats)
             if (stat.statName == statD.statName)
             {
-                stat.value = statD.value;
-                return;
-            }
+                    Debug.Log($"{stat.statName} before: {stat.value}");
+                    stat.value = statD.value;
+                    Debug.Log($"{stat.statName} updated to: {stat.value}");
+                    break;            }
         }
+        print("dziala");
+        player.GetComponent<MovementFin>().UpdateAllStats();
+        sword.GetComponent<MeleeWeapon>().UpdateAllStats();
+        player.GetComponent<StaminaControl>().UpdateAllStats();
+        player.GetComponent<HealthController>().UpdateAllStats();
+        player.GetComponent<SpellManager>().UpdateAllStats();
         updateGUI?.Invoke();
     }
 }

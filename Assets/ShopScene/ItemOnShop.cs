@@ -18,6 +18,10 @@ public class ItemOnShop : MonoBehaviour
     bool playerIsClose = false;
     GameObject player;
 
+    public delegate void UpdateGUIDelegate(Sprite sprite, string description);
+
+    public static event UpdateGUIDelegate updateGUIUpgrades;
+
 
     private void Start()
     {
@@ -47,7 +51,7 @@ public class ItemOnShop : MonoBehaviour
             m_MoneyManager.SubMoney(itemCost);
       
             player.GetComponent<PlayerStatsManager>().UpdateStat(playerStat, power);
-
+            updateGUIUpgrades?.Invoke(m_ScriptableObject.ImageItem, m_ScriptableObject.Description);
             Destroy(gameObject);
         }
         else

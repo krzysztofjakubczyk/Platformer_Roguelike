@@ -17,11 +17,14 @@ public class TextManager : MonoBehaviour
     [SerializeField]
     GameObject spellListParent;
     [SerializeField]
+    GameObject upgradeListParent;
+    [SerializeField]
     GameObject player;
 
     PlayerStatsManager playerStatsManager;
     MoneyManager moneyManager;
     SpellManager spellManager;
+    ItemOnShop itemOnShop;
 
     [SerializeField] 
     private TMP_Text goldText;
@@ -46,6 +49,7 @@ public class TextManager : MonoBehaviour
         playerStatsManager = player.GetComponent<PlayerStatsManager>();
         moneyManager = player.GetComponent<MoneyManager>();
         spellManager = player.GetComponent<SpellManager>();
+        
         foreach(var spell in spellManager.spells)
         {
             Image newImage = new GameObject("Image").AddComponent<Image>();
@@ -54,6 +58,7 @@ public class TextManager : MonoBehaviour
             Sprite sprite = spell.GetComponent<Spell>().spellData.ImageItem;
             newImage.sprite = sprite;
         }
+        inventory.SetActive(!inventory.activeSelf);
         StatsValues = new Dictionary<string, float>()
         {
             {"HealthValue", playerStatsManager.playerStats.stats[0].value},
@@ -66,6 +71,7 @@ public class TextManager : MonoBehaviour
             {"GoldValue", moneyManager.GetMoney()}
         };
         playerStatsManager.updateGUI += updateGUI;
+        ItemOnShop.updateGUIUpgrades += UpdateUpgrades;
         updateGUI();
     }
     private void updateGUI()
@@ -95,5 +101,12 @@ public class TextManager : MonoBehaviour
             inventory.SetActive(!inventory.activeSelf);
         }
     }
-    
+    private void UpdateUpgrades(Sprite sprite, string description)
+    {
+        Image newImage = new GameObject("Image").AddComponent<Image>();
+        newImage.transform.SetParent(upgradeListParent.transform); // ustaw parentTransform na odpowiedni transform rodzica dla obiektów Image
+
+        newImage.sprite = sprite;
+    }
+
 }
