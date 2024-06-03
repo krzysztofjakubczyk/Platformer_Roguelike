@@ -1,8 +1,9 @@
-using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class SceneLoadTrigger : MonoBehaviour
 {
@@ -15,11 +16,12 @@ public class SceneLoadTrigger : MonoBehaviour
     [SerializeField] int indexOfShopAtSecondFloor;
     [SerializeField] List<int> IndexesOfScenesAtFirstFloor;
     [SerializeField] List<int> IndexesOfScenesAtSecondFloor;
-    [SerializeField] bool isThisFirstFloor;
+    [SerializeField] bool isFirstFloor;
     GameObject _OutsideDoors;
+    GameObject transitionTrigger;
     GameObject _InsideDoors;
     private GameObject _player;
-
+    public Vector3 moveAmount;
     void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
@@ -27,9 +29,9 @@ public class SceneLoadTrigger : MonoBehaviour
         if (mapInstance != null)
         {
             _InsideDoors = mapInstance.FindDisabledObjectByName<Transform>("InDoors")?.gameObject;
+            transitionTrigger = mapInstance.FindDisabledObjectByName<Transform>("LoadCameraTrigger")?.gameObject;
         }
         howManyScenesOnBuild = SceneManager.sceneCountInBuildSettings;
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,15 +41,23 @@ public class SceneLoadTrigger : MonoBehaviour
             if (gameObject.name == "LoadRoomTrigger")
             {
                 indexOfSceneLoadedNow = SceneManager.GetActiveScene().buildIndex;
-                if (isThisFirstFloor)
+                if (isFirstFloor && IndexesOfScenesAtFirstFloor.Count != 0)
                 {
                     indexOfSceneToSpawn = Random.Range(IndexesOfScenesAtFirstFloor.First(), IndexesOfScenesAtFirstFloor.Last());
                     IndexesOfScenesAtFirstFloor.Remove(indexOfSceneToSpawn);
                 }
-                else
+                else if (isFirstFloor && IndexesOfScenesAtFirstFloor.Count == 0)
+                {
+                    isFirstFloor = false;
+                }
+                else if (!isFirstFloor && IndexesOfScenesAtSecondFloor.Count != 0)
                 {
                     indexOfSceneToSpawn = Random.Range(IndexesOfScenesAtSecondFloor.First(), IndexesOfScenesAtSecondFloor.Last());
-                    IndexesOfScenesAtFirstFloor.Remove(indexOfSceneToSpawn);
+                    IndexesOfScenesAtSecondFloor.Remove(indexOfSceneToSpawn);
+                }
+                else if (!isFirstFloor && IndexesOfScenesAtSecondFloor.Count == 0)
+                {
+                    indexOfSceneToSpawn = 0; //SCENA MENU KONCOWEGO
                 }
                 LoadScene(indexOfSceneLoadedNow, indexOfSceneToSpawn);
             }
@@ -69,22 +79,17 @@ public class SceneLoadTrigger : MonoBehaviour
     private void LoadScene(int indexOfSceneLoadedNow, int indexOfSceneToSpawn)
     {
         _OutsideDoors.SetActive(false); // wy³¹cz drzwi, ¿eby mo¿na by³o przejœæ dalej
+        transitionTrigger.SetActive(true);
         StartCoroutine(LoadAndSetActiveScene(indexOfSceneToSpawn));
     }
 
     private IEnumerator LoadAndSetActiveScene(int indexOfSceneToSpawn)
     {
-        // SprawdŸ, czy scena jest ju¿ za³adowana
-        if (!IsSceneLoaded(indexOfSceneToSpawn))
-        {
-            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(indexOfSceneToSpawn, LoadSceneMode.Additive);
-            yield return new WaitUntil(() => asyncLoad.isDone);
-        }
-        Debug.Log("Ustaw aktywna");
-        // Ustaw za³adowan¹ scenê jako aktywn¹
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(indexOfSceneToSpawn, LoadSceneMode.Additive);
+        yield return new WaitUntil(() => asyncLoad.isDone);
         Scene loadedScene = SceneManager.GetSceneByBuildIndex(indexOfSceneToSpawn);
-        SceneManager.SetActiveScene(loadedScene);
-        Debug.Log("Active Scene: " + SceneManager.GetActiveScene().name);
+        SceneManager.SetActiveScene(loadedScene);         // Ustaw za³adowan¹ scenê jako aktywn¹
+        MoveScene(loadedScene);
         Destroy(gameObject);
     }
     private void UnLoadScene(int indexOfSceneLoadedNow, int indexOfSceneToUnload)
@@ -96,16 +101,13 @@ public class SceneLoadTrigger : MonoBehaviour
         SceneManager.UnloadSceneAsync(indexOfSceneToUnload);
         Destroy(gameObject);
     }
-    private bool IsSceneLoaded(int buildIndex)
+    private void MoveScene(Scene loadScene)
     {
-        for (int i = 0; i < SceneManager.sceneCount; i++)
+        moveAmount = new Vector3(40,0,0);
+        GameObject[] sceneObjects = loadScene.GetRootGameObjects();
+        foreach (GameObject obj in sceneObjects)
         {
-            Scene scene = SceneManager.GetSceneAt(i);
-            if (scene.buildIndex == buildIndex)
-            {
-                return true;
-            }
+            obj.transform.position = obj.transform.position + moveAmount;
         }
-        return false;
     }
 }

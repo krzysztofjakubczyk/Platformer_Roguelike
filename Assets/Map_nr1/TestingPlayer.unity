@@ -20466,12 +20466,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7801999215551583394, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
+      propertyPath: isThisFirstFloor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801999215551583394, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
       propertyPath: _scenesToLoad.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7801999215551583394, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
       propertyPath: _scenesToLoad.Array.data[0]
       value: TestingPlayer2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801999215551583394, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
+      propertyPath: IndexesOfScenesAtFirstFloor.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801999215551583394, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
+      propertyPath: IndexesOfScenesAtFirstFloor.Array.data[0]
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8812048207247753880, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
       propertyPath: m_Enabled

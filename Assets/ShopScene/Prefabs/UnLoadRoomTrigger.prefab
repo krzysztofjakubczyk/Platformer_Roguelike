@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2525366577306441282}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.244, y: -2.24, z: 0}
   m_LocalScale: {x: 18.661987, y: 3.479119, z: 1}
   m_ConstrainProportionsScale: 0
@@ -144,6 +144,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapInstance: {fileID: 6621371230715735204, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
-  _scenesToLoad: []
-  _scenesToUnLoad:
-  - Tes
+  indexOfSceneLoadedNow: 0
+  indexOfSceneToSpawn: 0
+  indexOfSceneToUnload: 0
+  howManyScenesOnBuild: 0
+  indexOfShopAtFirstFloor: 0
+  indexOfShopAtSecondFloor: 0
+  IndexesOfScenesAtFirstFloor: 
+  IndexesOfScenesAtSecondFloor: 
+  isFirstFloor: 0
+  moveAmount: {x: 0, y: 0, z: 0}
