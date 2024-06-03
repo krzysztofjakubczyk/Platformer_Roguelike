@@ -41,16 +41,17 @@ public class HealthController : StatConroller
         {
             switch (stat.statName)
             {
-                case PlayerStatEnum.manaMax:
+                case PlayerStatEnum.hpMax:
                     maxAmount = stat.value;
                     break;
-                case PlayerStatEnum.manaCurrent:
+                case PlayerStatEnum.hpCurrent:
                     currentAmount = stat.value;
                     break;
-                case PlayerStatEnum.manaRecoverTime:
+                case PlayerStatEnum.hpRecoverTime:
                     recoverTime = stat.value;
                     break;
             }
         }
+        print(maxAmount + "max am");
     }
 }
