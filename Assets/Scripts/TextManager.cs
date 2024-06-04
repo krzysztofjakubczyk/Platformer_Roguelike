@@ -108,28 +108,23 @@ public class TextManager : MonoBehaviour
             inventory.SetActive(!inventory.activeSelf);
         }
     }
-    private void UpdateUpgrades(Items item)
+    private void UpdateUpgrades(GameObject prefabOfItem)
     {
-        inventory.SetActive(true);
-        Image newImage = new GameObject("Image").AddComponent<Image>();
-        newImage.transform.SetParent(upgradeListParent.transform); // ustaw parentTransform na odpowiedni transform rodzica dla obiektów Image
-
-        ItemOnShop newItem = newImage.gameObject.AddComponent<ItemOnShop>();
-        newImage.gameObject.SetActive(true);
-        newItem.m_ScriptableObject = item;
-        newImage.sprite = item.ImageItem;
-        newItem.gameObject.AddComponent<EventSystem>();
-        EventTrigger eventTrigger = newItem.gameObject.AddComponent<EventTrigger>();
-        EventTrigger.Entry entry = new EventTrigger.Entry();
-        entry.eventID = EventTriggerType.PointerClick;
-        entry.callback.AddListener((data) => { itemOnShop.OnPointerClick((PointerEventData)data); });
-        eventTrigger.triggers.Add(entry);
+        GameObject newUpgrade = Instantiate(prefabOfItem);
+        Destroy(newUpgrade.GetComponent<SpriteRenderer>());
+        newUpgrade.transform.SetParent(upgradeListParent.transform);
+        Image image = newUpgrade.AddComponent<Image>();
+        Items newItem = newUpgrade.GetComponent<ItemOnShop>().m_ScriptableObject;
+        image.sprite = newItem.ImageItem;
+        
+        
     }
 
 
-    private void ShowDescription(Items item)
+    public void ShowDescription(GameObject prefabOfItem)
     {
-        descriptionParent.GetComponent<TMP_Text>().text = item.Description;
+        print("wykryto mysz");
+        descriptionParent.GetComponent<TMP_Text>().text = prefabOfItem.GetComponent<ItemOnShop>().m_ScriptableObject.Description;
     }
 
 }
