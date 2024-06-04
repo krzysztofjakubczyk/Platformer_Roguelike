@@ -15,19 +15,21 @@ public class MapTranistion : MonoBehaviour
         moneyManager = FindAnyObjectByType<MoneyManager>();
         getEnemies();
         // Znajdü wy≥πczony obiekt LoadRoomTrigger
-        _loadTrigger = FindDisabledObjectByName<SceneLoadTrigger>("LoadRoomTrigger");
+        findLoadTrigger();
     }
 
+    private void findLoadTrigger()
+    {
+        _loadTrigger = FindDisabledObjectByName<SceneLoadTrigger>("LoadRoomTrigger");
+    }
     void killAnEnemy()
     {
         getEnemies();
         if (howManyEnemies == 1)
         {
+            findLoadTrigger();
             moneyManager.AddMoney(howMoneyFromEnemy);
-            if (_loadTrigger != null)
-            {
-                _loadTrigger.gameObject.SetActive(true);
-            }
+            _loadTrigger.gameObject.SetActive(true);
         }
     }
 
