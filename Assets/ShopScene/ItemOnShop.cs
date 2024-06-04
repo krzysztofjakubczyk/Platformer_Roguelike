@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using System;
 
-public class ItemOnShop : MonoBehaviour
+public class ItemOnShop : MonoBehaviour, IPointerClickHandler, IPointerExitHandler
 {
-    [SerializeField] protected Items m_ScriptableObject;
+    [SerializeField] public Items m_ScriptableObject;
 
     MoneyManager m_MoneyManager;
     TMP_Text name, description;
@@ -18,10 +20,11 @@ public class ItemOnShop : MonoBehaviour
     bool playerIsClose = false;
     GameObject player;
 
-    public delegate void UpdateGUIDelegate(Sprite sprite, string description);
+    public delegate void UpdateGUIDelegate(Items item);
 
     public static event UpdateGUIDelegate updateGUIUpgrades;
 
+    public static event UpdateGUIDelegate showDescription;
 
     private void Start()
     {
@@ -30,7 +33,10 @@ public class ItemOnShop : MonoBehaviour
         description = GameObject.Find("DescriptionOfItemInShop").GetComponent<TMP_Text>();
         player = GameObject.Find("Player");
 
-        GetComponent<SpriteRenderer>().sprite = m_ScriptableObject.ImageItem;
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null) sr.sprite = m_ScriptableObject.ImageItem;
+        else Debug.Log("Obiekt gry nie ma komponentu SpriteRenderer");
+        
         itemName = m_ScriptableObject.Name;
         itemDescription = m_ScriptableObject.Description;
         playerStat = m_ScriptableObject.stat;
@@ -51,7 +57,7 @@ public class ItemOnShop : MonoBehaviour
             m_MoneyManager.SubMoney(itemCost);
       
             player.GetComponent<PlayerStatsManager>().UpdateStat(playerStat, power);
-            updateGUIUpgrades?.Invoke(m_ScriptableObject.ImageItem, m_ScriptableObject.Description);
+            updateGUIUpgrades?.Invoke(m_ScriptableObject);
             Destroy(gameObject);
         }
         else
@@ -85,4 +91,18 @@ public class ItemOnShop : MonoBehaviour
             return true;
     }
 
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("wchodzi na item myszek");
+        showDescription?.Invoke(m_ScriptableObject);
+        
+        throw new System.NotImplementedException();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        showDescription?.Invoke(m_ScriptableObject);
+        Debug.Log("wychodzi na item myszek");
+        throw new System.NotImplementedException();
+    }
 }

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System;
+using UnityEditor.Events;
+using UnityEngine.Events;
 
 public class TextManager : MonoBehaviour
 {
@@ -16,6 +20,8 @@ public class TextManager : MonoBehaviour
 
     [SerializeField]
     GameObject spellListParent;
+    [SerializeField]
+    GameObject descriptionParent;
     [SerializeField]
     GameObject upgradeListParent;
     [SerializeField]
@@ -70,11 +76,12 @@ public class TextManager : MonoBehaviour
             {"DashPowerValue", playerStatsManager.playerStats.stats[16].value},
             {"GoldValue", moneyManager.GetMoney()}
         };
-        playerStatsManager.updateGUI += updateGUI;
+        playerStatsManager.updateGUI += UpdateGUI;
         ItemOnShop.updateGUIUpgrades += UpdateUpgrades;
-        updateGUI();
+        ItemOnShop.showDescription += ShowDescription;
+        UpdateGUI();
     }
-    private void updateGUI()
+    private void UpdateGUI()
     {
         foreach (var stat in StatsTexts)
         {
@@ -97,16 +104,32 @@ public class TextManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.Tab))
         { 
-            updateGUI();
+            UpdateGUI();
             inventory.SetActive(!inventory.activeSelf);
         }
     }
-    private void UpdateUpgrades(Sprite sprite, string description)
+    private void UpdateUpgrades(Items item)
     {
+        inventory.SetActive(true);
         Image newImage = new GameObject("Image").AddComponent<Image>();
         newImage.transform.SetParent(upgradeListParent.transform); // ustaw parentTransform na odpowiedni transform rodzica dla obiektów Image
 
-        newImage.sprite = sprite;
+        ItemOnShop newItem = newImage.gameObject.AddComponent<ItemOnShop>();
+        newImage.gameObject.SetActive(true);
+        newItem.m_ScriptableObject = item;
+        newImage.sprite = item.ImageItem;
+        newItem.gameObject.AddComponent<EventSystem>();
+        EventTrigger eventTrigger = newItem.gameObject.AddComponent<EventTrigger>();
+        EventTrigger.Entry entry = new EventTrigger.Entry();
+        entry.eventID = EventTriggerType.PointerClick;
+        entry.callback.AddListener((data) => { itemOnShop.OnPointerClick((PointerEventData)data); });
+        eventTrigger.triggers.Add(entry);
+    }
+
+
+    private void ShowDescription(Items item)
+    {
+        descriptionParent.GetComponent<TMP_Text>().text = item.Description;
     }
 
 }
