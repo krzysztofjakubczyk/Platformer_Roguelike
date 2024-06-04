@@ -20,7 +20,7 @@ public class ItemOnShop : MonoBehaviour, IPointerClickHandler, IPointerExitHandl
     bool playerIsClose = false;
     GameObject player;
 
-    public delegate void UpdateGUIDelegate(Items item);
+    public delegate void UpdateGUIDelegate(GameObject prefab);
 
     public static event UpdateGUIDelegate updateGUIUpgrades;
 
@@ -57,7 +57,7 @@ public class ItemOnShop : MonoBehaviour, IPointerClickHandler, IPointerExitHandl
             m_MoneyManager.SubMoney(itemCost);
       
             player.GetComponent<PlayerStatsManager>().UpdateStat(playerStat, power);
-            updateGUIUpgrades?.Invoke(m_ScriptableObject);
+            updateGUIUpgrades?.Invoke(gameObject);
             Destroy(gameObject);
         }
         else
@@ -94,15 +94,15 @@ public class ItemOnShop : MonoBehaviour, IPointerClickHandler, IPointerExitHandl
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("wchodzi na item myszek");
-        showDescription?.Invoke(m_ScriptableObject);
+        showDescription?.Invoke(gameObject);
         
-        throw new System.NotImplementedException();
+       
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        showDescription?.Invoke(m_ScriptableObject);
+        showDescription?.Invoke(gameObject);
         Debug.Log("wychodzi na item myszek");
-        throw new System.NotImplementedException();
+       
     }
 }
