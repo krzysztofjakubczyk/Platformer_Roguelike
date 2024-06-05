@@ -19610,8 +19610,8 @@ MonoBehaviour:
   mapInstance: {fileID: 1587916847}
   indexOfSceneToSpawn: 0
   indexOfSceneToUnload: 0
-  indexOfShopAtFirstFloor: 0
-  indexOfShopAtSecondFloor: 0
+  indexOfShopAtFirstFloor: 5
+  indexOfShopAtSecondFloor: 5
   sizeOfFirstFloor: 0
   sizeOfSecondFloor: 0
   IndexesOfScenesAtFirstFloor: 

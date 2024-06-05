@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -56,7 +57,7 @@ public class SceneController : MonoBehaviour
     }
     public void LoadScene()
     {
-        indexOfShopAtFirstFloor = IndexesOfScenesAtFirstFloor[Random.Range(0, IndexesOfScenesAtFirstFloor.Count)];
+        
         if (IsFirstFloor())
         {
             if (loadedScenes < indexOfShopAtSecondFloor)
@@ -65,7 +66,7 @@ public class SceneController : MonoBehaviour
                 IndexesOfScenesAtFirstFloor.Remove(indexOfSceneToSpawn);
                 loadedScenes++;
             }
-            else if (IsFirstFloor() && loadedScenes == indexOfShopAtFirstFloor)
+            else if (loadedScenes == indexOfShopAtFirstFloor)
             {
                 indexOfSceneToSpawn = indexOfShopAtFirstFloor;
                 loadedScenes = 0;
@@ -73,7 +74,7 @@ public class SceneController : MonoBehaviour
         }
         else
         {
-            indexOfShopAtSecondFloor = IndexesOfScenesAtSecondFloor[Random.Range(0, IndexesOfScenesAtSecondFloor.Count)];
+            
             if (loadedScenes < indexOfShopAtSecondFloor)
             {
                 indexOfSceneToSpawn = IndexesOfScenesAtSecondFloor.First();
@@ -86,7 +87,13 @@ public class SceneController : MonoBehaviour
                 loadedScenes = 0;
             }
         }
-        SceneManager.LoadSceneAsync(indexOfSceneToSpawn, LoadSceneMode.Additive);
+        StartCoroutine(LoadSceneCoroutine());
+    }
+    
+    private IEnumerator LoadSceneCoroutine()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(indexOfSceneToSpawn, LoadSceneMode.Additive);
+        yield return asyncLoad;
         Scene scene = SceneManager.GetSceneByBuildIndex(indexOfSceneToSpawn);
         MoveScene(scene);
         SceneManager.SetActiveScene(scene);
