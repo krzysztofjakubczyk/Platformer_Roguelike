@@ -34,12 +34,10 @@ public class BoundingShapeScripts : MonoBehaviour
         {
             SetBoundingShape(mainCameraConfiner,GetCollider("ColliderForNewCamera"));
             GetCollider("ColliderForNewCamera").name = "ColliderForCamera";
-            Destroy(gameObject);
         }
         else if(collision.CompareTag("Player") && gameObject.name == "LoadCameraTrigger")
         {
             SetBoundingShape(mainCameraConfiner, GetCollider("TransitionCameraCollider"));
-            Destroy(gameObject);
         }
     }
 }

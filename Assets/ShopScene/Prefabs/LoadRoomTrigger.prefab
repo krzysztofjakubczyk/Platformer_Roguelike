@@ -150,7 +150,7 @@ MonoBehaviour:
   howManyScenesOnBuild: 0
   indexOfShopAtFirstFloor: 0
   indexOfShopAtSecondFloor: 0
-  IndexesOfScenesAtFirstFloor: 04000000
+  IndexesOfScenesAtFirstFloor: 0500000004000000
   IndexesOfScenesAtSecondFloor: 
   isFirstFloor: 1
   moveAmount: {x: 0, y: 0, z: 0}
