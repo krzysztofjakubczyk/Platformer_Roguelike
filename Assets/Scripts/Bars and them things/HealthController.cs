@@ -52,6 +52,5 @@ public class HealthController : StatConroller
                     break;
             }
         }
-        print(maxAmount + "max am");
     }
 }
