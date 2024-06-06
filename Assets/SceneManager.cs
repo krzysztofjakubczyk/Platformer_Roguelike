@@ -6,90 +6,82 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    [SerializeField] MapTranistion mapInstance;
-    [SerializeField] int indexOfSceneToSpawn;
-    [SerializeField] int indexOfSceneToUnload;
-    [SerializeField] int indexOfShopAtFirstFloor;
-    [SerializeField] int indexOfShopAtSecondFloor;
-    [SerializeField] int sizeOfFirstFloor;
-    [SerializeField] int sizeOfSecondFloor;
-    int loadedScenes = 1;
-    [SerializeField] List<int> IndexesOfScenesAtFirstFloor;
-    [SerializeField] List<int> IndexesAddedToFirstFloor;
-    [SerializeField] List<int> IndexesOfScenesAtSecondFloor;
-    [SerializeField] List<int> IndexesAddedToSecondFloor;
-    public Vector3 moveAmount;
+    [SerializeField] private MapTranistion mapInstance;
+    [SerializeField] private int shopSceneIndex;
+    [SerializeField] private Vector3 moveAmount = new Vector3(38, 0, 0);
+    [SerializeField] private List<int> floorSizes;
+
+    private const int minFloorSize = 2;
+    private const int maxFloorSize = 5;
+    private int currentFloor = 0;
+    private int loadedScenes = 1;
+    private int indexOfSceneToSpawn;
+    private Dictionary<int, List<int>> floorSceneIndexes = new Dictionary<int, List<int>>();
 
     void Start()
     {
-        RandomNumbersForFloors();
+        if (moveAmount == Vector3.zero)
+        {
+            moveAmount = new Vector3(38, 0, 0);
+        }
+        InitializeFloors();
     }
 
-    private void RandomNumbersForFloors()
+    private void InitializeFloors()
     {
-        sizeOfFirstFloor = UnityEngine.Random.Range(2, 5);
-        sizeOfSecondFloor = UnityEngine.Random.Range(2, 5);
-
-        for (int i = 0; i < sizeOfFirstFloor; i++)
+        for (int floor = 0; floor < floorSizes.Count; floor++)
         {
-            int randomIndex;
-            do
-            {
-                randomIndex = UnityEngine.Random.Range(1, 5);
-            }
-            while (IndexesAddedToFirstFloor.Contains(randomIndex));
-
-            IndexesOfScenesAtFirstFloor.Add(randomIndex);
-            IndexesAddedToFirstFloor.Add(randomIndex);
-        }
-        for (int i = 0; i < sizeOfSecondFloor; i++)
-        {
-            int randomIndex;
-            do
-            {
-                randomIndex = UnityEngine.Random.Range(1, 5);
-            }
-            while (IndexesAddedToFirstFloor.Contains(randomIndex));
-
-            IndexesOfScenesAtSecondFloor.Add(randomIndex);
-            IndexesAddedToSecondFloor.Add(randomIndex);
+            InitializeFloorScenes(floor);
         }
     }
+
+    private void InitializeFloorScenes(int floor)
+    {
+        int floorSize = UnityEngine.Random.Range(minFloorSize, maxFloorSize);
+        floorSizes[floor] = floorSize;
+        var sceneIndexes = new HashSet<int>();
+
+        for (int i = 0; i < floorSize; i++)
+        {
+            int randomIndex;
+            do
+            {
+                randomIndex = UnityEngine.Random.Range(1, 5);
+            }
+            while (sceneIndexes.Contains(randomIndex));
+
+            if (!floorSceneIndexes.ContainsKey(floor))
+            {
+                floorSceneIndexes[floor] = new List<int>();
+            }
+
+            floorSceneIndexes[floor].Add(randomIndex);
+            sceneIndexes.Add(randomIndex);
+        }
+    }
+
     public void LoadScene()
     {
-        
-        if (IsFirstFloor())
+        if (loadedScenes < shopSceneIndex)
         {
-            if (loadedScenes < indexOfShopAtSecondFloor)
-            {
-                indexOfSceneToSpawn = IndexesOfScenesAtFirstFloor.First();
-                IndexesOfScenesAtFirstFloor.Remove(indexOfSceneToSpawn);
-                loadedScenes++;
-            }
-            else if (loadedScenes == indexOfShopAtFirstFloor)
-            {
-                indexOfSceneToSpawn = indexOfShopAtFirstFloor;
-                loadedScenes = 0;
-            }
+            indexOfSceneToSpawn = floorSceneIndexes[currentFloor].First();
+            floorSceneIndexes[currentFloor].Remove(indexOfSceneToSpawn);
+            loadedScenes++;
         }
-        else
+        else if (loadedScenes == shopSceneIndex)
         {
-            
-            if (loadedScenes < indexOfShopAtSecondFloor)
-            {
-                indexOfSceneToSpawn = IndexesOfScenesAtSecondFloor.First();
-                IndexesOfScenesAtSecondFloor.Remove(indexOfSceneToSpawn);
-            }
+            indexOfSceneToSpawn = shopSceneIndex;
+            loadedScenes = 0;
+        }
 
-            else if (loadedScenes == indexOfShopAtSecondFloor)
-            {
-                indexOfSceneToSpawn = indexOfShopAtSecondFloor;
-                loadedScenes = 0;
-            }
+        if (IsSceneAlreadyLoaded(indexOfSceneToSpawn))
+        {
+            return;
         }
+
         StartCoroutine(LoadSceneCoroutine());
     }
-    
+
     private IEnumerator LoadSceneCoroutine()
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(indexOfSceneToSpawn, LoadSceneMode.Additive);
@@ -98,40 +90,47 @@ public class SceneController : MonoBehaviour
         MoveScene(scene);
         SceneManager.SetActiveScene(scene);
     }
+
     public void UnLoadScene()
     {
-        foreach (var scene in SceneManager.GetAllScenes()) // Unload inactive scenes
+        foreach (var scene in SceneManager.GetAllScenes())
         {
             if (scene != SceneManager.GetActiveScene())
             {
-                indexOfSceneToUnload = scene.buildIndex;
-                SceneManager.UnloadSceneAsync(indexOfSceneToUnload);
+                SceneManager.UnloadSceneAsync(scene.buildIndex);
             }
         }
     }
-    private int GetCurrentLoadedScene()
+
+    private bool IsSceneAlreadyLoaded(int sceneIndex)
     {
-        return SceneManager.GetActiveScene().buildIndex;
+        Scene activeScene = SceneManager.GetActiveScene();
+        return activeScene.buildIndex == sceneIndex;
     }
-    private bool IsFirstFloor()
-    {
-        if (IndexesOfScenesAtFirstFloor.Count > 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
+
     private void MoveScene(Scene loadScene)
     {
-        moveAmount = new Vector3(38, 0, 0);
         Debug.Log("Moved scene by: " + moveAmount);
+
         GameObject[] sceneObjects = loadScene.GetRootGameObjects();
+        if (sceneObjects.Length == 0)
+        {
+            Debug.LogWarning("No root game objects found in the scene to move.");
+            return;
+        }
+
         foreach (GameObject obj in sceneObjects)
         {
-            obj.transform.position += moveAmount;
+            if (obj != null)
+            {
+                Debug.Log("Moving object: " + obj.name);
+                obj.transform.position += moveAmount;
+            }
+            else
+            {
+                Debug.LogWarning("Encountered a null object in the scene.");
+            }
         }
     }
 }
+    

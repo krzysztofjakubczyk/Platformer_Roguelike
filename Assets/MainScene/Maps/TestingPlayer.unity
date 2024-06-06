@@ -19608,17 +19608,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapInstance: {fileID: 1587916847}
-  indexOfSceneToSpawn: 0
-  indexOfSceneToUnload: 0
-  indexOfShopAtFirstFloor: 5
-  indexOfShopAtSecondFloor: 5
-  sizeOfFirstFloor: 0
-  sizeOfSecondFloor: 0
-  IndexesOfScenesAtFirstFloor: 
-  IndexesAddedToFirstFloor: 
-  IndexesOfScenesAtSecondFloor: 
-  IndexesAddedToSecondFloor: 
+  shopSceneIndex: 5
   moveAmount: {x: 0, y: 0, z: 0}
+  floorSizes: 0300000002000000
 --- !u!1 &2005817366
 GameObject:
   m_ObjectHideFlags: 0
