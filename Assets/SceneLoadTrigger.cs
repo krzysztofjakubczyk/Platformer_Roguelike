@@ -32,6 +32,7 @@ public class SceneLoadTrigger : MonoBehaviour
             }
             else if (gameObject.name == "UnLoadRoomTrigger")
             {
+                Debug.Log("odladowano scene");
                 controller.UnLoadScene();
                 FindNewGameObjectsOnScene();
                 _InsideDoors.SetActive(true);
@@ -41,6 +42,7 @@ public class SceneLoadTrigger : MonoBehaviour
     }
     private void FindNewGameObjectsOnScene()
     {
+        mapInstance = FindObjectOfType<MapTranistion>();
         _OutsideDoors = GameObject.Find("OutDoors");
         if (mapInstance != null)
         {
