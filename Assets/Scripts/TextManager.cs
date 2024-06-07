@@ -17,6 +17,7 @@ public class TextManager : MonoBehaviour
     List<TMP_Text> StatsTexts;
 
     Dictionary<string, float> StatsValues;
+    Dictionary<string, string> SpellValues;
 
     [SerializeField]
     GameObject spellListParent;
@@ -55,16 +56,22 @@ public class TextManager : MonoBehaviour
         playerStatsManager = player.GetComponent<PlayerStatsManager>();
         moneyManager = player.GetComponent<MoneyManager>();
         spellManager = player.GetComponent<SpellManager>();
-        
+
+        SpellValues = new Dictionary<string, string>();
+
         foreach(var spell in spellManager.spells)
         {
-            Image newImage = new GameObject("Image").AddComponent<Image>();
-            newImage.transform.SetParent(spellListParent.transform); // ustaw parentTransform na odpowiedni transform rodzica dla obiektów Image
             Items spellInstance = spell.GetComponent<Spell>().spellData;
-           
+            //dodawanie stringów do s³ownika nazw spelli i ich opisów
+            string spellName = spellInstance.Name;
+            string spellDescription = spellInstance.Description;
+            SpellValues.Add(spellName, spellDescription);
+            //dodawanie ikony i ustawianie w odpowiednim miejscu w UI
+            Image newImage = new GameObject(spellName).AddComponent<Image>();
+            newImage.transform.SetParent(spellListParent.transform); // ustaw parentTransform na odpowiedni transform rodzica dla obiektów Image
             Sprite sprite = spellInstance.ImageItem;
             newImage.sprite = sprite;
-
+            //dodanie triggeru najechania na obrazek i wyœwietlenie opisu spella
             EventTrigger eventTrigger = newImage.gameObject.AddComponent<EventTrigger>();
 
             // Tworzenie nowego wpisu dla zdarzenia PointerEnter
@@ -141,8 +148,17 @@ public class TextManager : MonoBehaviour
         print("wykryto mysz");
         if(prefabOfItem.GetComponent<ItemOnShop>()!=null)
             descriptionParent.GetComponent<TMP_Text>().text = prefabOfItem.GetComponent<ItemOnShop>().m_ScriptableObject.Description;
-        else if(prefabOfItem.GetComponent<Items>() != null)
-            descriptionParent.GetComponent<TMP_Text>().text = prefabOfItem.GetComponent<Items>().Description;
+        else 
+        {
+            foreach(var spell in SpellValues)
+            {
+                if(spell.Key == prefabOfItem.gameObject.name)
+                {
+                    descriptionParent.GetComponent<TMP_Text>().text = spell.Value;
+                }
+            }
+        }
+            
     }
 
 }
