@@ -60,9 +60,26 @@ public class TextManager : MonoBehaviour
         {
             Image newImage = new GameObject("Image").AddComponent<Image>();
             newImage.transform.SetParent(spellListParent.transform); // ustaw parentTransform na odpowiedni transform rodzica dla obiektów Image
-
-            Sprite sprite = spell.GetComponent<Spell>().spellData.ImageItem;
+            Items spellInstance = spell.GetComponent<Spell>().spellData;
+           
+            Sprite sprite = spellInstance.ImageItem;
             newImage.sprite = sprite;
+
+            EventTrigger eventTrigger = newImage.gameObject.AddComponent<EventTrigger>();
+
+            // Tworzenie nowego wpisu dla zdarzenia PointerEnter
+            EventTrigger.Entry pointerEnterEntry = new EventTrigger.Entry();
+            pointerEnterEntry.eventID = EventTriggerType.PointerEnter;
+
+            // Dodawanie funkcji do wywo³ania, gdy zdarzenie PointerEnter zostanie wywo³ane
+            pointerEnterEntry.callback.AddListener((eventData) => {
+                // Tutaj umieœæ kod, który ma byæ wykonany podczas zdarzenia PointerEnter
+                Debug.Log("Pointer entered on the image");
+                ShowDescription(newImage.gameObject);
+            });
+
+            // Dodawanie wpisu do EventTrigger
+            eventTrigger.triggers.Add(pointerEnterEntry);
         }
         inventory.SetActive(!inventory.activeSelf);
         StatsValues = new Dictionary<string, float>()
@@ -116,15 +133,16 @@ public class TextManager : MonoBehaviour
         Image image = newUpgrade.AddComponent<Image>();
         Items newItem = newUpgrade.GetComponent<ItemOnShop>().m_ScriptableObject;
         image.sprite = newItem.ImageItem;
-        
-        
     }
 
 
-    public void ShowDescription(GameObject prefabOfItem)
+        public void ShowDescription(GameObject prefabOfItem)
     {
         print("wykryto mysz");
-        descriptionParent.GetComponent<TMP_Text>().text = prefabOfItem.GetComponent<ItemOnShop>().m_ScriptableObject.Description;
+        if(prefabOfItem.GetComponent<ItemOnShop>()!=null)
+            descriptionParent.GetComponent<TMP_Text>().text = prefabOfItem.GetComponent<ItemOnShop>().m_ScriptableObject.Description;
+        else if(prefabOfItem.GetComponent<Items>() != null)
+            descriptionParent.GetComponent<TMP_Text>().text = prefabOfItem.GetComponent<Items>().Description;
     }
 
 }

@@ -41,7 +41,9 @@ public class MovementFin : MonoBehaviour
     KeyCode dashKey = KeyCode.LeftShift;
     //KeyCode spellKey = KeyCode.X;
     //KeyCode meleeKey = KeyCode.C;
-
+    private bool getDamageFromEnemy;
+    [SerializeField]
+    private float pushBackForce;
 
     private void Start()
     {
@@ -72,7 +74,7 @@ public class MovementFin : MonoBehaviour
     private void FixedUpdate()
     {
         // moving player horizontally:
-        if(!isDashing && !sideJump)
+        if(!isDashing && !sideJump && !getDamageFromEnemy)
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
 
         if (Mathf.Abs(horizontal * speed) > 0.1f)
@@ -238,4 +240,24 @@ public class MovementFin : MonoBehaviour
     public float GetDash() { return dashPower; }
 
     public float GetMovement() { return speed; }
+    IEnumerator ChangeDamageEnterFlagAfterDelay(bool value, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        getDamageFromEnemy = value;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.transform.tag == "Enemy")
+        {
+            print("kolizja z enemy");
+            getDamageFromEnemy = true;
+            if (collision.transform.position.x > transform.position.x)
+                rb.AddForce(new Vector2(-1, 1) * pushBackForce , ForceMode2D.Impulse);
+            else if (collision.transform.position.x < transform.position.x)
+                rb.AddForce(new Vector2(1, 1) * pushBackForce, ForceMode2D.Impulse);
+            StartCoroutine(ChangeDamageEnterFlagAfterDelay(false, 1));
+        }
+    }
+
 }

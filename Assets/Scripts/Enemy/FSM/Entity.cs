@@ -186,6 +186,18 @@ public class Entity : MonoBehaviour
             if (facingDirection == 1) Flip();
         }
     }
-   
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.layer == entityData.WhatIsPlayer)
+        {
+            //wy³¹czyæ movemnt gracza
+            Debug.Log("odbija");
+            rb = collision.transform.GetComponent<Rigidbody2D>();
+            if(collision.transform.position.x < transform.position.x)
+            rb.AddForce(new Vector2(-1, -1), ForceMode2D.Impulse);
+            else if (collision.transform.position.x > transform.position.x)
+                rb.AddForce(new Vector2(1, 1), ForceMode2D.Impulse);
+        }
+    }
 
 }
