@@ -17,6 +17,7 @@ public class SceneController : MonoBehaviour
     private int loadedScenes = 1;
     private int indexOfSceneToSpawn;
     private Dictionary<int, List<int>> floorSceneIndexes = new Dictionary<int, List<int>>();
+    private Dictionary<string, Vector3> previousScenePositions = new Dictionary<string, Vector3>();
 
     void Start()
     {
@@ -34,7 +35,20 @@ public class SceneController : MonoBehaviour
             InitializeFloorScenes(floor);
         }
     }
+    private void StoreCurrentScenePositions()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        GameObject[] sceneObjects = currentScene.GetRootGameObjects();
 
+        previousScenePositions.Clear();
+        foreach (GameObject obj in sceneObjects)
+        {
+            if (obj != null)
+            {
+                previousScenePositions[obj.name] = obj.transform.position;
+            }
+        }
+    }
     private void InitializeFloorScenes(int floor)
     {
         int floorSize = UnityEngine.Random.Range(minFloorSize, maxFloorSize);
@@ -81,13 +95,22 @@ public class SceneController : MonoBehaviour
 
         StartCoroutine(LoadSceneCoroutine());
     }
-
+    public void LoadNewScene(string sceneName)
+    {
+        StoreCurrentScenePositions();
+        SceneManager.LoadScene(sceneName);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        MoveScene(scene);
+    }
     private IEnumerator LoadSceneCoroutine()
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(indexOfSceneToSpawn, LoadSceneMode.Additive);
         yield return asyncLoad;
         Scene scene = SceneManager.GetSceneByBuildIndex(indexOfSceneToSpawn);
-        MoveScene(scene);
         SceneManager.SetActiveScene(scene);
     }
 
@@ -121,14 +144,14 @@ public class SceneController : MonoBehaviour
 
         foreach (GameObject obj in sceneObjects)
         {
-            if (obj != null)
+            if (obj != null && obj.name!="Player")
             {
                 Debug.Log("Moving object: " + obj.name);
                 obj.transform.position += moveAmount;
             }
             else
             {
-                Debug.LogWarning("Encountered a null object in the scene.");
+                Debug.Log("Encountered a Player object in the scene.");
             }
         }
     }
