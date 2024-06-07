@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
-using System.Globalization;
 
 public class BoundingShapeScripts : MonoBehaviour
 {
@@ -11,35 +10,31 @@ public class BoundingShapeScripts : MonoBehaviour
 
     private void Start()
     {
-        GetCamera();
-        GetCollider("ColliderForCamera");
+        mainCameraConfiner = FindObjectOfType<CinemachineConfiner2D>();
+        colliderForCamera = GameObject.Find("ColliderForCamera").GetComponent<CompositeCollider2D>();
+        mainCameraConfiner.m_BoundingShape2D = colliderForCamera;
     }
-    private CinemachineConfiner2D GetCamera()
-    {
-        mainCameraConfiner = GameObject.Find("MainCamera").GetComponent<CinemachineConfiner2D>();
-        return mainCameraConfiner;
-    }
-    private CompositeCollider2D GetCollider(string name)
-    {
-        colliderForCamera = GameObject.Find(name).GetComponent<CompositeCollider2D>();
-        return colliderForCamera;
-    }
-    public void SetBoundingShape(CinemachineConfiner2D mainCameraConfiner, CompositeCollider2D collider)
+
+    public void SetBoundingShape(CompositeCollider2D collider)
     {
         mainCameraConfiner.m_BoundingShape2D = collider;
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && gameObject.name == "CameraLoadTrigger")
         {
-            SetBoundingShape(mainCameraConfiner,GetCollider("ColliderForNewCamera"));
-            GetCollider("ColliderForNewCamera").name = "ColliderForCamera";
-            Destroy(gameObject);
+            var newCollider = GameObject.Find("ColliderForNewCamera").GetComponent<CompositeCollider2D>();
+            SetBoundingShape(newCollider);
+            newCollider.name = "ColliderForCamera";
+            gameObject.SetActive(false);
+            print("Prze³¹czono na kamerê: " + newCollider.name);
         }
-        else if(collision.CompareTag("Player") && gameObject.name == "LoadCameraTrigger")
+        else if (collision.CompareTag("Player") && gameObject.name == "LoadCameraTrigger")
         {
-            SetBoundingShape(mainCameraConfiner, GetCollider("TransitionCameraCollider"));
-            Destroy(gameObject);
+            var transitionCollider = GameObject.Find("TransitionCameraCollider").GetComponent<CompositeCollider2D>();
+            SetBoundingShape(transitionCollider);
+            gameObject.SetActive(false);
         }
     }
 }

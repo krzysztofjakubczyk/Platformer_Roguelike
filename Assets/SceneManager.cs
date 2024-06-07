@@ -1,3 +1,4 @@
+using Cinemachine.Utility;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,11 @@ public class SceneController : MonoBehaviour
     private const int minFloorSize = 2;
     private const int maxFloorSize = 5;
     private int currentFloor = 0;
-    private int loadedScenes = 1;
+    private int loadedScenes;
     private int indexOfSceneToSpawn;
+    private int indexForBossScene;
     private Dictionary<int, List<int>> floorSceneIndexes = new Dictionary<int, List<int>>();
-    private Dictionary<string, Vector3> previousScenePositions = new Dictionary<string, Vector3>();
+    private Vector3 previousSceneEndPosition = Vector3.zero;
 
     void Start()
     {
@@ -35,20 +37,7 @@ public class SceneController : MonoBehaviour
             InitializeFloorScenes(floor);
         }
     }
-    private void StoreCurrentScenePositions()
-    {
-        Scene currentScene = SceneManager.GetActiveScene();
-        GameObject[] sceneObjects = currentScene.GetRootGameObjects();
 
-        previousScenePositions.Clear();
-        foreach (GameObject obj in sceneObjects)
-        {
-            if (obj != null)
-            {
-                previousScenePositions[obj.name] = obj.transform.position;
-            }
-        }
-    }
     private void InitializeFloorScenes(int floor)
     {
         int floorSize = UnityEngine.Random.Range(minFloorSize, maxFloorSize);
@@ -76,7 +65,7 @@ public class SceneController : MonoBehaviour
 
     public void LoadScene()
     {
-        if (loadedScenes < shopSceneIndex)
+        if (floorSceneIndexes.Count > 0)
         {
             indexOfSceneToSpawn = floorSceneIndexes[currentFloor].First();
             floorSceneIndexes[currentFloor].Remove(indexOfSceneToSpawn);
@@ -87,25 +76,30 @@ public class SceneController : MonoBehaviour
             indexOfSceneToSpawn = shopSceneIndex;
             loadedScenes = 0;
         }
-
+        else if (floorSizes.Count == 0)
+        {
+            print("Nie ma narazie bosa");
+        }
         if (IsSceneAlreadyLoaded(indexOfSceneToSpawn))
         {
             return;
         }
 
-        StartCoroutine(LoadSceneCoroutine());
+        LoadNewScene(SceneManager.GetSceneByBuildIndex(indexOfSceneToSpawn).name);
     }
+
     public void LoadNewScene(string sceneName)
     {
-        StoreCurrentScenePositions();
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine(LoadSceneCoroutine());
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
         MoveScene(scene);
     }
+
     private IEnumerator LoadSceneCoroutine()
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(indexOfSceneToSpawn, LoadSceneMode.Additive);
@@ -130,11 +124,8 @@ public class SceneController : MonoBehaviour
         Scene activeScene = SceneManager.GetActiveScene();
         return activeScene.buildIndex == sceneIndex;
     }
-
     private void MoveScene(Scene loadScene)
     {
-        Debug.Log("Moved scene by: " + moveAmount);
-
         GameObject[] sceneObjects = loadScene.GetRootGameObjects();
         if (sceneObjects.Length == 0)
         {
@@ -142,18 +133,31 @@ public class SceneController : MonoBehaviour
             return;
         }
 
+        Vector3 sceneEndPosition = Vector3.zero;
+
         foreach (GameObject obj in sceneObjects)
         {
-            if (obj != null && obj.name!="Player")
+            if (obj != null)
             {
-                Debug.Log("Moving object: " + obj.name);
-                obj.transform.position += moveAmount;
-            }
-            else
-            {
-                Debug.Log("Encountered a Player object in the scene.");
+                // Pobierz aktualn¹ pozycjê obiektu
+                Vector3 currentPosition = obj.transform.position;
+
+                // Dodaj przesuniêcie wzd³u¿ osi X, pomno¿one przez iloœæ za³adowanych scen
+                currentPosition.x += moveAmount.x * loadedScenes;
+
+                // Ustaw now¹ pozycjê obiektu
+                obj.transform.position = currentPosition;
+
+                // Aktualizacja pozycji koñcowej sceny na pozycji ostatniego obiektu w scenie
+                sceneEndPosition = currentPosition;
             }
         }
+
+        // Aktualizacja pozycji koñcowej poprzedniej sceny
+        previousSceneEndPosition = sceneEndPosition;
     }
+
+
+
+
 }
-    
