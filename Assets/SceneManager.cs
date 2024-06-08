@@ -131,7 +131,7 @@ public class SceneController : MonoBehaviour
         GameObject[] sceneObjects = loadScene.GetRootGameObjects();
         GameObject sceneObject = sceneObjects[0];
         UnityEngine.Vector3 orginalPostion = sceneObject.transform.position;
-        orginalPostion.x = moveAmount.x * loadedScenes;
+        orginalPostion.x = orginalPostion.x+  moveAmount.x * loadedScenes;
         orginalPostion.y = VectorOfYPostionFirstScene.y;
         sceneObject.transform.position = orginalPostion;
     }
