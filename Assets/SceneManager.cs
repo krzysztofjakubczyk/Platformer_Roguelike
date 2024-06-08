@@ -2,6 +2,7 @@ using Cinemachine.Utility;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,7 +10,7 @@ public class SceneController : MonoBehaviour
 {
     [SerializeField] private MapTranistion mapInstance;
     [SerializeField] private int shopSceneIndex;
-    [SerializeField] private Vector3 moveAmount = new Vector3(38, 0, 0);
+    [SerializeField] private UnityEngine.Vector3 moveAmount = new UnityEngine.Vector3(38, 0, 0);
     [SerializeField] private List<int> floorSizes;
 
     private const int minFloorSize = 2;
@@ -18,14 +19,15 @@ public class SceneController : MonoBehaviour
     private int loadedScenes;
     private int indexOfSceneToSpawn;
     private int indexForBossScene;
+    private UnityEngine.Vector3 VectorOfYPostionFirstScene;
     private Dictionary<int, List<int>> floorSceneIndexes = new Dictionary<int, List<int>>();
-    private Vector3 previousSceneEndPosition = Vector3.zero;
 
     void Start()
     {
-        if (moveAmount == Vector3.zero)
+        VectorOfYPostionFirstScene = new UnityEngine.Vector3 (0,((int)(SceneManager.GetActiveScene().GetRootGameObjects()[0].transform.position.y)),0);
+        if (moveAmount == UnityEngine.Vector3.zero)
         {
-            moveAmount = new Vector3(38, 0, 0);
+            moveAmount = new UnityEngine.Vector3(38, 0, 0);
         }
         InitializeFloors();
     }
@@ -127,34 +129,11 @@ public class SceneController : MonoBehaviour
     private void MoveScene(Scene loadScene)
     {
         GameObject[] sceneObjects = loadScene.GetRootGameObjects();
-        if (sceneObjects.Length == 0)
-        {
-            Debug.LogWarning("No root game objects found in the scene to move.");
-            return;
-        }
-
-        Vector3 sceneEndPosition = Vector3.zero;
-
-        foreach (GameObject obj in sceneObjects)
-        {
-            if (obj != null)
-            {
-                // Pobierz aktualn¹ pozycjê obiektu
-                Vector3 currentPosition = obj.transform.position;
-
-                // Dodaj przesuniêcie wzd³u¿ osi X, pomno¿one przez iloœæ za³adowanych scen
-                currentPosition.x += moveAmount.x * loadedScenes;
-
-                // Ustaw now¹ pozycjê obiektu
-                obj.transform.position = currentPosition;
-
-                // Aktualizacja pozycji koñcowej sceny na pozycji ostatniego obiektu w scenie
-                sceneEndPosition = currentPosition;
-            }
-        }
-
-        // Aktualizacja pozycji koñcowej poprzedniej sceny
-        previousSceneEndPosition = sceneEndPosition;
+        GameObject sceneObject = sceneObjects[0];
+        UnityEngine.Vector3 orginalPostion = sceneObject.transform.position;
+        orginalPostion.x = moveAmount.x * loadedScenes;
+        orginalPostion.y = VectorOfYPostionFirstScene.y;
+        sceneObject.transform.position = orginalPostion;
     }
 
 

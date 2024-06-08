@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/MainScene/Maps/swordANDspell 1.unity
     guid: 7f90fe378cc48a94499da7a11e417178
   - enabled: 1
-    path: Assets/MainScene/Maps/swordANDspell 2.unity
-    guid: 011db7f758bf5224484ac10ad0a2cfba
-  - enabled: 1
     path: Assets/MainScene/Maps/swordANDspell 4.unity
     guid: 60f8b731b079be749b3e5cd02a28cdbe
   - enabled: 1
