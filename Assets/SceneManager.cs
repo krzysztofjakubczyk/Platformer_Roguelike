@@ -1,8 +1,6 @@
-using Cinemachine.Utility;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +8,7 @@ public class SceneController : MonoBehaviour
 {
     [SerializeField] private MapTranistion mapInstance;
     [SerializeField] private int shopSceneIndex;
-    [SerializeField] private UnityEngine.Vector3 moveAmount = new UnityEngine.Vector3(38, 0, 0);
+    [SerializeField] private Vector3 moveAmount = new Vector3(38, 0, 0);
     [SerializeField] private List<int> floorSizes;
 
     private const int minFloorSize = 2;
@@ -19,15 +17,19 @@ public class SceneController : MonoBehaviour
     private int loadedScenes;
     private int indexOfSceneToSpawn;
     private int indexForBossScene;
-    private UnityEngine.Vector3 VectorOfYPostionFirstScene;
+    private Vector3 VectorOfYPostionFirstScene;
+    private Vector3 originalMoveAmount;
     private Dictionary<int, List<int>> floorSceneIndexes = new Dictionary<int, List<int>>();
+    private List<int> shopInsertedFloors = new List<int>();
+    private bool shopJustLoaded = false;  // Flaga oznaczaj¹ca, ¿e sklep zosta³ w³aœnie za³adowany
 
     void Start()
     {
-        VectorOfYPostionFirstScene = new UnityEngine.Vector3 (0,((int)(SceneManager.GetActiveScene().GetRootGameObjects()[0].transform.position.y)),0);
-        if (moveAmount == UnityEngine.Vector3.zero)
+        originalMoveAmount = new Vector3 (38,0,0);
+        VectorOfYPostionFirstScene = new Vector3(0, (int)(SceneManager.GetActiveScene().GetRootGameObjects()[0].transform.position.y), 0);
+        if (moveAmount == Vector3.zero)
         {
-            moveAmount = new UnityEngine.Vector3(38, 0, 0);
+            moveAmount = new Vector3(38, 0, 0);
         }
         InitializeFloors();
     }
@@ -42,7 +44,7 @@ public class SceneController : MonoBehaviour
 
     private void InitializeFloorScenes(int floor)
     {
-        int floorSize = UnityEngine.Random.Range(minFloorSize, maxFloorSize);
+        int floorSize = Random.Range(minFloorSize, maxFloorSize);
         floorSizes[floor] = floorSize;
         var sceneIndexes = new HashSet<int>();
 
@@ -51,7 +53,7 @@ public class SceneController : MonoBehaviour
             int randomIndex;
             do
             {
-                randomIndex = UnityEngine.Random.Range(1, 5);
+                randomIndex = Random.Range(1, 5);
             }
             while (sceneIndexes.Contains(randomIndex));
 
@@ -63,6 +65,16 @@ public class SceneController : MonoBehaviour
             floorSceneIndexes[floor].Add(randomIndex);
             sceneIndexes.Add(randomIndex);
         }
+
+        // Dodanie sklepu na losowej pozycji, ale nie pierwszej ani ostatniej
+        if (!shopInsertedFloors.Contains(floor))
+        {
+            int shopPosition = Random.Range(1, floorSize - 1); // Zapewnia, ¿e sklep nie bêdzie ani pierwszy, ani ostatni
+            floorSceneIndexes[floor].Insert(shopPosition, shopSceneIndex);
+            shopInsertedFloors.Add(floor);
+        }
+
+        floorSceneIndexes[floor].Add(indexForBossScene);
     }
 
     public void LoadScene()
@@ -73,41 +85,42 @@ public class SceneController : MonoBehaviour
             floorSceneIndexes[currentFloor].Remove(indexOfSceneToSpawn);
             loadedScenes++;
         }
-        else if (loadedScenes == shopSceneIndex)
-        {
-            indexOfSceneToSpawn = shopSceneIndex;
-            loadedScenes = 0;
-        }
-        else if (floorSizes.Count == 0)
-        {
-            print("Nie ma narazie bosa");
-        }
         if (IsSceneAlreadyLoaded(indexOfSceneToSpawn))
         {
             return;
         }
 
-        LoadNewScene(SceneManager.GetSceneByBuildIndex(indexOfSceneToSpawn).name);
-    }
-
-    public void LoadNewScene(string sceneName)
-    {
         StartCoroutine(LoadSceneCoroutine());
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-        MoveScene(scene);
     }
 
     private IEnumerator LoadSceneCoroutine()
     {
+        // Jeœli w³aœnie za³adowano sklep, ustaw moveAmount na 24 dla nastêpnej sceny
+        if (shopJustLoaded)
+        {
+            moveAmount = new Vector3(23, moveAmount.y, moveAmount.z);
+        }
+        else
+        {
+            moveAmount = originalMoveAmount;
+        }
+
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(indexOfSceneToSpawn, LoadSceneMode.Additive);
         yield return asyncLoad;
         Scene scene = SceneManager.GetSceneByBuildIndex(indexOfSceneToSpawn);
         SceneManager.SetActiveScene(scene);
+
+        MoveScene(scene);
+
+        // Po za³adowaniu sceny sprawdŸ, czy to jest sklep, i ustaw flagê
+        if (indexOfSceneToSpawn == shopSceneIndex)
+        {
+            shopJustLoaded = true;
+        }
+        else
+        {
+            shopJustLoaded = false;
+        }
     }
 
     public void UnLoadScene()
@@ -126,17 +139,22 @@ public class SceneController : MonoBehaviour
         Scene activeScene = SceneManager.GetActiveScene();
         return activeScene.buildIndex == sceneIndex;
     }
+
     private void MoveScene(Scene loadScene)
     {
         GameObject[] sceneObjects = loadScene.GetRootGameObjects();
         GameObject sceneObject = sceneObjects[0];
-        UnityEngine.Vector3 orginalPostion = sceneObject.transform.position;
-        orginalPostion.x = orginalPostion.x+  moveAmount.x * loadedScenes;
-        orginalPostion.y = VectorOfYPostionFirstScene.y;
-        sceneObject.transform.position = orginalPostion;
+        Vector3 originalPosition = sceneObject.transform.position;
+        originalPosition.x += moveAmount.x * loadedScenes;
+        originalPosition.y = VectorOfYPostionFirstScene.y;
+        sceneObject.transform.position = originalPosition;
+        Debug.Log(originalPosition.x + "Move amount: "+ moveAmount.x);
+        // Jeœli za³adowano sklep, ustaw flagê shopJustLoaded na true
+        if (indexOfSceneToSpawn == shopSceneIndex)
+        {
+            shopJustLoaded = true;
+        }
     }
 
-
-
-
 }
+ 

@@ -8,9 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MainScene/Maps/TestingPlayer.unity
     guid: 9993af8c78b4a1644b16829a88d9c53a
-  - enabled: 0
-    path: Assets/MainScene/Maps/TestingPlayer2.unity
-    guid: a26d66a5cd0cf444599bb9cff95ff24d
   - enabled: 1
     path: Assets/MainScene/Maps/swordANDspell 1.unity
     guid: 7f90fe378cc48a94499da7a11e417178
@@ -23,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MainScene/Maps/swordANDspell 5.unity
     guid: 96a0fc56d81e6c147bc6d89fe54535d4
+  - enabled: 1
+    path: Assets/MainScene/Maps/ShopScene.unity
+    guid: bcbe4c017fe0f9d4a87c0f519e366c70
   m_configObjects: {}
