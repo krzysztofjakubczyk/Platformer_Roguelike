@@ -241,13 +241,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   speed: 5
-  jumpingPower: 14
+  jumpingPower: 16
   dashPower: 8
   leftWallJump: 0.5
   rightWallJump: 0.5
   WJleft: {fileID: 9197745978974536674}
   WJright: {fileID: 6096011072974974785}
   coyoteTimeDuration: 1
+  pushBackForce: 5
 --- !u!95 &4924503599912042665
 Animator:
   serializedVersion: 5

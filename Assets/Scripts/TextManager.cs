@@ -33,22 +33,6 @@ public class TextManager : MonoBehaviour
     SpellManager spellManager;
     ItemOnShop itemOnShop;
 
-    [SerializeField] 
-    private TMP_Text goldText;
-    [SerializeField]
-    private TMP_Text hpText;
-    [SerializeField]
-    private TMP_Text staminaText;
-    [SerializeField]
-    private TMP_Text adText;
-    [SerializeField]
-    private TMP_Text asText;
-    [SerializeField]
-    private TMP_Text movementText;
-    [SerializeField]
-    private TMP_Text jpText; //jump Power
-    [SerializeField]
-    private TMP_Text dpText; //dash Power
 
     // Start is called before the first frame update
     void Start()

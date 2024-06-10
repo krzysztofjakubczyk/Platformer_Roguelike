@@ -19747,6 +19747,10 @@ PrefabInstance:
       value: cave_bg
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 24bc8bf7f8e54ce43923e0a33053e41b, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 24bc8bf7f8e54ce43923e0a33053e41b, type: 3}
       propertyPath: m_SortingOrder
       value: -5
       objectReference: {fileID: 0}
