@@ -271,7 +271,6 @@ GameObject:
   m_Component:
   - component: {fileID: 847116538993975793}
   - component: {fileID: 6307085158684046214}
-  - component: {fileID: 155772385301171799}
   m_Layer: 10
   m_Name: EnemyRange
   m_TagString: Enemy
@@ -309,6 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityData: {fileID: 11400000, guid: e7d78f635e0f3b64889a5f47c838456c, type: 2}
   player: {fileID: 1922316363251511598, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
+  patrolPoint: {x: 0, y: 0, z: 0}
   playerHp: {fileID: 0}
   currentHealth: 0
   currentStunResistance: 0
@@ -328,33 +328,6 @@ MonoBehaviour:
   rangedAttackStateData: {fileID: 11400000, guid: e066d39a72dd3514eb66337c92838f76, type: 2}
   meleeAttackPosition: {fileID: 2045910965686248656}
   rangedAttackPosition: {fileID: 948129527297697511}
---- !u!50 &155772385301171799
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4905171580431181393}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
 --- !u!1 &5295124948619160544
 GameObject:
   m_ObjectHideFlags: 0

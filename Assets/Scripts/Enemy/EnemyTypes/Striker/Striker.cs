@@ -20,4 +20,12 @@ public class Striker : Entity
         idleState = new StrikerIdleState(this, stateMachine, "idle", idleStateData, this);
         stateMachine.Initialize(moveState);
     }
+
+    public override void DamageGet(AttackDetails attackDetails)
+    {
+        base.DamageGet(attackDetails);
+      //  if (isDeath && stateMachine.currentState != deathState) stateMachine.ChangeState(deathState);
+      //  else if (isStunned && stateMachine.currentState != stunState) stateMachine.ChangeState(stunState);
     }
+
+}

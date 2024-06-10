@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f97639471016d61449cb970a40f7e219
+guid: c101a5817114ad745a8eef8a9490db80
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,169 +110,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spr_StrikerRun_strip_0
+      name: spr_StrikerIdle_strip_0
       rect:
         serializedVersion: 2
-        x: 29
-        y: 28
-        width: 35
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a031f70347537b4408bd5b1a842e6af0
-      internalID: 1805348526
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_StrikerRun_strip_1
-      rect:
-        serializedVersion: 2
-        x: 124
-        y: 28
-        width: 35
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8af7fc64811593742b9dbed898d96290
-      internalID: -1291026445
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_StrikerRun_strip_2
-      rect:
-        serializedVersion: 2
-        x: 219
-        y: 32
-        width: 34
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 864f9e5220716354595c551e0e7131db
-      internalID: 194239499
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_StrikerRun_strip_3
-      rect:
-        serializedVersion: 2
-        x: 316
-        y: 28
-        width: 33
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8add3e5919120c146b128fa3c4855c00
-      internalID: -1098215141
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_StrikerRun_strip_4
-      rect:
-        serializedVersion: 2
-        x: 411
-        y: 28
-        width: 35
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f457a37707cf6d14d8ce3a4cbc5f0c52
-      internalID: -498173095
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_StrikerRun_strip_5
-      rect:
-        serializedVersion: 2
-        x: 503
-        y: 28
-        width: 41
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f5a3c8e343d9b634197e30161d026260
-      internalID: 593859059
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_StrikerRun_strip_6
-      rect:
-        serializedVersion: 2
-        x: 599
-        y: 31
-        width: 41
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b3b07597737f844bb36471237978fa2
-      internalID: 1487183173
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_StrikerRun_strip_7
-      rect:
-        serializedVersion: 2
-        x: 696
+        x: 17
         y: 28
         width: 39
-        height: 32
+        height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49036b9d83534c146a84be55752f96ed
-      internalID: 957440629
+      spriteID: e5479d7295992324c805ed9434027391
+      internalID: -1812641200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerIdle_strip_1
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 28
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dfed089e85daad4192390a9372b2db5
+      internalID: 1096913092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerIdle_strip_2
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 28
+        width: 39
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2940b01c956b3184aa35ab014dc24844
+      internalID: -2021581363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerIdle_strip_3
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 28
+        width: 39
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e41628401318e2429eaaf2fe2904700
+      internalID: 941678553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerIdle_strip_4
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 28
+        width: 39
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ed566559e5b7934c8d564dc56e4845b
+      internalID: 1423430193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerIdle_strip_5
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 28
+        width: 39
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03b896b71b5feb84ea47b2931acce31f
+      internalID: 275520422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerIdle_strip_6
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 28
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 298105c7601cf8041acbae405dfe1ebd
+      internalID: 1063118700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerIdle_strip_7
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 28
+        width: 39
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdeb23ae51115a7428358ac28e077141
+      internalID: -1742348440
       vertices: []
       indices: 
       edges: []
@@ -288,14 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spr_StrikerRun_strip_0: 1805348526
-      spr_StrikerRun_strip_1: -1291026445
-      spr_StrikerRun_strip_2: 194239499
-      spr_StrikerRun_strip_3: -1098215141
-      spr_StrikerRun_strip_4: -498173095
-      spr_StrikerRun_strip_5: 593859059
-      spr_StrikerRun_strip_6: 1487183173
-      spr_StrikerRun_strip_7: 957440629
+      spr_StrikerIdle_strip_0: -1812641200
+      spr_StrikerIdle_strip_1: 1096913092
+      spr_StrikerIdle_strip_2: -2021581363
+      spr_StrikerIdle_strip_3: 941678553
+      spr_StrikerIdle_strip_4: 1423430193
+      spr_StrikerIdle_strip_5: 275520422
+      spr_StrikerIdle_strip_6: 1063118700
+      spr_StrikerIdle_strip_7: -1742348440
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
