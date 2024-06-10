@@ -16,6 +16,6 @@ MonoBehaviour:
   Description: "Potion kt\xF3ry daje graczowi umiej\u0119tno\u015B\u0107 szybszego
     odnawiania staminy"
   Cost: 5
-  ImageItem: {fileID: 21300000, guid: a00c22460f121d248b570207ec9345b1, type: 3}
+  ImageItem: {fileID: 1735958976, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 5
   power: -0.05

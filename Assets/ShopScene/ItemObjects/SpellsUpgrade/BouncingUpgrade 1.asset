@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: ' Bouncing ball upgrade'
   Description: "Ulepszenie umiejetnosci gracza odbijaj\u0105cej si\u0119 kuli"
   Cost: 3
-  ImageItem: {fileID: 21300000, guid: 371a0ed271e46e04ebf652969c1e445c, type: 3}
+  ImageItem: {fileID: 1272825447, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 0
   power: 0

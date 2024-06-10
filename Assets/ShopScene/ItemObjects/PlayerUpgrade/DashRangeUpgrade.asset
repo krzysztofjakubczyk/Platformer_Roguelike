@@ -15,5 +15,6 @@ MonoBehaviour:
   Name: Dash Range Upgrade
   Description: "Zio\u0142owy napar zwi\u0119kszajacy zasi\u0119g  dasha gracza"
   Cost: 5
-  ImageItem: {fileID: 0}
-  type: 3
+  ImageItem: {fileID: 885413621, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
+  stat: 16
+  power: 3

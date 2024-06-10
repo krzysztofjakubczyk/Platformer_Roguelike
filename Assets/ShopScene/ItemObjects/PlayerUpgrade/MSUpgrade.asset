@@ -16,5 +16,6 @@ MonoBehaviour:
   Description: "Zio\u0142owy napar zwi\u0119kszajacy szybko\u015B\u0107 poruszania
     si\u0119 gracza"
   Cost: 5
-  ImageItem: {fileID: 0}
-  type: 3
+  ImageItem: {fileID: 44294141, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
+  stat: 15
+  power: 3

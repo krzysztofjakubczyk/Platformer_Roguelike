@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: Health Potion
   Description: "Potion zwi\u0119kszaj\u0105cy max HP"
   Cost: 5
-  ImageItem: {fileID: 5642884455452387023, guid: 54f8df368b881894a9d5bb4c2c4bbdaa, type: 3}
+  ImageItem: {fileID: -1286055648, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 0
   power: 10

@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: Grenade upgrade
   Description: Ulepszenie umiejetnosci gracza rzucania granatem
   Cost: 3
-  ImageItem: {fileID: 21300000, guid: 1d36495befd973543a7dff1883388829, type: 3}
+  ImageItem: {fileID: 1080939168, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 13
   power: 5
