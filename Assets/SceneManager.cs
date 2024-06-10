@@ -21,7 +21,9 @@ public class SceneController : MonoBehaviour
     private Vector3 originalMoveAmount;
     private Dictionary<int, List<int>> floorSceneIndexes = new Dictionary<int, List<int>>();
     private List<int> shopInsertedFloors = new List<int>();
-    bool isShopLoaded= false;
+    public bool isShopLoaded= false;
+    private bool hasShopBeenLoaded= false;
+    float lastPosition = 0f;
     void Start()
     {
         originalMoveAmount = new Vector3(38, 0, 0);
@@ -127,24 +129,35 @@ public class SceneController : MonoBehaviour
 
     private void MoveScene(Scene loadScene)
     {
+        
         GameObject[] sceneObjects = loadScene.GetRootGameObjects();
         if (sceneObjects.Length > 0)
         {
+            
             GameObject sceneObject = sceneObjects[0];
             Vector3 originalPosition = sceneObject.transform.position;
             // Jeœli w³aœnie za³adowano sklep, ustaw moveAmount na 23 dla nastêpnej sceny
             if (isShopLoaded)
             {
-                originalPosition.x += (moveAmount.x * (loadedScenes-1))+ 23.5f;
+                hasShopBeenLoaded = true;
+                lastPosition += (moveAmount.x * (loadedScenes-1))+ 23.5f;
+                originalPosition.x = lastPosition;
             }
-            else
+            else if (!isShopLoaded && !hasShopBeenLoaded)
             {
+                Debug.Log("wzielo sie to z: " + moveAmount.x + " loaded scenese: " + loadedScenes);
                 originalPosition.x += moveAmount.x * loadedScenes;
+            }
+            else if(!isShopLoaded && hasShopBeenLoaded)
+            {
+                lastPosition += moveAmount.x;
+                originalPosition.x = lastPosition;
             }
             
             originalPosition.y = VectorOfYPostionFirstScene.y;
             sceneObject.transform.position = originalPosition;
             Debug.Log("Nowa pozycja: " + originalPosition.x + " Iloœæ przesuniêcia: " + moveAmount.x);
+            Debug.Log("Iloœæ scen zaladowanych: " + loadedScenes);
             if(loadScene.buildIndex == shopSceneIndex)
             {
                 isShopLoaded = true;
