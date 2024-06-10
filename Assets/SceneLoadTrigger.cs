@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,29 +28,42 @@ public class SceneLoadTrigger : MonoBehaviour
         {
             if (gameObject.name == "LoadRoomTrigger")
             {
-                controller.LoadScene();
-                FindNewGameObjectsOnScene();
-                transitionTrigger.SetActive(true);
-                _OutsideDoors.SetActive(false);
-                gameObject.SetActive(false);
+                LoadSceneElements();
             }
             else if (gameObject.name == "UnLoadRoomTrigger")
             {
-                Debug.Log("Od³adowano scenê");
-                controller.UnLoadScene();
-                FindNewGameObjectsOnScene();
-                _InsideDoors.SetActive(true);
-                gameObject.SetActive(false);
+                UnLoadSceneElements();
             }
         }
     }
+    private void LoadSceneElements()
+    {
+        controller.LoadScene();
+        FindNewGameObjectsOnScene();
+        transitionTrigger.SetActive(true);
+        _OutsideDoors.SetActive(false);
+        _OutsideDoors.name = "OutDoors:";
+        gameObject.SetActive(false);
+    }
+
+
+   private void UnLoadSceneElements()
+    {
+        controller.UnLoadScene();
+        FindNewGameObjectsOnScene();
+        _InsideDoors.SetActive(true);
+        _InsideDoors.name = "InDoors";
+        gameObject.SetActive(false);
+    }
+
+
     private void FindNewGameObjectsOnScene()
     {
         mapInstance = FindObjectOfType<MapTranistion>();
-        _OutsideDoors = GameObject.Find("OutDoors");
+        _OutsideDoors = GameObject.Find("NewOutDoors");
         if (mapInstance != null)
         {
-            _InsideDoors = mapInstance.FindDisabledObjectByName<Transform>("InDoors")?.gameObject;
+            _InsideDoors = mapInstance.FindDisabledObjectByName<Transform>("NewInDoors")?.gameObject;
             transitionTrigger = mapInstance.FindDisabledObjectByName<Transform>("LoadCameraTrigger")?.gameObject;
         }
     }

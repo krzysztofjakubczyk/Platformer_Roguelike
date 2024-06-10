@@ -143,14 +143,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1a1c9951d4b17e40be225d4198db8dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapInstance: {fileID: 6621371230715735204, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
-  indexOfSceneLoadedNow: 0
-  indexOfSceneToSpawn: 0
-  indexOfSceneToUnload: 0
-  howManyScenesOnBuild: 0
-  indexOfShopAtFirstFloor: 0
-  indexOfShopAtSecondFloor: 0
-  IndexesOfScenesAtFirstFloor: 
-  IndexesOfScenesAtSecondFloor: 
-  isFirstFloor: 0
-  moveAmount: {x: 0, y: 0, z: 0}
+  mapInstance: {fileID: 0}
