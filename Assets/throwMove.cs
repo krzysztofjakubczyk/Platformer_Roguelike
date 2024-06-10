@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class throwMove : MonoBehaviour
 {
-    [SerializeField] Vector2 dir;
+    public Vector2 dir;
     [SerializeField] float speed;
 
     Rigidbody2D rb;
@@ -17,6 +17,6 @@ public class throwMove : MonoBehaviour
 
     void Update()
     {
-        rb.velocity = dir * speed;
+        rb.velocity = dir.normalized * speed;
     }
 }
