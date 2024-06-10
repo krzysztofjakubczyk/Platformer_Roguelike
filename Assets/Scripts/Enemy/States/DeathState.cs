@@ -39,4 +39,9 @@ public class DeathState : State
     {
         base.PhysicsUpdate();
     }
+    //private IEnumerator waitAfterDeath()
+    //{
+    //    yield return new WaitForSeconds(5);
+    //    entity.gameObject.SetActive(false);
+    //}
 }

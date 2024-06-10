@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1904371300439605531}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LedgeCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,8 +80,8 @@ MonoBehaviour:
   player: {fileID: 0}
   patrolPoint: {x: 0, y: 0, z: 0}
   playerHp: {fileID: 0}
-  currentHealth: 0
-  currentStunResistance: 0
+  currentHealth: 40
+  currentStunResistance: 30
   lastDamageTime: 0
   wallCheck: {fileID: 2204538367409074982}
   LedgeCheck: {fileID: 1904371300439605531}
@@ -89,6 +89,8 @@ MonoBehaviour:
   groundCheck: {fileID: 5619887724545508738}
   idleStateData: {fileID: 11400000, guid: 974cbb0a2d99d6b469f759340c4df179, type: 2}
   moveStateData: {fileID: 11400000, guid: fb9e708b7d6200742951b167e9b1dced, type: 2}
+  stunStateData: {fileID: 11400000, guid: 290ca59d71a513b4eb56241f5c5a2738, type: 2}
+  deathStateData: {fileID: 11400000, guid: 8f6e63d55a705aa43878d67643dc1940, type: 2}
 --- !u!1 &2166568322371740355
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,7 +100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6552009620993726577}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 461721859871156999}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RangedAttackPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5619887724545508738}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +193,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2204538367409074982}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,9 +229,9 @@ GameObject:
   - component: {fileID: 3260841128812266807}
   - component: {fileID: 7778448413457670367}
   - component: {fileID: 1161540696407543634}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Alive
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -243,7 +245,7 @@ Transform:
   m_GameObject: {fileID: 8347646767960054696}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.43, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -354,7 +356,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &7778448413457670367
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -421,7 +423,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2307194540462108066}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MeleeAttackPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}

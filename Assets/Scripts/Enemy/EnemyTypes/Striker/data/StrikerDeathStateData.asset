@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa0638db8cb2bef4f82c21f881441047, type: 3}
+  m_Name: StrikerDeathStateData
+  m_EditorClassIdentifier: 
+  deathChunkParticle: {fileID: 1962614393226834858, guid: b1df1c9881c28b14b9bd3f6e0d5de436, type: 3}
+  deathBloodParticle: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 3}
