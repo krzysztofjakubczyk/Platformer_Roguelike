@@ -27,7 +27,23 @@ public class StrikerMoveState : MoveState
 
     public override void LogicUpdate()
     {
+        Debug.Log("wall" + isDetectingWall);
+        Debug.Log("podloga" + isDetectingLedge);
         base.LogicUpdate();
+        if (isEnemyInRange)
+        {
+            enemy.idleState.SetFlipAfterIdle(true);
+            stateMachine.ChangeState(enemy.idleState);
+        }
+        else if (isPlayerInMinAgroRange && !isEnemyInRangeToCharge)
+        {
+            //stateMachine.ChangeState(enemy.playerDetectedState);
+        }
+        else if (isDetectingWall || !isDetectingLedge)
+        {
+            enemy.idleState.SetFlipAfterIdle(true);
+            stateMachine.ChangeState(enemy.idleState);
+        }
     }
 
     public override void PhysicsUpdate()
