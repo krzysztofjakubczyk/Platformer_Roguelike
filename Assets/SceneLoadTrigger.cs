@@ -39,6 +39,7 @@ public class SceneLoadTrigger : MonoBehaviour
                 controller.UnLoadScene();
                 FindNewGameObjectsOnScene();
                 _InsideDoors.SetActive(true);
+                gameObject.SetActive(false);
             }
         }
     }

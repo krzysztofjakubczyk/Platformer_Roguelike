@@ -5,7 +5,6 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
-using UnityEditor.Events;
 using UnityEngine.Events;
 
 public class TextManager : MonoBehaviour

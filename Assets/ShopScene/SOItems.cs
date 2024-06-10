@@ -1,9 +1,9 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewItem", menuName ="Shop/Item")] //dodanie do klikniêcia prawym przyciskiem opcji dodawania SO
+[CreateAssetMenu(fileName = "NewItem", menuName = "Shop/Item")] //dodanie do klikniï¿½cia prawym przyciskiem opcji dodawania SO
 public class Items : ScriptableObject
 {
     [Header("Item's settings")]

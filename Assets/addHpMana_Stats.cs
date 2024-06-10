@@ -8,6 +8,8 @@ public class addHpMana_Stats : MonoBehaviour
     [SerializeField] GameObject player;
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        stats = player.GetComponent<PlayerStatsManager>();
         foreach (var stat in stats.playerStats.stats)
         {
             if (stat.statName == PlayerStatEnum.hpCurrent)

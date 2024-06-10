@@ -39,7 +39,7 @@ public class PlayerStatsManager : MonoBehaviour
 
                 return;
             }
-        }
+        }   
         updateGUI?.Invoke();
         Debug.LogWarning($"Stat {statName} not found!");
     }
