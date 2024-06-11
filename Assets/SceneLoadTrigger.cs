@@ -35,13 +35,13 @@ public class SceneLoadTrigger : MonoBehaviour
     private void LoadSceneElements()
     {
         controller.LoadScene();
-        Invoke("LoadActions", 3f);
+        Invoke("LoadActions", 2f);
     }
 
     private void UnLoadSceneElements()
     {
         controller.UnLoadScene();
-        Invoke("UnloadActions", 3f);
+        Invoke("UnloadActions", 2f);
     }
     private void UnloadActions()
     {

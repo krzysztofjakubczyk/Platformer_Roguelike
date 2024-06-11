@@ -83,6 +83,7 @@ public class SceneController : MonoBehaviour
         indexOfSceneToSpawn = floorSceneIndexes[currentFloor].First();
         if (IsSceneAlreadyLoaded(indexOfSceneToSpawn))
         {
+            Debug.Log("return");
             return;
         }
 
