@@ -511,7 +511,6 @@ Transform:
   - {fileID: 1693526818}
   - {fileID: 1843112811}
   - {fileID: 2123987584}
-  - {fileID: 1449672046}
   - {fileID: 285763693}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18939,7 +18938,7 @@ GameObject:
   - component: {fileID: 634839177}
   - component: {fileID: 634839176}
   m_Layer: 0
-  m_Name: LoadCameraTrigger
+  m_Name: LoadTrainstionCameraTrigger
   m_TagString: LoadCameraTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23602,88 +23601,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1001 &1449672045
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 261705213}
-    m_Modifications:
-    - target: {fileID: 224943721881513132, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
-      propertyPath: m_Name
-      value: LoadRoomTrigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 224943721881513132, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224943721881513132, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
-      propertyPath: m_TagString
-      value: LoadRoomTrigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974142416038356021, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 10.071481
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974142416038356021, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.1093688
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974142416038356021, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.082294986
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974142416038356021, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974142416038356021, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974142416038356021, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974142416038356021, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974142416038356021, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974142416038356021, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974142416038356021, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7801999215551583394, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
-      propertyPath: mapInstance
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8812048207247753880, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8872903577033795534, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
---- !u!4 &1449672046 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5974142416038356021, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
-  m_PrefabInstance: {fileID: 1449672045}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1620468869
 PrefabInstance:
   m_ObjectHideFlags: 0

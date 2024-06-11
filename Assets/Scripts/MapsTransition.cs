@@ -1,42 +1,44 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MapTranistion : MonoBehaviour
 {
-    SceneLoadTrigger _loadTrigger;
-    MoneyManager moneyManager;
-    int howMoneyFromEnemy;
     [SerializeField] int howManyEnemies;
+    private GameObject transitionTrigger;
+    private GameObject _OutsideDoors;
+    private SceneController controller;
+    private MoneyManager moneyManager;
+    int howMoneyFromEnemy; // do wziecia z enemy dane
+
 
     private void Start()
     {
-        Entity.OnEnemyDeath += killAnEnemy;
+        Entity.OnEnemyDeath += WhenEnemyDead;
+        controller = FindObjectOfType<SceneController>();
         moneyManager = FindAnyObjectByType<MoneyManager>();
         getEnemies();
-        // Znajdü wy≥πczony obiekt LoadRoomTrigger
-        findLoadTrigger();
     }
-
-    private void findLoadTrigger()
-    {
-        _loadTrigger = GameObject.FindGameObjectWithTag("LoadRoomTrigger").GetComponent<SceneLoadTrigger>();
-        print(_loadTrigger.name);
-
-    }
-    void killAnEnemy()
+    void WhenEnemyDead()
     {
         getEnemies();
         if (howManyEnemies == 1)
         {
-            findLoadTrigger();
-            moneyManager.AddMoney(howMoneyFromEnemy);
-            _loadTrigger.GetComponent<BoxCollider2D>().enabled = true;
+            controller.LoadScene();
+            Invoke(nameof(LoadSceneElements), 2f);
         }
     }
-
+    
+    private void LoadSceneElements()
+    {
+        _OutsideDoors = GameObject.FindGameObjectWithTag("NewOutDoors");
+        transitionTrigger = GameObject.FindGameObjectWithTag("LoadCameraTrigger");
+        moneyManager.AddMoney(howMoneyFromEnemy);
+        transitionTrigger.GetComponent<BoxCollider2D>().enabled = true;
+        _OutsideDoors.SetActive(false);
+        _OutsideDoors.tag = "OutDoors";
+    }
     private void getEnemies()
     {
         howManyEnemies = (GameObject.FindGameObjectsWithTag("Enemy").Length) / 2;
     }
+    
 }

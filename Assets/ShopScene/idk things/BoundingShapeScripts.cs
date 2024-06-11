@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Cinemachine;
+using UnityEngine;
 
 public class BoundingShapeScripts : MonoBehaviour
 {
@@ -27,14 +25,13 @@ public class BoundingShapeScripts : MonoBehaviour
             var newCollider = GameObject.Find("ColliderForNewCamera").GetComponent<CompositeCollider2D>();
             SetBoundingShape(newCollider);
             newCollider.name = "ColliderForCamera";
-            gameObject.SetActive(false);
-            print("Prze³¹czono na kamerê: " + newCollider.name);
+            Destroy(gameObject);
         }
-        else if (collision.CompareTag("Player") && gameObject.name == "LoadCameraTrigger")
+        else if (collision.CompareTag("Player") && gameObject.name == "LoadTrainstionCameraTrigger")
         {
             var transitionCollider = GameObject.Find("TransitionCameraCollider").GetComponent<CompositeCollider2D>();
             SetBoundingShape(transitionCollider);
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }
