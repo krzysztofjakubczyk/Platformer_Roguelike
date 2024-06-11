@@ -650,6 +650,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnLoadRoomTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 2525366577306441282, guid: 781fb3a321876df4c868c17edf0c5a2c, type: 3}
+      propertyPath: m_TagString
+      value: UnLoadRoomTrigger
+      objectReference: {fileID: 0}
     - target: {fileID: 3695553265405329319, guid: 781fb3a321876df4c868c17edf0c5a2c, type: 3}
       propertyPath: IndexesOfScenesAtFirstFloor.Array.size
       value: 0
@@ -24273,11 +24277,11 @@ GameObject:
   - component: {fileID: 1222533135}
   m_Layer: 0
   m_Name: NewInDoors
-  m_TagString: Untagged
+  m_TagString: NewInDoors
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1222533131
 Transform:
   m_ObjectHideFlags: 0
@@ -24300,7 +24304,7 @@ TilemapCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222533130}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -24336,7 +24340,7 @@ TilemapRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222533130}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -24385,7 +24389,7 @@ Tilemap:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222533130}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Tiles:
   - first: {x: 36, y: -8, z: 0}
     second:
@@ -25571,7 +25575,7 @@ PlatformEffector2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222533130}
-  m_Enabled: 1
+  m_Enabled: 0
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
@@ -25598,6 +25602,10 @@ PrefabInstance:
     - target: {fileID: 1333520668799787548, guid: 8f901677e65c1df41ac6cb3c77da2cc6, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333520668799787548, guid: 8f901677e65c1df41ac6cb3c77da2cc6, type: 3}
+      propertyPath: m_TagString
+      value: NewOutDoors
       objectReference: {fileID: 0}
     - target: {fileID: 3152600788603574067, guid: 8f901677e65c1df41ac6cb3c77da2cc6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28963,11 +28971,11 @@ GameObject:
   - component: {fileID: 1288177503}
   m_Layer: 0
   m_Name: LoadCameraTrigger
-  m_TagString: Untagged
+  m_TagString: LoadCameraTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1288177503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28987,7 +28995,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1288177502}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -29106,7 +29114,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224943721881513132, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224943721881513132, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
+      propertyPath: m_TagString
+      value: LoadRoomTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 5974142416038356021, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29151,6 +29163,10 @@ PrefabInstance:
     - target: {fileID: 7801999215551583394, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
       propertyPath: mapInstance
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8812048207247753880, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8872903577033795534, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
       propertyPath: m_Enabled

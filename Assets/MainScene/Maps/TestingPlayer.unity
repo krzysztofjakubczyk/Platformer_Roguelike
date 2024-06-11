@@ -16223,11 +16223,11 @@ GameObject:
   - component: {fileID: 697788314}
   m_Layer: 0
   m_Name: 'NewInDoors '
-  m_TagString: Untagged
+  m_TagString: NewInDoors
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &697788314
 Transform:
   m_ObjectHideFlags: 0
@@ -16717,6 +16717,10 @@ PrefabInstance:
     - target: {fileID: 2137580607419842638, guid: 14d3878570fa3b745bf6fb9d013c6772, type: 3}
       propertyPath: m_Name
       value: Striker
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137580607419842638, guid: 14d3878570fa3b745bf6fb9d013c6772, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3260841128812266807, guid: 14d3878570fa3b745bf6fb9d013c6772, type: 3}
       propertyPath: m_Constraints
@@ -17929,17 +17933,6 @@ MonoBehaviour:
   _yellowImage: {fileID: 911301895}
   statController: {fileID: 512151326}
   timeForRedImage: 0
---- !u!114 &1587916847 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6621371230715735204, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
-  m_PrefabInstance: {fileID: 512151325}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1494167380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c6d74f37b74b874793f1984b8993861, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1587916854 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8834038255314397138, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
@@ -18700,7 +18693,7 @@ GameObject:
   - component: {fileID: 1754782290}
   m_Layer: 0
   m_Name: LoadCameraTrigger
-  m_TagString: Untagged
+  m_TagString: LoadCameraTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18712,7 +18705,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1754782286}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -19251,7 +19244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4102ab2dd3f7e144895131ee683d962e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapInstance: {fileID: 1587916847}
+  mapInstance: {fileID: 0}
   shopSceneIndex: 5
   moveAmount: {x: 0, y: 0, z: 0}
   floorSizes: 0300000002000000
@@ -19358,6 +19351,10 @@ PrefabInstance:
     - target: {fileID: 1333520668799787548, guid: 8f901677e65c1df41ac6cb3c77da2cc6, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333520668799787548, guid: 8f901677e65c1df41ac6cb3c77da2cc6, type: 3}
+      propertyPath: m_TagString
+      value: NewOutDoors
       objectReference: {fileID: 0}
     - target: {fileID: 3152600788603574067, guid: 8f901677e65c1df41ac6cb3c77da2cc6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20236,24 +20233,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7801999215551583394, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7801999215551583394, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
-      propertyPath: mapInstance
-      value: 
-      objectReference: {fileID: 1587916847}
     - target: {fileID: 8812048207247753880, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8872903577033795534, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8872903577033795534, guid: c2cca7ff2e057af4ba565def836756d8, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

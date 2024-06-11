@@ -20,7 +20,9 @@ public class MapTranistion : MonoBehaviour
 
     private void findLoadTrigger()
     {
-        _loadTrigger = FindDisabledObjectByName<SceneLoadTrigger>("LoadRoomTrigger");
+        _loadTrigger = GameObject.FindGameObjectWithTag("LoadRoomTrigger").GetComponent<SceneLoadTrigger>();
+        print(_loadTrigger.name);
+
     }
     void killAnEnemy()
     {
@@ -29,7 +31,7 @@ public class MapTranistion : MonoBehaviour
         {
             findLoadTrigger();
             moneyManager.AddMoney(howMoneyFromEnemy);
-            _loadTrigger.gameObject.SetActive(true);
+            _loadTrigger.GetComponent<BoxCollider2D>().enabled = true;
         }
     }
 
@@ -37,18 +39,4 @@ public class MapTranistion : MonoBehaviour
     {
         howManyEnemies = (GameObject.FindGameObjectsWithTag("Enemy").Length) / 2;
     }
-
-    // Metoda do znajdowania wy³¹czonych obiektów w scenie
-    public T FindDisabledObjectByName<T>(string name) where T : Component
-    {
-        foreach (T obj in Resources.FindObjectsOfTypeAll<T>())
-        {
-            if (obj.gameObject.name == name)
-            {
-                return obj;
-            }
-        }
-        return null;
-    }
-
 }

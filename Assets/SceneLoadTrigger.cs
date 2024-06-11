@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 
 public class SceneLoadTrigger : MonoBehaviour
 {
@@ -11,14 +8,10 @@ public class SceneLoadTrigger : MonoBehaviour
     private GameObject LoadRoomTrigger;
     private GameObject _InsideDoors;
     private SceneController controller;
-    [SerializeField] private MapTranistion mapInstance;
-    private BoundingShapeScripts boundingShapeScripts;
 
     private void Start()
     {
         controller = FindObjectOfType<SceneController>();
-        mapInstance = FindObjectOfType<MapTranistion>();
-        boundingShapeScripts = FindObjectOfType<BoundingShapeScripts>();
         FindNewGameObjectsOnScene();
     }
 
@@ -39,32 +32,35 @@ public class SceneLoadTrigger : MonoBehaviour
     private void LoadSceneElements()
     {
         controller.LoadScene();
-        FindNewGameObjectsOnScene();
-        transitionTrigger.SetActive(true);
-        _OutsideDoors.SetActive(false);
-        _OutsideDoors.name = "OutDoors:";
-        gameObject.SetActive(false);
+        Invoke("LoadActions", 3f);
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
 
-
-   private void UnLoadSceneElements()
+    private void UnLoadSceneElements()
     {
-        controller.UnLoadScene();
-        FindNewGameObjectsOnScene();
-        _InsideDoors.SetActive(true);
-        _InsideDoors.name = "InDoors";
-        gameObject.SetActive(false);
+            controller.UnLoadScene();
+            Invoke("UnloadActions", 3f);
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
-
-
+    private void UnloadActions()
+    {
+        FindNewGameObjectsOnScene();
+        _InsideDoors.GetComponent<TilemapRenderer>().enabled = true;
+        _InsideDoors.GetComponent<TilemapCollider2D>().enabled = true;
+        _InsideDoors.GetComponent<PlatformEffector2D>().enabled = true;
+        _InsideDoors.tag = "InDoors";
+    }
+    private void LoadActions()
+    {
+        FindNewGameObjectsOnScene();
+        transitionTrigger.GetComponent<BoxCollider2D>().enabled = true;
+        _OutsideDoors.SetActive(false);
+        _OutsideDoors.tag = "OutDoors";
+    }
     private void FindNewGameObjectsOnScene()
     {
-        mapInstance = FindObjectOfType<MapTranistion>();
-        _OutsideDoors = GameObject.Find("NewOutDoors");
-        if (mapInstance != null)
-        {
-            _InsideDoors = mapInstance.FindDisabledObjectByName<Transform>("NewInDoors")?.gameObject;
-            transitionTrigger = mapInstance.FindDisabledObjectByName<Transform>("LoadCameraTrigger")?.gameObject;
-        }
+        _OutsideDoors = GameObject.FindGameObjectWithTag("NewOutDoors");
+        _InsideDoors = GameObject.FindGameObjectWithTag("NewInDoors");
+        transitionTrigger = GameObject.FindGameObjectWithTag("LoadCameraTrigger");
     }
 }

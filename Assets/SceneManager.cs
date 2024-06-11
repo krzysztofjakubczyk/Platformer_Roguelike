@@ -80,13 +80,7 @@ public class SceneController : MonoBehaviour
 
     public void LoadScene()
     {
-        if (floorSceneIndexes[currentFloor].Count > 0)
-        {
-            indexOfSceneToSpawn = floorSceneIndexes[currentFloor].First();
-            floorSceneIndexes[currentFloor].Remove(indexOfSceneToSpawn);
-            loadedScenes++;
-        }
-        
+        indexOfSceneToSpawn = floorSceneIndexes[currentFloor].First();
         if (IsSceneAlreadyLoaded(indexOfSceneToSpawn))
         {
             return;
@@ -97,6 +91,9 @@ public class SceneController : MonoBehaviour
 
     private IEnumerator LoadSceneCoroutine()
     {
+        
+        floorSceneIndexes[currentFloor].Remove(indexOfSceneToSpawn);
+        loadedScenes++;
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(indexOfSceneToSpawn, LoadSceneMode.Additive);
         yield return asyncLoad;
         Scene scene = SceneManager.GetSceneByBuildIndex(indexOfSceneToSpawn);
