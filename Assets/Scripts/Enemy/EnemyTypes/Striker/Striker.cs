@@ -8,6 +8,8 @@ public class Striker : Entity
     public StrikerMoveState moveState { get; private set; }
     public StrikerStunState stunState { get; private set; }
     public StrikerDeathState deathState { get; private set; }
+    public StrikerPlayerDetectedState playerDetectedState { get; private set; }
+    public StrikerLookForPlayerState lookForPlayerState { get; private set; }
 
     [SerializeField]
     private IdleStateData idleStateData;
@@ -17,6 +19,10 @@ public class Striker : Entity
     private StunStateData stunStateData;
     [SerializeField]
     private DeathStateData deathStateData;
+    [SerializeField]
+    private PlayerDetectedData playerDetectedData;
+    [SerializeField]
+    private LookForPlayerStateData lookForPlayerStateData;
 
     public override void Start()
     {
@@ -26,6 +32,8 @@ public class Striker : Entity
         idleState = new StrikerIdleState(this, stateMachine, "idle", idleStateData, this);
         stunState = new StrikerStunState(this, stateMachine, "stun", stunStateData, this);
         deathState = new StrikerDeathState(this, stateMachine, "death", deathStateData, this);
+        playerDetectedState = new StrikerPlayerDetectedState(this, stateMachine, "playerDetected", playerDetectedData, this);
+        lookForPlayerState = new StrikerLookForPlayerState(this, stateMachine, "lookForPlayer", lookForPlayerStateData, this);
         stateMachine.Initialize(moveState);
     }
 
