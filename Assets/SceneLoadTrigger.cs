@@ -22,25 +22,26 @@ public class SceneLoadTrigger : MonoBehaviour
             if (gameObject.name == "LoadRoomTrigger")
             {
                 LoadSceneElements();
+                gameObject.SetActive(false);
             }
             else if (gameObject.name == "UnLoadRoomTrigger")
             {
                 UnLoadSceneElements();
+                gameObject.SetActive(false);
             }
+            
         }
     }
     private void LoadSceneElements()
     {
         controller.LoadScene();
         Invoke("LoadActions", 3f);
-        gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
 
     private void UnLoadSceneElements()
     {
-            controller.UnLoadScene();
-            Invoke("UnloadActions", 3f);
-        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        controller.UnLoadScene();
+        Invoke("UnloadActions", 3f);
     }
     private void UnloadActions()
     {

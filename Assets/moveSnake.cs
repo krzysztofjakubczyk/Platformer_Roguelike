@@ -32,6 +32,8 @@ public class moveSnake : MonoBehaviour
         IdleTimeLeft = idleTime;
 
         basicColor = GetComponent<SpriteRenderer>().color;
+
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
 
