@@ -5,60 +5,40 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class moveSnake : MonoBehaviour
 {
-    Rigidbody2D rb;
-    Animator animator;
-
     [SerializeField] GameObject player;
     [SerializeField] LayerMask ground;
 
-    [SerializeField] float speed;
+    [SerializeField] float speed = 10;
     [SerializeField] float walkTime;
     [SerializeField] float idleTime = 5;
     [SerializeField] float throwPower;
+
+    Rigidbody2D rb;
+    Animator animator;
+
     float IdleTimeLeft;
     bool running, runningRight;
     bool jumped;
-    Color basicColor;
 
-    PolygonCollider2D polcoll;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        polcoll = GetComponent<PolygonCollider2D>();
-
         IdleTimeLeft = idleTime;
-
-        basicColor = GetComponent<SpriteRenderer>().color;
     }
 
 
     void Update()
     {
         if (IsGrounded())
-            animator.SetBool("grounded", true);
-        else
-            animator.SetBool("grounded", false);
-
-        if (jumped)
-        {
-            if (IsGrounded())
-            {
-                if (player.transform.position.x - transform.position.x > 0)
-                    transform.rotation = Quaternion.Euler(0, 0, 0);
-                else
-                    transform.rotation = Quaternion.Euler(0, 180, 0);
-
-                jumped = false;
-            }
-        }
-
+            LookAtPlayer();   
 
         if (IdleTimeLeft <= 0)
         {
             int attackNow = Random.Range(1, 5);
+
             switch (attackNow)
             {
                 case 1:
@@ -76,12 +56,12 @@ public class moveSnake : MonoBehaviour
                     JumpAttack();
                     break;
             }
-
             IdleTimeLeft = idleTime;
         }
 
         IdleTimeLeft -= Time.deltaTime;
     }
+
 
     private void FixedUpdate()
     {
@@ -97,7 +77,16 @@ public class moveSnake : MonoBehaviour
 
     bool IsGrounded()
     {
-        return Physics2D.Raycast(transform.position, Vector2.down, 2.5f, ground);
+        if (Physics2D.Raycast(transform.position, Vector2.down, 2.5f, ground))
+        {
+            animator.SetBool("grounded", true);
+            return true;
+        }
+        else
+        {
+            animator.SetBool("grounded", false);
+            return false;
+        }
     }
 
     void ThrowBlades()
@@ -124,6 +113,15 @@ public class moveSnake : MonoBehaviour
         throwdart3.SetActive(true);
     }
 
+    void CheckIfWalls()
+    {
+        if (Physics2D.Raycast(transform.position, Vector2.right, 2f, ground) || Physics2D.Raycast(transform.position, Vector2.left, 2f, ground))
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            LookAtPlayer();
+        }
+    }
+
     void JumpAttack()
     {
         Vector2 throwDir;
@@ -133,14 +131,12 @@ public class moveSnake : MonoBehaviour
             throwDir = new Vector2(-1, 1.5f);
 
         GetComponent<Rigidbody2D>().AddForce(throwDir * throwPower, ForceMode2D.Impulse);
-        Invoke(nameof(SetJumped), 0.2f);
     }
 
     void StartSpeed()
     {
         animator.SetBool("chargeAttack", false);
         animator.SetBool("running", true);
-        speed = 10;
         running = true;
         if (player.transform.position.x - transform.position.x > 0)
             runningRight = true;
@@ -153,22 +149,26 @@ public class moveSnake : MonoBehaviour
     void StopSpeed()
     {
         running = false;
-        speed = 0;
+        rb.velocity = Vector2.zero;
         animator.SetBool("running", false);
+
+        LookAtPlayer();
+    }
+
+    void LookAtPlayer()
+    {
         if (player.transform.position.x - transform.position.x > 0)
             transform.rotation = Quaternion.Euler(0, 0, 0);
         else
             transform.rotation = Quaternion.Euler(0, 180, 0);
     }
 
-    void SetJumped()
-    {
-        jumped = true;
-    }
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawRay(transform.position, Vector2.down * 2.5f);
+        Gizmos.DrawRay(transform.position, Vector2.right * 2f);
+        Gizmos.DrawRay(transform.position, Vector2.left * 2f);
     }
 
 
