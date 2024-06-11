@@ -16,7 +16,7 @@ public class SceneController : MonoBehaviour
     private int currentFloor = 0;
     private int loadedScenes;
     private int indexOfSceneToSpawn;
-    private int indexForBossScene;
+    private int indexForBossScene = 6;
     private Vector3 VectorOfYPostionFirstScene;
     private Vector3 originalMoveAmount;
     private Dictionary<int, List<int>> floorSceneIndexes = new Dictionary<int, List<int>>();
