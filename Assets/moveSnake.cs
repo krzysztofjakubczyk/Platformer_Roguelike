@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
+using Quaternion = UnityEngine.Quaternion;
+using Vector2 = UnityEngine.Vector2;
 
 public class moveSnake : MonoBehaviour
 {
-    [SerializeField] GameObject player;
+    public GameObject player;
     [SerializeField] LayerMask ground;
 
     [SerializeField] float speed = 10;
@@ -37,20 +39,21 @@ public class moveSnake : MonoBehaviour
 
         if (IdleTimeLeft <= 0)
         {
-            int attackNow = Random.Range(1, 5);
+            int attackNow = Random.Range(2, 3);
 
             switch (attackNow)
             {
                 case 1:
                     animator.SetTrigger("armAttack");
+                    Invoke(nameof(ArmAttack), 0.7f);
                     break;
                 case 2:
                     animator.SetTrigger("bladesAttack");
-                    ThrowBlades();
+                    Invoke(nameof(ThrowBlades), 1f);
                     break;
                 case 3:
                     animator.SetBool("chargeAttack", true);
-                    Invoke(nameof(StartSpeed), 1f);
+                    Invoke(nameof(StartSpeed), 1.5f);
                     break;
                 case 4:
                     JumpAttack();
@@ -89,37 +92,41 @@ public class moveSnake : MonoBehaviour
         }
     }
 
-    void ThrowBlades()
+    void ArmAttack()
     {
-        GameObject throwdart = Instantiate(transform.GetChild(0).gameObject);
-        throwdart.GetComponent<throwMove>().dir = new Vector2(-1, 0);
-        throwdart.transform.parent = gameObject.transform;
-        throwdart.transform.localScale = Vector3.one;
-        throwdart.transform.position = transform.GetChild(0).position;
-        throwdart.SetActive(true);
-
-        GameObject throwdart2 = Instantiate(transform.GetChild(0).gameObject);
-        throwdart2.GetComponent<throwMove>().dir = new Vector2(-1, 1);
-        throwdart2.transform.parent = gameObject.transform;
-        throwdart2.transform.localScale = Vector3.one;
-        throwdart2.transform.position = transform.GetChild(0).position;
-        throwdart2.SetActive(true);
-
-        GameObject throwdart3 = Instantiate(transform.GetChild(0).gameObject);
-        throwdart3.GetComponent<throwMove>().dir = new Vector2(-1, 3);
-        throwdart3.transform.parent = gameObject.transform;
-        throwdart3.transform.localScale = Vector3.one;
-        throwdart3.transform.position = transform.GetChild(0).position;
-        throwdart3.SetActive(true);
+        GetComponent<PolygonCollider2D>().offset = new Vector2(0.3f, 0);
+        Invoke(nameof(EndArmAttack), 0.1f);
     }
 
-    void CheckIfWalls()
+    void EndArmAttack()
     {
-        if (Physics2D.Raycast(transform.position, Vector2.right, 2f, ground) || Physics2D.Raycast(transform.position, Vector2.left, 2f, ground))
+        GetComponent<PolygonCollider2D>().offset = Vector2.zero;
+    }
+
+    void ThrowBlades()
+    {
+        List<GameObject> blades = new List<GameObject>();
+        GameObject blade1 = Instantiate(transform.GetChild(0).gameObject);
+        GameObject blade2 = Instantiate(transform.GetChild(0).gameObject);
+        GameObject blade3 = Instantiate(transform.GetChild(0).gameObject);
+
+        blades.Add(blade1);
+        blades.Add(blade2);
+        blades.Add(blade3);
+
+        foreach(GameObject blade in blades)
         {
-            rb.velocity = new Vector2(0, rb.velocity.y);
-            LookAtPlayer();
+            blade.transform.localScale = gameObject.transform.localScale;
+            blade.transform.rotation = transform.GetChild(0).rotation;
+            blade.transform.position = transform.GetChild(0).position;
+            blade.GetComponent<throwMove>().player = player;
+            blade.SetActive(true);
         }
+
+        blade1.GetComponent<throwMove>().dir = transform.right;
+        blade2.GetComponent<throwMove>().dir = new Vector2(transform.right.x, 1);
+        blade3.GetComponent<throwMove>().dir = transform.up;
+
     }
 
     void JumpAttack()
@@ -163,6 +170,14 @@ public class moveSnake : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 180, 0);
     }
 
+    void CheckIfWalls()
+    {
+        if (Physics2D.Raycast(transform.position, Vector2.right, 2f, ground) || Physics2D.Raycast(transform.position, Vector2.left, 2f, ground))
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            LookAtPlayer();
+        }
+    }
 
     private void OnDrawGizmos()
     {
@@ -173,18 +188,3 @@ public class moveSnake : MonoBehaviour
 
 
 }
-/*
-if (Input.GetKeyDown(KeyCode.K))
-{
-    animator.SetTrigger("armHit");
-}
-
-if (Input.GetKeyDown(KeyCode.J))
-{
-    GameObject throwdart = Instantiate(transform.GetChild(0).gameObject);
-    throwdart.transform.parent = gameObject.transform;
-    throwdart.transform.localScale = Vector3.one;
-    throwdart.transform.position = transform.GetChild(0).position;
-    throwdart.SetActive(true);
-}
-*/

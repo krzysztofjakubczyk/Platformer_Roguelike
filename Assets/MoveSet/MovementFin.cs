@@ -250,14 +250,20 @@ public class MovementFin : MonoBehaviour
     {
         if(collision.transform.tag == "Enemy")
         {
-            print("kolizja z enemy");
-            getDamageFromEnemy = true;
-            if (collision.transform.position.x > transform.position.x)
-                rb.AddForce(new Vector2(-1, 1) * pushBackForce , ForceMode2D.Impulse);
-            else if (collision.transform.position.x < transform.position.x)
-                rb.AddForce(new Vector2(1, 1) * pushBackForce, ForceMode2D.Impulse);
-            StartCoroutine(ChangeDamageEnterFlagAfterDelay(false, 1));
+            DamageOnCollision(collision.collider);  
         }
+        
+    }
+
+    public void DamageOnCollision(Collider2D coll)
+    {
+        print("kolizja z enemy");
+        getDamageFromEnemy = true;
+        if (coll.transform.position.x > transform.position.x)
+            rb.AddForce(new Vector2(-1, 1) * pushBackForce, ForceMode2D.Impulse);
+        else //(coll.transform.position.x < transform.position.x)
+            rb.AddForce(new Vector2(1, 1) * pushBackForce, ForceMode2D.Impulse);
+        StartCoroutine(ChangeDamageEnterFlagAfterDelay(false, 1));
     }
 
 }
