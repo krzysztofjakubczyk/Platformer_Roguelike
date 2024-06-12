@@ -91,6 +91,8 @@ MonoBehaviour:
   moveStateData: {fileID: 11400000, guid: fb9e708b7d6200742951b167e9b1dced, type: 2}
   stunStateData: {fileID: 11400000, guid: 290ca59d71a513b4eb56241f5c5a2738, type: 2}
   deathStateData: {fileID: 11400000, guid: 8f6e63d55a705aa43878d67643dc1940, type: 2}
+  playerDetectedData: {fileID: 11400000, guid: a571d98ff42a1684eb1ac34d7f3a5f15, type: 2}
+  lookForPlayerStateData: {fileID: 11400000, guid: f14b42d55b7375e44a8d019aade4abf2, type: 2}
 --- !u!1 &2166568322371740355
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +340,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8347646767960054696}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -356,7 +358,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 6
+  m_Constraints: 4
 --- !u!61 &7778448413457670367
 BoxCollider2D:
   m_ObjectHideFlags: 0

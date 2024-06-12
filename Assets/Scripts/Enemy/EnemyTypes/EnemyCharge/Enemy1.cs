@@ -24,7 +24,7 @@ public class Enemy1 : Entity
     [SerializeField]
     private LookForPlayerStateData lookForPlayerStateData;
     [SerializeField]
-    private D_MeleeAttack meleeAttackStateData;
+    private MeleeAttackStateData meleeAttackStateData;
     [SerializeField]
     private StunStateData stunStateData;
     [SerializeField]

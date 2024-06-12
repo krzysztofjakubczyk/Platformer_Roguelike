@@ -6,7 +6,7 @@ public class ER_MeleeAttackState : MeleeAttackState
 {
     private EnemyRange enemy;
 
-    public ER_MeleeAttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition, D_MeleeAttack stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, attackPosition, stateData)
+    public ER_MeleeAttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition, MeleeAttackStateData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, attackPosition, stateData)
     {
         this.enemy = enemy;
     }

@@ -21,7 +21,7 @@ public class FlyingEnemy : Entity
     [SerializeField]
     private D_ChargeState chargeStateData;
     [SerializeField]
-    private D_MeleeAttack meleeAttackStateData;
+    private MeleeAttackStateData meleeAttackStateData;
     [SerializeField]
     private LookForPlayerStateData lookForPlayerStateData;
     [SerializeField]

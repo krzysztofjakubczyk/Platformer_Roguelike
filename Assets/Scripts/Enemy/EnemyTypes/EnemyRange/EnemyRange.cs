@@ -21,7 +21,7 @@ public class EnemyRange : Entity
     [SerializeField]
     private PlayerDetectedData playerDetectedStateData;
     [SerializeField]
-    private D_MeleeAttack meleeAttackStateData;
+    private MeleeAttackStateData meleeAttackStateData;
     [SerializeField]
     private LookForPlayerStateData lookForPlayerStateData;
     [SerializeField]

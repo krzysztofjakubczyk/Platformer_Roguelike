@@ -10,6 +10,7 @@ public class Striker : Entity
     public StrikerDeathState deathState { get; private set; }
     public StrikerPlayerDetectedState playerDetectedState { get; private set; }
     public StrikerLookForPlayerState lookForPlayerState { get; private set; }
+    public StrikerMeleeAttackState meleeAttackState { get; private set; }
 
     [SerializeField]
     private IdleStateData idleStateData;
@@ -23,6 +24,11 @@ public class Striker : Entity
     private PlayerDetectedData playerDetectedData;
     [SerializeField]
     private LookForPlayerStateData lookForPlayerStateData;
+    [SerializeField]
+    private MeleeAttackStateData meleeAttackStateData;
+
+    [SerializeField]
+    private Transform meleeAttackPosition;
 
     public override void Start()
     {
@@ -34,6 +40,7 @@ public class Striker : Entity
         deathState = new StrikerDeathState(this, stateMachine, "death", deathStateData, this);
         playerDetectedState = new StrikerPlayerDetectedState(this, stateMachine, "playerDetected", playerDetectedData, this);
         lookForPlayerState = new StrikerLookForPlayerState(this, stateMachine, "lookForPlayer", lookForPlayerStateData, this);
+        meleeAttackState = new StrikerMeleeAttackState(this, stateMachine, "meleeAttack", meleeAttackPosition, meleeAttackStateData, this);
         stateMachine.Initialize(moveState);
     }
 

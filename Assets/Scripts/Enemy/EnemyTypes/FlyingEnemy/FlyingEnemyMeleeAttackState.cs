@@ -5,7 +5,7 @@ using UnityEngine;
 public class FlyingEnemyMeleeAttackState : MeleeAttackState
 {
     private FlyingEnemy enemy;
-    public FlyingEnemyMeleeAttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition, D_MeleeAttack stateData, FlyingEnemy enemy) : base(entity, stateMachine, animBoolName, attackPosition, stateData)
+    public FlyingEnemyMeleeAttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition, MeleeAttackStateData stateData, FlyingEnemy enemy) : base(entity, stateMachine, animBoolName, attackPosition, stateData)
     {
         this.enemy = enemy;
     }

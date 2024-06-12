@@ -28,15 +28,14 @@ public class StrikerPlayerDetectedState : PlayerDetected
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        Debug.Log(isEnemyInRangeToCharge + " czy przeciwnik jest w zasiêgu ataku");
         if (isEnemyInRange)
         {
             entity.Flip();
             stateMachine.ChangeState(enemy.moveState);
         }
-        //else if (performCloseRangeAction) stateMachine.ChangeState(enemy.meleeAttackState);
+        else if (performCloseRangeAction) stateMachine.ChangeState(enemy.meleeAttackState);
         //else if (!isEnemyInRangeToCharge && performLongRangeAction) stateMachine.ChangeState(enemy.chargeState);
-        //else if (!isPlayerInMaxAgroRange) stateMachine.ChangeState(enemy.lookForPlayerState);
+        else if (!isPlayerInMaxAgroRange) stateMachine.ChangeState(enemy.lookForPlayerState);
         else if (!isDetectingLedge)
         {
             entity.Flip();

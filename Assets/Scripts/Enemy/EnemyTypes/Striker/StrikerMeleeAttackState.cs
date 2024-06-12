@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class E1_MeleeAttackState : MeleeAttackState
+public class StrikerMeleeAttackState :MeleeAttackState
 {
-    private Enemy1 enemy;
-    public E1_MeleeAttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition, MeleeAttackStateData stateData, Enemy1 enemy) : base(entity, stateMachine, animBoolName, attackPosition, stateData)
+    private Striker enemy;
+    private int comboCounter = 0;
+    public StrikerMeleeAttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition, MeleeAttackStateData stateData, Striker enemy) : base(entity, stateMachine, animBoolName, attackPosition, stateData)
     {
         this.enemy = enemy;
     }
@@ -33,11 +34,15 @@ public class E1_MeleeAttackState : MeleeAttackState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if (isAnimationFinished)
-        {
-            if (isPlayerInMinAgrRange) stateMachine.ChangeState(enemy.playerDetectedState);
-            else stateMachine.ChangeState(enemy.lookForPlayerState);
-        }
+
+            if (isAnimationFinished)
+            {
+            if (isPlayerInMinAgrRange) {
+                stateMachine.ChangeState(enemy.playerDetectedState);
+                comboCounter = 0; 
+                }
+                else stateMachine.ChangeState(enemy.lookForPlayerState);
+            }   
             
     }
 

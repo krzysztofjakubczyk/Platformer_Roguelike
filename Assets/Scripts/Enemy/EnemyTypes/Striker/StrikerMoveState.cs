@@ -37,7 +37,7 @@ public class StrikerMoveState : MoveState
         }
         else if (isPlayerInMinAgroRange && !isEnemyInRangeToCharge)
         {
-            //stateMachine.ChangeState(enemy.playerDetectedState);
+            stateMachine.ChangeState(enemy.playerDetectedState);
         }
         else if (isDetectingWall || !isDetectingLedge)
         {

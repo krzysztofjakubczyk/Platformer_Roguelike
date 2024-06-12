@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,7 +108,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: spr_StrikerSlash_stripNoEffect_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 28
+        width: 42
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae60463494e3b6845ac006a389664b86
+      internalID: 1714754458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerSlash_stripNoEffect_1
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 28
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11ec3ae5c63d21a4ab5c53581e5e5118
+      internalID: -1701733126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerSlash_stripNoEffect_2
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 28
+        width: 64
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 096bdedf2871a62429b2d036d4956916
+      internalID: 1080757141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerSlash_stripNoEffect_3
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 28
+        width: 45
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9989df04e4a6f4948ab3aafd5d3b4cb0
+      internalID: 769283630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerSlash_stripNoEffect_4
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 28
+        width: 56
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e683048480576f489ee6a1312dd9062
+      internalID: -2140174204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerSlash_stripNoEffect_5
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 28
+        width: 43
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 312591712fa583e4c9933f4764224a11
+      internalID: -567730433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerSlash_stripNoEffect_6
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 28
+        width: 47
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca37ed5b634116449945951ad5d9ec4
+      internalID: 2011943177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerSlash_stripNoEffect_7
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 28
+        width: 34
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b5816cd758304549998c07b82e4b38f
+      internalID: 747589726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerSlash_stripNoEffect_8
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 28
+        width: 38
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b69ec9020f9c04e99eecde62894332
+      internalID: 880330389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerSlash_stripNoEffect_9
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 28
+        width: 41
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 077dcd196b552eb45909842d77af1bd4
+      internalID: 850081768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerSlash_stripNoEffect_10
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 28
+        width: 47
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 353b6dd57d5f27549be96251b396c21d
+      internalID: 348304190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerSlash_stripNoEffect_11
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 28
+        width: 47
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf567a9a5ec871b4c86f9b0c20fca1e7
+      internalID: 1789071815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerSlash_stripNoEffect_12
+      rect:
+        serializedVersion: 2
+        x: 1551
+        y: 28
+        width: 47
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bf6d318cd62013459fedef31f500a54
+      internalID: -754089513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerSlash_stripNoEffect_13
+      rect:
+        serializedVersion: 2
+        x: 1675
+        y: 28
+        width: 51
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d47cd85dce86e4a429abf27cf597bfe0
+      internalID: -407519128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerSlash_stripNoEffect_14
+      rect:
+        serializedVersion: 2
+        x: 1799
+        y: 28
+        width: 50
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cacf9dc28f1d484cbb83c8417f1342a
+      internalID: -348833147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_StrikerSlash_stripNoEffect_15
+      rect:
+        serializedVersion: 2
+        x: 1932
+        y: 28
+        width: 45
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d2249c71cb87e9439e44aa7439a3827
+      internalID: -1769469310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +455,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_StrikerSlash_stripNoEffect_0: 1714754458
+      spr_StrikerSlash_stripNoEffect_1: -1701733126
+      spr_StrikerSlash_stripNoEffect_10: 348304190
+      spr_StrikerSlash_stripNoEffect_11: 1789071815
+      spr_StrikerSlash_stripNoEffect_12: -754089513
+      spr_StrikerSlash_stripNoEffect_13: -407519128
+      spr_StrikerSlash_stripNoEffect_14: -348833147
+      spr_StrikerSlash_stripNoEffect_15: -1769469310
+      spr_StrikerSlash_stripNoEffect_2: 1080757141
+      spr_StrikerSlash_stripNoEffect_3: 769283630
+      spr_StrikerSlash_stripNoEffect_4: -2140174204
+      spr_StrikerSlash_stripNoEffect_5: -567730433
+      spr_StrikerSlash_stripNoEffect_6: 2011943177
+      spr_StrikerSlash_stripNoEffect_7: 747589726
+      spr_StrikerSlash_stripNoEffect_8: 880330389
+      spr_StrikerSlash_stripNoEffect_9: 850081768
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

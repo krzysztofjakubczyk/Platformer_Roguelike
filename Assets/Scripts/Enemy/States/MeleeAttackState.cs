@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class MeleeAttackState : AttackState
 {
-    protected D_MeleeAttack stateData;
+    protected MeleeAttackStateData stateData;
 
     protected AttackDetails attackDetails;
 
-    public MeleeAttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition, D_MeleeAttack stateData) : base(entity, stateMachine, animBoolName, attackPosition)
+    public MeleeAttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition, MeleeAttackStateData stateData) : base(entity, stateMachine, animBoolName, attackPosition)
     {
         this.stateData = stateData;
     }
