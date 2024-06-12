@@ -34,7 +34,9 @@ public class StrikerPlayerDetectedState : PlayerDetected
             stateMachine.ChangeState(enemy.moveState);
         }
         else if (performCloseRangeAction) stateMachine.ChangeState(enemy.meleeAttackState);
-        //else if (!isEnemyInRangeToCharge && performLongRangeAction) stateMachine.ChangeState(enemy.chargeState);
+        //else if (!isEnemyInRangeToCharge && performCloseRangeAction) stateMachine.ChangeState(enemy.dodgeState);
+        else if (!isEnemyInRangeToCharge && performLongRangeAction) stateMachine.ChangeState(enemy.dodgeState);
+        //else if (isPlayerInMaxAgroRange && performLongRangeAction) stateMachine.ChangeState(enemy.rangedAttackState);
         else if (!isPlayerInMaxAgroRange) stateMachine.ChangeState(enemy.lookForPlayerState);
         else if (!isDetectingLedge)
         {

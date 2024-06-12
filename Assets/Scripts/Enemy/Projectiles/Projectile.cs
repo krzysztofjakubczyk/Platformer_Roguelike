@@ -82,6 +82,7 @@ public class Projectile : MonoBehaviour
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
                 rb.velocity = Vector2.zero;
                 rb.isKinematic = true;
+                Destroy(this.gameObject,3);
                 
             }
 

@@ -23598,6 +23598,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3985340409233497530, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5104819628213200034, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12
@@ -23637,6 +23641,10 @@ PrefabInstance:
     - target: {fileID: 5104819628213200034, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995267144880173407, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
+      propertyPath: testVar
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6015207124225747833, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
       propertyPath: spells.Array.data[0]
@@ -23902,11 +23910,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1790147022 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2307194540462108066, guid: 14d3878570fa3b745bf6fb9d013c6772, type: 3}
-  m_PrefabInstance: {fileID: 1854323362}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1803336924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24024,10 +24027,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Striker
       objectReference: {fileID: 0}
-    - target: {fileID: 3260841128812266807, guid: 14d3878570fa3b745bf6fb9d013c6772, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6117564792919136870, guid: 14d3878570fa3b745bf6fb9d013c6772, type: 3}
       propertyPath: player
       value: 
@@ -24036,18 +24035,14 @@ PrefabInstance:
       propertyPath: playerHp
       value: 
       objectReference: {fileID: 1424189345}
-    - target: {fileID: 6117564792919136870, guid: 14d3878570fa3b745bf6fb9d013c6772, type: 3}
-      propertyPath: attackPosition
-      value: 
-      objectReference: {fileID: 1790147022}
-    - target: {fileID: 6117564792919136870, guid: 14d3878570fa3b745bf6fb9d013c6772, type: 3}
-      propertyPath: meleeAttackPosition
-      value: 
-      objectReference: {fileID: 1790147022}
-    - target: {fileID: 6117564792919136870, guid: 14d3878570fa3b745bf6fb9d013c6772, type: 3}
-      propertyPath: meleeAttackStateData
-      value: 
-      objectReference: {fileID: 11400000, guid: 42d4301478bda804a86c24f7695ec198, type: 2}
+    - target: {fileID: 6552009620993726577, guid: 14d3878570fa3b745bf6fb9d013c6772, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 6552009620993726577, guid: 14d3878570fa3b745bf6fb9d013c6772, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.29
+      objectReference: {fileID: 0}
     - target: {fileID: 8920375945797450280, guid: 14d3878570fa3b745bf6fb9d013c6772, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.6627924

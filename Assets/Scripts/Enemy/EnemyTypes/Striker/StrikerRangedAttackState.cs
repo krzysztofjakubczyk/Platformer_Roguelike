@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StrikerMeleeAttackState :MeleeAttackState
+public class StrikerRangedAttackState : RangedAttackState
 {
     private Striker enemy;
-    private int comboCounter = 0;
-    public StrikerMeleeAttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition, MeleeAttackStateData stateData, Striker enemy) : base(entity, stateMachine, animBoolName, attackPosition, stateData)
+    public StrikerRangedAttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition, RangedAttackStateData stateData, Striker enemy) : base(entity, stateMachine, animBoolName, attackPosition, stateData)
     {
         this.enemy = enemy;
     }
@@ -34,16 +33,10 @@ public class StrikerMeleeAttackState :MeleeAttackState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-
-            if (isAnimationFinished)
-            {
-            if (isPlayerInMinAgrRange) {
-                stateMachine.ChangeState(enemy.rangedAttackState);
-                //stateMachine.ChangeState(enemy.playerDetectedState);
-            }
-                else stateMachine.ChangeState(enemy.lookForPlayerState);
-            }   
-            
+        entity.CheckFlipToPlayer();
+        if (isAnimationFinished)
+            if (isPlayerInMinAgrRange) stateMachine.ChangeState(enemy.playerDetectedState);
+            else stateMachine.ChangeState(enemy.lookForPlayerState);
     }
 
     public override void PhysicsUpdate()

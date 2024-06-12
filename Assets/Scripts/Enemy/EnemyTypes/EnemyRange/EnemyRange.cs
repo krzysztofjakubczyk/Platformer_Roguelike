@@ -29,7 +29,7 @@ public class EnemyRange : Entity
     [SerializeField]
     private DeathStateData deathStateData;
     [SerializeField]
-    public D_DodgeState dodgeStateData;//{ get; private set; }
+    public DodgeStateData dodgeStateData;//{ get; private set; }
     [SerializeField]
     private RangedAttackStateData rangedAttackStateData;
 

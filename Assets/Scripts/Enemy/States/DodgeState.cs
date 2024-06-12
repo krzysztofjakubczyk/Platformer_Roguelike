@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class DodgeState : State
 {
-    protected D_DodgeState stateData;
+    protected DodgeStateData stateData;
 
     protected bool performCloseRangeAction;
     protected bool isPlayerInMaxAgroRange;
     protected bool isGrounded;
     protected bool isDodgeOver;
-    public DodgeState(Entity entity, BaseStateMachine stateMachine, string animBoolName, D_DodgeState stateData) : base(entity, stateMachine, animBoolName)
+    public DodgeState(Entity entity, BaseStateMachine stateMachine, string animBoolName, DodgeStateData stateData) : base(entity, stateMachine, animBoolName)
     {
         this.stateData = stateData;
     }

@@ -11,6 +11,8 @@ public class Striker : Entity
     public StrikerPlayerDetectedState playerDetectedState { get; private set; }
     public StrikerLookForPlayerState lookForPlayerState { get; private set; }
     public StrikerMeleeAttackState meleeAttackState { get; private set; }
+    public StrikerDodgeState dodgeState { get; private set; }
+    public StrikerRangedAttackState rangedAttackState { get; private set; }
 
     [SerializeField]
     private IdleStateData idleStateData;
@@ -26,9 +28,15 @@ public class Striker : Entity
     private LookForPlayerStateData lookForPlayerStateData;
     [SerializeField]
     private MeleeAttackStateData meleeAttackStateData;
+    [SerializeField]
+    private DodgeStateData dodgeStateData;
+    [SerializeField]
+    private RangedAttackStateData rangedAttackStateData;
 
     [SerializeField]
     private Transform meleeAttackPosition;
+    [SerializeField]
+    private Transform rangedAttackPosition;
 
     public override void Start()
     {
@@ -41,6 +49,8 @@ public class Striker : Entity
         playerDetectedState = new StrikerPlayerDetectedState(this, stateMachine, "playerDetected", playerDetectedData, this);
         lookForPlayerState = new StrikerLookForPlayerState(this, stateMachine, "lookForPlayer", lookForPlayerStateData, this);
         meleeAttackState = new StrikerMeleeAttackState(this, stateMachine, "meleeAttack", meleeAttackPosition, meleeAttackStateData, this);
+        dodgeState = new StrikerDodgeState(this, stateMachine, "dodge", dodgeStateData, this);
+        rangedAttackState = new StrikerRangedAttackState(this, stateMachine, "rangeAttack", rangedAttackPosition ,rangedAttackStateData, this);
         stateMachine.Initialize(moveState);
     }
 
