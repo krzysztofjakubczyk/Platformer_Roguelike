@@ -18617,7 +18617,7 @@ GameObject:
   - component: {fileID: 662620638}
   m_Layer: 10
   m_Name: throwThing
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18651,7 +18651,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dir: {x: 1, y: 0}
   speed: 5
-  player: {fileID: 0}
 --- !u!212 &662620636
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19046,7 +19045,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 1.7, y: -0.97, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 662620634}
@@ -19064,13 +19063,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 642e7e6d3e668614d848ae8c984fcdd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1550697768}
   ground:
     serializedVersion: 2
     m_Bits: 64
   speed: 10
   walkTime: 2
-  idleTime: 3
+  idleTime: 2
   throwPower: 10
 --- !u!60 &1349739368
 PolygonCollider2D:
@@ -19154,11 +19152,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!1 &1550697768 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1922316363251511598, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
-  m_PrefabInstance: {fileID: 3105395521122954196}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1590319980
 GameObject:
   m_ObjectHideFlags: 0
@@ -19740,6 +19733,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6621371230715735204, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834038255314397138, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
+      propertyPath: canRecover
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

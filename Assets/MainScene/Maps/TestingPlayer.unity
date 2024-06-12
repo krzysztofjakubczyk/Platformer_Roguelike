@@ -17919,7 +17919,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _blueImage: {fileID: 358304146}
   _yellowImage: {fileID: 911301895}
-  statController: {fileID: 512151326}
+  statController: {fileID: 1587916854}
   timeForRedImage: 0
 --- !u!114 &1587916854 stripped
 MonoBehaviour:
@@ -19306,6 +19306,7 @@ MonoBehaviour:
   shopSceneIndex: 5
   moveAmount: {x: 0, y: 0, z: 0}
   floorSizes: 0300000002000000
+  lastIndexOfSceneSpawned: 0
   isShopLoaded: 0
 --- !u!1 &2005817366
 GameObject:

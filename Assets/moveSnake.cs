@@ -18,6 +18,9 @@ public class moveSnake : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
 
+    enum attackStates {charg, jump, armAttack, bladesAttack}
+    attackStates attackState;
+
     float IdleTimeLeft;
     bool running, runningRight;
     bool jumped;
