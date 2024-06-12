@@ -17,7 +17,7 @@ public class SceneController : MonoBehaviour
     private int loadedScenes;
     private int indexOfSceneToSpawn;
     private int indexForBossScene = 6;
-    private int lastIndexOfSceneSpawned;
+    [SerializeField] private int lastIndexOfSceneSpawned = 0;
     private Vector3 VectorOfYPostionFirstScene;
     private Vector3 originalMoveAmount;
     private Dictionary<int, List<int>> floorSceneIndexes = new Dictionary<int, List<int>>();
@@ -82,7 +82,6 @@ public class SceneController : MonoBehaviour
     public void LoadScene()
     {
         indexOfSceneToSpawn = floorSceneIndexes[currentFloor].First();
-        lastIndexOfSceneSpawned = indexOfSceneToSpawn;
         if (IsSceneAlreadyLoaded(indexOfSceneToSpawn))
         {
             return;
@@ -109,6 +108,12 @@ public class SceneController : MonoBehaviour
     public void UnLoadScene()
     {
         SceneManager.UnloadSceneAsync(lastIndexOfSceneSpawned);
+        if (SceneManager.sceneCount == 2)
+        {
+            lastIndexOfSceneSpawned = SceneManager.GetActiveScene().buildIndex;
+            Debug.Log(lastIndexOfSceneSpawned);
+        }
+        
     }
 
     private bool IsSceneAlreadyLoaded(int sceneIndex)
