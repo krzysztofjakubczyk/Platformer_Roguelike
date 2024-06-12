@@ -7,7 +7,7 @@ public class throwMove : MonoBehaviour
     public Vector2 dir;
     [SerializeField] float speed;
 
-    public GameObject player;
+    GameObject player;
 
     Rigidbody2D rb;
 
@@ -15,6 +15,8 @@ public class throwMove : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        player = GameObject.Find("Player");
         Invoke(nameof(DestroyObject), 5);
     }
 
