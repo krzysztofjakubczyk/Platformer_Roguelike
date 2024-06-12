@@ -240,6 +240,7 @@ public class MovementFin : MonoBehaviour
     public float GetDash() { return dashPower; }
 
     public float GetMovement() { return speed; }
+
     IEnumerator ChangeDamageEnterFlagAfterDelay(bool value, float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -263,7 +264,7 @@ public class MovementFin : MonoBehaviour
             rb.AddForce(new Vector2(-1, 1) * pushBackForce, ForceMode2D.Impulse);
         else //(coll.transform.position.x < transform.position.x)
             rb.AddForce(new Vector2(1, 1) * pushBackForce, ForceMode2D.Impulse);
-        StartCoroutine(ChangeDamageEnterFlagAfterDelay(false, 1));
+        StartCoroutine(ChangeDamageEnterFlagAfterDelay(false, 0.5f));
     }
 
 }

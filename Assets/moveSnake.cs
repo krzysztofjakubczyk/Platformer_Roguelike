@@ -7,7 +7,7 @@ using Vector2 = UnityEngine.Vector2;
 
 public class moveSnake : MonoBehaviour
 {
-    public GameObject player;
+    public GameObject player { get; private set; }
     [SerializeField] LayerMask ground;
 
     [SerializeField] float speed = 10;
@@ -28,6 +28,8 @@ public class moveSnake : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
+        player = GameObject.Find("Player");
+
         IdleTimeLeft = idleTime;
     }
 
@@ -37,9 +39,11 @@ public class moveSnake : MonoBehaviour
         if (IsGrounded())
             LookAtPlayer();   
 
+        CheckIfWalls();
+
         if (IdleTimeLeft <= 0)
         {
-            int attackNow = Random.Range(2, 3);
+            int attackNow = Random.Range(1, 5);
 
             switch (attackNow)
             {
@@ -119,7 +123,6 @@ public class moveSnake : MonoBehaviour
             blade.transform.localScale = gameObject.transform.localScale;
             blade.transform.rotation = transform.GetChild(0).rotation;
             blade.transform.position = transform.GetChild(0).position;
-            blade.GetComponent<throwMove>().player = player;
             blade.SetActive(true);
         }
 
@@ -142,7 +145,7 @@ public class moveSnake : MonoBehaviour
 
     void StartSpeed()
     {
-        animator.SetBool("chargeAttack", false);
+        
         animator.SetBool("running", true);
         running = true;
         if (player.transform.position.x - transform.position.x > 0)
@@ -150,11 +153,14 @@ public class moveSnake : MonoBehaviour
         else
             runningRight = false;
 
+        animator.SetBool("chargeAttack", false);
+
         Invoke(nameof(StopSpeed), 2);
     }
 
     void StopSpeed()
     {
+        
         running = false;
         rb.velocity = Vector2.zero;
         animator.SetBool("running", false);
@@ -174,6 +180,7 @@ public class moveSnake : MonoBehaviour
     {
         if (Physics2D.Raycast(transform.position, Vector2.right, 2f, ground) || Physics2D.Raycast(transform.position, Vector2.left, 2f, ground))
         {
+            StopSpeed();
             rb.velocity = new Vector2(0, rb.velocity.y);
             LookAtPlayer();
         }
