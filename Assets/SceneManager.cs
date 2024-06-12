@@ -17,12 +17,13 @@ public class SceneController : MonoBehaviour
     private int loadedScenes;
     private int indexOfSceneToSpawn;
     private int indexForBossScene = 6;
+    private int lastIndexOfSceneSpawned;
     private Vector3 VectorOfYPostionFirstScene;
     private Vector3 originalMoveAmount;
     private Dictionary<int, List<int>> floorSceneIndexes = new Dictionary<int, List<int>>();
     private List<int> shopInsertedFloors = new List<int>();
-    public bool isShopLoaded= false;
-    private bool hasShopBeenLoaded= false;
+    public bool isShopLoaded = false;
+    private bool hasShopBeenLoaded = false;
     float lastPosition = 0f;
     void Start()
     {
@@ -81,18 +82,21 @@ public class SceneController : MonoBehaviour
     public void LoadScene()
     {
         indexOfSceneToSpawn = floorSceneIndexes[currentFloor].First();
+        lastIndexOfSceneSpawned = indexOfSceneToSpawn;
         if (IsSceneAlreadyLoaded(indexOfSceneToSpawn))
         {
-            Debug.Log("return");
             return;
         }
-
+        if (indexOfSceneToSpawn == shopSceneIndex)
+        {
+            StartCoroutine(LoadSceneWithDelayCoroutine(7f));
+        }
         StartCoroutine(LoadSceneCoroutine());
     }
 
     private IEnumerator LoadSceneCoroutine()
     {
-        
+
         floorSceneIndexes[currentFloor].Remove(indexOfSceneToSpawn);
         loadedScenes++;
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(indexOfSceneToSpawn, LoadSceneMode.Additive);
@@ -104,13 +108,7 @@ public class SceneController : MonoBehaviour
 
     public void UnLoadScene()
     {
-        foreach (var scene in SceneManager.GetAllScenes())
-        {
-            if (scene != SceneManager.GetActiveScene())
-            {
-                SceneManager.UnloadSceneAsync(scene.buildIndex);
-            }
-        }
+        SceneManager.UnloadSceneAsync(lastIndexOfSceneSpawned);
     }
 
     private bool IsSceneAlreadyLoaded(int sceneIndex)
@@ -127,18 +125,19 @@ public class SceneController : MonoBehaviour
 
     private void MoveScene(Scene loadScene)
     {
-        
+
         GameObject[] sceneObjects = loadScene.GetRootGameObjects();
         if (sceneObjects.Length > 0)
         {
-            
+
             GameObject sceneObject = sceneObjects[0];
             Vector3 originalPosition = sceneObject.transform.position;
             // Jeœli w³aœnie za³adowano sklep, ustaw moveAmount na 23 dla nastêpnej sceny
+
             if (isShopLoaded)
             {
                 hasShopBeenLoaded = true;
-                lastPosition += (moveAmount.x * (loadedScenes-1))+ 23.5f;
+                lastPosition += (moveAmount.x * (loadedScenes - 1)) + 23.5f;
                 originalPosition.x = lastPosition;
             }
             else if (!isShopLoaded && !hasShopBeenLoaded)
@@ -146,17 +145,17 @@ public class SceneController : MonoBehaviour
                 Debug.Log("wzielo sie to z: " + moveAmount.x + " loaded scenese: " + loadedScenes);
                 originalPosition.x += moveAmount.x * loadedScenes;
             }
-            else if(!isShopLoaded && hasShopBeenLoaded)
+            else if (!isShopLoaded && hasShopBeenLoaded)
             {
                 lastPosition += moveAmount.x;
                 originalPosition.x = lastPosition;
             }
-            
+
             originalPosition.y = VectorOfYPostionFirstScene.y;
             sceneObject.transform.position = originalPosition;
             Debug.Log("Nowa pozycja: " + originalPosition.x + " Iloœæ przesuniêcia: " + moveAmount.x);
             Debug.Log("Iloœæ scen zaladowanych: " + loadedScenes);
-            if(loadScene.buildIndex == shopSceneIndex)
+            if (loadScene.buildIndex == shopSceneIndex)
             {
                 isShopLoaded = true;
             }
@@ -165,5 +164,10 @@ public class SceneController : MonoBehaviour
                 isShopLoaded = false;
             }
         }
+    }
+    private IEnumerator LoadSceneWithDelayCoroutine(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        LoadScene();
     }
 }
