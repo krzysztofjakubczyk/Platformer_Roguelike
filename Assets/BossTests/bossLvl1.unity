@@ -18650,7 +18650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dir: {x: 1, y: 0}
-  speed: 5
+  speed: 7
 --- !u!212 &662620636
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19044,7 +19044,7 @@ Transform:
   m_GameObject: {fileID: 1349739362}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 1.7, y: -0.97, z: 0}
+  m_LocalPosition: {x: 7.96, y: -0.97, z: 0}
   m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19067,9 +19067,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   speed: 10
-  walkTime: 2
-  idleTime: 2
+  idleTime: 4
   throwPower: 10
+  minAttack: 3
+  maxAttack: 4
 --- !u!60 &1349739368
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -19102,10 +19103,10 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.12, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.3, y: 0.5}
     oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5

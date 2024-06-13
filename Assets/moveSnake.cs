@@ -11,19 +11,22 @@ public class moveSnake : MonoBehaviour
     [SerializeField] LayerMask ground;
 
     [SerializeField] float speed = 10;
-    [SerializeField] float walkTime;
     [SerializeField] float idleTime = 5;
     [SerializeField] float throwPower;
 
     Rigidbody2D rb;
     Animator animator;
 
-    enum attackStates {charg, jump, armAttack, bladesAttack}
+    float IdleTimeLeft;
+    bool runningRight;
+
+    enum attackStates { idle, charge, jump, armAttack, bladesAttack }
     attackStates attackState;
 
-    float IdleTimeLeft;
-    bool running, runningRight;
-    bool jumped;
+    //for debugging
+    [SerializeField] int minAttack;
+    [SerializeField] int maxAttack;
+
 
 
     void Start()
@@ -34,28 +37,31 @@ public class moveSnake : MonoBehaviour
         player = GameObject.Find("Player");
 
         IdleTimeLeft = idleTime;
+        attackState = attackStates.idle;
     }
 
 
     void Update()
     {
-        if (IsGrounded())
+        if (IsGrounded() && attackState != attackStates.charge)
             LookAtPlayer();   
 
         CheckIfWalls();
 
         if (IdleTimeLeft <= 0)
         {
-            int attackNow = Random.Range(1, 5);
+            int attackNow = Random.Range(minAttack, maxAttack+1);
 
             switch (attackNow)
             {
                 case 1:
                     animator.SetTrigger("armAttack");
+                    attackState = attackStates.armAttack;
                     Invoke(nameof(ArmAttack), 0.7f);
                     break;
                 case 2:
                     animator.SetTrigger("bladesAttack");
+                    attackState = attackStates.bladesAttack;
                     Invoke(nameof(ThrowBlades), 1f);
                     break;
                 case 3:
@@ -64,6 +70,7 @@ public class moveSnake : MonoBehaviour
                     break;
                 case 4:
                     JumpAttack();
+                    attackState = attackStates.jump;
                     break;
             }
             IdleTimeLeft = idleTime;
@@ -75,8 +82,11 @@ public class moveSnake : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (running)
+        if (attackState == attackStates.charge)
         {
+            if(CheckIfWalls())
+                return;
+
             if (runningRight)
                 rb.velocity = Vector2.right * speed;
             else
@@ -110,18 +120,19 @@ public class moveSnake : MonoBehaviour
         GetComponent<PolygonCollider2D>().offset = Vector2.zero;
     }
 
+
     void ThrowBlades()
     {
         List<GameObject> blades = new List<GameObject>();
+
         GameObject blade1 = Instantiate(transform.GetChild(0).gameObject);
         GameObject blade2 = Instantiate(transform.GetChild(0).gameObject);
         GameObject blade3 = Instantiate(transform.GetChild(0).gameObject);
-
         blades.Add(blade1);
         blades.Add(blade2);
         blades.Add(blade3);
 
-        foreach(GameObject blade in blades)
+        foreach (GameObject blade in blades)
         {
             blade.transform.localScale = gameObject.transform.localScale;
             blade.transform.rotation = transform.GetChild(0).rotation;
@@ -135,40 +146,42 @@ public class moveSnake : MonoBehaviour
 
     }
 
+
     void JumpAttack()
     {
         Vector2 throwDir;
-        if (player.transform.position.x - transform.position.x > 0)
+
+        if(CheckIfWalls())
+            throwDir = new Vector2(0, 1.5f);
+        else if (player.transform.position.x - transform.position.x > 0)
             throwDir = new Vector2(1, 1.5f);
         else
             throwDir = new Vector2(-1, 1.5f);
 
-        GetComponent<Rigidbody2D>().AddForce(throwDir * throwPower, ForceMode2D.Impulse);
+        rb.AddForce(throwDir * throwPower, ForceMode2D.Impulse);
     }
 
     void StartSpeed()
     {
-        
+        attackState = attackStates.charge;
         animator.SetBool("running", true);
-        running = true;
+
         if (player.transform.position.x - transform.position.x > 0)
             runningRight = true;
         else
             runningRight = false;
-
-        animator.SetBool("chargeAttack", false);
 
         Invoke(nameof(StopSpeed), 2);
     }
 
     void StopSpeed()
     {
-        
-        running = false;
-        rb.velocity = Vector2.zero;
+        attackState = attackStates.idle;
         animator.SetBool("running", false);
+        animator.SetBool("chargeAttack", false);
 
-        LookAtPlayer();
+        rb.velocity = new Vector2(0, rb.velocity.y);
+
     }
 
     void LookAtPlayer()
@@ -179,14 +192,15 @@ public class moveSnake : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 180, 0);
     }
 
-    void CheckIfWalls()
+    bool CheckIfWalls()
     {
-        if (Physics2D.Raycast(transform.position, Vector2.right, 2f, ground) || Physics2D.Raycast(transform.position, Vector2.left, 2f, ground))
-        {
-            StopSpeed();
-            rb.velocity = new Vector2(0, rb.velocity.y);
-            LookAtPlayer();
-        }
+        //if (Physics2D.Raycast(transform.position, Vector2.right, 2f, ground) || Physics2D.Raycast(transform.position, Vector2.left, 2f, ground))
+        //{
+        //    rb.velocity = new Vector2(0, rb.velocity.y);
+        //    return true;
+        //}
+        //else
+            return false;
     }
 
     private void OnDrawGizmos()
