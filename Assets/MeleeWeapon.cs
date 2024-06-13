@@ -74,7 +74,7 @@ public class MeleeWeapon : MonoBehaviour
 
         if (collision.transform.parent != null)
         {
-            if (collision.GetComponent<Entity>() != null)
+            if (collision.transform.parent.GetComponent<Entity>() != null)
             {
                 attackDetails.position = transform.position;
                 attackDetails.damageAmount = damage;
