@@ -19,6 +19,7 @@ public class moveSnake : MonoBehaviour
 
     float IdleTimeLeft;
     bool runningRight;
+    Color normalColor;
 
     enum attackStates { idle, charge, jump, armAttack, bladesAttack }
     attackStates attackState;
@@ -38,17 +39,16 @@ public class moveSnake : MonoBehaviour
 
         IdleTimeLeft = idleTime;
         attackState = attackStates.idle;
+        normalColor = GetComponent<SpriteRenderer>().color;
     }
 
 
     void Update()
     {
         if (IsGrounded() && attackState != attackStates.charge)
-            LookAtPlayer();   
+            LookAtPlayer();
 
-        CheckIfWalls();
-
-        if (IdleTimeLeft <= 0)
+        if (IdleTimeLeft <= 0 && attackState == attackStates.idle)
         {
             int attackNow = Random.Range(minAttack, maxAttack+1);
 
@@ -69,8 +69,8 @@ public class moveSnake : MonoBehaviour
                     Invoke(nameof(StartSpeed), 1.5f);
                     break;
                 case 4:
-                    JumpAttack();
                     attackState = attackStates.jump;
+                    JumpAttack();
                     break;
             }
             IdleTimeLeft = idleTime;
@@ -84,9 +84,6 @@ public class moveSnake : MonoBehaviour
     {
         if (attackState == attackStates.charge)
         {
-            if(CheckIfWalls())
-                return;
-
             if (runningRight)
                 rb.velocity = Vector2.right * speed;
             else
@@ -111,13 +108,14 @@ public class moveSnake : MonoBehaviour
 
     void ArmAttack()
     {
-        GetComponent<PolygonCollider2D>().offset = new Vector2(0.3f, 0);
+        GetComponent<PolygonCollider2D>().offset = new Vector2(0.42f, 0);
         Invoke(nameof(EndArmAttack), 0.1f);
     }
 
     void EndArmAttack()
     {
-        GetComponent<PolygonCollider2D>().offset = Vector2.zero;
+        GetComponent<PolygonCollider2D>().offset = new Vector2(0.12f, 0);
+        attackState = attackStates.idle;
     }
 
 
@@ -144,6 +142,8 @@ public class moveSnake : MonoBehaviour
         blade2.GetComponent<throwMove>().dir = new Vector2(transform.right.x, 1);
         blade3.GetComponent<throwMove>().dir = transform.up;
 
+        attackState = attackStates.idle;
+
     }
 
 
@@ -151,14 +151,14 @@ public class moveSnake : MonoBehaviour
     {
         Vector2 throwDir;
 
-        if(CheckIfWalls())
-            throwDir = new Vector2(0, 1.5f);
-        else if (player.transform.position.x - transform.position.x > 0)
+        if (player.transform.position.x - transform.position.x > 0)
             throwDir = new Vector2(1, 1.5f);
         else
             throwDir = new Vector2(-1, 1.5f);
 
         rb.AddForce(throwDir * throwPower, ForceMode2D.Impulse);
+
+        attackState = attackStates.idle;
     }
 
     void StartSpeed()
@@ -176,12 +176,12 @@ public class moveSnake : MonoBehaviour
 
     void StopSpeed()
     {
-        attackState = attackStates.idle;
         animator.SetBool("running", false);
         animator.SetBool("chargeAttack", false);
 
         rb.velocity = new Vector2(0, rb.velocity.y);
 
+        attackState = attackStates.idle;
     }
 
     void LookAtPlayer()
@@ -192,23 +192,20 @@ public class moveSnake : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 180, 0);
     }
 
-    bool CheckIfWalls()
+    public void ChangeToNormalColor()
     {
-        //if (Physics2D.Raycast(transform.position, Vector2.right, 2f, ground) || Physics2D.Raycast(transform.position, Vector2.left, 2f, ground))
-        //{
-        //    rb.velocity = new Vector2(0, rb.velocity.y);
-        //    return true;
-        //}
-        //else
-            return false;
+        Invoke(nameof(ChangeColor), 0.1f);
+        
     }
 
-    private void OnDrawGizmos()
+    void ChangeColor()
     {
-        Gizmos.DrawRay(transform.position, Vector2.down * 2.5f);
-        Gizmos.DrawRay(transform.position, Vector2.right * 2f);
-        Gizmos.DrawRay(transform.position, Vector2.left * 2f);
+        GetComponent<SpriteRenderer>().color = normalColor;
     }
 
+    public void OnDeath()
+    {
+        
+    }
 
 }

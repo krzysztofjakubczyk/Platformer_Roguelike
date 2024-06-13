@@ -23,8 +23,11 @@ public class HealthController : StatConroller
     public void Start()
     {
         StartCoroutine(RecoverNew());
-        playerStats = GetComponent<PlayerStatsManager>().playerStats;
-        UpdateAllStats();
+        if (GetComponent<PlayerStatsManager>() != null)
+        {
+            playerStats = GetComponent<PlayerStatsManager>().playerStats;
+            UpdateAllStats();
+        }
 
     }
 

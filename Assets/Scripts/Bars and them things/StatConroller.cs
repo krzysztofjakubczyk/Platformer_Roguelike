@@ -35,17 +35,21 @@ public class StatConroller : MonoBehaviour
 
    
 
-    public virtual bool SubAmount(float amount)
+    public virtual void SubAmount(float amount)
     {
         if (currentAmount < amount)
-            return false;
-
-        currentAmount -= amount;
+        {
+            currentAmount = 0;
+            if (GetComponent<moveSnake>() != null)
+                GetComponent<moveSnake>().OnDeath();
+        }
+        else
+            currentAmount -= amount;
 
         if (!RecoverIsRunning)
             StartCoroutine(RecoverNew());
 
-        return true;
+        return;
     }
 
     public virtual bool AddAmount(float amount)

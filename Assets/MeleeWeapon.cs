@@ -23,6 +23,8 @@ public class MeleeWeapon : MonoBehaviour
 
     AttackDetails attackDetails = new AttackDetails();
 
+    Color32 hitColor = new Color32(255, 132, 112, 255);
+
     void Start()
     {
         player = transform.parent.gameObject;
@@ -43,8 +45,6 @@ public class MeleeWeapon : MonoBehaviour
         if (!canAttack)
             return;
 
-
-        // TO DO:       wrzucic to do funkcji
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             upPressed = true;
         else
@@ -54,50 +54,12 @@ public class MeleeWeapon : MonoBehaviour
         {
             canAttack = false;
             Invoke(nameof(allowAttack), attackRate);
-            if (player.GetComponent<SpriteRenderer>().flipX)
-            {
-                GetComponent<SpriteRenderer>().flipX = true;
-                GetComponent<SpriteRenderer>().flipY = false;
-                transform.rotation = Quaternion.Euler(0, 0, 0);
-                if (upPressed)
-                {
-                    GetComponent<SpriteRenderer>().flipX = false;
 
-                    GetComponent<SpriteRenderer>().flipY = true;
-                    transform.localPosition = new Vector2(1f, 3);
-                    transform.rotation = Quaternion.Euler(0, 0, -90);
-                    upPressed = false;
-                }
-                else
-                {
-                    transform.localPosition = new Vector2(1.5f, 1);
-                }
-            }
-            else
-            {
-                GetComponent<SpriteRenderer>().flipX = false;
-                GetComponent<SpriteRenderer>().flipY = false;
-                transform.rotation = Quaternion.Euler(0, 0, 0);
-                if (upPressed)
-                {
-                    transform.localPosition = new Vector2(-1.5f, 2);
+            FlipSword();
 
-                    GetComponent<SpriteRenderer>().flipY = false;
-                    transform.localPosition = new Vector2(-1f, 3);
-                    transform.rotation = Quaternion.Euler(0, 0, -90);
-                    upPressed = false;
-                }
-                else
-                {
-                    transform.localPosition = new Vector2(-1.5f, 1);
-                }
-            }
-
-            
             GetComponent<SpriteRenderer>().enabled = true;
             animator.SetTrigger("Attacking");
             animatorSword.SetTrigger("AttackingRn");
-            
 
             Invoke(nameof(OnWeapon), attackDelay);
         }
@@ -109,13 +71,67 @@ public class MeleeWeapon : MonoBehaviour
         {
             return;
         }
-        
-        attackDetails.position = transform.position;
-        attackDetails.damageAmount = damage;
-        attackDetails.stunDamageAmount = stunDamage;
 
-        collision.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
+        if (collision.transform.parent != null)
+        {
+            if (collision.GetComponent<Entity>() != null)
+            {
+                attackDetails.position = transform.position;
+                attackDetails.damageAmount = damage;
+                attackDetails.stunDamageAmount = stunDamage;
 
+                collision.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
+            }
+        }
+        else if (collision.GetComponent<HealthController>() != null)
+        {
+            collision.GetComponent<HealthController>().SubAmount(damage);
+            collision.GetComponent<SpriteRenderer>().color = hitColor;
+            collision.GetComponent<moveSnake>().ChangeToNormalColor();
+        }
+
+    }
+
+    void FlipSword()
+    {
+        if (player.GetComponent<SpriteRenderer>().flipX)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+            GetComponent<SpriteRenderer>().flipY = false;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+
+            if (upPressed)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+                GetComponent<SpriteRenderer>().flipY = true;
+                transform.localPosition = new Vector2(1f, 3);
+                transform.rotation = Quaternion.Euler(0, 0, -90);
+                upPressed = false;
+            }
+            else
+            {
+                transform.localPosition = new Vector2(1.5f, 1);
+            }
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+            GetComponent<SpriteRenderer>().flipY = false;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+
+            if (upPressed)
+            {
+                transform.localPosition = new Vector2(-1.5f, 2);
+                GetComponent<SpriteRenderer>().flipY = false;
+                transform.localPosition = new Vector2(-1f, 3);
+                transform.rotation = Quaternion.Euler(0, 0, -90);
+                upPressed = false;
+            }
+            else
+            {
+                transform.localPosition = new Vector2(-1.5f, 1);
+            }
+        }
     }
 
     public void UpdateAllStats()
