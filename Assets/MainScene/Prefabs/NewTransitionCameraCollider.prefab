@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4575489095856472850}
   - component: {fileID: 2128172892359937976}
   m_Layer: 11
-  m_Name: ColliderForCamera
+  m_Name: NewTransitionCameraCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

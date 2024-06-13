@@ -4,34 +4,32 @@ using UnityEngine;
 public class BoundingShapeScripts : MonoBehaviour
 {
     private CinemachineConfiner2D mainCameraConfiner;
-    private CompositeCollider2D colliderForCamera;
+    [SerializeField] private CompositeCollider2D colliderForCamera;
+    [SerializeField] private CompositeCollider2D transitionCollider;
 
     private void Start()
     {
         mainCameraConfiner = FindObjectOfType<CinemachineConfiner2D>();
-        colliderForCamera = GameObject.Find("ColliderForCamera").GetComponent<CompositeCollider2D>();
-        mainCameraConfiner.m_BoundingShape2D = colliderForCamera;
     }
-
     public void SetBoundingShape(CompositeCollider2D collider)
     {
         mainCameraConfiner.m_BoundingShape2D = collider;
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && gameObject.name == "CameraLoadTrigger")
+        if(!collision.CompareTag("Player"))
         {
-            var newCollider = GameObject.Find("ColliderForNewCamera").GetComponent<CompositeCollider2D>();
-            SetBoundingShape(newCollider);
-            newCollider.name = "ColliderForCamera";
-            Destroy(gameObject);
+            return;
         }
-        else if (collision.CompareTag("Player") && gameObject.name == "LoadTrainstionCameraTrigger")
+        if (gameObject.name == "CameraLoadTrigger")
         {
-            var transitionCollider = GameObject.Find("TransitionCameraCollider").GetComponent<CompositeCollider2D>();
+            Debug.Log(collision.name);
+            SetBoundingShape(colliderForCamera);
+        }
+        else if (gameObject.name == "LoadTrainstionCameraTrigger")
+        {
+            Debug.Log(collision.name);
             SetBoundingShape(transitionCollider);
-            Destroy(gameObject);
         }
     }
 }
