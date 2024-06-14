@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Quaternion = UnityEngine.Quaternion;
 using Vector2 = UnityEngine.Vector2;
 
@@ -13,6 +14,8 @@ public class moveSnake : MonoBehaviour
     [SerializeField] float speed = 10;
     [SerializeField] float idleTime = 5;
     [SerializeField] float throwPower;
+
+    [SerializeField] DoorsToNextFloor doorsForSpawnNewFloor;
 
     Rigidbody2D rb;
     Animator animator;
@@ -205,7 +208,9 @@ public class moveSnake : MonoBehaviour
 
     public void OnDeath()
     {
-        
+        print("Umarl boss");
+        doorsForSpawnNewFloor.GetComponent<BoxCollider2D>().enabled = true;
+        doorsForSpawnNewFloor.GetComponent<SpriteRenderer>().enabled = true;
     }
 
 }

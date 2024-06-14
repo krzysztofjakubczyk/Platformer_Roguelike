@@ -82,13 +82,14 @@ public class MeleeWeapon : MonoBehaviour
 
                 collision.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
             }
+            else if (collision.GetComponent<HealthController>() != null)
+            {
+                collision.GetComponent<HealthController>().SubAmount(damage);
+                collision.GetComponent<SpriteRenderer>().color = hitColor;
+                collision.GetComponent<moveSnake>().ChangeToNormalColor();
+            }
         }
-        else if (collision.GetComponent<HealthController>() != null)
-        {
-            collision.GetComponent<HealthController>().SubAmount(damage);
-            collision.GetComponent<SpriteRenderer>().color = hitColor;
-            collision.GetComponent<moveSnake>().ChangeToNormalColor();
-        }
+        
 
     }
 

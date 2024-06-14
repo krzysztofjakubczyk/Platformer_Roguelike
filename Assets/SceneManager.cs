@@ -8,16 +8,17 @@ public class SceneController : MonoBehaviour
 {
     [SerializeField] private int shopSceneIndex;
     [SerializeField] private int lastIndexOfSceneSpawned = 0;
-    [SerializeField] private Vector3 moveAmount = new Vector3(38, 0, 0);
+    [SerializeField] private Vector3 moveAmount = new Vector3(37, 0, 0);
     [SerializeField] private List<int> floorSizes;
     [SerializeField] private List<int> indexForBossScene;
     [SerializeField] private List<int> loadedSceneIndexes = new List<int>();
     [SerializeField] private MapTranistion mapInstance;
     [SerializeField] private Dictionary<int, List<int>> floorSceneIndexes = new Dictionary<int, List<int>>();
 
+
     private const int minFloorSize = 2;
     private const int maxFloorSize = 5;
-    private int currentFloor = 0;
+    public int currentFloor = 0;
     private int loadedScenes;
     private int indexOfSceneToSpawn;
     private Vector3 VectorOfYPostionFirstScene;
@@ -27,6 +28,7 @@ public class SceneController : MonoBehaviour
     float lastPosition = 0f;
     void Start()
     {
+        
         loadedSceneIndexes.Add(0);
         VectorOfYPostionFirstScene = new Vector3(0, (int)(SceneManager.GetActiveScene().GetRootGameObjects()[0].transform.position.y), 0);
         if (moveAmount == Vector3.zero)
@@ -76,7 +78,7 @@ public class SceneController : MonoBehaviour
             shopInsertedFloors.Add(floor);
         }
 
-        floorSceneIndexes[floor].Add(indexForBossScene[floor]);
+        floorSceneIndexes[floor].Add(indexForBossScene[indexForBossScene.Count - (currentFloor +1)]);
     }
 
     public void LoadScene()
@@ -170,5 +172,11 @@ public class SceneController : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         LoadScene();
+    }
+    public void AfterBossDeath()
+    {
+        currentFloor++;
+        LoadScene();
+        loadedScenes = 0;
     }
 }

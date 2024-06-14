@@ -22287,7 +22287,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: 31.795261, y: 7.6016903}
+  m_Offset: {x: 31.763374, y: 7.0596056}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -22298,7 +22298,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 34.966286, y: 16.936577}
+  m_Size: {x: 36.30555, y: 18.786043}
   m_EdgeRadius: 0
 --- !u!50 &1000857230
 Rigidbody2D:
@@ -22366,20 +22366,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1000857229}
     m_ColliderPaths:
-    - - X: 492784032
-        Y: 160699792
-      - X: 143121184
-        Y: 160699792
-      - X: 143121184
-        Y: -8665981
-      - X: 492784032
-        Y: -8665981
+    - - X: 499161504
+        Y: 164526272
+      - X: 136106000
+        Y: 164526272
+      - X: 136106000
+        Y: -23334160
+      - X: 499161504
+        Y: -23334160
   m_CompositePaths:
     m_Paths:
-    - - {x: 49.278374, y: -0.8665981}
-      - {x: 49.278374, y: 16.069979}
-      - {x: 14.312119, y: 16.06995}
-      - {x: 14.312147, y: -0.8665981}
+    - - {x: 49.916122, y: -2.333416}
+      - {x: 49.916122, y: 16.452627}
+      - {x: 13.6106, y: 16.452599}
+      - {x: 13.610629, y: -2.333416}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -22393,7 +22393,7 @@ Transform:
   m_GameObject: {fileID: 1000857228}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -31.64, y: -4.2, z: 0.082294986}
+  m_LocalPosition: {x: -33.35, y: -4.2, z: 0.082294986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22433,7 +22433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7646014265016401292, guid: 781fb3a321876df4c868c17edf0c5a2c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.65
+      value: -1.37
       objectReference: {fileID: 0}
     - target: {fileID: 7646014265016401292, guid: 781fb3a321876df4c868c17edf0c5a2c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22828,7 +22828,7 @@ Transform:
   m_GameObject: {fileID: 1753225452}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.92, y: -2.88, z: 0.082294986}
+  m_LocalPosition: {x: 9.24, y: -2.88, z: 0.082294986}
   m_LocalScale: {x: 2.3503, y: 2.072281, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22852,7 +22852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3483620533141171333, guid: f3daec46ff4fe774ca7502276f299c2a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.05
+      value: -17.2
       objectReference: {fileID: 0}
     - target: {fileID: 3483620533141171333, guid: f3daec46ff4fe774ca7502276f299c2a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22988,7 +22988,7 @@ GameObject:
   - component: {fileID: 6103186448714376088}
   - component: {fileID: 7228430903576535286}
   - component: {fileID: 8663608395900093037}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NewInDoors
   m_TagString: NewInDoors
   m_Icon: {fileID: 0}

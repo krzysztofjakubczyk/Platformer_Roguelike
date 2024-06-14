@@ -22392,7 +22392,7 @@ GameObject:
   - component: {fileID: 1285739086}
   - component: {fileID: 1285739085}
   - component: {fileID: 1285739084}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NewInDoors
   m_TagString: NewInDoors
   m_Icon: {fileID: 0}
@@ -23668,7 +23668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7022476590844404115, guid: ab2d0ad7e9e047f4aa68614bb228c928, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.898186
+      value: 14.15
       objectReference: {fileID: 0}
     - target: {fileID: 7022476590844404115, guid: ab2d0ad7e9e047f4aa68614bb228c928, type: 3}
       propertyPath: m_LocalPosition.y
@@ -23735,7 +23735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3483620533141171333, guid: f3daec46ff4fe774ca7502276f299c2a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.04
+      value: -16.06
       objectReference: {fileID: 0}
     - target: {fileID: 3483620533141171333, guid: f3daec46ff4fe774ca7502276f299c2a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -23947,7 +23947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7646014265016401292, guid: 781fb3a321876df4c868c17edf0c5a2c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.61
+      value: -1.87
       objectReference: {fileID: 0}
     - target: {fileID: 7646014265016401292, guid: 781fb3a321876df4c868c17edf0c5a2c, type: 3}
       propertyPath: m_LocalPosition.y
