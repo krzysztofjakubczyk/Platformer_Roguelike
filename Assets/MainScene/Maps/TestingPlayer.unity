@@ -622,26 +622,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6015207124225747833, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
-      propertyPath: spells.Array.data[0]
-      value: 
-      objectReference: {fileID: 7846823468872101394, guid: 55644b8d26e9af245b1c001153d90156, type: 3}
-    - target: {fileID: 6015207124225747833, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
-      propertyPath: spells.Array.data[1]
-      value: 
-      objectReference: {fileID: 3151645623783271711, guid: 479a12da8e060d240b480054d83e0bbe, type: 3}
-    - target: {fileID: 6015207124225747833, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
-      propertyPath: spells.Array.data[2]
-      value: 
-      objectReference: {fileID: 4837390724998732666, guid: 6ee1ee8cd2be17a4d9af7174fbf49a38, type: 3}
-    - target: {fileID: 6015207124225747833, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
-      propertyPath: spells.Array.data[3]
-      value: 
-      objectReference: {fileID: 7993795310370821829, guid: b6c5c8b4005b9ab44a05f5d26e7af1b0, type: 3}
-    - target: {fileID: 6015207124225747833, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
-      propertyPath: spells.Array.data[4]
-      value: 
-      objectReference: {fileID: 8333201292758725811, guid: b899952662807734b9243b2cc70dee15, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17989,6 +17969,7 @@ MonoBehaviour:
   indexForBossScene: 06000000
   loadedSceneIndexes: 
   mapInstance: {fileID: 0}
+  currentFloor: 0
 --- !u!1 &2005817366
 GameObject:
   m_ObjectHideFlags: 0

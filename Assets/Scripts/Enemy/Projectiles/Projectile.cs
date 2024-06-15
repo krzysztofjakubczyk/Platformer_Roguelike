@@ -39,6 +39,7 @@ public class Projectile : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log(entity.playerHp + " projectile");
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0.0f;
         rb.velocity = direction * speed;
@@ -132,9 +133,9 @@ public class Projectile : MonoBehaviour
         Collider2D playerHit = Physics2D.OverlapCircle(damagePosition.position, damageRadius, whatIsPlayer);
         if (playerHit)
         {
-            print("deal dmg");
+            print(attackDetails.damageAmount);
             entity.playerHp.DamagePlayer(attackDetails.damageAmount);
         }
-        Destroy(Projectile, 5);
+        Destroy(Projectile, 2);
     }
 }

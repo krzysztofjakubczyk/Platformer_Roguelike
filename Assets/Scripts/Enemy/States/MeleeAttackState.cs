@@ -24,7 +24,7 @@ public class MeleeAttackState : AttackState
 
         attackDetails.damageAmount = stateData.attackDamage;
         attackDetails.position = entity.aliveGameObject.transform.position;
-        
+        Debug.Log(entity.playerHp);
     }
 
     public override void Exit()
@@ -59,6 +59,7 @@ public class MeleeAttackState : AttackState
 
             foreach (Collider2D collider in detectedObjects)
             {
+                
                 entity.playerHp.DamagePlayer(attackDetails.damageAmount);
                 entity.playerTransform.gameObject.GetComponent<Rigidbody2D>().AddForce(stateData.vectorPush * stateData.pushForce, ForceMode2D.Impulse);
             }
@@ -70,7 +71,7 @@ public class MeleeAttackState : AttackState
             foreach (Collider2D collider in detectedObjects)
             {
                 entity.playerTransform.gameObject.GetComponent<MovementFin>().DamageOnCollision(collider);
-                Debug.Log("drugi atak");
+                
                 entity.playerHp.DamagePlayer(attackDetails.damageAmount);
                 Vector2 force = new Vector2(1, 0) * entity.facingDirection * stateData.pushForce* 2;
                 Debug.Log("Applying force: " + force);
