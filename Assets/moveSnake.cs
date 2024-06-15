@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Quaternion = UnityEngine.Quaternion;
 using Vector2 = UnityEngine.Vector2;
 
@@ -11,19 +12,25 @@ public class moveSnake : MonoBehaviour
     [SerializeField] LayerMask ground;
 
     [SerializeField] float speed = 10;
-    [SerializeField] float walkTime;
     [SerializeField] float idleTime = 5;
     [SerializeField] float throwPower;
+
+    [SerializeField] DoorsToNextFloor doorsForSpawnNewFloor;
 
     Rigidbody2D rb;
     Animator animator;
 
-    enum attackStates {charg, jump, armAttack, bladesAttack}
+    float IdleTimeLeft;
+    bool runningRight;
+    Color normalColor;
+
+    enum attackStates { idle, charge, jump, armAttack, bladesAttack }
     attackStates attackState;
 
-    float IdleTimeLeft;
-    bool running, runningRight;
-    bool jumped;
+    //for debugging
+    [SerializeField] int minAttack;
+    [SerializeField] int maxAttack;
+
 
 
     void Start()
@@ -34,28 +41,30 @@ public class moveSnake : MonoBehaviour
         player = GameObject.Find("Player");
 
         IdleTimeLeft = idleTime;
+        attackState = attackStates.idle;
+        normalColor = GetComponent<SpriteRenderer>().color;
     }
 
 
     void Update()
     {
-        if (IsGrounded())
-            LookAtPlayer();   
+        if (IsGrounded() && attackState != attackStates.charge)
+            LookAtPlayer();
 
-        CheckIfWalls();
-
-        if (IdleTimeLeft <= 0)
+        if (IdleTimeLeft <= 0 && attackState == attackStates.idle)
         {
-            int attackNow = Random.Range(1, 5);
+            int attackNow = Random.Range(minAttack, maxAttack+1);
 
             switch (attackNow)
             {
                 case 1:
                     animator.SetTrigger("armAttack");
+                    attackState = attackStates.armAttack;
                     Invoke(nameof(ArmAttack), 0.7f);
                     break;
                 case 2:
                     animator.SetTrigger("bladesAttack");
+                    attackState = attackStates.bladesAttack;
                     Invoke(nameof(ThrowBlades), 1f);
                     break;
                 case 3:
@@ -63,6 +72,7 @@ public class moveSnake : MonoBehaviour
                     Invoke(nameof(StartSpeed), 1.5f);
                     break;
                 case 4:
+                    attackState = attackStates.jump;
                     JumpAttack();
                     break;
             }
@@ -75,7 +85,7 @@ public class moveSnake : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (running)
+        if (attackState == attackStates.charge)
         {
             if (runningRight)
                 rb.velocity = Vector2.right * speed;
@@ -101,27 +111,29 @@ public class moveSnake : MonoBehaviour
 
     void ArmAttack()
     {
-        GetComponent<PolygonCollider2D>().offset = new Vector2(0.3f, 0);
+        GetComponent<PolygonCollider2D>().offset = new Vector2(0.42f, 0);
         Invoke(nameof(EndArmAttack), 0.1f);
     }
 
     void EndArmAttack()
     {
-        GetComponent<PolygonCollider2D>().offset = Vector2.zero;
+        GetComponent<PolygonCollider2D>().offset = new Vector2(0.12f, 0);
+        attackState = attackStates.idle;
     }
+
 
     void ThrowBlades()
     {
         List<GameObject> blades = new List<GameObject>();
+
         GameObject blade1 = Instantiate(transform.GetChild(0).gameObject);
         GameObject blade2 = Instantiate(transform.GetChild(0).gameObject);
         GameObject blade3 = Instantiate(transform.GetChild(0).gameObject);
-
         blades.Add(blade1);
         blades.Add(blade2);
         blades.Add(blade3);
 
-        foreach(GameObject blade in blades)
+        foreach (GameObject blade in blades)
         {
             blade.transform.localScale = gameObject.transform.localScale;
             blade.transform.rotation = transform.GetChild(0).rotation;
@@ -133,42 +145,46 @@ public class moveSnake : MonoBehaviour
         blade2.GetComponent<throwMove>().dir = new Vector2(transform.right.x, 1);
         blade3.GetComponent<throwMove>().dir = transform.up;
 
+        attackState = attackStates.idle;
+
     }
+
 
     void JumpAttack()
     {
         Vector2 throwDir;
+
         if (player.transform.position.x - transform.position.x > 0)
             throwDir = new Vector2(1, 1.5f);
         else
             throwDir = new Vector2(-1, 1.5f);
 
-        GetComponent<Rigidbody2D>().AddForce(throwDir * throwPower, ForceMode2D.Impulse);
+        rb.AddForce(throwDir * throwPower, ForceMode2D.Impulse);
+
+        attackState = attackStates.idle;
     }
 
     void StartSpeed()
     {
-        
+        attackState = attackStates.charge;
         animator.SetBool("running", true);
-        running = true;
+
         if (player.transform.position.x - transform.position.x > 0)
             runningRight = true;
         else
             runningRight = false;
-
-        animator.SetBool("chargeAttack", false);
 
         Invoke(nameof(StopSpeed), 2);
     }
 
     void StopSpeed()
     {
-        
-        running = false;
-        rb.velocity = Vector2.zero;
         animator.SetBool("running", false);
+        animator.SetBool("chargeAttack", false);
 
-        LookAtPlayer();
+        rb.velocity = new Vector2(0, rb.velocity.y);
+
+        attackState = attackStates.idle;
     }
 
     void LookAtPlayer()
@@ -179,22 +195,22 @@ public class moveSnake : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 180, 0);
     }
 
-    void CheckIfWalls()
+    public void ChangeToNormalColor()
     {
-        if (Physics2D.Raycast(transform.position, Vector2.right, 2f, ground) || Physics2D.Raycast(transform.position, Vector2.left, 2f, ground))
-        {
-            StopSpeed();
-            rb.velocity = new Vector2(0, rb.velocity.y);
-            LookAtPlayer();
-        }
+        Invoke(nameof(ChangeColor), 0.1f);
+        
     }
 
-    private void OnDrawGizmos()
+    void ChangeColor()
     {
-        Gizmos.DrawRay(transform.position, Vector2.down * 2.5f);
-        Gizmos.DrawRay(transform.position, Vector2.right * 2f);
-        Gizmos.DrawRay(transform.position, Vector2.left * 2f);
+        GetComponent<SpriteRenderer>().color = normalColor;
     }
 
+    public void OnDeath()
+    {
+        print("Umarl boss");
+        doorsForSpawnNewFloor.GetComponent<BoxCollider2D>().enabled = true;
+        doorsForSpawnNewFloor.GetComponent<SpriteRenderer>().enabled = true;
+    }
 
 }

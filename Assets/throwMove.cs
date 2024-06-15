@@ -8,19 +8,18 @@ public class throwMove : MonoBehaviour
     [SerializeField] float speed;
 
     GameObject player;
-
     Rigidbody2D rb;
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
         player = GameObject.Find("Player");
+
         Invoke(nameof(DestroyObject), 5);
     }
 
-    void Update()
+    private void FixedUpdate()
     {
         rb.velocity = dir.normalized * speed;
     }

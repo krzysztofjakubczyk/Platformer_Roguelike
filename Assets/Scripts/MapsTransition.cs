@@ -23,7 +23,7 @@ public class MapTranistion : MonoBehaviour
         if (howManyEnemies == 1)
         {
             controller.LoadScene();
-            Invoke(nameof(LoadSceneElements), 2f);
+            Invoke(nameof(LoadSceneElements), 1f);
         }
     }
     
@@ -33,6 +33,7 @@ public class MapTranistion : MonoBehaviour
         transitionTrigger = GameObject.FindGameObjectWithTag("LoadCameraTrigger");
         moneyManager.AddMoney(howMoneyFromEnemy);
         transitionTrigger.GetComponent<BoxCollider2D>().enabled = true;
+        Debug.Log(transitionTrigger.GetComponent<BoxCollider2D>());
         _OutsideDoors.SetActive(false);
         _OutsideDoors.tag = "OutDoors";
     }

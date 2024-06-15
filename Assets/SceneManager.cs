@@ -6,32 +6,34 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    [SerializeField] private MapTranistion mapInstance;
     [SerializeField] private int shopSceneIndex;
-    [SerializeField] private Vector3 moveAmount = new Vector3(38, 0, 0);
+    [SerializeField] private int lastIndexOfSceneSpawned = 0;
+    [SerializeField] private Vector3 moveAmount = new Vector3(37, 0, 0);
     [SerializeField] private List<int> floorSizes;
+    [SerializeField] private List<int> indexForBossScene;
+    [SerializeField] private List<int> loadedSceneIndexes = new List<int>();
+    [SerializeField] private MapTranistion mapInstance;
+    [SerializeField] private Dictionary<int, List<int>> floorSceneIndexes = new Dictionary<int, List<int>>();
+
 
     private const int minFloorSize = 2;
     private const int maxFloorSize = 5;
-    private int currentFloor = 0;
+    public int currentFloor = 0;
     private int loadedScenes;
     private int indexOfSceneToSpawn;
-    private int indexForBossScene = 6;
-    [SerializeField] private int lastIndexOfSceneSpawned = 0;
     private Vector3 VectorOfYPostionFirstScene;
-    private Vector3 originalMoveAmount;
-    private Dictionary<int, List<int>> floorSceneIndexes = new Dictionary<int, List<int>>();
     private List<int> shopInsertedFloors = new List<int>();
-    public bool isShopLoaded = false;
+    private bool isShopLoaded = false;
     private bool hasShopBeenLoaded = false;
     float lastPosition = 0f;
     void Start()
     {
-        originalMoveAmount = new Vector3(38, 0, 0);
+        
+        loadedSceneIndexes.Add(0);
         VectorOfYPostionFirstScene = new Vector3(0, (int)(SceneManager.GetActiveScene().GetRootGameObjects()[0].transform.position.y), 0);
         if (moveAmount == Vector3.zero)
         {
-            moveAmount = new Vector3(38, 0, 0);
+            moveAmount = new Vector3(37, 0, 0);
         }
         InitializeFloors();
     }
@@ -76,7 +78,7 @@ public class SceneController : MonoBehaviour
             shopInsertedFloors.Add(floor);
         }
 
-        floorSceneIndexes[floor].Add(indexForBossScene);
+        floorSceneIndexes[floor].Add(indexForBossScene[indexForBossScene.Count - (currentFloor +1)]);
     }
 
     public void LoadScene()
@@ -88,16 +90,16 @@ public class SceneController : MonoBehaviour
         }
         if (indexOfSceneToSpawn == shopSceneIndex)
         {
-            StartCoroutine(LoadSceneWithDelayCoroutine(7f));
+            StartCoroutine(LoadSceneWithDelayCoroutine(5f));
         }
         StartCoroutine(LoadSceneCoroutine());
     }
 
     private IEnumerator LoadSceneCoroutine()
     {
-
         floorSceneIndexes[currentFloor].Remove(indexOfSceneToSpawn);
         loadedScenes++;
+        loadedSceneIndexes.Add(indexOfSceneToSpawn);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(indexOfSceneToSpawn, LoadSceneMode.Additive);
         yield return asyncLoad;
         Scene scene = SceneManager.GetSceneByBuildIndex(indexOfSceneToSpawn);
@@ -107,13 +109,9 @@ public class SceneController : MonoBehaviour
 
     public void UnLoadScene()
     {
-        SceneManager.UnloadSceneAsync(lastIndexOfSceneSpawned);
-        if (SceneManager.sceneCount == 2)
-        {
-            lastIndexOfSceneSpawned = SceneManager.GetActiveScene().buildIndex;
-            Debug.Log(lastIndexOfSceneSpawned);
-        }
-        
+        int sceneIndexToUnload= loadedSceneIndexes.First();
+        SceneManager.UnloadSceneAsync(sceneIndexToUnload);
+        loadedSceneIndexes.Remove(sceneIndexToUnload);
     }
 
     private bool IsSceneAlreadyLoaded(int sceneIndex)
@@ -142,7 +140,7 @@ public class SceneController : MonoBehaviour
             if (isShopLoaded)
             {
                 hasShopBeenLoaded = true;
-                lastPosition += (moveAmount.x * (loadedScenes - 1)) + 23.5f;
+                lastPosition += (moveAmount.x * (loadedScenes - 1)) + 27.5f;
                 originalPosition.x = lastPosition;
             }
             else if (!isShopLoaded && !hasShopBeenLoaded)
@@ -174,5 +172,11 @@ public class SceneController : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         LoadScene();
+    }
+    public void AfterBossDeath()
+    {
+        currentFloor++;
+        LoadScene();
+        loadedScenes = 0;
     }
 }

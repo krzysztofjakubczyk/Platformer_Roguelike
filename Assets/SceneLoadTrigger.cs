@@ -3,7 +3,7 @@ using UnityEngine.Tilemaps;
 
 public class SceneUnLoadTrigger : MonoBehaviour
 {
-    private GameObject _InsideDoors;
+    [SerializeField] private GameObject _InsideDoors;
     private SceneController controller;
     private void Start()
     {
@@ -12,22 +12,22 @@ public class SceneUnLoadTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && gameObject.CompareTag("UnLoadRoomTrigger"))
+        if (!collision.CompareTag("Player"))
+        {
+            return;
+        }
+        if (gameObject.CompareTag("UnLoadRoomTrigger"))
         {
             UnLoadSceneElements();
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
     private void UnLoadSceneElements()
     {
-        controller.UnLoadScene();
-        Invoke(nameof(UnloadFunction), 2f);
-    }
-    private void UnloadFunction()
-    {
-        _InsideDoors = GameObject.FindGameObjectWithTag("NewInDoors");
+        _InsideDoors.GetComponent<Tilemap>().enabled = true;
         _InsideDoors.GetComponent<TilemapRenderer>().enabled = true;
         _InsideDoors.GetComponent<TilemapCollider2D>().enabled = true;
-        _InsideDoors.tag = "InDoors";
+        _InsideDoors.GetComponent<PlatformEffector2D>().enabled = true;
+        controller.UnLoadScene();
     }
 }
