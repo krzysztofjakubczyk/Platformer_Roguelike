@@ -31,11 +31,13 @@ public class StrikerDodgeState : DodgeState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        entity.CheckFlipToPlayer();
+
         if (isDodgeOver)
             if (isPlayerInMaxAgroRange && performCloseRangeAction) stateMachine.ChangeState(enemy.meleeAttackState);
-            else if(isPlayerInMaxAgroRange) stateMachine.ChangeState(enemy.dodgeState);
+            else if (isPlayerInMinAgroRange && isDodgeCooldownOver) stateMachine.ChangeState(enemy.dodgeState);
             else if (!isPlayerInMaxAgroRange) stateMachine.ChangeState(enemy.lookForPlayerState);
+            else if (isPlayerInMaxAgroRange) stateMachine.ChangeState(enemy.rangedAttackState);
+        entity.CheckFlipToPlayer();
     }
 
     public override void PhysicsUpdate()

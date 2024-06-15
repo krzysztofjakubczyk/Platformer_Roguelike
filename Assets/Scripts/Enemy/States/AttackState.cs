@@ -7,7 +7,8 @@ public class AttackState : State
     protected Transform attackPosition;
 
     protected bool isAnimationFinished;
-    protected bool isPlayerInMinAgrRange;
+    protected bool isPlayerInMinAgroRange;
+    protected bool isPlayerInMaxAgroRange;
 
     public AttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition) : base(entity, stateMachine, animBoolName)
     {
@@ -18,7 +19,8 @@ public class AttackState : State
     {
         base.DoChecks();
 
-        isPlayerInMinAgrRange = entity.CheckPlayerInMinAgroRange();
+        isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
+        isPlayerInMaxAgroRange = entity.CheckPlayerInMaxAgroRange();
     }
 
     public override void Enter()

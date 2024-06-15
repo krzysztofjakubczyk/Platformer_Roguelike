@@ -7,7 +7,7 @@ public class MeleeAttackState : AttackState
     protected MeleeAttackStateData stateData;
 
     protected AttackDetails attackDetails;
-
+    protected int comboCounter = 0;
     public MeleeAttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition, MeleeAttackStateData stateData) : base(entity, stateMachine, animBoolName, attackPosition)
     {
         this.stateData = stateData;
@@ -24,6 +24,7 @@ public class MeleeAttackState : AttackState
 
         attackDetails.damageAmount = stateData.attackDamage;
         attackDetails.position = entity.aliveGameObject.transform.position;
+        
     }
 
     public override void Exit()
@@ -49,13 +50,32 @@ public class MeleeAttackState : AttackState
     public override void TriggerAttack()
     {
         base.TriggerAttack();
-
-        Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(attackPosition.position, stateData.attackRadius,stateData.whatIsPlayer);
-
-        foreach (Collider2D collider in detectedObjects)
+        comboCounter++;
+        
+        if (comboCounter == 3) comboCounter = 1;
+        if (comboCounter == 1)
         {
-            // collider.transform.SendMessage("Damage", attackDetails);
-            entity.playerHp.DamagePlayer(attackDetails.damageAmount);
+            Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(attackPosition.position, stateData.attackRadius, stateData.whatIsPlayer);
+
+            foreach (Collider2D collider in detectedObjects)
+            {
+                entity.playerHp.DamagePlayer(attackDetails.damageAmount);
+                entity.playerTransform.gameObject.GetComponent<Rigidbody2D>().AddForce(stateData.vectorPush * stateData.pushForce, ForceMode2D.Impulse);
+            }
+        }
+        else if (comboCounter == 2)
+        {
+            
+            Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(attackPosition.position, stateData.attackRadius, stateData.whatIsPlayer);
+            foreach (Collider2D collider in detectedObjects)
+            {
+                entity.playerTransform.gameObject.GetComponent<MovementFin>().DamageOnCollision(collider);
+                Debug.Log("drugi atak");
+                entity.playerHp.DamagePlayer(attackDetails.damageAmount);
+                Vector2 force = new Vector2(1, 0) * entity.facingDirection * stateData.pushForce* 2;
+                Debug.Log("Applying force: " + force);
+                entity.playerTransform.gameObject.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
+            }
         }
     }
 }

@@ -30,7 +30,12 @@ public class Projectile : MonoBehaviour
 
     float angle;
     float angleBeforeHit;
-
+    [SerializeField]
+    private bool isBoomed = false;
+    [SerializeField]
+    private GameObject projectileShot;
+    [SerializeField]
+    private float boomRadius;
 
     private void Start()
     {
@@ -71,7 +76,8 @@ public class Projectile : MonoBehaviour
             if (damageHit)
             {
                 //damageHit.transform.SendMessage("Damage", attackDetails);
-                entity.playerHp.DamagePlayer(attackDetails.damageAmount);//ale jest to strasznie nieresponsywne ale nie wiem czy eventy w tym przypadku to dobry pomys³
+                if (isBoomed) Boom();
+                else entity.playerHp.DamagePlayer(attackDetails.damageAmount);//ale jest to strasznie nieresponsywne ale nie wiem czy eventy w tym przypadku to dobry pomys³
                 Destroy(gameObject);
             }
             if (groundHit)
@@ -82,8 +88,10 @@ public class Projectile : MonoBehaviour
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
                 rb.velocity = Vector2.zero;
                 rb.isKinematic = true;
-                Destroy(this.gameObject,3);
-                
+
+                if(isBoomed)Invoke(nameof(Boom), 3);
+                Destroy(gameObject,3);
+               
             }
 
             if (Mathf.Abs(xStartPos - transform.position.x) >= travelDistance && !isGravityOn)
@@ -105,6 +113,7 @@ public class Projectile : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(damagePosition.position, damageRadius);
+        Gizmos.DrawWireSphere(damagePosition.position, boomRadius);
     }
     private void Rotate(float angle)
     {
@@ -116,5 +125,16 @@ public class Projectile : MonoBehaviour
         
 
         Debug.Log(angle + " angle after");
+    }
+    private void Boom()
+    {
+        GameObject Projectile = Instantiate(projectileShot,damagePosition.position,Quaternion.identity);
+        Collider2D playerHit = Physics2D.OverlapCircle(damagePosition.position, damageRadius, whatIsPlayer);
+        if (playerHit)
+        {
+            print("deal dmg");
+            entity.playerHp.DamagePlayer(attackDetails.damageAmount);
+        }
+        Destroy(Projectile, 5);
     }
 }

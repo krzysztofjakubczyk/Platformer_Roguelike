@@ -188,3 +188,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   damagePosition: {fileID: 1349337081421133837}
+  isBoomed: 1
+  projectileShot: {fileID: 9076510141567040719, guid: 9016d90ba16a0ce4383c1fbbec9b03f2, type: 3}
+  boomRadius: 5

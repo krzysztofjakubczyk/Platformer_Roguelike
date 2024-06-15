@@ -34,7 +34,7 @@ public class FlyingEnemyMeleeAttackState : MeleeAttackState
         base.LogicUpdate();
         if (isAnimationFinished)
         {
-            if (isPlayerInMinAgrRange) stateMachine.ChangeState(enemy.playerDetectedState);
+            if (isPlayerInMinAgroRange) stateMachine.ChangeState(enemy.playerDetectedState);
             else stateMachine.ChangeState(enemy.lookForPlayerState);
         }
     }

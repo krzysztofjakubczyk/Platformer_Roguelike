@@ -10,6 +10,8 @@ public class DodgeState : State
     protected bool isPlayerInMaxAgroRange;
     protected bool isGrounded;
     protected bool isDodgeOver;
+    protected bool isDodgeCooldownOver;
+    protected bool isPlayerInMinAgroRange;
     public DodgeState(Entity entity, BaseStateMachine stateMachine, string animBoolName, DodgeStateData stateData) : base(entity, stateMachine, animBoolName)
     {
         this.stateData = stateData;
@@ -22,6 +24,7 @@ public class DodgeState : State
         performCloseRangeAction = entity.CheckPlayerInCloseRangeAction();
         isPlayerInMaxAgroRange = entity.CheckPlayerInMaxAgroRange();
         isGrounded = entity.CheckGround();
+        isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
 
     }
 
@@ -29,7 +32,7 @@ public class DodgeState : State
     {
         base.Enter();
         isDodgeOver = false;
-
+        isDodgeCooldownOver = false;
         entity.SetVelocity(stateData.dodgeSpeed, stateData.dodgeAngle, -entity.facingDirection);
     }
 
@@ -43,6 +46,7 @@ public class DodgeState : State
         base.LogicUpdate();
 
         if (Time.time >= startTime + stateData.dodgeTime && isGrounded) isDodgeOver=true;
+        if (Time.time >= startTime + stateData.dodgeTime + stateData.dodgeCooldown && isGrounded) isDodgeCooldownOver = true;
     }
 
     public override void PhysicsUpdate()

@@ -38,6 +38,7 @@ public class Striker : Entity
     [SerializeField]
     private Transform rangedAttackPosition;
 
+
     public override void Start()
     {
         base.Start();
@@ -57,6 +58,7 @@ public class Striker : Entity
     public override void DamageGet(AttackDetails attackDetails)
     {
         base.DamageGet(attackDetails);
+        CheckFlipToPlayer();
         if (isDeath && stateMachine.currentState != deathState) stateMachine.ChangeState(deathState);
         else if (isStunned && stateMachine.currentState != stunState) stateMachine.ChangeState(stunState);
     }

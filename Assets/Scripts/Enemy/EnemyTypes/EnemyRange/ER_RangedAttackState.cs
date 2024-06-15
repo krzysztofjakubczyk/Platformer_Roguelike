@@ -39,7 +39,7 @@ public class ER_RangedAttackState : RangedAttackState
         }
 
         if (isAnimationFinished)
-            if (isPlayerInMinAgrRange) stateMachine.ChangeState(enemy.playerDetectedState);
+            if (isPlayerInMinAgroRange) stateMachine.ChangeState(enemy.playerDetectedState);
             else stateMachine.ChangeState(enemy.lookForPlayerState);
     }
 

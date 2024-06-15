@@ -37,7 +37,7 @@ public class StrikerMeleeAttackState :MeleeAttackState
 
             if (isAnimationFinished)
             {
-            if (isPlayerInMinAgrRange) {
+            if (isPlayerInMaxAgroRange) {
                 stateMachine.ChangeState(enemy.rangedAttackState);
                 //stateMachine.ChangeState(enemy.playerDetectedState);
             }
@@ -54,5 +54,6 @@ public class StrikerMeleeAttackState :MeleeAttackState
     public override void TriggerAttack()
     {
         base.TriggerAttack();
+       
     }
 }
