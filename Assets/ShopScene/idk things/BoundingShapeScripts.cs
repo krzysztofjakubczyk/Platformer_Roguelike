@@ -4,11 +4,13 @@ using UnityEngine;
 public class BoundingShapeScripts : MonoBehaviour
 {
     private CinemachineConfiner2D mainCameraConfiner;
+    private SceneController sceneController;
     [SerializeField] private CompositeCollider2D colliderForCamera;
     [SerializeField] private CompositeCollider2D transitionCollider;
 
     private void Start()
     {
+        sceneController = GetComponent<SceneController>();
         mainCameraConfiner = FindObjectOfType<CinemachineConfiner2D>();
     }
     public void SetBoundingShape(CompositeCollider2D collider)

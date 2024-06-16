@@ -28,7 +28,7 @@ public class SceneController : MonoBehaviour
     float lastPosition = 0f;
     void Start()
     {
-        
+
         loadedSceneIndexes.Add(0);
         VectorOfYPostionFirstScene = new Vector3(0, (int)(SceneManager.GetActiveScene().GetRootGameObjects()[0].transform.position.y), 0);
         if (moveAmount == Vector3.zero)
@@ -78,7 +78,7 @@ public class SceneController : MonoBehaviour
             shopInsertedFloors.Add(floor);
         }
 
-        floorSceneIndexes[floor].Add(indexForBossScene[indexForBossScene.Count - (currentFloor +1)]);
+        floorSceneIndexes[floor].Add(indexForBossScene[indexForBossScene.Count - (currentFloor + 1)]);
     }
 
     public void LoadScene()
@@ -109,7 +109,8 @@ public class SceneController : MonoBehaviour
 
     public void UnLoadScene()
     {
-        int sceneIndexToUnload= loadedSceneIndexes.First();
+        int sceneIndexToUnload = loadedSceneIndexes.First();
+        Debug.Log(sceneIndexToUnload + "UNLOADSCENE");
         SceneManager.UnloadSceneAsync(sceneIndexToUnload);
         loadedSceneIndexes.Remove(sceneIndexToUnload);
     }
@@ -173,10 +174,41 @@ public class SceneController : MonoBehaviour
         yield return new WaitForSeconds(delay);
         LoadScene();
     }
+    private IEnumerator SceneFadeOut()
+    {
+        SceneFadeManager._instance.StartFadeOut();
+        while (SceneFadeManager._instance.isFadingOut)
+        {
+            yield return null;
+        }
+        Debug.Log("SCENEFADEOUT COROUTINE OUT");
+    }
+
+    private IEnumerator SceneFadeIn()
+    {
+        SceneFadeManager._instance.StartFadeIn();
+        while (SceneFadeManager._instance.isFadingIn)
+        {
+            yield return null;
+        }
+        Debug.Log("SCENEFADEIN COROUTINE IN");
+    }
+
     public void AfterBossDeath()
     {
+        StartCoroutine(HandleAfterBossDeath());
+    }
+
+    private IEnumerator HandleAfterBossDeath()
+    {
+        yield return SceneFadeOut(); // Fade-out przed za³adowaniem nowej sceny
         currentFloor++;
         LoadScene();
-        loadedScenes = 0;
+        SceneManager.UnloadSceneAsync(indexForBossScene[currentFloor-1]);
+        yield return SceneFadeIn(); // Fade-in po za³adowaniu nowej sceny
+    }
+    public int GetLastIndexOfSceneSpawned()
+    {
+        return lastIndexOfSceneSpawned;
     }
 }
