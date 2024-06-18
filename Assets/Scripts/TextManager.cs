@@ -162,7 +162,9 @@ public class TextManager : MonoBehaviour
     }
     public void ChangeSpellUI()
     {
-
+        if (currentSpellIndex == -2) currentSpellIndex=3;
+        if (currentSpellIndex < 4) currentSpellIndex++;
+        else currentSpellIndex = 0;
         for (int i=0; i < 3; i++)
         {
             if (currentSpellIndex + i >= 5)
@@ -171,15 +173,12 @@ public class TextManager : MonoBehaviour
                 else if(i==2) currentSpellIndex = -2;
             }
             int index = currentSpellIndex + i;
-            print(index);
+            if(i==1)spellManager.setSpell(spellManager.spells[index]);
+            //print("currentSpellIndex " + currentSpellIndex + " idnex " + index);
             Sprite sprite;
             SpellIcons.TryGetValue(index, out sprite);
             SpellUIHolders[i].sprite = sprite;
         }
-        if (currentSpellIndex < 4) currentSpellIndex++;
-        else currentSpellIndex = 0;
-
-
     }
 
 }
