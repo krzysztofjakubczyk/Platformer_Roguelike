@@ -23,8 +23,8 @@ public class SceneController : MonoBehaviour
     private int indexOfSceneToSpawn;
     private Vector3 VectorOfYPostionFirstScene;
     private List<int> shopInsertedFloors = new List<int>();
-    private bool isShopLoaded = false;
-    private bool hasShopBeenLoaded = false;
+    [SerializeField]private bool isShopLoaded = false;
+    [SerializeField]private bool hasShopBeenLoaded = false;
     float lastPosition = 0f;
     void Start()
     {
@@ -78,12 +78,13 @@ public class SceneController : MonoBehaviour
             shopInsertedFloors.Add(floor);
         }
 
-        floorSceneIndexes[floor].Add(indexForBossScene[indexForBossScene.Count - (currentFloor + 1)]);
+        floorSceneIndexes[floor].Add(indexForBossScene[floor]);
+        Debug.Log("BOSS SCENE NUMBER " + floorSceneIndexes[floor].Last());
     }
 
     public void LoadScene()
     {
-        indexOfSceneToSpawn = floorSceneIndexes[currentFloor].First();
+        indexOfSceneToSpawn = floorSceneIndexes[currentFloor].First();  
         if (IsSceneAlreadyLoaded(indexOfSceneToSpawn))
         {
             return;
@@ -137,16 +138,15 @@ public class SceneController : MonoBehaviour
             GameObject sceneObject = sceneObjects[0];
             Vector3 originalPosition = sceneObject.transform.position;
             // Jeœli w³aœnie za³adowano sklep, ustaw moveAmount na 23 dla nastêpnej sceny
-
+            Debug.Log("MOVE SCENE + IS SHOP LOADED" + isShopLoaded);
             if (isShopLoaded)
             {
                 hasShopBeenLoaded = true;
-                lastPosition += (moveAmount.x * (loadedScenes - 1)) + 27.5f;
+                lastPosition = (moveAmount.x * (loadedScenes - 1)) + 25.5f;
                 originalPosition.x = lastPosition;
             }
             else if (!isShopLoaded && !hasShopBeenLoaded)
             {
-                Debug.Log("wzielo sie to z: " + moveAmount.x + " loaded scenese: " + loadedScenes);
                 originalPosition.x += moveAmount.x * loadedScenes;
             }
             else if (!isShopLoaded && hasShopBeenLoaded)
@@ -157,8 +157,7 @@ public class SceneController : MonoBehaviour
 
             originalPosition.y = VectorOfYPostionFirstScene.y;
             sceneObject.transform.position = originalPosition;
-            Debug.Log("Nowa pozycja: " + originalPosition.x + " Iloœæ przesuniêcia: " + moveAmount.x);
-            Debug.Log("Iloœæ scen zaladowanych: " + loadedScenes);
+            Debug.Log("Nowa pozycja: " + originalPosition.x);
             if (loadScene.buildIndex == shopSceneIndex)
             {
                 isShopLoaded = true;
@@ -181,7 +180,6 @@ public class SceneController : MonoBehaviour
         {
             yield return null;
         }
-        Debug.Log("SCENEFADEOUT COROUTINE OUT");
     }
 
     private IEnumerator SceneFadeIn()
@@ -191,7 +189,6 @@ public class SceneController : MonoBehaviour
         {
             yield return null;
         }
-        Debug.Log("SCENEFADEIN COROUTINE IN");
     }
 
     public void AfterBossDeath()
@@ -203,9 +200,11 @@ public class SceneController : MonoBehaviour
     {
         yield return SceneFadeOut(); // Fade-out przed za³adowaniem nowej sceny
         currentFloor++;
+        hasShopBeenLoaded = false;
         LoadScene();
         SceneManager.UnloadSceneAsync(indexForBossScene[currentFloor-1]);
         yield return SceneFadeIn(); // Fade-in po za³adowaniu nowej sceny
+
     }
     public int GetLastIndexOfSceneSpawned()
     {

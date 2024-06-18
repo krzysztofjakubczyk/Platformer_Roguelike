@@ -8,6 +8,7 @@ public class BoundingShapeScripts : MonoBehaviour
     [SerializeField] private CompositeCollider2D colliderForCamera;
     [SerializeField] private CompositeCollider2D transitionCollider;
 
+    
     private void Start()
     {
         sceneController = GetComponent<SceneController>();
@@ -19,19 +20,27 @@ public class BoundingShapeScripts : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!collision.CompareTag("Player"))
+        if (!collision.CompareTag("Player"))
         {
             return;
         }
         if (gameObject.name == "CameraLoadTrigger")
         {
-            Debug.Log(collision.name);
-            SetBoundingShape(colliderForCamera);
+            if (CameraController.instiate.GetisTransitionCollider())
+            {
+                SetBoundingShape(colliderForCamera);
+                CameraController.instiate.SetTransitionCollider(false);
+            }
+            CameraController.instiate.SetNormalCollider(true);
         }
         else if (gameObject.name == "LoadTrainstionCameraTrigger")
         {
-            Debug.Log(collision.name);
-            SetBoundingShape(transitionCollider);
+            if (CameraController.instiate.GetisNormalCollider())
+            {
+                SetBoundingShape(transitionCollider);
+                CameraController.instiate.SetTransitionCollider(true);
+            }
+            CameraController.instiate.SetNormalCollider(false);
         }
-    }
+    }   
 }
