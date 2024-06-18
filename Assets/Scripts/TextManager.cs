@@ -14,9 +14,13 @@ public class TextManager : MonoBehaviour
     GameObject inventory;
     [SerializeField]
     List<TMP_Text> StatsTexts;
+    [SerializeField]
+    List<Image> SpellUIHolders;
 
     Dictionary<string, float> StatsValues;
     Dictionary<string, string> SpellValues;
+    public Dictionary<int, Sprite> SpellIcons;
+    private int currentSpellIndex = 0;
 
     [SerializeField]
     GameObject spellListParent;
@@ -41,6 +45,18 @@ public class TextManager : MonoBehaviour
         spellManager = player.GetComponent<SpellManager>();
 
         SpellValues = new Dictionary<string, string>();
+        SpellIcons = new Dictionary<int, Sprite>();
+        for (int i = 0; i < 5; i++)
+        {
+            SpellIcons.Add(i, spellManager.spells[i].GetComponent<Spell>().spellData.ImageItem);
+        }
+            for (int i = 0; i < 3; i++)
+        {
+            Sprite sprite;
+            SpellIcons.TryGetValue(i, out sprite);
+            SpellUIHolders[i].sprite = sprite;
+        }
+        
 
         foreach(var spell in spellManager.spells)
         {
@@ -114,6 +130,7 @@ public class TextManager : MonoBehaviour
             UpdateGUI();
             inventory.SetActive(!inventory.activeSelf);
         }
+        if (Input.GetKeyDown(KeyCode.D)) ChangeSpellUI();
     }
     private void UpdateUpgrades(GameObject prefabOfItem)
     {
@@ -142,6 +159,27 @@ public class TextManager : MonoBehaviour
             }
         }
             
+    }
+    public void ChangeSpellUI()
+    {
+
+        for (int i=0; i < 3; i++)
+        {
+            if (currentSpellIndex + i >= 5)
+            {
+                if(i==1) currentSpellIndex = -1;
+                else if(i==2) currentSpellIndex = -2;
+            }
+            int index = currentSpellIndex + i;
+            print(index);
+            Sprite sprite;
+            SpellIcons.TryGetValue(index, out sprite);
+            SpellUIHolders[i].sprite = sprite;
+        }
+        if (currentSpellIndex < 4) currentSpellIndex++;
+        else currentSpellIndex = 0;
+
+
     }
 
 }
