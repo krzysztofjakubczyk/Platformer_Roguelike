@@ -17,6 +17,7 @@ public class grabEnemy : Spell
 
     private void Start()
     {
+        base.Start();
         stopPos = player.transform.position;
     }
 

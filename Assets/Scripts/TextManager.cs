@@ -16,12 +16,14 @@ public class TextManager : MonoBehaviour
     List<TMP_Text> StatsTexts;
     [SerializeField]
     List<Image> SpellUIHolders;
+    [SerializeField]
+    List<Image> SpellUIHoldersInventory;
 
     Dictionary<string, float> StatsValues;
     Dictionary<string, string> SpellValues;
     public Dictionary<int, Sprite> SpellIcons;
     private int currentSpellIndex = 0;
-
+    
     [SerializeField]
     GameObject spellListParent;
     [SerializeField]
@@ -55,6 +57,9 @@ public class TextManager : MonoBehaviour
             Sprite sprite;
             SpellIcons.TryGetValue(i, out sprite);
             SpellUIHolders[i].sprite = sprite;
+            inventory.SetActive(true);
+            SpellUIHoldersInventory[i].sprite = sprite;
+            inventory.SetActive(false);
         }
         
 
@@ -131,6 +136,7 @@ public class TextManager : MonoBehaviour
             inventory.SetActive(!inventory.activeSelf);
         }
         if (Input.GetKeyDown(KeyCode.D)) ChangeSpellUI();
+        if (Input.GetKeyDown(KeyCode.A)) ChangeSpellUILeft();
     }
     private void UpdateUpgrades(GameObject prefabOfItem)
     {
@@ -178,6 +184,29 @@ public class TextManager : MonoBehaviour
             Sprite sprite;
             SpellIcons.TryGetValue(index, out sprite);
             SpellUIHolders[i].sprite = sprite;
+            inventory.SetActive(true);
+            SpellUIHoldersInventory[i].sprite = sprite;
+            inventory.SetActive(false);
+        }
+    }
+    public void ChangeSpellUILeft()
+    {
+        // if (currentSpellIndex == -1) currentSpellIndex = 3;
+        if (currentSpellIndex == -2) currentSpellIndex = 3;
+        if (currentSpellIndex > 0) currentSpellIndex--;
+        if (currentSpellIndex == 0) currentSpellIndex = 4;
+        for (int i = 0; i < 3; i++)
+        {
+            int index = currentSpellIndex + i;
+            if (index > 4) index -= 5; 
+            if (i == 1) spellManager.setSpell(spellManager.spells[index]);
+            print("currentSpellIndex " + currentSpellIndex + " index " + index);
+            Sprite sprite;
+            SpellIcons.TryGetValue(index, out sprite);
+            SpellUIHolders[i].sprite = sprite;
+            inventory.SetActive(true);
+            SpellUIHoldersInventory[i].sprite = sprite;
+            inventory.SetActive(false);
         }
     }
 

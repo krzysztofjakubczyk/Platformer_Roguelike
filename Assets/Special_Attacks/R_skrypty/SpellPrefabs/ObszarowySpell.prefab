@@ -107,6 +107,7 @@ MonoBehaviour:
   castDirection: {x: 1, y: 0}
   rb: {fileID: -4139253590238007361}
   spellData: {fileID: 11400000, guid: e712918e3166b9848a86e2aa3acb3f49, type: 2}
+  effect: {fileID: 9186446616439801708, guid: acdb90624a404aa438447006f1026065, type: 3}
   delay: 0
   radius: 3
   maxThrowPower: 10
@@ -114,6 +115,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 1024
+  effectBoom: {fileID: 2433282508523890284, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312, type: 3}
 --- !u!50 &-4139253590238007361
 Rigidbody2D:
   serializedVersion: 4

@@ -5,6 +5,7 @@ using UnityEngine.Rendering;
 
 public class LightingChain : Spell
 {
+   
     [SerializeField] float searchRadius;
     [SerializeField] float jumpsNumberMax;
     [SerializeField] float speed;

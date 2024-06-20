@@ -169,6 +169,7 @@ MonoBehaviour:
   castDirection: {x: -1, y: -0}
   rb: {fileID: 295874814376067257}
   spellData: {fileID: 11400000, guid: 79cc5cfb0d7a9d948806edf95e8bd3eb, type: 2}
+  effect: {fileID: 5824670795371433368, guid: f6fd568b816c64943a44efc3add3a881, type: 3}
   pullForce: 50
   speed: 1200
   stopXDys: 2

@@ -9,6 +9,7 @@ public class Obszarowy : Spell
     [SerializeField] float maxThrowPower;
     [SerializeField] float loadPowerSpeed;
     [SerializeField] LayerMask enemyLayer;
+    [SerializeField] protected ParticleSystem effectBoom;
     Vector2 throwDir;
     
     float throwPower = 1;
@@ -19,6 +20,7 @@ public class Obszarowy : Spell
 
     void Start()
     {
+        base.Start();
         //Invoke(nameof(Attack), delay);
         GetComponent<SpriteRenderer>().enabled = false;
         StartCoroutine(SelectPower());
@@ -76,6 +78,7 @@ public class Obszarowy : Spell
 
     void Explode()
     {
+        Instantiate(effectBoom, transform.position, Quaternion.identity);
         Collider2D[] closeEnemies = Physics2D.OverlapCircleAll(transform.position, radius, enemyLayer);
         foreach(Collider2D enemy in closeEnemies)
         {
@@ -84,7 +87,6 @@ public class Obszarowy : Spell
             attackDetails.damageAmount = damage;
             attackDetails.stunDamageAmount = stunDamage;
             enemy.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
-
         }
         Destroy(gameObject);
     }

@@ -107,6 +107,7 @@ MonoBehaviour:
   castDirection: {x: 1, y: 0}
   rb: {fileID: 1409051048395732217}
   spellData: {fileID: 11400000, guid: dfa8c3e6fd540ed448c0cf8622cbf922, type: 2}
+  effect: {fileID: 9027514048236820043, guid: effb650189dc5714e9e9801b1cfb3991, type: 3}
   searchRadius: 15
   jumpsNumberMax: 5
   speed: 1200

@@ -12,6 +12,10 @@ public abstract class Spell : MonoBehaviour
     [HideInInspector] public Vector2 castDirection;
     [HideInInspector] public Rigidbody2D rb;
     [SerializeField] public Items spellData;
-
+    [SerializeField] protected ParticleSystem effect;
+    protected void Start()
+    {
+        Instantiate(effect, transform);
+    }
     public abstract void Attack();
 }

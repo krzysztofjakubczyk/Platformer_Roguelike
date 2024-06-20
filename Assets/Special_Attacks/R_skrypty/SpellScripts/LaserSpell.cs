@@ -11,10 +11,11 @@ public class LaserSpell : Spell
 
     float wallDistance;
 
-    void Start()
+    private void Start()
     {
+        base.Start();
         Invoke(nameof(Attack), delay);
-
+        Instantiate(effect, transform.position, Quaternion.identity);
     }
 
     public override void Attack()

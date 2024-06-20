@@ -5000,6 +5000,7 @@ MonoBehaviour:
   castDirection: {x: 1, y: 0}
   rb: {fileID: 3365534036523940703}
   spellData: {fileID: 11400000, guid: e5335d64f98029443849e463b5655553, type: 2}
+  effect: {fileID: 1206498299807332549, guid: af6c1e3f046eecd4d81330aeb285600f, type: 3}
   damageOnExplode: 0
   pushbackForce: 50
   dmgRadius: 0.5
