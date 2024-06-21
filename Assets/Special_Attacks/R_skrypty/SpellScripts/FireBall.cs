@@ -51,7 +51,9 @@ public class FireBall : Spell
         foreach (Collider2D c in closeEnemies)
         {
             c.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
+            print(c.name);
         }
+        
         
         Destroy(gameObject);
     }

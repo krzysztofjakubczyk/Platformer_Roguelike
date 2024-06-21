@@ -54,7 +54,7 @@ public class Entity : MonoBehaviour
     public virtual void Update()
     {
         stateMachine.currentState.LogicUpdate();
-
+        playerTransform = player.transform;
         //anim.SetFloat("yVelocity", rb.velocity.y); do animacji dodgowania w góre albo w dó³, tymczasowo puste
 
         if(Time.time >=lastDamageTime + entityData.stunRecoveryTime)

@@ -49,6 +49,7 @@ public class StatConroller : MonoBehaviour
         if (!RecoverIsRunning)
             StartCoroutine(RecoverNew());
 
+        BothBarsCheck?.Invoke();
         return;
     }
 

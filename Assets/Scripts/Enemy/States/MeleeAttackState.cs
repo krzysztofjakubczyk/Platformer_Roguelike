@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class MeleeAttackState : AttackState
@@ -59,7 +60,7 @@ public class MeleeAttackState : AttackState
 
             foreach (Collider2D collider in detectedObjects)
             {
-                
+                Debug.Log(entity.playerTransform);
                 entity.playerHp.DamagePlayer(attackDetails.damageAmount);
                 entity.playerTransform.gameObject.GetComponent<Rigidbody2D>().AddForce(stateData.vectorPush * stateData.pushForce, ForceMode2D.Impulse);
             }
