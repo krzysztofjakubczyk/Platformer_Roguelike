@@ -21,21 +21,22 @@ public class FireBall : Spell
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag != "Enemy" && collision.tag != "Player")
-        {
+        //if (collision.tag != "Enemy" && collision.tag != "Player")
+        //{
+        //    Attack();
+
+        //    return;
+        //}
+
+
+        //if (collision.tag != "Enemy")
+        //{
+        //    print(collision.name);
+        //    return;
+        //}
+
+        if (collision.tag == "Enemy")
             Attack();
-
-            return;
-        }
-
-
-        if (collision.tag != "Enemy")
-            return;
-
-
-        // zadanie dmg dla pierwszy target here
-        Attack();
-
     }
 
     public override void Attack()
@@ -51,7 +52,7 @@ public class FireBall : Spell
         foreach (Collider2D c in closeEnemies)
         {
             c.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
-            print(c.name);
+           // print(c.name);
         }
         
         

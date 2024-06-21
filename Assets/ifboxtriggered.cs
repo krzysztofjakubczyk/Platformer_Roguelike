@@ -9,8 +9,6 @@ public class ifboxtriggered : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-
         isTriggered = true;
     }
 

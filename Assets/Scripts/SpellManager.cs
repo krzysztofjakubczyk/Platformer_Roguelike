@@ -102,7 +102,7 @@ public class SpellManager : MonoBehaviour
                     newSpell.transform.localRotation = Quaternion.Euler(0, 0, 90);
                 else if (throwDir.x == -transform.right.x)
                     newSpell.GetComponent<SpriteRenderer>().flipX = true;
-                print(newSpell.tag);
+                //print(newSpell.tag);
 
             }
         }

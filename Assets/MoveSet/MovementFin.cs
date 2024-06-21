@@ -153,13 +153,13 @@ public class MovementFin : MonoBehaviour
         #endregion
 
         //wall jump
-        if (WJleft.GetComponent<ifboxtriggered>().isTriggered && !isGrounded && ZPressed)
+        if (Physics2D.OverlapBox(new Vector2(transform.position.x + 0.410643f, transform.position.y + 1f), new Vector2(0.320549f, 1.392045f), 0, groundLayer) && !isGrounded && ZPressed)
         {
             isJumpingLeft = true;
             sideJump = true;
         }
-
-        if (WJright.GetComponent<ifboxtriggered>().isTriggered && !isGrounded && ZPressed)
+        
+        if (Physics2D.OverlapBox(new Vector2(transform.position.x + -0.4013805f, transform.position.y + 1f), new Vector2(0.2293253f, 1.392045f), 0, groundLayer) && !isGrounded && ZPressed)
         {
             isJumpingRight = true;
             sideJump = true;
@@ -167,6 +167,7 @@ public class MovementFin : MonoBehaviour
 
         wasGrounded = isGrounded;
     }
+
 
     void MoveAccordingly()
     {
