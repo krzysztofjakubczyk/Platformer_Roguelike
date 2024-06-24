@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="StaminaControl">
+    <Position X="3" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQCACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Bars and them things\StaminaControl.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerStats" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerStatsManager">
+    <Position X="5.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAACAEAAAAAAAEAAAAAABBAAABAAAAgAAAAAA=</HashCode>
+      <FileName>Assets\PlayerStatsManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerStats" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="StatConroller">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="StatConroller.AmountChange" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Bars and them things\StatConroller.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AQABAAQAAAgABAAEEACAAAEAIAAAAAAAAhAAAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Bars and them things\StatConroller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthController">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAQCACAAAAAAAAAAAAAAAAAgAAAAAAAgAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Bars and them things\HealthController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerStats" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="StaminaBarControl">
+    <Position X="3" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAABCAAAAAAAIAAAAAAAAAQEEAAAAAAQAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\Bars and them things\StaminaBarControl.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="statController" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerStatsFin" Collapsed="true">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\PlayerStatsFin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpellManager">
+    <Position X="7.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQAAAQCACABAAAAAAAAAACEAAAQBAQEAADgEAAgAAA=</HashCode>
+      <FileName>Assets\Scripts\SpellManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="StaminaControl" />
+      <Field Name="playerStats" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MovementFin">
+    <Position X="9.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>BSUgAkQiFiAAQIYMAAgEAEaIAQQAAQAIAAggiABiHBA=</HashCode>
+      <FileName>Assets\MoveSet\MovementFin.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerStats" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MapTranistion">
+    <Position X="12.75" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAgAIAAAACAwAAEAAAAAAAAAIAAAAgAAAAAAAgAACAA=</HashCode>
+      <FileName>Assets\Scripts\MapsTransition.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="controller" />
+      <Field Name="moneyManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SceneController" Collapsed="true">
+    <Position X="15.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAIIhAACICIAABEJAAQJGKEDADAEACAAAAIAACBAAQA=</HashCode>
+      <FileName>Assets\SceneManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoneyManager" Collapsed="true">
+    <Position X="15.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAEBA=</HashCode>
+      <FileName>Assets\MoneyManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextManager">
+    <Position X="18.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASQIAAAASBCAAgIAAggAAAAQBEAAAADBCQAAQAAAAA=</HashCode>
+      <FileName>Assets\Scripts\TextManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="moneyManager" />
+      <Field Name="playerStatsManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CameraController">
+    <Position X="12.75" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAACCAISAAAAAAAAAAAAAAAAAAQAAAEA=</HashCode>
+      <FileName>Assets\CameraController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

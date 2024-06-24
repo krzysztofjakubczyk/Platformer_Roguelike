@@ -208,7 +208,7 @@ public class moveSnake : MonoBehaviour
 
     public void OnDeath()
     {
-        print("Umarl boss");
+        Destroy(gameObject);
         doorsForSpawnNewFloor.GetComponent<BoxCollider2D>().enabled = true;
         doorsForSpawnNewFloor.GetComponent<SpriteRenderer>().enabled = true;
     }

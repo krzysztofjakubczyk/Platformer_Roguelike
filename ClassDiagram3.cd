@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AttackState" Collapsed="true">
+    <Position X="5.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABQABAABAAAAAAAAAAEAAAAAAAEAAAIIAAAgAAoAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\AttackState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackToPatrolState" Collapsed="true">
+    <Position X="9.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQABAgAAAAAAAAAAAEAAAAAAAEAAAAIAAAIAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\BackToPatrolState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Charge" Collapsed="true">
+    <Position X="12.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAQABAAAAAABAAAAAAECAAAAAAUAAgIIAAAIAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\Charge.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackToPatrolStateData" Collapsed="true">
+    <Position X="11" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\Data\BackToPatrolStateData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="D_ChargeState" Collapsed="true">
+    <Position X="14.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAwAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\Data\D_ChargeState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DeathStateData" Collapsed="true">
+    <Position X="9.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\Data\DeathStateData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DodgeStateData" Collapsed="true">
+    <Position X="12.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAABAAAAAAAAAAAAAAAAAIAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\Data\DodgeStateData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EntityData" Collapsed="true">
+    <Position X="14.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAQAAAIAAAABAEAAABAAAAIABAAAAgAAAAKAAQAAAE=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\Data\EntityData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IdleStateData" Collapsed="true">
+    <Position X="9.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\Data\IdleStateData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LookForPlayerStateData" Collapsed="true">
+    <Position X="12.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\Data\LookForPlayerStateData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MeleeAttackStateData" Collapsed="true">
+    <Position X="14.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAABEAAAAAAQAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\Data\MeleeAttackStateData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoveStateData" Collapsed="true">
+    <Position X="9.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\Data\MoveStateData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerDetectedData" Collapsed="true">
+    <Position X="12.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\Data\PlayerDetectedData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RangedAttackStateData" Collapsed="true">
+    <Position X="14.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAQAAABAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\Data\RangedAttackStateData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StunStateData" Collapsed="true">
+    <Position X="9.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAIAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\Data\StunStateData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DeathState" Collapsed="true">
+    <Position X="16.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQABAAAAAAAAAAAAAEAAAAAAAEAAAAIAAAIAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\DeathState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DodgeState" Collapsed="true">
+    <Position X="11" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQABAAAAAAAAACAAAEAAAAAAAEAAgIIAAAIAAgAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\DodgeState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IdleState" Collapsed="true">
+    <Position X="16.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQABAAAAAAAAABAAAEAAAQAEAEAAAIIAEAIAAQAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\IdleState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LookForPlayerState" Collapsed="true">
+    <Position X="11" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAwABACAAAAgCAAAAAEAAAAABAEAAAIIAAIIAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\LookForPlayerState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MeleeAttackState" Collapsed="true">
+    <Position X="6.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACQABAABAAAAAAAAAEEAAAAAAAEAAAAIAAAIAAIAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\MeleeAttackState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoveState" Collapsed="true">
+    <Position X="16.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gCAQABAAAAAABAAAAAAEAAAAABAEAAAIIAAAIAAAAQA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\MoveState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerDetected" Collapsed="true">
+    <Position X="11" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAQABAAAAAAAQAAAAAEAAAAABAEAAgIIAAAIAAgAQA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\PlayerDetected.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RangedAttackState" Collapsed="true">
+    <Position X="4.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAwABAABAAAAAAAAAAMAAAAAAAEAAAAIAAAIAAIAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\RangedAttackState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StunState" Collapsed="true">
+    <Position X="16.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQBBAAAAAAAAAAAAAEAAAAAAAEAAgIIAAAIAAAAIA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\States\StunState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Striker" Collapsed="true">
+    <Position X="12" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAhAAAQICIAAAIAAAgAABAIAABAQBgAAIAAACAEAAQ=</HashCode>
+      <FileName>Assets\Scripts\Enemy\EnemyTypes\Striker\Striker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StrikerDeathState" Collapsed="true">
+    <Position X="18.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQABAAAAAAAAAAAAAEAAAAAAAEAAAAIAAAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Enemy\EnemyTypes\Striker\StrikerDeathState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StrikerDodgeState" Collapsed="true">
+    <Position X="20" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQABAAAAAAAAAAAAAEAAAAAAAEAAAAIAAAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Enemy\EnemyTypes\Striker\StrikerDodgeState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StrikerIdleState" Collapsed="true">
+    <Position X="18.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQABAAAAAAAAAAAAAEAAAAAAAEAAAAIAAAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Enemy\EnemyTypes\Striker\StrikerIdleState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StrikerLookForPlayerState" Collapsed="true">
+    <Position X="13" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQABAAAAAAAAAAAAAEAAAAAAAEAAAAIAAAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Enemy\EnemyTypes\Striker\StrikerLookForPlayerState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StrikerMeleeAttackState" Collapsed="true">
+    <Position X="7" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQABAABAAAAAAAAAEEAAAAAAAEAAAAIAAAAAAIAAI=</HashCode>
+      <FileName>Assets\Scripts\Enemy\EnemyTypes\Striker\StrikerMeleeAttackState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StrikerMoveState" Collapsed="true">
+    <Position X="18.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQABAAAAAAAAAAAAAEAAAAAAAEAAAAIAAAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Enemy\EnemyTypes\Striker\StrikerMoveState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StrikerPlayerDetectedState" Collapsed="true">
+    <Position X="11" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQABAAAAAAAAAAAAAEAAAAAAAEAAAAIAAAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Enemy\EnemyTypes\Striker\StrikerPlayerDetectedState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StrikerRangedAttackState" Collapsed="true">
+    <Position X="4.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQABAABAAAAAAAAAAEAAAAAAAEAAAAIAAAAAAIAAI=</HashCode>
+      <FileName>Assets\Scripts\Enemy\EnemyTypes\Striker\StrikerRangedAttackState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StrikerStunState" Collapsed="true">
+    <Position X="18.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQABAAAAAAAAAAAAAEAAAAAAAEAAAAIAAAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Enemy\EnemyTypes\Striker\StrikerStunState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
