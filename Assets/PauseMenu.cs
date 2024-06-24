@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -38,6 +40,8 @@ public class PauseMenu : MonoBehaviour
     public void PlayButton()
     {
         ShowChildren(false);
+        show = !show;
+        Time.timeScale = 1;
     }
 
     public void Settings()
