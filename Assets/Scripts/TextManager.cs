@@ -108,6 +108,7 @@ public class TextManager : MonoBehaviour
         ItemOnShop.updateGUIUpgrades += UpdateUpgrades;
         ItemOnShop.showDescription += ShowDescription;
         UpdateGUI();
+        inventory.SetActive(false);
     }
     private void UpdateGUI()
     {

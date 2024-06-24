@@ -14666,19 +14666,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5532795765994295873, guid: f3daec46ff4fe774ca7502276f299c2a, type: 3}
       propertyPath: m_Size.x
-      value: 18.507051
+      value: 19.553831
       objectReference: {fileID: 0}
     - target: {fileID: 5532795765994295873, guid: f3daec46ff4fe774ca7502276f299c2a, type: 3}
       propertyPath: m_Size.y
-      value: 2.9688234
+      value: 9.610279
       objectReference: {fileID: 0}
     - target: {fileID: 5532795765994295873, guid: f3daec46ff4fe774ca7502276f299c2a, type: 3}
       propertyPath: m_Offset.x
-      value: 9.839625
+      value: 10.363015
       objectReference: {fileID: 0}
     - target: {fileID: 5532795765994295873, guid: f3daec46ff4fe774ca7502276f299c2a, type: 3}
       propertyPath: m_Offset.y
-      value: 1.1268401
+      value: 4.447567
       objectReference: {fileID: 0}
     - target: {fileID: 8527275050250961387, guid: f3daec46ff4fe774ca7502276f299c2a, type: 3}
       propertyPath: colliderForCamera
