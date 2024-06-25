@@ -589,6 +589,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 429123964}
     m_Modifications:
+    - target: {fileID: 1177248224539906526, guid: 781fb3a321876df4c868c17edf0c5a2c, type: 3}
+      propertyPath: m_Size.x
+      value: 3.7179832
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177248224539906526, guid: 781fb3a321876df4c868c17edf0c5a2c, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.55166984
+      objectReference: {fileID: 0}
     - target: {fileID: 2525366577306441282, guid: 781fb3a321876df4c868c17edf0c5a2c, type: 3}
       propertyPath: m_Name
       value: UnLoadRoomTrigger
@@ -28744,7 +28752,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09932667, y: 0}
+  m_Offset: {x: 1.1313539, y: -0.60490644}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -28755,7 +28763,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7490748, y: 1}
+  m_Size: {x: 3.813129, y: 2.2098129}
   m_EdgeRadius: 0
 --- !u!212 &1288177505
 SpriteRenderer:

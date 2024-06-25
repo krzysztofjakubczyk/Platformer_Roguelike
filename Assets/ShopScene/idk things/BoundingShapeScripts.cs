@@ -31,6 +31,10 @@ public class BoundingShapeScripts : MonoBehaviour
                 SetBoundingShape(colliderForCamera);
                 CameraController.instiate.SetTransitionCollider(false);
             }
+            else
+            {
+                SetBoundingShape(colliderForCamera);
+            }
             CameraController.instiate.SetNormalCollider(true);
         }
         else if (gameObject.name == "LoadTrainstionCameraTrigger")
@@ -39,6 +43,10 @@ public class BoundingShapeScripts : MonoBehaviour
             {
                 SetBoundingShape(transitionCollider);
                 CameraController.instiate.SetTransitionCollider(true);
+            }
+            else
+            {
+                SetBoundingShape(transitionCollider);
             }
             CameraController.instiate.SetNormalCollider(false);
         }

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class DoorsToNextFloor : MonoBehaviour
 {
+    [SerializeField] private CompositeCollider2D colliderForCamera;
+    BoundingShapeScripts boundingShape;
     private GameObject player;
 
     private void Start()
@@ -25,6 +27,7 @@ public class DoorsToNextFloor : MonoBehaviour
     {
         SceneController sceneManager = FindObjectOfType<SceneController>();
         sceneManager.AfterBossDeath();
-        player.transform.position =  gameObject.transform.position + new UnityEngine.Vector3(19, 0, 0);
+        player.transform.position =  gameObject.transform.position + new UnityEngine.Vector3(26 , 0, 0);
+
     }
 }

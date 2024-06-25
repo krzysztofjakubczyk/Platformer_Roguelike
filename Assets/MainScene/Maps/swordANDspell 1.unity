@@ -22559,6 +22559,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1984490241}
     m_Modifications:
+    - target: {fileID: 1177248224539906526, guid: 781fb3a321876df4c868c17edf0c5a2c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.96652293
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177248224539906526, guid: 781fb3a321876df4c868c17edf0c5a2c, type: 3}
+      propertyPath: m_Size.y
+      value: 3.9808655
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177248224539906526, guid: 781fb3a321876df4c868c17edf0c5a2c, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0167384
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177248224539906526, guid: 781fb3a321876df4c868c17edf0c5a2c, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.4904327
+      objectReference: {fileID: 0}
     - target: {fileID: 2525366577306441282, guid: 781fb3a321876df4c868c17edf0c5a2c, type: 3}
       propertyPath: m_Name
       value: UnLoadRoomTrigger
@@ -23128,7 +23144,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753225452}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -23153,7 +23169,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.6872045, y: 0.31176013}
+  m_Offset: {x: 2.7239814, y: 0.31176013}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -23164,7 +23180,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.3744092, y: 1.6235203}
+  m_Size: {x: 6.447962, y: 1.6235203}
   m_EdgeRadius: 0
 --- !u!4 &1753225456
 Transform:
