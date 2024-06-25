@@ -10,7 +10,11 @@ public class MovementFin : MonoBehaviour
     LayerMask pustwarstwa;
 
     PlayerStatsFin playerStats;
-    AudioSource playerAudio;
+
+    AudioSource audio;
+    [SerializeField] AudioClip[] runningClips;
+    [SerializeField] float audioSpeed = 0.35f;
+    bool playingSoundOn;
 
     [SerializeField] float speed = 4f;
     [SerializeField] float jumpingPower = 7f;
@@ -29,8 +33,6 @@ public class MovementFin : MonoBehaviour
 
     float horizontal;
     float lastDirection;
-
-    bool corutineRunningAlready;
 
     bool isJumping, willJump;
     bool isGrounded, wasGrounded;
@@ -51,18 +53,22 @@ public class MovementFin : MonoBehaviour
 
     private void Start()
     {
-        corutineRunningAlready = false;
+        playingSoundOn = false;
         Application.targetFrameRate = 120;
 
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         sword = transform.GetChild(0);
-        playerAudio = GetComponent<AudioSource>();
+
+        audio = GetComponent<AudioSource>();
+        StartCoroutine(runningSound());
+
+        //StartCoroutine(running());
 
         playerStats = GetComponent<PlayerStatsManager>().playerStats;
         UpdateAllStats();
-        StartCoroutine(running());
+        
     }
 
     void Update()
@@ -87,12 +93,20 @@ public class MovementFin : MonoBehaviour
         if (Mathf.Abs(horizontal * speed) > 0.1f)
         {
             animator.SetBool("isRunning", true);
-           
+
+            if (animator.GetBool("isRunning") && !animator.GetBool("isGrounded"))
+                playingSoundOn = false;
+
+            if (!playingSoundOn)
+            {
+                StartCoroutine(runningSound());
+            }
         }
 
         else
         {
             animator.SetBool("isRunning", false);
+            playingSoundOn = false;
         }
 
 
@@ -282,16 +296,28 @@ public class MovementFin : MonoBehaviour
         StartCoroutine(ChangeDamageEnterFlagAfterDelay(false, 0.5f));
     }
 
-    IEnumerator running()
+    IEnumerator runningSound()
     {
-        int x = 100;
-        if (x <= 0)
+        int max = runningClips.Length;
+        int num = 0;
+        int oldNum = 1;
+
+
+        while (animator.GetBool("isRunning") && animator.GetBool("isGrounded")) // while isRunning
         {
-            x--;
-            playerAudio.Play();
-            print("awdawdawdawdawd");
-            yield return new WaitForSeconds(1f);
-        } 
-        
+            while (num == oldNum)
+            {
+                num = Random.Range(0, max);
+            }
+
+            audio.clip = runningClips[num];
+            audio.Play();
+
+            oldNum = num;
+            playingSoundOn = true;
+            yield return new WaitForSeconds(audioSpeed);
+        }
+
+        yield return null;
     }
 }
