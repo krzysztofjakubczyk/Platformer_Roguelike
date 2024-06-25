@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections.LowLevel.Unsafe;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class MovementFin : MonoBehaviour
@@ -9,6 +10,7 @@ public class MovementFin : MonoBehaviour
     LayerMask pustwarstwa;
 
     PlayerStatsFin playerStats;
+    AudioSource playerAudio;
 
     [SerializeField] float speed = 4f;
     [SerializeField] float jumpingPower = 7f;
@@ -27,6 +29,8 @@ public class MovementFin : MonoBehaviour
 
     float horizontal;
     float lastDirection;
+
+    bool corutineRunningAlready;
 
     bool isJumping, willJump;
     bool isGrounded, wasGrounded;
@@ -47,15 +51,18 @@ public class MovementFin : MonoBehaviour
 
     private void Start()
     {
+        corutineRunningAlready = false;
         Application.targetFrameRate = 120;
 
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         sword = transform.GetChild(0);
+        playerAudio = GetComponent<AudioSource>();
 
         playerStats = GetComponent<PlayerStatsManager>().playerStats;
         UpdateAllStats();
+        StartCoroutine(running());
     }
 
     void Update()
@@ -78,10 +85,17 @@ public class MovementFin : MonoBehaviour
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
 
         if (Mathf.Abs(horizontal * speed) > 0.1f)
+        {
             animator.SetBool("isRunning", true);
+           
+        }
+
         else
+        {
             animator.SetBool("isRunning", false);
-        
+        }
+
+
 
         if (isJumpingLeft)
         {
@@ -268,4 +282,16 @@ public class MovementFin : MonoBehaviour
         StartCoroutine(ChangeDamageEnterFlagAfterDelay(false, 0.5f));
     }
 
+    IEnumerator running()
+    {
+        int x = 100;
+        if (x <= 0)
+        {
+            x--;
+            playerAudio.Play();
+            print("awdawdawdawdawd");
+            yield return new WaitForSeconds(1f);
+        } 
+        
+    }
 }
