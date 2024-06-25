@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,7 +36,13 @@ public class BackToPatrolState : State
     {
         base.PhysicsUpdate();
         CheckFlipToPoint();
-        entity.aliveGameObject.transform.position = Vector3.MoveTowards(entity.aliveGameObject.transform.position, entity.patrolPoint, stateData.backSpeed * Time.deltaTime);
+        Vector2 targetPosition = new Vector2((float)Math.Round(entity.patrolPoint.x, 1), (float)Math.Round(entity.patrolPoint.y, 1));
+
+        entity.aliveGameObject.transform.localPosition = Vector2.MoveTowards(
+            entity.aliveGameObject.transform.localPosition,
+            new Vector2(targetPosition.x, targetPosition.y),
+            stateData.backSpeed * Time.deltaTime
+        );
     }
     public virtual void CheckFlipToPoint()
     {

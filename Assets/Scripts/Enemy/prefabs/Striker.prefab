@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityData: {fileID: 11400000, guid: ba37e3c1609cb4a44ba8805bf78b5930, type: 2}
+  sceneManager: {fileID: 6820872453537031780, guid: 42b111e899c2e20489c4b4d97890f03b, type: 3}
   player: {fileID: 0}
   patrolPoint: {x: 0, y: 0, z: 0}
   playerHp: {fileID: 0}

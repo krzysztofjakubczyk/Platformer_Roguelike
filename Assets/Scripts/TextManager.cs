@@ -201,7 +201,7 @@ public class TextManager : MonoBehaviour
             int index = currentSpellIndex + i;
             if (index > 4) index -= 5; 
             if (i == 1) spellManager.setSpell(spellManager.spells[index]);
-            print("currentSpellIndex " + currentSpellIndex + " index " + index);
+            //print("currentSpellIndex " + currentSpellIndex + " index " + index);
             Sprite sprite;
             SpellIcons.TryGetValue(index, out sprite);
             SpellUIHolders[i].sprite = sprite;

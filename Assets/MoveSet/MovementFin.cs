@@ -259,7 +259,7 @@ public class MovementFin : MonoBehaviour
 
     public void DamageOnCollision(Collider2D coll)
     {
-        print("kolizja z enemy");
+        //print("kolizja z enemy");
         getDamageFromEnemy = true;
         if (coll.transform.position.x > transform.position.x)
             rb.AddForce(new Vector2(-1, 1) * pushBackForce, ForceMode2D.Impulse);

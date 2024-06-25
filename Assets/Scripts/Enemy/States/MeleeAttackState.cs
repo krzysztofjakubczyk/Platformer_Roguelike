@@ -25,7 +25,7 @@ public class MeleeAttackState : AttackState
 
         attackDetails.damageAmount = stateData.attackDamage;
         attackDetails.position = entity.aliveGameObject.transform.position;
-        Debug.Log(entity.playerHp);
+        //Debug.Log(entity.playerHp);
     }
 
     public override void Exit()
