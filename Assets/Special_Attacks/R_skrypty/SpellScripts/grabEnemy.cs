@@ -19,6 +19,7 @@ public class grabEnemy : Spell
     {
         base.Start();
         stopPos = player.transform.position;
+        Debug.Log("rzucam spella przyci¹gania");
     }
 
     void Update()
@@ -29,14 +30,7 @@ public class grabEnemy : Spell
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag != "Enemy" && collision.tag != "Player")
-            Destroy(gameObject); 
-       
-        if (collision.tag != "Enemy")
-            return;
-
-        StartCoroutine(GoBackToPlayer(collision));
-
+        if (collision.tag == "Enemy") StartCoroutine(GoBackToPlayer(collision));
     }
 
     public override void Attack()

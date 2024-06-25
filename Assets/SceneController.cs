@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class SceneController : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class SceneController : MonoBehaviour
     [SerializeField] private List<int> loadedSceneIndexes = new List<int>();
     [SerializeField] private MapTranistion mapInstance;
     [SerializeField] private Dictionary<int, List<int>> floorSceneIndexes = new Dictionary<int, List<int>>();
-
+    public Action changeEnemyPos;
 
     private const int minFloorSize = 2;
     private const int maxFloorSize = 5;
@@ -48,7 +49,7 @@ public class SceneController : MonoBehaviour
 
     private void InitializeFloorScenes(int floor)
     {
-        int floorSize = Random.Range(minFloorSize, maxFloorSize);
+        int floorSize = UnityEngine.Random.Range(minFloorSize, maxFloorSize);
         floorSizes[floor] = floorSize;
         var sceneIndexes = new HashSet<int>();
 
@@ -57,7 +58,7 @@ public class SceneController : MonoBehaviour
             int randomIndex;
             do
             {
-                randomIndex = Random.Range(1, 5);
+                randomIndex = UnityEngine.Random.Range(1, 5);
             }
             while (sceneIndexes.Contains(randomIndex));
 
@@ -73,7 +74,7 @@ public class SceneController : MonoBehaviour
         // Dodanie sklepu na losowej pozycji, ale nie pierwszej ani ostatniej
         if (!shopInsertedFloors.Contains(floor))
         {
-            int shopPosition = Random.Range(1, floorSize - 1); // Zapewnia, ¿e sklep nie bêdzie ani pierwszy, ani ostatni
+            int shopPosition = UnityEngine.Random.Range(1, floorSize - 1); // Zapewnia, ¿e sklep nie bêdzie ani pierwszy, ani ostatni
             floorSceneIndexes[floor].Insert(shopPosition, shopSceneIndex);
             shopInsertedFloors.Add(floor);
         }
@@ -106,6 +107,7 @@ public class SceneController : MonoBehaviour
         Scene scene = SceneManager.GetSceneByBuildIndex(indexOfSceneToSpawn);
         MoveScene(scene);
         SceneManager.SetActiveScene(scene);
+        changeEnemyPos.Invoke();
     }
 
     public void UnLoadScene()
@@ -158,6 +160,7 @@ public class SceneController : MonoBehaviour
             originalPosition.y = VectorOfYPostionFirstScene.y;
             sceneObject.transform.position = originalPosition;
             Debug.Log("Nowa pozycja: " + originalPosition.x);
+           
             if (loadScene.buildIndex == shopSceneIndex)
             {
                 isShopLoaded = true;
@@ -166,6 +169,7 @@ public class SceneController : MonoBehaviour
             {
                 isShopLoaded = false;
             }
+            
         }
     }
     private IEnumerator LoadSceneWithDelayCoroutine(float delay)

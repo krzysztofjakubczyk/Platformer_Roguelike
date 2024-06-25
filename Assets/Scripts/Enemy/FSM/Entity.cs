@@ -6,7 +6,11 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     public EntityData entityData;
-
+    [SerializeField]
+    private GameObject sceneManager; 
+    
+    private SceneController sceneController;
+    
     public BaseStateMachine stateMachine;
     public int facingDirection { get; private set; }
     public Rigidbody2D rb { get; private set; }
@@ -16,8 +20,8 @@ public class Entity : MonoBehaviour
     public int lastDamageDirection { get; private set; }
     public Transform playerTransform { get; private set; }
     [SerializeField] private GameObject player;
-    
-    [SerializeField] public Vector3 patrolPoint;
+
+    [SerializeField] public Vector2 patrolPoint;
 
     public HealthController playerHp;
     public float currentHealth;
@@ -37,6 +41,8 @@ public class Entity : MonoBehaviour
     public static event Action OnEnemyDeath;
     public virtual void Start()
     {
+        sceneController = sceneManager.GetComponent<SceneController>();
+        sceneController.changeEnemyPos += SetPatrolPoint;
         facingDirection = 1;
         currentHealth = entityData.maxHealth;
         currentStunResistance = entityData.stunResistance;
@@ -199,6 +205,11 @@ public class Entity : MonoBehaviour
             else if (collision.transform.position.x > transform.position.x)
                 rb.AddForce(new Vector2(1, 1), ForceMode2D.Impulse);
         }
+    }
+    private void SetPatrolPoint()
+    {
+        patrolPoint = transform.position;
+        print(patrolPoint + " pozycja patrolowa "+ aliveGameObject.transform.parent.gameObject.name);
     }
 
 }

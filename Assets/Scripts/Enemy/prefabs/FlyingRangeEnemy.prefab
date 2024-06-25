@@ -108,8 +108,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityData: {fileID: 11400000, guid: d9ed82eacda3a8a4b898853eebdca8e9, type: 2}
+  sceneManager: {fileID: 6820872453537031780, guid: 42b111e899c2e20489c4b4d97890f03b, type: 3}
   player: {fileID: 1922316363251511598, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
-  patrolPoint: {x: -4, y: 9, z: 0}
+  patrolPoint: {x: -2, y: 0}
   playerHp: {fileID: 0}
   currentHealth: 100
   currentStunResistance: 100

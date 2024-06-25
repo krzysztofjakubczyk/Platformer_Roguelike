@@ -118,7 +118,7 @@ Transform:
   m_GameObject: {fileID: 4199393055648235950}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.139, y: 0.031, z: 0}
+  m_LocalPosition: {x: 0.32, y: 0.031, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -170,9 +170,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityData: {fileID: 11400000, guid: ac80a2b4440a8494d81350d2c9f86b09, type: 2}
+  sceneManager: {fileID: 6820872453537031780, guid: 42b111e899c2e20489c4b4d97890f03b, type: 3}
   player: {fileID: 1922316363251511598, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
   patrolPoint: {x: 0, y: 0, z: 0}
-  playerHp: {fileID: 8834038255314397138, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
+  playerHp: {fileID: 0}
   currentHealth: 0
   currentStunResistance: 0
   lastDamageTime: 0
@@ -214,7 +215,7 @@ Transform:
   m_GameObject: {fileID: 7510277339889150181}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.419, y: -0.03, z: 0}
+  m_LocalPosition: {x: 0.347, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
