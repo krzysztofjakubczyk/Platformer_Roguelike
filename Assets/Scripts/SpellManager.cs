@@ -35,6 +35,7 @@ public class SpellManager : MonoBehaviour
         StaminaControl = GetComponent<StaminaControl>();
 
         canCast = true;
+        throwDir = Vector2.right;
 
         playerStats = GetComponent<PlayerStatsManager>().playerStats;
         UpdateAllStats();

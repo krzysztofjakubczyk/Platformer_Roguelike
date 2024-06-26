@@ -14,7 +14,11 @@ public class MovementFin : MonoBehaviour
     AudioSource audio;
     [SerializeField] AudioClip[] runningClips;
     [SerializeField] float audioSpeed = 0.35f;
+    [SerializeField] AudioClip jumpAudio;
+    [SerializeField] AudioClip getHitAudio;
+    [SerializeField] AudioClip dashAudio;
     bool playingSoundOn;
+    bool soundCorutineisOn;
 
     [SerializeField] float speed = 4f;
     [SerializeField] float jumpingPower = 7f;
@@ -54,6 +58,7 @@ public class MovementFin : MonoBehaviour
     private void Start()
     {
         playingSoundOn = false;
+        soundCorutineisOn = false;
         Application.targetFrameRate = 120;
 
         rb = GetComponent<Rigidbody2D>();
@@ -99,7 +104,8 @@ public class MovementFin : MonoBehaviour
 
             if (!playingSoundOn)
             {
-                StartCoroutine(runningSound());
+                if(!soundCorutineisOn)
+                    StartCoroutine(runningSound());
             }
         }
 
@@ -116,12 +122,14 @@ public class MovementFin : MonoBehaviour
             rb.velocity = new Vector2(-jumpingPower, jumpingPower);
             isJumpingLeft = false;
             Invoke(nameof(EndSideJump), 0.1f);
+            audio.PlayOneShot(jumpAudio, 0.8f);
         }
         else if (isJumpingRight)
         {
             rb.velocity = new Vector2(jumpingPower, jumpingPower);
             isJumpingRight = false;
             Invoke(nameof(EndSideJump), 0.1f);
+            audio.PlayOneShot(jumpAudio, 0.8f);
         }
     }
 
@@ -145,7 +153,10 @@ public class MovementFin : MonoBehaviour
             ZPressed = true;
 
         if (Input.GetKeyDown(dashKey))
+        {
             isDashing = true;
+            audio.PlayOneShot(dashAudio, 0.8f);
+        }
 
 
         // coyoteTime
@@ -211,6 +222,8 @@ public class MovementFin : MonoBehaviour
 
         if (isJumping)
         {
+            audio.PlayOneShot(jumpAudio, 0.8f);
+
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             isJumping=false;
         }
@@ -287,8 +300,10 @@ public class MovementFin : MonoBehaviour
 
     public void DamageOnCollision(Collider2D coll)
     {
-        //print("kolizja z enemy");
         getDamageFromEnemy = true;
+
+        audio.PlayOneShot(getHitAudio, 1f);
+
         if (coll.transform.position.x > transform.position.x)
             rb.AddForce(new Vector2(-1, 1) * pushBackForce, ForceMode2D.Impulse);
         else //(coll.transform.position.x < transform.position.x)
@@ -302,6 +317,7 @@ public class MovementFin : MonoBehaviour
         int num = 0;
         int oldNum = 1;
 
+        soundCorutineisOn = true;
 
         while (animator.GetBool("isRunning") && animator.GetBool("isGrounded")) // while isRunning
         {
@@ -318,6 +334,7 @@ public class MovementFin : MonoBehaviour
             yield return new WaitForSeconds(audioSpeed);
         }
 
+        soundCorutineisOn = false;
         yield return null;
     }
 }
