@@ -39,7 +39,10 @@ public class FlyingEnemyBackToPatrolState : BackToPatrolState
         {
             stateMachine.ChangeState(enemy.moveState);
         }
-        else  Debug.Log("false zmiana nietoperza na move state dystans " + Math.Abs(Vector3.Distance(entity.aliveGameObject.transform.position, roundedPatrolPoint)));
+        else Debug.Log("false zmiana nietoperza na move state dystans "
+           + Math.Abs(Vector3.Distance(entity.aliveGameObject.transform.position, roundedPatrolPoint))
+           + "pozycja globalna " + entity.aliveGameObject.transform.position +
+           "pozycja lokalna " + entity.aliveGameObject.transform.localPosition);
         //Debug.Log("pozycja nietoperza " + entity.aliveGameObject.transform.localPosition + "pozycja docelowa " + new Vector3((float)Math.Round(entity.patrolPoint.x, 1), (float)Math.Round(entity.patrolPoint.y, 1)) +" bool ");
     }
 
