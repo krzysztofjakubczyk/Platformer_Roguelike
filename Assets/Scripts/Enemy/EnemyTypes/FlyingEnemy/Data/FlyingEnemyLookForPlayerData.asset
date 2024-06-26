@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: FlyingEnemyLookForPlayerData
   m_EditorClassIdentifier: 
   amountOfTurns: 3
-  timeBetweenTurns: 0.75
+  timeBetweenTurns: 0.5

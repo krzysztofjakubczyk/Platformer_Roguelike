@@ -18,8 +18,9 @@ MonoBehaviour:
   LedgeCheckDistance: 2
   groundCheckRadius: 1
   minAgroDistance: 12
+  minEnemyAgroDistance: 3
   maxAgroDistance: 20
-  stunResistance: 3
+  stunResistance: 10
   stunRecoveryTime: 2
   closeRangeActionDistance: 2
   hitParticle: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7, type: 3}

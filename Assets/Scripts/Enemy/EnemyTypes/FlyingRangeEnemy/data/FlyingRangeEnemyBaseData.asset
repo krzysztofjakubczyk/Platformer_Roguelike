@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f3959a6aacec848b007ecc7c111de4, type: 3}
   m_Name: FlyingRangeEnemyBaseData
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 20
   damageHopSpeed: 10
   wallCheckDistance: 0.7
   LedgeCheckDistance: 1
   groundCheckRadius: 0.3
   minAgroDistance: 7
+  minEnemyAgroDistance: 3
   maxAgroDistance: 8
-  stunResistance: 3
+  stunResistance: 10
   stunRecoveryTime: 2
   closeRangeActionDistance: 1
   hitParticle: {fileID: 1429954232896169633, guid: 83036083a4ebcd34f98131bd3cf6f4d2, type: 3}

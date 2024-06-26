@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRadius: 1.5
   attackDamage: 10
-  pushForce: 10
+  pushForce: 5
   vectorPush: {x: 1, y: 1}
   whatIsPlayer:
     serializedVersion: 2

@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97d4461cd0de0224cb2bcd242c4ab126, type: 3}
-  m_Name: FlyingRangeEnemyLookForPlayerStateData
+  m_Script: {fileID: 11500000, guid: 7b791a2ae9bd3b547b2cc509c7f8acf7, type: 3}
+  m_Name: FlyingEnemyStunStateData
   m_EditorClassIdentifier: 
-  amountOfTurns: 3
-  timeBetweenTurns: 0.5
+  stunTime: 1
+  stunKnockbackTime: 0.2
+  stunKnockbackSpeed: 20
+  stunKnockbackAngle: {x: 0, y: 1}
