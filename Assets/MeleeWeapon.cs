@@ -11,6 +11,8 @@ public class MeleeWeapon : MonoBehaviour
     [SerializeField] float attackRate;
     [SerializeField] float attackDelay;
 
+    AudioSource audio;
+
     PlayerStatsFin playerStats;
 
     bool canAttack = true;
@@ -29,8 +31,8 @@ public class MeleeWeapon : MonoBehaviour
     {
         player = transform.parent.gameObject;
         animator = player.GetComponent<Animator>();
-
         animatorSword = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
 
         GetComponent<BoxCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
@@ -56,6 +58,7 @@ public class MeleeWeapon : MonoBehaviour
             Invoke(nameof(allowAttack), attackRate);
 
             FlipSword();
+            audio.Play();
 
             GetComponent<SpriteRenderer>().enabled = true;
             animator.SetTrigger("Attacking");

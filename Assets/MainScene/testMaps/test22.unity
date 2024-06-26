@@ -242,35 +242,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1495576808895505087, guid: f4f9e5d8979eeba43867d696ec0aa9db, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1495576808895505087, guid: f4f9e5d8979eeba43867d696ec0aa9db, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1495576808895505087, guid: f4f9e5d8979eeba43867d696ec0aa9db, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 136.66666
       objectReference: {fileID: 0}
     - target: {fileID: 1495576808895505087, guid: f4f9e5d8979eeba43867d696ec0aa9db, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -140
       objectReference: {fileID: 0}
     - target: {fileID: 1543570068119856394, guid: f4f9e5d8979eeba43867d696ec0aa9db, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1543570068119856394, guid: f4f9e5d8979eeba43867d696ec0aa9db, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1543570068119856394, guid: f4f9e5d8979eeba43867d696ec0aa9db, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 583.33325
       objectReference: {fileID: 0}
     - target: {fileID: 1543570068119856394, guid: f4f9e5d8979eeba43867d696ec0aa9db, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -140
       objectReference: {fileID: 0}
     - target: {fileID: 2063256929956163304, guid: f4f9e5d8979eeba43867d696ec0aa9db, type: 3}
       propertyPath: m_Pivot.x
@@ -366,19 +366,19 @@ PrefabInstance:
       objectReference: {fileID: 1494167389}
     - target: {fileID: 8025420006225131354, guid: f4f9e5d8979eeba43867d696ec0aa9db, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8025420006225131354, guid: f4f9e5d8979eeba43867d696ec0aa9db, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8025420006225131354, guid: f4f9e5d8979eeba43867d696ec0aa9db, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 359.99997
       objectReference: {fileID: 0}
     - target: {fileID: 8025420006225131354, guid: f4f9e5d8979eeba43867d696ec0aa9db, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -140
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -753,6 +753,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4039128771887772745, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039128771887772745, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 18b53d37a055c76498e639e5cd7eb007, type: 3}
     - target: {fileID: 5104819628213200034, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.77
@@ -792,6 +800,10 @@ PrefabInstance:
     - target: {fileID: 5104819628213200034, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056843665333571015, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16920,7 +16932,7 @@ Transform:
   m_GameObject: {fileID: 1142257150}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.91, y: 1.87, z: 0}
+  m_LocalPosition: {x: -7.65, y: 3.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18084,7 +18096,13 @@ MonoBehaviour:
   indexForBossScene: 0600000007000000
   loadedSceneIndexes: 
   mapInstance: {fileID: 0}
+  firstStaticScene: 0
+  player: {fileID: 0}
+  panelToSceneLoader: {fileID: 0}
+  UIControllers: {fileID: 0}
+  loadingSlider: {fileID: 0}
   currentFloor: 0
+  loadedScenes: 0
   isShopLoaded: 0
   hasShopBeenLoaded: 0
 --- !u!1 &2005817366
