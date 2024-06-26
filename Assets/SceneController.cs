@@ -4,6 +4,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
+using System.Threading;
+using UnityEngine.UI;
 
 public class SceneController : MonoBehaviour
 {
@@ -16,6 +18,10 @@ public class SceneController : MonoBehaviour
     [SerializeField] private MapTranistion mapInstance;
     [SerializeField] private Dictionary<int, List<int>> floorSceneIndexes = new Dictionary<int, List<int>>();
     [SerializeField] private int firstStaticScene;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject panelToSceneLoader;
+    [SerializeField] private GameObject UIControllers;
+    [SerializeField] private Slider loadingSlider;
     public Action changeEnemyPos;
 
     private const int minFloorSize = 2;
@@ -30,14 +36,13 @@ public class SceneController : MonoBehaviour
     float lastPosition = 0f;
     void Start()
     {
-
         loadedSceneIndexes.Add(0);
-        VectorOfYPostionFirstScene = new Vector3(0, (int)(SceneManager.GetActiveScene().GetRootGameObjects()[0].transform.position.y), 0);
         if (moveAmount == Vector3.zero)
         {
             moveAmount = new Vector3(37, 0, 0);
         }
         InitializeFloors();
+
     }
 
     private void InitializeFloors()
@@ -157,10 +162,10 @@ public class SceneController : MonoBehaviour
                 lastPosition += moveAmount.x;
                 originalPosition.x = lastPosition;
             }
-
+            VectorOfYPostionFirstScene = new Vector3(0, (int)(SceneManager.GetActiveScene().GetRootGameObjects()[0].transform.position.y), 0);
             originalPosition.y = VectorOfYPostionFirstScene.y;
             sceneObject.transform.position = originalPosition;
-            Debug.Log("Nowa pozycja: " + originalPosition.x);
+            Debug.Log("Nowa pozycja: " + originalPosition.x + "y: " + originalPosition.y);
 
             if (loadScene.buildIndex == shopSceneIndex)
             {
@@ -190,7 +195,22 @@ public class SceneController : MonoBehaviour
 
     public void StartGameButton()
     {
-        SceneManager.LoadScene(firstStaticScene);
+        StartCoroutine(LoadSceneLoaderScene(firstStaticScene));
+    }
+    private IEnumerator LoadSceneLoaderScene(int levelToLoad)
+    {
+        panelToSceneLoader.SetActive(true);
+        player.SetActive(true);
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelToLoad);
+        while(!asyncLoad.isDone)
+        {
+            float progressValue = Mathf.Clamp01(asyncLoad.progress / 0.9f);
+            loadingSlider.value = progressValue;
+            yield return null;
+        }
+        UIControllers.SetActive(true);
+        panelToSceneLoader.SetActive(false);
     }
     public void EndGameButton()
     {
