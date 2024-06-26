@@ -15,12 +15,13 @@ public class SceneController : MonoBehaviour
     [SerializeField] private List<int> loadedSceneIndexes = new List<int>();
     [SerializeField] private MapTranistion mapInstance;
     [SerializeField] private Dictionary<int, List<int>> floorSceneIndexes = new Dictionary<int, List<int>>();
+    [SerializeField] private int firstStaticScene;
     public Action changeEnemyPos;
 
     private const int minFloorSize = 2;
     private const int maxFloorSize = 5;
     public int currentFloor = 0;
-    private int loadedScenes;
+    public int loadedScenes;
     private int indexOfSceneToSpawn;
     private Vector3 VectorOfYPostionFirstScene;
     private List<int> shopInsertedFloors = new List<int>();
@@ -107,7 +108,7 @@ public class SceneController : MonoBehaviour
         Scene scene = SceneManager.GetSceneByBuildIndex(indexOfSceneToSpawn);
         MoveScene(scene);
         SceneManager.SetActiveScene(scene);
-        changeEnemyPos.Invoke();
+        changeEnemyPos?.Invoke();
     }
 
     public void UnLoadScene()
@@ -160,7 +161,7 @@ public class SceneController : MonoBehaviour
             originalPosition.y = VectorOfYPostionFirstScene.y;
             sceneObject.transform.position = originalPosition;
             Debug.Log("Nowa pozycja: " + originalPosition.x);
-           
+
             if (loadScene.buildIndex == shopSceneIndex)
             {
                 isShopLoaded = true;
@@ -172,6 +173,7 @@ public class SceneController : MonoBehaviour
             
         }
     }
+
     private IEnumerator LoadSceneWithDelayCoroutine(float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -186,6 +188,22 @@ public class SceneController : MonoBehaviour
         }
     }
 
+    public void StartGameButton()
+    {
+        SceneManager.LoadScene(firstStaticScene);
+    }
+    public void EndGameButton()
+    {
+        Application.Quit();
+    }
+    public void SettingsGameButton()
+    {
+        //doladuj ustawienia
+    }
+    public void ContinueGameButton()
+    {
+        //kontynuuj gre
+    }
     private IEnumerator SceneFadeIn()
     {
         SceneFadeManager._instance.StartFadeIn();
@@ -204,9 +222,8 @@ public class SceneController : MonoBehaviour
     {
         yield return SceneFadeOut(); // Fade-out przed za³adowaniem nowej sceny
         currentFloor++;
-        hasShopBeenLoaded = false;
         LoadScene();
-        SceneManager.UnloadSceneAsync(indexForBossScene[currentFloor-1]);
+        hasShopBeenLoaded = false;
         yield return SceneFadeIn(); // Fade-in po za³adowaniu nowej sceny
 
     }
