@@ -10,9 +10,10 @@ public class MeleeWeapon : MonoBehaviour
     [SerializeField] float stunDamage;
     [SerializeField] float attackRate;
     [SerializeField] float attackDelay;
-
+    [SerializeField] LayerMask whatIsGround;
     PlayerStatsFin playerStats;
 
+    [SerializeField] GameObject rockHit;
     bool canAttack = true;
 
     bool upPressed;
@@ -31,7 +32,7 @@ public class MeleeWeapon : MonoBehaviour
         animator = player.GetComponent<Animator>();
 
         animatorSword = GetComponent<Animator>();
-
+        whatIsGround = (1 << 6) | (1 << 9);
         GetComponent<BoxCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
 
@@ -69,8 +70,14 @@ public class MeleeWeapon : MonoBehaviour
     {
         if(collision.tag != "Enemy")
         {
+            if (collision.gameObject.layer != 0 && ((1 << collision.gameObject.layer) & whatIsGround) != 0) {
+                Debug.Log("layer trafiony " + collision.gameObject.layer);
+                Instantiate(rockHit, transform.position, Quaternion.identity);
+            }
+            
             return;
         }
+
 
         if (collision.transform.parent != null)
         {

@@ -36,11 +36,14 @@ public class FlyingRangeEnemyBackToPatrolState : BackToPatrolState
   entity.aliveGameObject.transform.position.z
 );
 
-        if (Math.Abs(Vector3.Distance(entity.aliveGameObject.transform.position, roundedPatrolPoint)) < 110f)
+        if (Math.Abs(Vector3.Distance(entity.aliveGameObject.transform.localPosition, roundedPatrolPoint)) < 1f)
         {
             stateMachine.ChangeState(enemy.moveState);
         }
-        else Debug.Log("false zmiana nietoperza na move state dystans " + Math.Abs(Vector3.Distance(entity.aliveGameObject.transform.position, roundedPatrolPoint)));
+        else Debug.Log("false zmiana diab³a na move state dystans " 
+            + Math.Abs(Vector3.Distance(entity.aliveGameObject.transform.localPosition, roundedPatrolPoint))
+            + "pozycja globalna "+entity.aliveGameObject.transform.position+
+            "pozycja lokalna "+ entity.aliveGameObject.transform.localPosition);
     }
 
     public override void PhysicsUpdate()

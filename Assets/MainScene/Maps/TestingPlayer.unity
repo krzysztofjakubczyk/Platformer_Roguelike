@@ -801,6 +801,14 @@ PrefabInstance:
       propertyPath: canRecover
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9162844508501202121, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
+      propertyPath: rockHit
+      value: 
+      objectReference: {fileID: 1040608886635896, guid: a97415c6b57076f41a6621a7b51d63a3, type: 3}
+    - target: {fileID: 9162844508501202121, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
+      propertyPath: whatIsGround.m_Bits
+      value: 576
+      objectReference: {fileID: 0}
     - target: {fileID: 9197745978974536674, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
       propertyPath: m_IsActive
       value: 0
