@@ -183,37 +183,23 @@ public class SceneController : MonoBehaviour
         yield return new WaitForSeconds(delay);
         LoadScene();
     }
-    private IEnumerator SceneFadeOut()
-    {
-        SceneFadeManager._instance.StartFadeOut();
-        while (SceneFadeManager._instance.isFadingOut)
-        {
-            yield return null;
-        }
-    }
-
-    private IEnumerator SceneFadeIn()
-    {
-        SceneFadeManager._instance.StartFadeIn();
-        while (SceneFadeManager._instance.isFadingIn)
-        {
-            yield return null;
-        }
-    }
 
     public void AfterBossDeath()
     {
-        StartCoroutine(HandleAfterBossDeath());
-    }
-
-    private IEnumerator HandleAfterBossDeath()
-    {
-        yield return SceneFadeOut(); // Fade-out przed za³adowaniem nowej sceny
         currentFloor++;
-        LoadScene();
         hasShopBeenLoaded = false;
-        yield return SceneFadeIn(); // Fade-in po za³adowaniu nowej sceny
+        StartCoroutine(LoadFirstSceneOfNextFloor());
+    }
+    private IEnumerator LoadFirstSceneOfNextFloor()
+    {
+        // Za³aduj pierwsz¹ scenê nowego piêtra
+        if (floorSceneIndexes.ContainsKey(currentFloor) && floorSceneIndexes[currentFloor].Count > 0)
+        {
+            indexOfSceneToSpawn = floorSceneIndexes[currentFloor][0];
+            StartCoroutine(LoadSceneCoroutine());
+        }
 
+        yield return null;
     }
     public int GetLastIndexOfSceneSpawned()
     {
