@@ -42,7 +42,7 @@ public class Entity : MonoBehaviour
     public virtual void Start()
     {
         sceneController = sceneManager.GetComponent<SceneController>();
-        sceneController.changeEnemyPos += SetPatrolPoint;
+        //sceneController.changeEnemyPos += SetPatrolPoint;
         facingDirection = 1;
         currentHealth = entityData.maxHealth;
         currentStunResistance = entityData.stunResistance;
@@ -206,10 +206,10 @@ public class Entity : MonoBehaviour
                 rb.AddForce(new Vector2(1, 1), ForceMode2D.Impulse);
         }
     }
-    private void SetPatrolPoint()
-    {
-        patrolPoint = transform.position;
-        print(patrolPoint + " pozycja patrolowa "+ aliveGameObject.transform.parent.gameObject.name);
-    }
+    //private void SetPatrolPoint()
+    //{
+    //    patrolPoint = transform.position;
+    //    print(patrolPoint + " pozycja patrolowa "+ aliveGameObject.transform.parent.gameObject.name);
+    //}
 
 }

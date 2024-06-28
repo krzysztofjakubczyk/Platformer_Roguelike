@@ -3,7 +3,7 @@ using UnityEngine;
 public class HealthController : StatConroller
 {
     Animator animator;
-
+    [SerializeField] SceneController sceneController;
     PlayerStatsFin playerStats;
     
     private void Awake()
@@ -14,7 +14,7 @@ public class HealthController : StatConroller
     {
         if (collision.transform.CompareTag("Enemy") || collision.transform.CompareTag("enemyBullet"))
         {
-            SubAmount(1);
+            SubAmount(5);
             animator.SetTrigger("Hurting");
 
         }
@@ -28,6 +28,7 @@ public class HealthController : StatConroller
             playerStats = GetComponent<PlayerStatsManager>().playerStats;
             UpdateAllStats();
         }
+
 
     }
 
@@ -55,5 +56,9 @@ public class HealthController : StatConroller
                     break;
             }
         }
+    }
+    public void OnDeath()
+    {
+        sceneController.onPlayersDeath();
     }
 }

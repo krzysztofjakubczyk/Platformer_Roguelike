@@ -172,8 +172,8 @@ MonoBehaviour:
   entityData: {fileID: 11400000, guid: ac80a2b4440a8494d81350d2c9f86b09, type: 2}
   sceneManager: {fileID: 6820872453537031780, guid: 42b111e899c2e20489c4b4d97890f03b, type: 3}
   player: {fileID: 1922316363251511598, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
-  patrolPoint: {x: 0, y: 0, z: 0}
-  playerHp: {fileID: 0}
+  patrolPoint: {x: 0, y: 0}
+  playerHp: {fileID: 8834038255314397138, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
   currentHealth: 0
   currentStunResistance: 0
   lastDamageTime: 0

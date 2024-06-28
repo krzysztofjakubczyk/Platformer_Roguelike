@@ -1,11 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System;
-using System.Threading;
-using UnityEngine.UI;
 
 public class SceneController : MonoBehaviour
 {
@@ -17,12 +15,9 @@ public class SceneController : MonoBehaviour
     [SerializeField] private List<int> loadedSceneIndexes = new List<int>();
     [SerializeField] private MapTranistion mapInstance;
     [SerializeField] private Dictionary<int, List<int>> floorSceneIndexes = new Dictionary<int, List<int>>();
-    [SerializeField] private int firstStaticScene;
     [SerializeField] private GameObject player;
-    [SerializeField] private GameObject panelToSceneLoader;
-    [SerializeField] private GameObject UIControllers;
-    [SerializeField] private Slider loadingSlider;
-    public Action changeEnemyPos;
+    [SerializeField] private int indexOfDeathScene;
+    //public Action changeEnemyPos;
 
     private const int minFloorSize = 2;
     private const int maxFloorSize = 5;
@@ -31,8 +26,8 @@ public class SceneController : MonoBehaviour
     private int indexOfSceneToSpawn;
     private Vector3 VectorOfYPostionFirstScene;
     private List<int> shopInsertedFloors = new List<int>();
-    [SerializeField]private bool isShopLoaded = false;
-    [SerializeField]private bool hasShopBeenLoaded = false;
+    [SerializeField] private bool isShopLoaded = false;
+    [SerializeField] private bool hasShopBeenLoaded = false;
     float lastPosition = 0f;
     void Start()
     {
@@ -91,7 +86,7 @@ public class SceneController : MonoBehaviour
 
     public void LoadScene()
     {
-        indexOfSceneToSpawn = floorSceneIndexes[currentFloor].First();  
+        indexOfSceneToSpawn = floorSceneIndexes[currentFloor].First();
         if (IsSceneAlreadyLoaded(indexOfSceneToSpawn))
         {
             return;
@@ -103,6 +98,10 @@ public class SceneController : MonoBehaviour
         StartCoroutine(LoadSceneCoroutine());
     }
 
+    public void onPlayersDeath()
+    {
+        SceneManager.LoadScene(indexOfDeathScene);
+    }
     private IEnumerator LoadSceneCoroutine()
     {
         floorSceneIndexes[currentFloor].Remove(indexOfSceneToSpawn);
@@ -113,7 +112,7 @@ public class SceneController : MonoBehaviour
         Scene scene = SceneManager.GetSceneByBuildIndex(indexOfSceneToSpawn);
         MoveScene(scene);
         SceneManager.SetActiveScene(scene);
-        changeEnemyPos?.Invoke();
+        //changeEnemyPos?.Invoke();
     }
 
     public void UnLoadScene()
@@ -175,7 +174,7 @@ public class SceneController : MonoBehaviour
             {
                 isShopLoaded = false;
             }
-            
+
         }
     }
 
@@ -193,37 +192,6 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    public void StartGameButton()
-    {
-        StartCoroutine(LoadSceneLoaderScene(firstStaticScene));
-    }
-    private IEnumerator LoadSceneLoaderScene(int levelToLoad)
-    {
-        panelToSceneLoader.SetActive(true);
-        player.SetActive(true);
-
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelToLoad);
-        while(!asyncLoad.isDone)
-        {
-            float progressValue = Mathf.Clamp01(asyncLoad.progress / 0.9f);
-            loadingSlider.value = progressValue;
-            yield return null;
-        }
-        UIControllers.SetActive(true);
-        panelToSceneLoader.SetActive(false);
-    }
-    public void EndGameButton()
-    {
-        Application.Quit();
-    }
-    public void SettingsGameButton()
-    {
-        //doladuj ustawienia
-    }
-    public void ContinueGameButton()
-    {
-        //kontynuuj gre
-    }
     private IEnumerator SceneFadeIn()
     {
         SceneFadeManager._instance.StartFadeIn();
