@@ -5,7 +5,10 @@ using UnityEngine;
 public class MoneyManager : MonoBehaviour
 {
     [SerializeField] int money;
-
+    private void Start()
+    {
+        Coin.addMoney += AddMoney;
+    }
     public void AddMoney(int Add) 
     { 
         money += Add; 

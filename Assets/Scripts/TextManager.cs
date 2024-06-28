@@ -37,6 +37,7 @@ public class TextManager : MonoBehaviour
     MoneyManager moneyManager;
     SpellManager spellManager;
     ItemOnShop itemOnShop;
+    Coin coin;
 
 
     // Start is called before the first frame update
@@ -45,7 +46,7 @@ public class TextManager : MonoBehaviour
         playerStatsManager = player.GetComponent<PlayerStatsManager>();
         moneyManager = player.GetComponent<MoneyManager>();
         spellManager = player.GetComponent<SpellManager>();
-
+        
         SpellValues = new Dictionary<string, string>();
         SpellIcons = new Dictionary<int, Sprite>();
         for (int i = 0; i < 5; i++)
