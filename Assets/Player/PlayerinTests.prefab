@@ -203,6 +203,7 @@ MonoBehaviour:
   currentAmount: 0
   recoverTime: 0.05
   canRecover: 0
+  sceneController: {fileID: 0}
 --- !u!114 &6015207124225747833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,6 +247,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 60060b64debc75148b11361357197a27, type: 3}
   - {fileID: 8300000, guid: 9a00d355163be5242ad0cdbb82009300, type: 3}
   audioSpeed: 0.35
+  jumpAudio: {fileID: 0}
+  getHitAudio: {fileID: 0}
+  dashAudio: {fileID: 0}
   speed: 5
   jumpingPower: 16
   dashPower: 8
@@ -253,7 +257,7 @@ MonoBehaviour:
   rightWallJump: 0.5
   WJleft: {fileID: 9197745978974536674}
   WJright: {fileID: 6096011072974974785}
-  coyoteTimeDuration: 1
+  coyoteTimeDuration: 0.15
   pushBackForce: 5
 --- !u!95 &4924503599912042665
 Animator:
@@ -283,7 +287,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922316363251511598}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c6d74f37b74b874793f1984b8993861, type: 3}
   m_Name: 
@@ -346,7 +350,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9a00d355163be5242ad0cdbb82009300, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.05
+  m_Volume: 0.32
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -702,7 +706,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 18b53d37a055c76498e639e5cd7eb007, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

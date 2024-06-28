@@ -114,7 +114,7 @@ MonoBehaviour:
   platformLayer:
     serializedVersion: 2
     m_Bits: 576
-  delay: 1
+  delay: 0
 --- !u!82 &-6296435401379608012
 AudioSource:
   m_ObjectHideFlags: 0

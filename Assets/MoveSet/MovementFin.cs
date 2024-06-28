@@ -108,14 +108,11 @@ public class MovementFin : MonoBehaviour
                     StartCoroutine(runningSound());
             }
         }
-
         else
         {
             animator.SetBool("isRunning", false);
             playingSoundOn = false;
         }
-
-
 
         if (isJumpingLeft)
         {
