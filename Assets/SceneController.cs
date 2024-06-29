@@ -62,6 +62,7 @@ public class SceneController : MonoBehaviour
             do
             {
                 randomIndex = UnityEngine.Random.Range(1, 4);
+                print("to tu zacina");
             }
             while (sceneIndexes.Contains(randomIndex));
 
@@ -83,7 +84,7 @@ public class SceneController : MonoBehaviour
         }
 
         floorSceneIndexes[floor].Add(indexForBossScene[floor]);
-        Debug.Log("BOSS SCENE NUMBER " + floorSceneIndexes[floor].Last());
+        //Debug.Log("BOSS SCENE NUMBER " + floorSceneIndexes[floor].Last());
     }
 
     public void LoadScene()

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using Unity.Collections.LowLevel.Unsafe;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class MovementFin : MonoBehaviour
 {
@@ -10,6 +14,9 @@ public class MovementFin : MonoBehaviour
     LayerMask pustwarstwa;
 
     PlayerStatsFin playerStats;
+
+    [SerializeField] GameObject vignette;
+    byte vinetteVisible = 255;
 
     AudioSource audio;
     [SerializeField] AudioClip[] runningClips;
@@ -30,10 +37,6 @@ public class MovementFin : MonoBehaviour
     BoxCollider2D boxCollider;
     Animator animator;
     Transform sword;
-
-    //wall jumps colliders
-    [SerializeField] GameObject WJleft;
-    [SerializeField] GameObject WJright;
 
     float horizontal;
     float lastDirection;
@@ -212,10 +215,10 @@ public class MovementFin : MonoBehaviour
         else if (horizontal < 0)
             transform.GetComponent<SpriteRenderer>().flipX = false;
 
-        if(horizontal == 0 && rb.velocity.x > 0.1f)
-            transform.GetComponent<SpriteRenderer>().flipX = true;
-        else if (horizontal == 0 && rb.velocity.x < -0.1f)
-            transform.GetComponent<SpriteRenderer>().flipX = false;
+        //if(horizontal == 0 && rb.velocity.x > 0.1f)
+        //    transform.GetComponent<SpriteRenderer>().flipX = true;
+        //else if (horizontal == 0 && rb.velocity.x < -0.1f)
+        //    transform.GetComponent<SpriteRenderer>().flipX = false;
 
         if (isJumping)
         {
@@ -301,11 +304,30 @@ public class MovementFin : MonoBehaviour
 
         audio.PlayOneShot(getHitAudio, 1f);
 
+        vignette.SetActive(true);
+        StartCoroutine(HideBlood());
+
         if (coll.transform.position.x > transform.position.x)
             rb.AddForce(new Vector2(-1, 1) * pushBackForce, ForceMode2D.Impulse);
-        else //(coll.transform.position.x < transform.position.x)
+        else
             rb.AddForce(new Vector2(1, 1) * pushBackForce, ForceMode2D.Impulse);
+
         StartCoroutine(ChangeDamageEnterFlagAfterDelay(false, 0.5f));
+    }
+
+
+    IEnumerator HideBlood()
+    {
+        vinetteVisible = 255;
+        
+        while (vinetteVisible > 20)
+        {
+            vignette.GetComponent<UnityEngine.UI.Image>().color = new Color32(255,0,0, vinetteVisible);
+            vinetteVisible -= 15;
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        vignette.SetActive(false);
     }
 
     IEnumerator runningSound()

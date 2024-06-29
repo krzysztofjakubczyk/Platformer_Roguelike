@@ -31,6 +31,8 @@ public class Coin : MonoBehaviour
         anim.enabled = true;
         //GetComponent<CircleCollider2D>().isTrigger = true;
     }
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.CompareTag("Player"))
