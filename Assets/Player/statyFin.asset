@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
   - statName: 0
-    value: 100
+    value: 200
   - statName: 1
-    value: 100
+    value: 165
   - statName: 2
     value: 0.1
   - statName: 3
-    value: 100
+    value: 120
   - statName: 4
     value: 100
   - statName: 5
-    value: 0.1
+    value: 0.05
   - statName: 6
     value: 5
   - statName: 8
@@ -32,7 +32,7 @@ MonoBehaviour:
   - statName: 7
     value: 0.3
   - statName: 9
-    value: 10
+    value: 15
   - statName: 10
     value: 5
   - statName: 11
@@ -40,7 +40,7 @@ MonoBehaviour:
   - statName: 12
     value: 15
   - statName: 13
-    value: 10
+    value: 15
   - statName: 14
     value: 14
   - statName: 15
