@@ -17,6 +17,8 @@ public class SceneController : MonoBehaviour
     [SerializeField] private Dictionary<int, List<int>> floorSceneIndexes = new Dictionary<int, List<int>>();
     [SerializeField] private GameObject player;
     [SerializeField] private int indexOfDeathScene;
+    [SerializeField] private int indexOfSecondFloorsScene;
+
     //public Action changeEnemyPos;
 
     private const int minFloorSize = 2;
@@ -59,7 +61,7 @@ public class SceneController : MonoBehaviour
             int randomIndex;
             do
             {
-                randomIndex = UnityEngine.Random.Range(1, 5);
+                randomIndex = UnityEngine.Random.Range(1, 4);
             }
             while (sceneIndexes.Contains(randomIndex));
 
@@ -95,19 +97,19 @@ public class SceneController : MonoBehaviour
         {
             StartCoroutine(LoadSceneWithDelayCoroutine(5f));
         }
-        StartCoroutine(LoadSceneCoroutine());
+        StartCoroutine(LoadSceneCoroutine(LoadSceneMode.Additive));
     }
 
     public void onPlayersDeath()
     {
         SceneManager.LoadScene(indexOfDeathScene);
     }
-    private IEnumerator LoadSceneCoroutine()
+    private IEnumerator LoadSceneCoroutine(LoadSceneMode mode)
     {
         floorSceneIndexes[currentFloor].Remove(indexOfSceneToSpawn);
         loadedScenes++;
         loadedSceneIndexes.Add(indexOfSceneToSpawn);
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(indexOfSceneToSpawn, LoadSceneMode.Additive);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(indexOfSceneToSpawn, mode);
         yield return asyncLoad;
         Scene scene = SceneManager.GetSceneByBuildIndex(indexOfSceneToSpawn);
         MoveScene(scene);
@@ -118,7 +120,7 @@ public class SceneController : MonoBehaviour
     public void UnLoadScene()
     {
         int sceneIndexToUnload = loadedSceneIndexes.First();
-        Debug.Log(sceneIndexToUnload + "UNLOADSCENE");
+        Debug.Log("Po smierci bosa, scena do odladowania to:" + loadedSceneIndexes.First());
         SceneManager.UnloadSceneAsync(sceneIndexToUnload);
         loadedSceneIndexes.Remove(sceneIndexToUnload);
     }
@@ -184,11 +186,16 @@ public class SceneController : MonoBehaviour
         LoadScene();
     }
 
-    public void AfterBossDeath()
+    public IEnumerator AfterBossDeathAsync()
     {
+        foreach (int sceneIndex in loadedSceneIndexes)
+        {
+            yield return SceneManager.UnloadSceneAsync(sceneIndex);
+        }
+        loadedSceneIndexes.Clear();
         currentFloor++;
         hasShopBeenLoaded = false;
-        StartCoroutine(LoadFirstSceneOfNextFloor());
+        yield return StartCoroutine(LoadFirstSceneOfNextFloor());
     }
     private IEnumerator LoadFirstSceneOfNextFloor()
     {
@@ -196,7 +203,8 @@ public class SceneController : MonoBehaviour
         if (floorSceneIndexes.ContainsKey(currentFloor) && floorSceneIndexes[currentFloor].Count > 0)
         {
             indexOfSceneToSpawn = floorSceneIndexes[currentFloor][0];
-            StartCoroutine(LoadSceneCoroutine());
+            floorSceneIndexes[currentFloor].RemoveAt(0);
+            yield return StartCoroutine(LoadSceneCoroutine(LoadSceneMode.Single));
         }
 
         yield return null;

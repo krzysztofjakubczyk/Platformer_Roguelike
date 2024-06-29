@@ -15,11 +15,11 @@ EditorBuildSettings:
     path: Assets/MainScene/Maps/swordANDspell 4.unity
     guid: 60f8b731b079be749b3e5cd02a28cdbe
   - enabled: 1
-    path: Assets/MainScene/Maps/swordANDspell 3.unity
-    guid: b788a131d45366547a845a290cba5ad5
-  - enabled: 1
     path: Assets/MainScene/Maps/swordANDspell 5.unity
     guid: 96a0fc56d81e6c147bc6d89fe54535d4
+  - enabled: 1
+    path: Assets/MainScene/Maps/swordANDspell 3.unity
+    guid: b788a131d45366547a845a290cba5ad5
   - enabled: 1
     path: Assets/MainScene/Maps/ShopScene.unity
     guid: bcbe4c017fe0f9d4a87c0f519e366c70

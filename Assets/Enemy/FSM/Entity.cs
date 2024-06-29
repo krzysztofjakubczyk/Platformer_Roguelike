@@ -134,6 +134,7 @@ public class Entity : MonoBehaviour
         {
             isDeath = true;
             OnEnemyDeath?.Invoke();
+            GameObject.Destroy(gameObject);
         }
     }
     public virtual void Flip()
