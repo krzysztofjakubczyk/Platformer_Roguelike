@@ -103,11 +103,13 @@ public class TextManager : MonoBehaviour
             {"MovementValue", playerStatsManager.playerStats.stats[15].value},
             {"JumpPowerValue", playerStatsManager.playerStats.stats[14].value},
             {"DashPowerValue", playerStatsManager.playerStats.stats[16].value},
-            {"GoldValue", moneyManager.GetMoney()}
+            {"GoldValue", moneyManager.GetMoney()},
+            {"GoldValueInterface", moneyManager.GetMoney() }
         };
         playerStatsManager.updateGUI += UpdateGUI;
         ItemOnShop.updateGUIUpgrades += UpdateUpgrades;
         ItemOnShop.showDescription += ShowDescription;
+        moneyManager.updateGUI += UpdateGUI;
         UpdateGUI();
         inventory.SetActive(false);
     }
@@ -123,7 +125,8 @@ public class TextManager : MonoBehaviour
             StatsValues["JumpPowerValue"] = playerStatsManager.playerStats.stats[14].value;
             StatsValues["DashPowerValue"] = playerStatsManager.playerStats.stats[16].value;
             StatsValues["GoldValue"] = moneyManager.GetMoney();
-        
+            StatsValues["GoldValueInterface"] = moneyManager.GetMoney();
+
             float value = 0;
             StatsValues.TryGetValue(stat.name, out value);
 

@@ -13,14 +13,21 @@ public class Coin : MonoBehaviour
     [Range(1,50)]
     [SerializeField] 
     private int amount;
+    [Range(1, 10)]
+    [SerializeField]
+    private int amountBounce;
+    private int counterBounce;
+    [SerializeField]
+    private GameObject pickUpPrefab;
     // Start is called before the first frame update
     void Start()
     {
         Bounce();
-        Invoke(nameof(ReadyToCollect), 5); 
+        Invoke(nameof(ReadyToCollect), 3); 
     }
     void ReadyToCollect()
     {
+        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         anim.enabled = true;
         //GetComponent<CircleCollider2D>().isTrigger = true;
     }
@@ -30,10 +37,21 @@ public class Coin : MonoBehaviour
         {
             //tu bêdzie dodawanie monet dla gracza
             addMoney?.Invoke(amount);
+            Instantiate(pickUpPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
         else
         {
-            Bounce();
+            if(counterBounce<= amountBounce)
+            {
+                Bounce();
+                counterBounce++;
+            }
+            else
+            {
+                counterBounce = 0;
+            }
+            
         }
     }
     private void Bounce()

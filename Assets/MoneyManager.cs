@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class MoneyManager : MonoBehaviour
 {
+    public Action updateGUI;
     [SerializeField] int money;
     private void Start()
     {
@@ -11,12 +13,15 @@ public class MoneyManager : MonoBehaviour
     }
     public void AddMoney(int Add) 
     { 
-        money += Add; 
+        money += Add;
+        updateGUI?.Invoke();
     }
 
     public void SubMoney(int Substract) { 
         money -= Substract; 
     }
 
-    public int GetMoney() { return money; }
+    public int GetMoney() {
+        //updateGUI?.Invoke();
+        return money; }
 }
