@@ -5,6 +5,8 @@ using UnityEngine;
 public class DeathState : State
 {
     DeathStateData stateData;
+    public delegate void setPos(Vector3 pos);
+    public static event setPos setPosition;
     public DeathState(Entity entity, BaseStateMachine stateMachine, string animBoolName, DeathStateData stateData) : base(entity, stateMachine, animBoolName)
     {
         this.stateData = stateData;
@@ -18,7 +20,8 @@ public class DeathState : State
     public override void Enter()
     {
         base.Enter();
-
+        //tu wypadanie monet;
+        setPosition?.Invoke(entity.aliveGameObject.transform.position);
         GameObject.Instantiate(stateData.deathBloodParticle, entity.aliveGameObject.transform.position, stateData.deathBloodParticle.transform.rotation);
         GameObject.Instantiate(stateData.deathChunkParticle, entity.aliveGameObject.transform.position, stateData.deathChunkParticle.transform.rotation);
         
