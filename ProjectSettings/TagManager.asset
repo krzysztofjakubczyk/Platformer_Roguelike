@@ -32,6 +32,7 @@ TagManager:
   - NewOutDoors
   - LoadRoomTrigger
   - DoorsToNextLevel
+  - UI
   layers:
   - Default
   - TransparentFX

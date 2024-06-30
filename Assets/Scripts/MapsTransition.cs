@@ -9,7 +9,7 @@ public class MapTranistion : MonoBehaviour
     [SerializeField] private SceneController controller;
     private MoneyManager moneyManager;
     int howMoneyFromEnemy; // do wziecia z enemy dane
-
+    public bool isSecondBossKilled { get; set; } = false;
 
     private void Start()
     {
@@ -20,7 +20,7 @@ public class MapTranistion : MonoBehaviour
     void WhenEnemyDead()
     {
         getEnemies();
-        if (howManyEnemies == 1)
+        if (howManyEnemies == 1 && isSecondBossKilled == false)
         {
             controller.LoadScene();
             Invoke(nameof(LoadSceneElements), 1f);
