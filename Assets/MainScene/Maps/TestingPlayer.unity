@@ -19129,6 +19129,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1131560037}
     - target: {fileID: 8834038255314397138, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
+      propertyPath: canRecover
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834038255314397138, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
       propertyPath: sceneController
       value: 
       objectReference: {fileID: 6267933619230499945}
