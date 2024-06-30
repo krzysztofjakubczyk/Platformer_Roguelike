@@ -19,15 +19,16 @@ public class DeathState : State
 
     public override void Enter()
     {
+        setPosition?.Invoke(entity.aliveGameObject.transform.position);
         base.Enter();
         //tu wypadanie monet;
-        setPosition?.Invoke(entity.aliveGameObject.transform.position);
-
+        
+        Debug.Log("umieram");
         GameObject.Instantiate(stateData.deathBloodParticle, entity.aliveGameObject.transform.position, stateData.deathBloodParticle.transform.rotation);
         GameObject.Instantiate(stateData.deathChunkParticle, entity.aliveGameObject.transform.position, stateData.deathChunkParticle.transform.rotation);
         
         //entity.aliveGameObject.SetActive(false);
-        //GameObject.Destroy(entity);
+        //GameObject.Destroy(entity,0.1f);
     }
 
     public override void Exit()

@@ -133,8 +133,9 @@ public class Entity : MonoBehaviour
         if (currentHealth <= 0)
         {
             isDeath = true;
+            
             OnEnemyDeath?.Invoke();
-            GameObject.Destroy(gameObject);
+            GameObject.Destroy(gameObject,0.1f);
         }
     }
     public virtual void Flip()

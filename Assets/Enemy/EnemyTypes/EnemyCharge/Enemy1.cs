@@ -63,6 +63,7 @@ public class Enemy1 : Entity
     public override void DamageGet(AttackDetails attackDetails)
     {
         base.DamageGet(attackDetails);
+        
         if (isDeath && stateMachine.currentState != deathState) stateMachine.ChangeState(deathState);
         else if (isStunned && stateMachine.currentState != stunState) stateMachine.ChangeState(stunState);
     }

@@ -40,7 +40,7 @@ public class Coin : MonoBehaviour
             //tu bêdzie dodawanie monet dla gracza
             addMoney?.Invoke(amount);
             Instantiate(pickUpPrefab, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            Destroy(gameObject,0.1f);
         }
         else
         {
