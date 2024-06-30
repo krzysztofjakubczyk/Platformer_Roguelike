@@ -12,7 +12,7 @@ public class SceneController : MonoBehaviour
     [SerializeField] private Vector3 moveAmount = new Vector3(37, 0, 0);
     [SerializeField] private List<int> floorSizes;
     [SerializeField] private List<int> indexForBossScene;
-    [SerializeField] private List<int> loadedSceneIndexes = new List<int>();
+    public List<int> loadedSceneIndexes = new List<int>();
     [SerializeField] private MapTranistion mapInstance;
     [SerializeField] private Dictionary<int, List<int>> floorSceneIndexes = new Dictionary<int, List<int>>();
     [SerializeField] private GameObject player;
@@ -33,24 +33,20 @@ public class SceneController : MonoBehaviour
     float lastPosition = 0f;
     void Start()
     {
-        loadedSceneIndexes.Add(0);
-        if (moveAmount == Vector3.zero)
-        {
-            moveAmount = new Vector3(37, 0, 0);
-        }
-        InitializeFloors();
-
+        loadedSceneIndexes.Add(0); //pierwsza za³adowana scena to 0
+        StartCoroutine(InitializeFloorsCoroutine()); //zacznij losowanie indexow do konkretnych poziomow
     }
 
-    private void InitializeFloors()
+    private IEnumerator InitializeFloorsCoroutine()
     {
         for (int floor = 0; floor < floorSizes.Count; floor++)
         {
-            InitializeFloorScenes(floor);
+            Debug.Log("Zaczêto losowaæ piêtro: " + floor);
+            yield return StartCoroutine(InitializeFloorScenesCoroutine(floor));
         }
     }
 
-    private void InitializeFloorScenes(int floor)
+    private IEnumerator InitializeFloorScenesCoroutine(int floor)
     {
         int floorSize = UnityEngine.Random.Range(minFloorSize, maxFloorSize);
         floorSizes[floor] = floorSize;
@@ -62,7 +58,7 @@ public class SceneController : MonoBehaviour
             do
             {
                 randomIndex = UnityEngine.Random.Range(1, 4);
-                print("to tu zacina");
+                print("Losowany indeks: " + randomIndex);
             }
             while (sceneIndexes.Contains(randomIndex));
 
@@ -78,16 +74,18 @@ public class SceneController : MonoBehaviour
         // Dodanie sklepu na losowej pozycji, ale nie pierwszej ani ostatniej
         if (!shopInsertedFloors.Contains(floor))
         {
-            int shopPosition = UnityEngine.Random.Range(1, floorSize - 1); // Zapewnia, ¿e sklep nie bêdzie ani pierwszy, ani ostatni
+            int shopPosition = UnityEngine.Random.Range(1, floorSize - 1);
             floorSceneIndexes[floor].Insert(shopPosition, shopSceneIndex);
             shopInsertedFloors.Add(floor);
         }
 
         floorSceneIndexes[floor].Add(indexForBossScene[floor]);
-        //Debug.Log("BOSS SCENE NUMBER " + floorSceneIndexes[floor].Last());
+
+        yield return null; // Mo¿esz dodaæ opóŸnienie lub zwrot wartoœci, jeœli potrzebujesz
     }
 
-    public void LoadScene()
+
+public void LoadScene()
     {
         indexOfSceneToSpawn = floorSceneIndexes[currentFloor].First();
         if (IsSceneAlreadyLoaded(indexOfSceneToSpawn))
@@ -110,20 +108,27 @@ public class SceneController : MonoBehaviour
         floorSceneIndexes[currentFloor].Remove(indexOfSceneToSpawn);
         loadedScenes++;
         loadedSceneIndexes.Add(indexOfSceneToSpawn);
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(indexOfSceneToSpawn, mode);
-        yield return asyncLoad;
+        yield return SceneManager.LoadSceneAsync(indexOfSceneToSpawn, mode);
         Scene scene = SceneManager.GetSceneByBuildIndex(indexOfSceneToSpawn);
-        MoveScene(scene);
+        yield return StartCoroutine(MoveSceneCoroutine(scene)); // Dodaj wstrzymanie a¿ do zakoñczenia przesuniêcia sceny
         SceneManager.SetActiveScene(scene);
         //changeEnemyPos?.Invoke();
     }
 
-    public void UnLoadScene()
+    public IEnumerator UnLoadScene()
     {
-        int sceneIndexToUnload = loadedSceneIndexes.First();
-        Debug.Log("Po smierci bosa, scena do odladowania to:" + loadedSceneIndexes.First());
-        SceneManager.UnloadSceneAsync(sceneIndexToUnload);
-        loadedSceneIndexes.Remove(sceneIndexToUnload);
+        if (loadedSceneIndexes.Count > 0)
+        {
+            int sceneIndexToUnload = loadedSceneIndexes.First();
+            AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(sceneIndexToUnload);
+            yield return asyncUnload;
+
+            loadedSceneIndexes.Remove(sceneIndexToUnload);
+        }
+        else
+        {
+            Debug.LogWarning("No scenes to unload.");
+        }
     }
 
     private bool IsSceneAlreadyLoaded(int sceneIndex)
@@ -138,7 +143,7 @@ public class SceneController : MonoBehaviour
         return false;
     }
 
-    private void MoveScene(Scene loadScene)
+    private IEnumerator MoveSceneCoroutine(Scene loadScene)
     {
 
         GameObject[] sceneObjects = loadScene.GetRootGameObjects();
@@ -147,8 +152,6 @@ public class SceneController : MonoBehaviour
 
             GameObject sceneObject = sceneObjects[0];
             Vector3 originalPosition = sceneObject.transform.position;
-            // Jeœli w³aœnie za³adowano sklep, ustaw moveAmount na 23 dla nastêpnej sceny
-            Debug.Log("MOVE SCENE + IS SHOP LOADED" + isShopLoaded);
             if (isShopLoaded)
             {
                 hasShopBeenLoaded = true;
@@ -167,7 +170,6 @@ public class SceneController : MonoBehaviour
             VectorOfYPostionFirstScene = new Vector3(0, (int)(SceneManager.GetActiveScene().GetRootGameObjects()[0].transform.position.y), 0);
             originalPosition.y = VectorOfYPostionFirstScene.y;
             sceneObject.transform.position = originalPosition;
-            Debug.Log("Nowa pozycja: " + originalPosition.x + "y: " + originalPosition.y);
 
             if (loadScene.buildIndex == shopSceneIndex)
             {
@@ -177,7 +179,7 @@ public class SceneController : MonoBehaviour
             {
                 isShopLoaded = false;
             }
-
+            yield return null;
         }
     }
 
@@ -200,7 +202,6 @@ public class SceneController : MonoBehaviour
     }
     private IEnumerator LoadFirstSceneOfNextFloor()
     {
-        // Za³aduj pierwsz¹ scenê nowego piêtra
         if (floorSceneIndexes.ContainsKey(currentFloor) && floorSceneIndexes[currentFloor].Count > 0)
         {
             indexOfSceneToSpawn = floorSceneIndexes[currentFloor][0];

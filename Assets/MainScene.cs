@@ -5,26 +5,17 @@ using UnityEngine.UI;
 
 public class MainScene : MainMenuSceneController
 {
-    [SerializeField] private int firstStaticScene;
-    [SerializeField] private GameObject panelToSceneLoader;
-    [SerializeField] private Slider loadingSlider;
     public override void StartGameButton()
     {
-        StartCoroutine(LoadSceneLoaderScene(firstStaticScene));
+        StartCoroutine(LoadSceneLoaderScene());
     }
-    private IEnumerator LoadSceneLoaderScene(int levelToLoad)
+    private IEnumerator LoadSceneLoaderScene()
     {
-        panelToSceneLoader.SetActive(true);
+        yield return new WaitForSeconds(5);
+       SceneManager.LoadScene(0,LoadSceneMode.Single);
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelToLoad);
-        while (!asyncLoad.isDone)
-        {
-            float progressValue = Mathf.Clamp01(asyncLoad.progress / 0.9f);
-            loadingSlider.value = progressValue;
-            yield return null;
-        }
-        panelToSceneLoader.SetActive(false);
     }
+
     public override void EndGameButton()
     {
         base.EndGameButton();

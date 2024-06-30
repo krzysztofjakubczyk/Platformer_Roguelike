@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class MapTranistion : MonoBehaviour
@@ -5,28 +6,31 @@ public class MapTranistion : MonoBehaviour
     [SerializeField] int howManyEnemies;
     private GameObject transitionTrigger;
     private GameObject _OutsideDoors;
-    private SceneController controller;
+    [SerializeField] private SceneController controller;
     private MoneyManager moneyManager;
     int howMoneyFromEnemy; // do wziecia z enemy dane
 
 
     private void Start()
     {
-        Entity.OnEnemyDeath += WhenEnemyDead;
-        controller = FindObjectOfType<SceneController>();
+        Entity.OnEnemyDeath += WhenEnemyDead; 
         moneyManager = FindAnyObjectByType<MoneyManager>();
         getEnemies();
     }
     void WhenEnemyDead()
     {
-        getEnemies();
+        howManyEnemies--;
         if (howManyEnemies == 1)
         {
-            controller.LoadScene();
-            Invoke(nameof(LoadSceneElements), 1f);
+            StartCoroutine(LoadSceneAfterDelay(5f));
         }
     }
-    
+    private IEnumerator LoadSceneAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        controller.LoadScene();
+        LoadSceneElements();
+    }
     private void LoadSceneElements()
     {
         _OutsideDoors = GameObject.FindGameObjectWithTag("NewOutDoors");
