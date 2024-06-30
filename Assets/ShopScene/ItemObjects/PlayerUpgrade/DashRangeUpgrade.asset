@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Dash Range Upgrade
   Description: Ziolowy napar zwiekszajacy zasieg  dasha gracza
-  Cost: 5
+  Cost: 60
   ImageItem: {fileID: 885413621, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 16
   power: 3

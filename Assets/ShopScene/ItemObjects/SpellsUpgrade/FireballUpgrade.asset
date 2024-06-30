@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Firebal upgrade
   Description: Ulepszenie umiejetnosci gracza rzucania fireballem
-  Cost: 3
+  Cost: 98
   ImageItem: {fileID: 440813929, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 9
   power: 5

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Refresh Stamina Faster
   Description: Potion ktory daje graczowi umiejetnosc szybszego odnawiania staminy
-  Cost: 5
+  Cost: 300
   ImageItem: {fileID: 1735958976, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 5
   power: -0.05

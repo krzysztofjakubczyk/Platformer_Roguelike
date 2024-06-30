@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 'Movement Speed Upgrade '
   Description: Ziolowy napar zwiekszajacy szybkosc poruszania sie gracza
-  Cost: 5
+  Cost: 80
   ImageItem: {fileID: 44294141, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 15
   power: 3

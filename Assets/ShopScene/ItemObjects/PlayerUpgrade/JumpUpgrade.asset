@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Jump Upgrade
   Description: Ziolowy napar zwiekszajacy skok gracza
-  Cost: 5
+  Cost: 50
   ImageItem: {fileID: -745327640, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 14
   power: 3

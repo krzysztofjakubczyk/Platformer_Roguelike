@@ -82,4 +82,8 @@ public class HealthController : StatConroller
 
         vignette.SetActive(false);
     }
+    public void killme()
+    {
+        OnDeath();
+    }
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: ' Bouncing ball upgrade'
   Description: Ulepszenie umiejetnosci gracza odbijajacej sie kuli
-  Cost: 3
+  Cost: 52
   ImageItem: {fileID: 1272825447, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 0
   power: 0

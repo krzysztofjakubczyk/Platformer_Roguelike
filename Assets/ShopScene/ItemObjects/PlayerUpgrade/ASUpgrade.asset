@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 'Attack Speed Upgrade '
   Description: Ziolowy napar zwiekszajacy szybkosc ataku gracza
-  Cost: 5
+  Cost: 150
   ImageItem: {fileID: -705092254, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 7
   power: -0.2

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 'Dash Speed Upgrade '
   Description: Ziolowy napar zwiekszajacy szybkosc dasha gracza
-  Cost: 5
+  Cost: 50
   ImageItem: {fileID: 691021111, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 16
   power: 3

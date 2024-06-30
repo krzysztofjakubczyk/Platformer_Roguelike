@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Health Potion
   Description: Potion zwiekszajacy max HP
-  Cost: 5
+  Cost: 40
   ImageItem: {fileID: -1286055648, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 0
   power: 10

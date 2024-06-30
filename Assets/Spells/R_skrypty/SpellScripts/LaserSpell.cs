@@ -49,7 +49,19 @@ public class LaserSpell : Spell
             attackDetails.position = transform.position;
             attackDetails.damageAmount = damage;
             attackDetails.stunDamageAmount = stunDamage;
-            laserShoted2.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
+            //laserShoted2.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
+            if (laserShoted2.transform.parent != null)
+            {
+                if (laserShoted2.transform.parent.GetComponent<Entity>() != null)
+                {
+                    laserShoted2.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
+                }
+                else if (laserShoted2.transform.GetComponent<HealthController>() != null)
+                {
+                    laserShoted2.transform.GetComponent<HealthController>().SubAmount(damage);
+                }
+            }
+
             print(laserShoted2.transform.name);
         }
 

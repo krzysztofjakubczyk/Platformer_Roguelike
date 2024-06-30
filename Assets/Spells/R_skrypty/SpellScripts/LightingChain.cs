@@ -49,8 +49,20 @@ public class LightingChain : Spell
         attackDetails.position = transform.position;
         attackDetails.damageAmount = damage;
         attackDetails.stunDamageAmount = stunDamage;
-        collision.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
-        
+        //collision.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
+
+        if (collision.transform.parent != null)
+        {
+            if (collision.transform.parent.GetComponent<Entity>() != null)
+            {
+                collision.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
+            }
+            else if (collision.GetComponent<HealthController>() != null)
+            {
+                collision.GetComponent<HealthController>().SubAmount(damage);
+            }
+        }
+
         alreadyAttacked.Add(collision.GetInstanceID());
 
         jumpsNumberCurrent++;

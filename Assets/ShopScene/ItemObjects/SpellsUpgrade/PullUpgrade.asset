@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: pull upgrade
   Description: 'Ulepszenie umiejetnosci gracza przyciagania '
-  Cost: 3
+  Cost: 44
   ImageItem: {fileID: -154315097, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 0
   power: 0

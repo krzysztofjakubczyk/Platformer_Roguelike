@@ -51,13 +51,22 @@ public class FireBall : Spell
         // przykladowe wartosci
         AttackDetails attackDetails = new AttackDetails();
         attackDetails.position = transform.position;
-        attackDetails.damageAmount = 5;
-        attackDetails.stunDamageAmount = 5;
+        attackDetails.damageAmount = damage;
+        attackDetails.stunDamageAmount = stunDamage;
 
         foreach (Collider2D c in closeEnemies)
         {
-            c.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
-           // print(c.name);
+            if (c.transform.parent != null)
+            {
+                if (c.transform.parent.GetComponent<Entity>() != null)
+                {
+                    c.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
+                }
+                else if (c.GetComponent<HealthController>() != null)
+                {
+                    c.GetComponent<HealthController>().SubAmount(damage);
+                }
+            }
         }
         
         

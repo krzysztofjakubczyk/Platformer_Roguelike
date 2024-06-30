@@ -88,14 +88,22 @@ public class Obszarowy : Spell
             attackDetails.position = transform.position;
             attackDetails.damageAmount = damage;
             attackDetails.stunDamageAmount = stunDamage;
-            enemy.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
+            //enemy.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
+
+            if (enemy.transform.parent != null)
+            {
+                if (enemy.transform.parent.GetComponent<Entity>() != null)
+                {
+                    enemy.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
+                }
+                else if (enemy.GetComponent<HealthController>() != null)
+                {
+                    enemy.GetComponent<HealthController>().SubAmount(damage);
+                }
+            }
         }
-        //Destroy(gameObject);
-        Invoke(nameof(kill), 1);
+        Destroy(gameObject, 1f);
+
     }
 
-    void kill()
-    {
-        Destroy(gameObject);
-    }
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Full Health Potion
   Description: Potion ktory przywraca cale zycie graczowi
-  Cost: 5
+  Cost: 40
   ImageItem: {fileID: -1938480495, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 1
   power: 50

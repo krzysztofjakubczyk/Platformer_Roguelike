@@ -42,11 +42,24 @@ public class grabEnemy : Spell
         audio.Play();
         AttackDetails attackDetails = new AttackDetails();
         attackDetails.position = transform.position;
-        attackDetails.damageAmount = 5;
-        attackDetails.stunDamageAmount = 105;
+        attackDetails.damageAmount = damage;
+        attackDetails.stunDamageAmount = stunDamage;
         //to powy¿ej fajnie jakby by³o w funkcji ataku
 
-        target.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
+        //target.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
+
+        if (target.transform.parent != null)
+        {
+            if (target.transform.parent.GetComponent<Entity>() != null)
+            {
+                target.transform.parent.GetComponent<Entity>().DamageGet(attackDetails);
+            }
+            else if (target.GetComponent<HealthController>() != null)
+            {
+                target.GetComponent<HealthController>().SubAmount(damage);
+            }
+        }
+
         Vector2 dir2 = new Vector2(transform.position.x - target.transform.position.x, 0).normalized;
        
         float gravityof = target.GetComponent<Rigidbody2D>().gravityScale;
