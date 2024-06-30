@@ -22,10 +22,12 @@ public class DeathState : State
         base.Enter();
         //tu wypadanie monet;
         setPosition?.Invoke(entity.aliveGameObject.transform.position);
+
         GameObject.Instantiate(stateData.deathBloodParticle, entity.aliveGameObject.transform.position, stateData.deathBloodParticle.transform.rotation);
         GameObject.Instantiate(stateData.deathChunkParticle, entity.aliveGameObject.transform.position, stateData.deathChunkParticle.transform.rotation);
         
-        GameObject.Destroy(entity.aliveGameObject.transform.gameObject,1f);
+        //entity.aliveGameObject.SetActive(false);
+        //GameObject.Destroy(entity);
     }
 
     public override void Exit()
