@@ -24,7 +24,7 @@ MonoBehaviour:
   - statName: 4
     value: 120
   - statName: 5
-    value: 0.05
+    value: 0.1
   - statName: 6
     value: 5
   - statName: 8

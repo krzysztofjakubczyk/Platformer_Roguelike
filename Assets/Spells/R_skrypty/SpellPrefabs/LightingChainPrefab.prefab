@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  cost: 20
+  cost: 80
   damage: 5
   stunDamage: 5
   reachargeTime: 1

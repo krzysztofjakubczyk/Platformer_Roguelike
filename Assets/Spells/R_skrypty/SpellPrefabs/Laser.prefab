@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  cost: 2
+  cost: 80
   damage: 1
   stunDamage: 0
   reachargeTime: 0

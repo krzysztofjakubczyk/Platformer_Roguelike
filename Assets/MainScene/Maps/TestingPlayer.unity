@@ -290,6 +290,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3794802282044686807, guid: f4f9e5d8979eeba43867d696ec0aa9db, type: 3}
+      propertyPath: m_TagString
+      value: UI
+      objectReference: {fileID: 0}
     - target: {fileID: 5614921073464702321, guid: f4f9e5d8979eeba43867d696ec0aa9db, type: 3}
       propertyPath: statController
       value: 
@@ -18796,6 +18800,10 @@ PrefabInstance:
     - target: {fileID: 1922316363251511598, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3977101388054044226, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
+      propertyPath: recoverTime
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5104819628213200034, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
       propertyPath: m_LocalPosition.x
