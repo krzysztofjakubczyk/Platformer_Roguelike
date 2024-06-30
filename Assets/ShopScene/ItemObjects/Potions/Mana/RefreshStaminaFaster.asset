@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: RefreshStaminaFaster
   m_EditorClassIdentifier: 
   Name: Refresh Stamina Faster
-  Description: "Potion kt\xF3ry daje graczowi umiej\u0119tno\u015B\u0107 szybszego
-    odnawiania staminy"
+  Description: Potion ktory daje graczowi umiejetnosc szybszego odnawiania staminy
   Cost: 5
   ImageItem: {fileID: 1735958976, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 5

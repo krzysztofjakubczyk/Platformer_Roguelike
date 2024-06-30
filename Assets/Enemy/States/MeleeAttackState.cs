@@ -51,7 +51,9 @@ public class MeleeAttackState : AttackState
     public override void TriggerAttack()
     {
         base.TriggerAttack();
-        entity.gameObject.GetComponent<AudioSource>().Play();
+        Debug.Log(entity.gameObject.GetComponent<AudioSource>().name);
+        //entity.gameObject.GetComponent<AudioSource>().Play();
+        
         entity.playerHp.DamagePlayer(attackDetails.damageAmount);
         entity.playerTransform.gameObject.GetComponent<Rigidbody2D>().AddForce(stateData.vectorPush * stateData.pushForce, ForceMode2D.Impulse);
         //entity.pl

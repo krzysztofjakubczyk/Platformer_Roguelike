@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FullHealthPotion
   m_EditorClassIdentifier: 
   Name: Full Health Potion
-  Description: "Potion kt\xF3ry przywraca ca\u0142e \u017Cycie graczowi"
+  Description: Potion ktory przywraca cale zycie graczowi
   Cost: 5
   ImageItem: {fileID: -1938480495, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 1

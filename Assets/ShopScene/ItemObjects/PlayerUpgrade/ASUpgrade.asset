@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ASUpgrade
   m_EditorClassIdentifier: 
   Name: 'Attack Speed Upgrade '
-  Description: "Zio\u0142owy napar zwi\u0119kszajacy szybko\u015B\u0107 ataku gracza"
+  Description: Ziolowy napar zwiekszajacy szybkosc ataku gracza
   Cost: 5
   ImageItem: {fileID: -705092254, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 7

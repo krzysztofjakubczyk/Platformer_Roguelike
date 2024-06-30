@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MoreStamina
   m_EditorClassIdentifier: 
   Name: More Stamina
-  Description: "Zwi\u0119ksza ilo\u015B\u0107 maksymalnej staminy graczowi"
+  Description: Zwieksza ilosc maksymalnej staminy graczowi
   Cost: 3
   ImageItem: {fileID: -363413545, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 3
