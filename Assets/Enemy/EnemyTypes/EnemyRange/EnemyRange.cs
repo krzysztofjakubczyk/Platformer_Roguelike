@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class EnemyRange : Entity
 {
-    public ER_MoveState moveState { get; private set; }
-    public ER_IdleState idleState { get; private set; }
-    public ER_PlayerDetectedState playerDetectedState { get; private set; }
-    public ER_MeleeAttackState meleeAttackState { get; private set; }
-    public ER_LookForPlayerState lookForPlayerState { get; private set; }
-    public ER_StunState stunState { get; private set; }
-    public ER_DodgeState dodgeState { get; private set; }
-    public ER_DeathState deathstate { get; private set; }
-    public ER_RangedAttackState rangedAttackState { get; private set; }
+    public EnemyRangeMoveState moveState { get; private set; }
+    public EnemyRangeIdleState idleState { get; private set; }
+    public EnemyRangePlayerDetectedState playerDetectedState { get; private set; }
+    public EnemyRangeMeleeAttackState meleeAttackState { get; private set; }
+    public EnemyRangeLookForPlayerState lookForPlayerState { get; private set; }
+    public EnemyRangeStunState stunState { get; private set; }
+    public EnemyRangeDodgeState dodgeState { get; private set; }
+    public EnemyRangeDeathState deathstate { get; private set; }
+    public EnemyRangeRangedAttackState rangedAttackState { get; private set; }
 
     [SerializeField]
     private MoveStateData moveStateData;
@@ -41,15 +41,15 @@ public class EnemyRange : Entity
     {
         base.Start();
 
-        moveState = new ER_MoveState(this, stateMachine, "move", moveStateData, this);
-        idleState = new ER_IdleState(this, stateMachine, "idle", idleStateData, this);
-        playerDetectedState = new ER_PlayerDetectedState(this, stateMachine, "playerDetected", playerDetectedStateData,this);
-        meleeAttackState = new ER_MeleeAttackState(this, stateMachine, "meleeAttack", meleeAttackPosition, meleeAttackStateData, this);
-        lookForPlayerState = new ER_LookForPlayerState(this, stateMachine, "lookForPlayer", lookForPlayerStateData, this);
-        stunState = new ER_StunState(this, stateMachine, "stun", stunStateData, this);
-        deathstate = new ER_DeathState(this, stateMachine, "death", deathStateData, this);
-        dodgeState = new ER_DodgeState(this, stateMachine, "dodge", dodgeStateData, this);
-        rangedAttackState = new ER_RangedAttackState(this, stateMachine, "rangedAttack", rangedAttackPosition, rangedAttackStateData, this);
+        moveState = new EnemyRangeMoveState(this, stateMachine, "move", moveStateData, this);
+        idleState = new EnemyRangeIdleState(this, stateMachine, "idle", idleStateData, this);
+        playerDetectedState = new EnemyRangePlayerDetectedState(this, stateMachine, "playerDetected", playerDetectedStateData,this);
+        meleeAttackState = new EnemyRangeMeleeAttackState(this, stateMachine, "meleeAttack", meleeAttackPosition, meleeAttackStateData, this);
+        lookForPlayerState = new EnemyRangeLookForPlayerState(this, stateMachine, "lookForPlayer", lookForPlayerStateData, this);
+        stunState = new EnemyRangeStunState(this, stateMachine, "stun", stunStateData, this);
+        deathstate = new EnemyRangeDeathState(this, stateMachine, "death", deathStateData, this);
+        dodgeState = new EnemyRangeDodgeState(this, stateMachine, "dodge", dodgeStateData, this);
+        rangedAttackState = new EnemyRangeRangedAttackState(this, stateMachine, "rangedAttack", rangedAttackPosition, rangedAttackStateData, this);
 
         stateMachine.Initialize(moveState);
     }

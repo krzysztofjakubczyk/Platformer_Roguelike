@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class E1_MeleeAttackState : MeleeAttackState
+public class EnemyChargeMeleeAttackState : MeleeAttackState
 {
-    private Enemy1 enemy;
-    public E1_MeleeAttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition, MeleeAttackStateData stateData, Enemy1 enemy) : base(entity, stateMachine, animBoolName, attackPosition, stateData)
+    private EnemyCharge enemy;
+    public EnemyChargeMeleeAttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition, MeleeAttackStateData stateData, EnemyCharge enemy) : base(entity, stateMachine, animBoolName, attackPosition, stateData)
     {
         this.enemy = enemy;
     }

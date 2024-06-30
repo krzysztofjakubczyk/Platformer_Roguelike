@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ER_IdleState : IdleState
+public class EnemyRangeIdleState : IdleState
 {
     private EnemyRange enemy;
-    public ER_IdleState(Entity entity, BaseStateMachine stateMachine, string animBoolName, IdleStateData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, stateData)
+    public EnemyRangeIdleState(Entity entity, BaseStateMachine stateMachine, string animBoolName, IdleStateData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }

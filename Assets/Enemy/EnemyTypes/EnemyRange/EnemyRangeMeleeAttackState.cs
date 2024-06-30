@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ER_StunState : StunState
+public class EnemyRangeMeleeAttackState : MeleeAttackState
 {
     private EnemyRange enemy;
 
-    public ER_StunState(Entity entity, BaseStateMachine stateMachine, string animBoolName, StunStateData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, stateData)
+    public EnemyRangeMeleeAttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition, MeleeAttackStateData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, attackPosition, stateData)
     {
         this.enemy = enemy;
     }
@@ -26,16 +26,28 @@ public class ER_StunState : StunState
         base.Exit();
     }
 
+    public override void FinishAttack()
+    {
+        base.FinishAttack();
+    }
+
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if (isStunTimeOver)
+
+        if (isAnimationFinished)
             if (isPlayerInMinAgroRange) stateMachine.ChangeState(enemy.playerDetectedState);
             else stateMachine.ChangeState(enemy.lookForPlayerState);
+    
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+    }
+
+    public override void TriggerAttack()
+    {
+        base.TriggerAttack();
     }
 }

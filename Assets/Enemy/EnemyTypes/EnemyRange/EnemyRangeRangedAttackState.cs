@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ER_MeleeAttackState : MeleeAttackState
+public class EnemyRangeRangedAttackState : RangedAttackState
 {
     private EnemyRange enemy;
 
-    public ER_MeleeAttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition, MeleeAttackStateData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, attackPosition, stateData)
+    public EnemyRangeRangedAttackState(Entity entity, BaseStateMachine stateMachine, string animBoolName, Transform attackPosition, RangedAttackStateData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, attackPosition, stateData)
     {
         this.enemy = enemy;
     }
@@ -26,28 +26,25 @@ public class ER_MeleeAttackState : MeleeAttackState
         base.Exit();
     }
 
-    public override void FinishAttack()
-    {
-        base.FinishAttack();
-    }
-
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        if (entity.aliveGameObject.transform.position.x < entity.playerTransform.position.x)
+        {
+            if (entity.facingDirection != 1) entity.Flip();
+        }
+        else if (entity.aliveGameObject.transform.position.x > entity.playerTransform.position.x)
+        {
+            if (entity.facingDirection == 1) entity.Flip();
+        }
 
         if (isAnimationFinished)
             if (isPlayerInMinAgroRange) stateMachine.ChangeState(enemy.playerDetectedState);
             else stateMachine.ChangeState(enemy.lookForPlayerState);
-    
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-    }
-
-    public override void TriggerAttack()
-    {
-        base.TriggerAttack();
     }
 }

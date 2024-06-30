@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Charge : State
 {
-    protected D_ChargeState stateData;
+    protected ChargeStateData stateData;
     protected bool isPlayerInMinAgroRange;
     protected bool isEnemyInMinAgroRange;
     protected bool isDetectingWall;
     protected bool isDetectingLedge;
     protected bool isChargeTimeOver;
     protected bool performCloseRangeAction;
-    public Charge(Entity entity, BaseStateMachine stateMachine, string animBoolName, D_ChargeState stateData) : base(entity, stateMachine, animBoolName)
+    public Charge(Entity entity, BaseStateMachine stateMachine, string animBoolName, ChargeStateData stateData) : base(entity, stateMachine, animBoolName)
     {
         this.stateData = stateData;
     }

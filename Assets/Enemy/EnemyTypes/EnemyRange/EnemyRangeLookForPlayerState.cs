@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ER_MoveState : MoveState
+public class EnemyRangeLookForPlayerState : LookForPlayerState
 {
     private EnemyRange enemy;
-    public ER_MoveState(Entity entity, BaseStateMachine stateMachine, string animBoolName, MoveStateData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, stateData)
+
+    public EnemyRangeLookForPlayerState(Entity entity, BaseStateMachine stateMachine, string animBoolName, LookForPlayerStateData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }
@@ -28,18 +29,8 @@ public class ER_MoveState : MoveState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-
         if (isPlayerInMinAgroRange) stateMachine.ChangeState(enemy.playerDetectedState);
-        else if (isEnemyInRange)
-        {
-            enemy.idleState.SetFlipAfterIdle(true);
-            stateMachine.ChangeState(enemy.idleState);
-        }
-        else if (isDetectingWall || !isDetectingLedge) 
-        {
-            enemy.idleState.SetFlipAfterIdle(true);
-            stateMachine.ChangeState(enemy.idleState);
-        }
+        else if (isAllTurnsTimeDone) stateMachine.ChangeState(enemy.moveState);
     }
 
     public override void PhysicsUpdate()

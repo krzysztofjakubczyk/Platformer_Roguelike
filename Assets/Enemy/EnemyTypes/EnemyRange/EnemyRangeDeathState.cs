@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ER_LookForPlayerState : LookForPlayerState
+public class EnemyRangeDeathState : DeathState
 {
     private EnemyRange enemy;
 
-    public ER_LookForPlayerState(Entity entity, BaseStateMachine stateMachine, string animBoolName, LookForPlayerStateData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, stateData)
+    public EnemyRangeDeathState(Entity entity, BaseStateMachine stateMachine, string animBoolName, DeathStateData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }
@@ -29,8 +29,6 @@ public class ER_LookForPlayerState : LookForPlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if (isPlayerInMinAgroRange) stateMachine.ChangeState(enemy.playerDetectedState);
-        else if (isAllTurnsTimeDone) stateMachine.ChangeState(enemy.moveState);
     }
 
     public override void PhysicsUpdate()

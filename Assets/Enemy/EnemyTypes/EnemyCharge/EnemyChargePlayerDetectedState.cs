@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class E1_PlayerDetectedState : PlayerDetected
+public class EnemyChargePlayerDetectedState : PlayerDetected
 {
-    private Enemy1 enemy;
-    public E1_PlayerDetectedState(Entity entity, BaseStateMachine stateMachine, string animBoolName, PlayerDetectedData stateData,Enemy1 enemy) : base(entity, stateMachine, animBoolName, stateData)
+    private EnemyCharge enemy;
+    public EnemyChargePlayerDetectedState(Entity entity, BaseStateMachine stateMachine, string animBoolName, PlayerDetectedData stateData,EnemyCharge enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }

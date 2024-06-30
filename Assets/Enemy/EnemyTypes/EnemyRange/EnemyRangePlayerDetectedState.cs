@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ER_PlayerDetectedState : PlayerDetected
+public class EnemyRangePlayerDetectedState : PlayerDetected
 {
     private EnemyRange enemy;
 
-    public ER_PlayerDetectedState(Entity entity, BaseStateMachine stateMachine, string animBoolName, PlayerDetectedData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, stateData)
+    public EnemyRangePlayerDetectedState(Entity entity, BaseStateMachine stateMachine, string animBoolName, PlayerDetectedData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class E1_MoveState : MoveState
+public class EnemyChargeMoveState : MoveState
 {
-    private Enemy1 enemy;
-    public E1_MoveState(Entity entity, BaseStateMachine stateMachine, string animBoolName, MoveStateData stateData, Enemy1 enemy) : base(entity, stateMachine, animBoolName, stateData)
+    private EnemyCharge enemy;
+    public EnemyChargeMoveState(Entity entity, BaseStateMachine stateMachine, string animBoolName, MoveStateData stateData, EnemyCharge enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }

@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class E1_StunState :StunState
+public class EnemyChargeStunState :StunState
 {
-    Enemy1 enemy;
+    EnemyCharge enemy;
 
-    public E1_StunState(Entity entity, BaseStateMachine stateMachine, string animBoolName, StunStateData stateData, Enemy1 enemy) : base(entity, stateMachine, animBoolName, stateData)
+    public EnemyChargeStunState(Entity entity, BaseStateMachine stateMachine, string animBoolName, StunStateData stateData, EnemyCharge enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }

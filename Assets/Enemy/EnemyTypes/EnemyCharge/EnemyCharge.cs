@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy1 : Entity
+public class EnemyCharge : Entity
 {
-    public E1_IdleState idleState { get; private set; }
-    public E1_MoveState moveState { get; private set; }
-    public E1_PlayerDetectedState playerDetectedState { get; private set; }
-    public E1_ChargeState chargeState { get; private set; }
-    public E1_LookForPlayerState lookForPlayerState { get; private set; }
-    public E1_MeleeAttackState meleeAttackState { get; private set; }
-    public E1_StunState stunState { get; private set; }
-    public E1_DeathState deathState { get; private set; }
+    public EnemyChargeIdleState idleState { get; private set; }
+    public EnemyChargeMoveState moveState { get; private set; }
+    public EnemyChargePlayerDetectedState playerDetectedState { get; private set; }
+    public EnemyChargeChargeState chargeState { get; private set; }
+    public EnemyChargeLookForPlayerState lookForPlayerState { get; private set; }
+    public EnemyChargeMeleeAttackState meleeAttackState { get; private set; }
+    public EnemyChargeStunState stunState { get; private set; }
+    public EnemyChargeDeathState deathState { get; private set; }
 
     [SerializeField]
     private IdleStateData idleStateData;
@@ -20,7 +20,7 @@ public class Enemy1 : Entity
     [SerializeField]
     private PlayerDetectedData playerDetectedData;
     [SerializeField]
-    private D_ChargeState chargeStateData;
+    private ChargeStateData chargeStateData;
     [SerializeField]
     private LookForPlayerStateData lookForPlayerStateData;
     [SerializeField]
@@ -37,21 +37,20 @@ public class Enemy1 : Entity
     {
         base.Start();
         rb.gravityScale = 1f;
-        moveState = new E1_MoveState(this, stateMachine, "move", moveStateData, this);
-        idleState = new E1_IdleState(this, stateMachine, "idle", idleStateData, this);
-        playerDetectedState = new E1_PlayerDetectedState(this, stateMachine, "playerDetected", playerDetectedData, this);
-        chargeState = new E1_ChargeState(this, stateMachine, "charge", chargeStateData, this);
-        lookForPlayerState = new E1_LookForPlayerState(this, stateMachine, "lookForPlayer", lookForPlayerStateData, this);
-        meleeAttackState = new E1_MeleeAttackState(this, stateMachine, "meleeAttack", meleeAttackPosition, meleeAttackStateData,this);
-        stunState = new E1_StunState(this, stateMachine, "stun", stunStateData, this);
-        deathState = new E1_DeathState(this, stateMachine, "death", deathStateData, this);
+        moveState = new EnemyChargeMoveState(this, stateMachine, "move", moveStateData, this);
+        idleState = new EnemyChargeIdleState(this, stateMachine, "idle", idleStateData, this);
+        playerDetectedState = new EnemyChargePlayerDetectedState(this, stateMachine, "playerDetected", playerDetectedData, this);
+        chargeState = new EnemyChargeChargeState(this, stateMachine, "charge", chargeStateData, this);
+        lookForPlayerState = new EnemyChargeLookForPlayerState(this, stateMachine, "lookForPlayer", lookForPlayerStateData, this);
+        meleeAttackState = new EnemyChargeMeleeAttackState(this, stateMachine, "meleeAttack", meleeAttackPosition, meleeAttackStateData,this);
+        stunState = new EnemyChargeStunState(this, stateMachine, "stun", stunStateData, this);
+        deathState = new EnemyChargeDeathState(this, stateMachine, "death", deathStateData, this);
 
         stateMachine.Initialize(moveState);
     }
     public override void OnDrawGizmos()
     {
         base.OnDrawGizmos();
-
         //Gizmos.DrawWireSphere(meleeAttackPosition.position, meleeAttackStateData.attackRadius);
     }
     public override bool CheckPlayerInMinAgroRange()

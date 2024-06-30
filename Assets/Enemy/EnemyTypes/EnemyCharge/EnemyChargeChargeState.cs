@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class E1_ChargeState : Charge
+public class EnemyChargeChargeState : Charge
 {
-    Enemy1 enemy;
+    EnemyCharge enemy;
 
-    public E1_ChargeState(Entity entity, BaseStateMachine stateMachine, string animBoolName, D_ChargeState stateData,Enemy1 enemy) : base(entity, stateMachine, animBoolName, stateData)
+    public EnemyChargeChargeState(Entity entity, BaseStateMachine stateMachine, string animBoolName, ChargeStateData stateData,EnemyCharge enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ER_DodgeState : DodgeState
+public class EnemyRangeDodgeState : DodgeState
 {
     private EnemyRange enemy;
-    public ER_DodgeState(Entity entity, BaseStateMachine stateMachine, string animBoolName, DodgeStateData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, stateData)
+    public EnemyRangeDodgeState(Entity entity, BaseStateMachine stateMachine, string animBoolName, DodgeStateData stateData, EnemyRange enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }
