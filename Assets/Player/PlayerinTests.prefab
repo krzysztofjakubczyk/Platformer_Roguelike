@@ -323,7 +323,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b054a047295cd4d8809f28b8ea5998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinList: []
+  coinList:
+  - {fileID: 5283399201661343044, guid: 6f906edb09390634e951fd7b3ec874c5, type: 3}
+  - {fileID: 449127475708594103, guid: fe4a91e6f3f8e3f42b806abffedaf697, type: 3}
+  - {fileID: 1158784528134310067, guid: b0c6c74cd01c41f4ebd1b33c3b6da063, type: 3}
   money: 22
 --- !u!114 &5995267144880173407
 MonoBehaviour:

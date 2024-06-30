@@ -5,8 +5,6 @@ using System;
 
 public class MoneyManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject goldCoinPrefab;
     [SerializeField] List<GameObject> coinList;
     public Action updateGUI;
     [SerializeField] int money;
@@ -50,6 +48,7 @@ public class MoneyManager : MonoBehaviour
             {
                 Instantiate(coinList[j], pos, Quaternion.identity);
             }
+            if (j == instanceCounter.Count - 1) break;
             j++;
         }
 
