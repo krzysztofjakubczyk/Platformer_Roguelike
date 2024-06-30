@@ -25,7 +25,7 @@ public class DeathState : State
         GameObject.Instantiate(stateData.deathBloodParticle, entity.aliveGameObject.transform.position, stateData.deathBloodParticle.transform.rotation);
         GameObject.Instantiate(stateData.deathChunkParticle, entity.aliveGameObject.transform.position, stateData.deathChunkParticle.transform.rotation);
         
-        GameObject.Destroy(entity);
+        GameObject.Destroy(entity.aliveGameObject.transform.gameObject,1f);
     }
 
     public override void Exit()

@@ -38,16 +38,14 @@ public class MoneyManager : MonoBehaviour
         instanceCounter.Add(silverCoins);
         instanceCounter.Add(bronzeCoins);
         int j = 0;
-        for (int i=0; i< instanceCounter[j]; i++)
-        {
-            Instantiate(coinList[j], pos, Quaternion.identity);
-            if (i == instanceCounter[j] - 1)
+        foreach (var item in instanceCounter) {
+            if (item == 0) continue;
+            for (int i = 0; i < item; i++)
             {
-                i = 0;
-                if (j + 1 != instanceCounter.Count)
-                    j++;
-                else break;      
+                print(item);
+                Instantiate(coinList[j], pos, Quaternion.identity);
             }
         }
+    
     }
 }
