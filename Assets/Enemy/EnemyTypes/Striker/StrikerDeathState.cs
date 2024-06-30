@@ -20,7 +20,7 @@ public class StrikerDeathState : DeathState
     public override void Enter()
     {
         base.Enter();
-        SceneManager.LoadScene(11,LoadSceneMode.Single);
+        MapTranistion.isSecondBossKilled = true;
     }
 
     public override void Exit()

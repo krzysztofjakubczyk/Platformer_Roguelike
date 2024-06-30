@@ -66,7 +66,6 @@ public class HealthController : StatConroller
     public void OnDeath()
     {
         sceneController.onPlayersDeath();
-        GameObject.Destroy(player);
     }
 
     IEnumerator HideBlood()

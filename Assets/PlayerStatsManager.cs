@@ -14,7 +14,7 @@ public class PlayerStatsManager : MonoBehaviour
     {
         player = gameObject;
         sword = player.transform.GetChild(0).gameObject;
-        ResetStats();
+        Invoke(nameof(ResetStats),0.1f);
     }
 
     public void UpdateStat(PlayerStatEnum statName, float newValue)

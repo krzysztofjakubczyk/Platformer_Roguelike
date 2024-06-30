@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f3959a6aacec848b007ecc7c111de4, type: 3}
   m_Name: StrikerBaseData
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 80
   damageHopSpeed: 10
   wallCheckDistance: 0.2
   LedgeCheckDistance: 1

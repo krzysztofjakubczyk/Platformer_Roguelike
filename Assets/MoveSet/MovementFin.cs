@@ -86,7 +86,10 @@ public class MovementFin : MonoBehaviour
         {
             GetComponent<PlayerStatsManager>().ResetStats();
         }
-
+        if(gameObject.transform.position.y < -5)
+        {
+            gameObject.transform.position = Vector3.zero;
+        }
         MoveAccordingly();
     }
 
