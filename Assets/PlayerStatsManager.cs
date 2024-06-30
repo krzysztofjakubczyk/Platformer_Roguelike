@@ -1,15 +1,11 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 //using static Player_Anim_State;
 
 public class PlayerStatsManager : MonoBehaviour
 {
     public PlayerStatsFin playerStats;
-    [SerializeField]PlayerStatsFin playerStatsDefault;
+    [SerializeField] PlayerStatsFin playerStatsDefault;
     GameObject player;
     GameObject sword;
     public Action updateGUI;
@@ -18,6 +14,7 @@ public class PlayerStatsManager : MonoBehaviour
     {
         player = gameObject;
         sword = player.transform.GetChild(0).gameObject;
+        ResetStats();
     }
 
     public void UpdateStat(PlayerStatEnum statName, float newValue)
@@ -28,18 +25,18 @@ public class PlayerStatsManager : MonoBehaviour
             {
                 stat.value += newValue;
                 Debug.Log($"{stat.statName} updated to: {stat.value}");
-                
+
                 // update stats where they are used
                 player.GetComponent<MovementFin>().UpdateAllStats();
                 sword.GetComponent<MeleeWeapon>().UpdateAllStats();
                 player.GetComponent<StaminaControl>().UpdateAllStats();
                 player.GetComponent<HealthController>().UpdateAllStats();
                 player.GetComponent<SpellManager>().UpdateAllStats();
-                
+
 
                 return;
             }
-        }   
+        }
         updateGUI?.Invoke();
         Debug.LogWarning($"Stat {statName} not found!");
     }
@@ -48,15 +45,15 @@ public class PlayerStatsManager : MonoBehaviour
     {
         foreach (var stat in playerStats.stats)
         {
-            foreach(var statD in playerStatsDefault.stats)
-            if (stat.statName == statD.statName)
-            {
+            foreach (var statD in playerStatsDefault.stats)
+                if (stat.statName == statD.statName)
+                {
                     Debug.Log($"{stat.statName} before: {stat.value}");
                     stat.value = statD.value;
                     Debug.Log($"{stat.statName} updated to: {stat.value}");
-                    break;            }
+                    break;
+                }
         }
-        print("dziala");
         player.GetComponent<MovementFin>().UpdateAllStats();
         sword.GetComponent<MeleeWeapon>().UpdateAllStats();
         player.GetComponent<StaminaControl>().UpdateAllStats();

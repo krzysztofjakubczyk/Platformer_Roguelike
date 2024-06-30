@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ADUpgrade
   m_EditorClassIdentifier: 
   Name: 'Attack Damage Upgrade '
-  Description: "Zio\u0142owy napar zwi\u0119kszajacy obra\u017Cenia ataku gracza"
+  Description: Ziolowy napar zwiekszajacy obrazenia ataku gracza
   Cost: 5
   ImageItem: {fileID: -221801870, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 6

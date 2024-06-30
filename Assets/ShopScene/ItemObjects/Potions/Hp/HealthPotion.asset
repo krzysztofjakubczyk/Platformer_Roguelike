@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HealthPotion
   m_EditorClassIdentifier: 
   Name: Health Potion
-  Description: "Potion zwi\u0119kszaj\u0105cy max HP"
+  Description: Potion zwiekszajacy max HP
   Cost: 5
   ImageItem: {fileID: -1286055648, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: JumpUpgrade
   m_EditorClassIdentifier: 
   Name: Jump Upgrade
-  Description: "Zio\u0142owy napar zwi\u0119kszajacy skok gracza"
+  Description: Ziolowy napar zwiekszajacy skok gracza
   Cost: 5
   ImageItem: {fileID: -745327640, guid: 8ee4a734f7061d54986c4567b50a5b2a, type: 3}
   stat: 14

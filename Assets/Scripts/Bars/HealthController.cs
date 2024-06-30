@@ -10,7 +10,7 @@ public class HealthController : StatConroller
 
     [SerializeField]GameObject vignette;
     byte vinetteVisible;
-
+    [SerializeField] GameObject player;
     [SerializeField] AudioClip gettingHit;
 
 
@@ -66,6 +66,7 @@ public class HealthController : StatConroller
     public void OnDeath()
     {
         sceneController.onPlayersDeath();
+        GameObject.Destroy(player);
     }
 
     IEnumerator HideBlood()

@@ -40,10 +40,10 @@ public class FlyingRangeEnemyBackToPatrolState : BackToPatrolState
         {
             stateMachine.ChangeState(enemy.moveState);
         }
-        else Debug.Log("false zmiana diab³a na move state dystans " 
-            + Math.Abs(Vector3.Distance(entity.aliveGameObject.transform.localPosition, roundedPatrolPoint))
-            + "pozycja globalna "+entity.aliveGameObject.transform.position+
-            "pozycja lokalna "+ entity.aliveGameObject.transform.localPosition);
+        //else Debug.Log("false zmiana diab³a na move state dystans " 
+        //    + Math.Abs(Vector3.Distance(entity.aliveGameObject.transform.localPosition, roundedPatrolPoint))
+        //    + "pozycja globalna "+entity.aliveGameObject.transform.position+
+        //    "pozycja lokalna "+ entity.aliveGameObject.transform.localPosition);
     }
 
     public override void PhysicsUpdate()
