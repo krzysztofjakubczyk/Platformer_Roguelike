@@ -19,17 +19,12 @@ public class MapTranistion : MonoBehaviour
     }
     void WhenEnemyDead()
     {
-        howManyEnemies--;
+        getEnemies();
         if (howManyEnemies == 1)
         {
-            StartCoroutine(LoadSceneAfterDelay(5f));
+            controller.LoadScene();
+            Invoke(nameof(LoadSceneElements), 1f);
         }
-    }
-    private IEnumerator LoadSceneAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        controller.LoadScene();
-        LoadSceneElements();
     }
     private void LoadSceneElements()
     {

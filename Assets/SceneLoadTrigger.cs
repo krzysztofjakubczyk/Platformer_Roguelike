@@ -28,6 +28,6 @@ public class SceneUnLoadTrigger : MonoBehaviour
         _InsideDoors.GetComponent<TilemapRenderer>().enabled = true;
         _InsideDoors.GetComponent<TilemapCollider2D>().enabled = true;
         _InsideDoors.GetComponent<PlatformEffector2D>().enabled = true;
-        StartCoroutine(controller.UnLoadScene());
+       controller.UnLoadScene();
     }
 }

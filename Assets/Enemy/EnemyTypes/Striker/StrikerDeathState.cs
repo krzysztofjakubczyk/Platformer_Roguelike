@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StrikerDeathState : DeathState
 {
@@ -19,7 +20,7 @@ public class StrikerDeathState : DeathState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Umiera Striker");
+        SceneManager.LoadScene(11,LoadSceneMode.Single);
     }
 
     public override void Exit()

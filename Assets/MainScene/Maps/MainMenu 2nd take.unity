@@ -774,9 +774,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 869388139de2ae545a6168b59b0fdb73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstStaticScene: 0
-  panelToSceneLoader: {fileID: 1496785984}
-  loadingSlider: {fileID: 503346946}
+  CanvasToLoader: {fileID: 1496785984}
+  _slider: {fileID: 503346946}
 --- !u!1 &503346944
 GameObject:
   m_ObjectHideFlags: 0
