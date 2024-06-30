@@ -95,6 +95,11 @@ public class moveSnake : MonoBehaviour
             
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        player.GetComponent<HealthController>().SubAmount(15);
+    }
+
     bool IsGrounded()
     {
         if (Physics2D.Raycast(transform.position, Vector2.down, 2.5f, ground))

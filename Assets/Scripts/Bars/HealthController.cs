@@ -14,9 +14,8 @@ public class HealthController : StatConroller
     {
         if (collision.transform.CompareTag("Enemy") || collision.transform.CompareTag("enemyBullet"))
         {
-            SubAmount(5);
+            //SubAmount(5);
             animator.SetTrigger("Hurting");
-
         }
     }
 

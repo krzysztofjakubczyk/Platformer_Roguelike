@@ -41,7 +41,10 @@ public class StatConroller : MonoBehaviour
         {
             currentAmount = 0;
             if (GetComponent<moveSnake>() != null)
+            {
                 GetComponent<moveSnake>().OnDeath();
+                return;
+            }
             if (GetComponent<HealthController>() != null)
                 GetComponent<HealthController>().OnDeath();
         }
