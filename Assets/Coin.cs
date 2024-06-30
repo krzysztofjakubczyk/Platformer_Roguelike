@@ -9,6 +9,8 @@ public class Coin : MonoBehaviour
     public static event AddMoneyDelegate addMoney; 
     Animator anim;
     [SerializeField]
+    AudioClip audioClip;
+    [SerializeField]
     private float force;
     [Range(1,50)]
     [SerializeField] 
@@ -40,7 +42,11 @@ public class Coin : MonoBehaviour
             //tu bêdzie dodawanie monet dla gracza
             addMoney?.Invoke(amount);
             Instantiate(pickUpPrefab, transform.position, Quaternion.identity);
-            Destroy(gameObject,0.1f);
+            GameObject Audio = new GameObject("Audio");
+            Audio.AddComponent<AudioSource>().clip = audioClip;
+            Audio.GetComponent<AudioSource>().Play();
+            Destroy(Audio, 1f);
+            Destroy(gameObject,0.01f);
         }
         else
         {

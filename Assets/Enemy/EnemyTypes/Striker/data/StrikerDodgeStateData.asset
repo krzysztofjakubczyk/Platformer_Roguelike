@@ -16,3 +16,4 @@ MonoBehaviour:
   dodgeTime: 1
   dodgeCooldown: 2
   dodgeAngle: {x: 1, y: 0}
+  dodgeSound: {fileID: 8300000, guid: 72ee5ceebaa8dcb4cb3540d680e5007b, type: 3}
