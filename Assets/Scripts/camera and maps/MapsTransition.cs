@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MapTranistion : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class MapTranistion : MonoBehaviour
     [SerializeField] private SceneController controller;
     private MoneyManager moneyManager;
     int howMoneyFromEnemy; // do wziecia z enemy dane
-    public bool isSecondBossKilled { get; set; } = false;
+    public static bool isSecondBossKilled { get; set; } = false;
 
     private void Start()
     {
@@ -24,6 +25,10 @@ public class MapTranistion : MonoBehaviour
         {
             controller.LoadScene();
             Invoke(nameof(LoadSceneElements), 1f);
+        }
+        else if (isSecondBossKilled)
+        {
+            SceneManager.LoadScene(11);
         }
     }
     private void LoadSceneElements()

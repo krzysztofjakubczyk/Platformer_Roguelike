@@ -7,16 +7,15 @@ public class MainScene : MainMenuSceneController
 {
     [SerializeField] private GameObject CanvasToLoader;
     [SerializeField] private Slider _slider;
-    
     public override void StartGameButton()
     {
         StartCoroutine(LoadSceneLoaderScene());
     }
     private IEnumerator LoadSceneLoaderScene()
     {
-       yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1f);
         CanvasToLoader.SetActive(true);
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(0,LoadSceneMode.Single);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
         while (!asyncLoad.isDone)
         {
             float progressValue = Mathf.Clamp01(asyncLoad.progress / 0.9f);

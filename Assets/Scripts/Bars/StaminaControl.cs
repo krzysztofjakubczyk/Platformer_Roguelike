@@ -1,15 +1,23 @@
 
 
+using System.Collections;
+using UnityEngine;
+
 public class StaminaControl : StatConroller
 {
     PlayerStatsFin playerStats;
 
     public void Start()
     {
-        StartCoroutine(RecoverNew());
+        StartCoroutine(loadWithDelay());
         playerStats = GetComponent<PlayerStatsManager>().playerStats;
         UpdateAllStats();
 
+    }
+    private IEnumerator loadWithDelay()
+    {
+        yield return new WaitForSeconds(2f);
+        StartCoroutine(RecoverNew());   
     }
     public void UpdateAllStats()
     {
