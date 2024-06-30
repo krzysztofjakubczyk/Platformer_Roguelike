@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
   - statName: 0
-    value: 200
+    value: 100
   - statName: 1
-    value: 165
+    value: 60
   - statName: 2
     value: 0.1
   - statName: 3
     value: 120
   - statName: 4
-    value: 100
+    value: 120
   - statName: 5
     value: 0.05
   - statName: 6
