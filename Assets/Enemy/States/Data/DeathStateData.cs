@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class DeathStateData :ScriptableObject
 {
+
     public GameObject deathChunkParticle;
     public GameObject deathBloodParticle;
 }
