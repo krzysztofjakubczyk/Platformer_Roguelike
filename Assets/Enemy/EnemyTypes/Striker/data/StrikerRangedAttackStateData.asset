@@ -16,3 +16,4 @@ MonoBehaviour:
   projectileDamage: 10
   projectileSpeed: 12
   projectileTravelDistance: 20
+  spellShot: {fileID: 8300000, guid: 008f1d8843deb134daf53fd7781f5766, type: 3}

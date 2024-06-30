@@ -7,7 +7,9 @@ public class Entity : MonoBehaviour
 {
     public EntityData entityData;
     [SerializeField]
-    private GameObject sceneManager; 
+    private GameObject sceneManager;
+    
+    public AudioSource audioSource;
     
     private SceneController sceneController;
     
@@ -53,7 +55,7 @@ public class Entity : MonoBehaviour
         rb = aliveGameObject.GetComponent<Rigidbody2D>();
         anim = aliveGameObject.GetComponent<Animator>();
         atsm = aliveGameObject.GetComponent<AnimationToStateMachine>();
-
+        audioSource = aliveGameObject.GetComponent<AudioSource>();
         stateMachine = new BaseStateMachine();
     }
 

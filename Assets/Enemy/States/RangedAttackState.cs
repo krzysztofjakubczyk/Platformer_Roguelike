@@ -45,7 +45,7 @@ public class RangedAttackState : AttackState
     public override void TriggerAttack()
     {
         base.TriggerAttack();
-
+        entity.audioSource.Play();
         projectile = GameObject.Instantiate(stateData.projectile, attackPosition.position, Quaternion.Euler(0,0,(entity.playerTransform.position - entity.aliveGameObject.transform.position).z));
         projectileScript = projectile.GetComponent<Projectile>();
         

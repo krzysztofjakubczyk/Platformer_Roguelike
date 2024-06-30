@@ -10,7 +10,8 @@ public class Projectile : MonoBehaviour
     private float travelDistance;
     private float xStartPos;
     private Vector3 direction;
-
+    [SerializeField]
+    private AudioClip audioClip;
     [SerializeField]
     private float gravity;
     [SerializeField]
@@ -131,11 +132,15 @@ public class Projectile : MonoBehaviour
     {
         GameObject Projectile = Instantiate(projectileShot,damagePosition.position,Quaternion.identity);
         Collider2D playerHit = Physics2D.OverlapCircle(damagePosition.position, damageRadius, whatIsPlayer);
+        GameObject Audio = new GameObject("Audio");
+        Audio.AddComponent<AudioSource>().clip = audioClip;
+        Audio.GetComponent<AudioSource>().Play();
         if (playerHit)
         {
             print(attackDetails.damageAmount);
             entity.playerHp.DamagePlayer(attackDetails.damageAmount);
         }
         Destroy(Projectile, 2);
+        Destroy(Audio, 2);
     }
 }
