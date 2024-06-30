@@ -53,6 +53,7 @@ public class MeleeAttackState : AttackState
         base.TriggerAttack();
         entity.playerHp.DamagePlayer(attackDetails.damageAmount);
         entity.playerTransform.gameObject.GetComponent<Rigidbody2D>().AddForce(stateData.vectorPush * stateData.pushForce, ForceMode2D.Impulse);
+        //entity.pl
 
     }
 }

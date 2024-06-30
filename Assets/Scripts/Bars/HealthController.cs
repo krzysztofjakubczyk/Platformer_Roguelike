@@ -1,11 +1,19 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class HealthController : StatConroller
 {
     Animator animator;
     [SerializeField] SceneController sceneController;
     PlayerStatsFin playerStats;
-    
+
+    [SerializeField]GameObject vignette;
+    byte vinetteVisible;
+
+    [SerializeField] AudioClip gettingHit;
+
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -27,15 +35,14 @@ public class HealthController : StatConroller
             playerStats = GetComponent<PlayerStatsManager>().playerStats;
             UpdateAllStats();
         }
-
-
     }
 
     public void DamagePlayer(float amount)
     {
         SubAmount(amount);
-
+        StartCoroutine(HideBlood());
         animator.SetTrigger("Hurting");
+        GetComponent<AudioSource>().PlayOneShot(gettingHit);
     }
 
     public void UpdateAllStats()
@@ -59,5 +66,20 @@ public class HealthController : StatConroller
     public void OnDeath()
     {
         sceneController.onPlayersDeath();
+    }
+
+    IEnumerator HideBlood()
+    {
+        vignette.SetActive(true);
+        vinetteVisible = 255;
+
+        while (vinetteVisible > 20)
+        {
+            vignette.GetComponent<UnityEngine.UI.Image>().color = new Color32(255, 0, 0, vinetteVisible);
+            vinetteVisible -= 15;
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        vignette.SetActive(false);
     }
 }

@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ScriptableObject: {fileID: 11400000, guid: 68c38bf4fe12bab4696de55da9035900, type: 2}
+  soundToPlay: {fileID: 3098517082091381405, guid: f8b970e70a1b7c648938c9b11ca13450, type: 3}
 --- !u!114 &982850468539166699
 MonoBehaviour:
   m_ObjectHideFlags: 0

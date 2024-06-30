@@ -8,9 +8,10 @@ using System;
 public class ItemOnShop : MonoBehaviour, IPointerClickHandler, IPointerExitHandler
 {
     [SerializeField] public Items m_ScriptableObject;
+    [SerializeField] GameObject soundToPlay;
 
     MoneyManager m_MoneyManager;
-    TMP_Text name, description;
+    TMP_Text name, description, cost;
 
     string itemName, itemDescription;
     int itemCost;
@@ -31,6 +32,7 @@ public class ItemOnShop : MonoBehaviour, IPointerClickHandler, IPointerExitHandl
         m_MoneyManager=FindAnyObjectByType<MoneyManager>();
         name = GameObject.Find("NameOfItemInShop").GetComponent<TMP_Text>();
         description = GameObject.Find("DescriptionOfItemInShop").GetComponent<TMP_Text>();
+        cost = GameObject.Find("CostOfItemInShop").GetComponent<TMP_Text>();
         player = GameObject.Find("Player");
 
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
@@ -58,6 +60,7 @@ public class ItemOnShop : MonoBehaviour, IPointerClickHandler, IPointerExitHandl
       
             player.GetComponent<PlayerStatsManager>().UpdateStat(playerStat, power);
             updateGUIUpgrades?.Invoke(gameObject);
+            Instantiate(soundToPlay);
             Destroy(gameObject);
         }
         else
@@ -71,7 +74,12 @@ public class ItemOnShop : MonoBehaviour, IPointerClickHandler, IPointerExitHandl
 
         playerIsClose = true;
 
-        name.text = itemName + "  Cost: " + itemCost.ToString();
+        name.gameObject.GetComponent<MeshRenderer>().enabled = true;
+        description.gameObject.GetComponent<MeshRenderer>().enabled = true;
+        cost.gameObject.GetComponent<MeshRenderer>().enabled = true;
+
+        cost.text = "Cost: " + itemCost.ToString();
+        name.text = itemName;
         description.text = itemDescription;
 
     }

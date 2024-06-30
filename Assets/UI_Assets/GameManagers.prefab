@@ -54,12 +54,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  SpellUIHolders:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  SpellUIHoldersInventory:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  spellListParent: {fileID: 0}
+  descriptionParent: {fileID: 0}
+  upgradeListParent: {fileID: 0}
   player: {fileID: 0}
-  goldText: {fileID: 0}
-  hpText: {fileID: 0}
-  staminaText: {fileID: 0}
-  adText: {fileID: 0}
-  asText: {fileID: 0}
-  movementText: {fileID: 0}
-  jpText: {fileID: 0}
-  dpText: {fileID: 0}

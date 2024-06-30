@@ -46,11 +46,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopSceneIndex: 5
   lastIndexOfSceneSpawned: 0
-  moveAmount: {x: 0, y: 0, z: 0}
+  moveAmount: {x: 37, y: 0, z: 0}
   floorSizes: 0300000002000000
   indexForBossScene: 0600000007000000
-  loadedSceneIndexes: 
   mapInstance: {fileID: 0}
+  player: {fileID: 0}
+  indexOfDeathScene: 8
+  indexOfSecondFloorsScene: 4
   currentFloor: 0
+  loadedScenes: 0
   isShopLoaded: 0
   hasShopBeenLoaded: 0
