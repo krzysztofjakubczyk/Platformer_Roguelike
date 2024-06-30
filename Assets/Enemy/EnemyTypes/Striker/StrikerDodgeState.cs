@@ -19,7 +19,8 @@ public class StrikerDodgeState : DodgeState
     public override void Enter()
     {
         base.Enter();
-
+        entity.audioSource.clip = stateData.dodgeSound;
+        entity.audioSource.Play();
         entity.SetVelocity(stateData.dodgeSpeed, stateData.dodgeAngle, entity.facingDirection);
     }
 

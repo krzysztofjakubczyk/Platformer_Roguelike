@@ -59,7 +59,8 @@ public class StrikerMeleeAttackState :MeleeAttackState
         if (comboCounter == 1)
         {
             Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(attackPosition.position, stateData.attackRadius, stateData.whatIsPlayer);
-
+            entity.audioSource.clip = stateData.audioStab;
+            entity.audioSource.Play();
             foreach (Collider2D collider in detectedObjects)
             {
                 Debug.Log(entity.playerTransform);
@@ -69,7 +70,8 @@ public class StrikerMeleeAttackState :MeleeAttackState
         }
         else if (comboCounter == 2)
         {
-
+            entity.audioSource.clip = stateData.audioSlash;
+            entity.audioSource.Play();
             Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(attackPosition.position, stateData.attackRadius, stateData.whatIsPlayer);
             foreach (Collider2D collider in detectedObjects)
             {

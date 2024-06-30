@@ -14,4 +14,6 @@ public class MeleeAttackStateData : ScriptableObject
     public Vector2 vectorPush;
 
     public LayerMask whatIsPlayer;
+    public AudioClip audioStab;
+    public AudioClip audioSlash;
 }

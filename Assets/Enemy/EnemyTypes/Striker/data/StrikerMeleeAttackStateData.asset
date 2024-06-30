@@ -19,3 +19,5 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
+  audioStab: {fileID: 8300000, guid: 91267e7cb32c8f543a9c96824c2d8ede, type: 3}
+  audioSlash: {fileID: 8300000, guid: c47e84f5d2b187c45b32adec1dbde5f6, type: 3}

@@ -18,6 +18,7 @@ public class StrikerRangedAttackState : RangedAttackState
     public override void Enter()
     {
         base.Enter();
+        entity.audioSource.clip = stateData.spellShot;
     }
 
     public override void Exit()
