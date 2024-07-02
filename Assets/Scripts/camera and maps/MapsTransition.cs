@@ -9,16 +9,14 @@ public class MapTranistion : MonoBehaviour
     private GameObject _OutsideDoors;
     [SerializeField] private SceneController controller;
     private MoneyManager moneyManager;
+    [SerializeField]private GameObject UiCanvas;
     int howMoneyFromEnemy; // do wziecia z enemy dane
-    public static bool isSecondBossKilled { get; set; } = false;
-
     private void Start()
     {
-        Entity.OnEnemyDeath += WhenEnemyDead; 
         moneyManager = FindAnyObjectByType<MoneyManager>();
         getEnemies();
     }
-    void WhenEnemyDead()
+    public void WhenEnemyDead(bool isSecondBossKilled)
     {
         getEnemies();
         if (howManyEnemies == 1 && isSecondBossKilled == false)
@@ -29,6 +27,7 @@ public class MapTranistion : MonoBehaviour
         else if (isSecondBossKilled)
         {
             SceneManager.LoadScene(11);
+            UiCanvas.SetActive(false);
         }
     }
     private void LoadSceneElements()

@@ -20,7 +20,7 @@ public class StrikerDeathState : DeathState
     public override void Enter()
     {
         base.Enter();
-        MapTranistion.isSecondBossKilled = true;
+        Debug.Log("Boss drugi umar³");
     }
 
     public override void Exit()

@@ -39,7 +39,7 @@ public class Entity : MonoBehaviour
     [SerializeField] private Transform LedgeCheck;
     [SerializeField] public Transform playerCheck;
     [SerializeField] private Transform groundCheck;
-
+    MapTranistion maps;
     public static event Action OnEnemyDeath;
     public virtual void Start()
     {
@@ -57,6 +57,7 @@ public class Entity : MonoBehaviour
         atsm = aliveGameObject.GetComponent<AnimationToStateMachine>();
         audioSource = aliveGameObject.GetComponent<AudioSource>();
         stateMachine = new BaseStateMachine();
+        maps = player.GetComponent<MapTranistion>();
     }
 
     public virtual void Update()
@@ -135,8 +136,16 @@ public class Entity : MonoBehaviour
         if (currentHealth <= 0)
         {
             isDeath = true;
-            
-            OnEnemyDeath?.Invoke();
+            Debug.Log(gameObject.name);
+            if (gameObject.name == "Striker")
+            {
+                maps.WhenEnemyDead(true);
+            }
+            else
+            {
+                maps.WhenEnemyDead(false);
+            }
+
             GameObject.Destroy(gameObject,0.1f);
         }
     }

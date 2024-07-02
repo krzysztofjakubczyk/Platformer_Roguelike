@@ -15,7 +15,7 @@ public class MainScene : MainMenuSceneController
     {
         yield return new WaitForSeconds(1f);
         CanvasToLoader.SetActive(true);
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
         while (!asyncLoad.isDone)
         {
             float progressValue = Mathf.Clamp01(asyncLoad.progress / 0.9f);

@@ -19117,6 +19117,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1131560037}
     - target: {fileID: 6621371230715735204, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
+      propertyPath: UiCanvas
+      value: 
+      objectReference: {fileID: 757702000}
+    - target: {fileID: 6621371230715735204, guid: 627b247c83ac75643847b6b1938a9a58, type: 3}
       propertyPath: controller
       value: 
       objectReference: {fileID: 6267933619230499945}
@@ -21882,8 +21886,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5513850055734595547, guid: 42b111e899c2e20489c4b4d97890f03b, type: 3}
+      propertyPath: shopSceneIndex
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5513850055734595547, guid: 42b111e899c2e20489c4b4d97890f03b, type: 3}
       propertyPath: indexOfDeathScene
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5513850055734595547, guid: 42b111e899c2e20489c4b4d97890f03b, type: 3}
       propertyPath: panelToSceneLoader
@@ -21891,7 +21899,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5513850055734595547, guid: 42b111e899c2e20489c4b4d97890f03b, type: 3}
       propertyPath: indexOfSecondFloorsScene
-      value: 4
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5513850055734595547, guid: 42b111e899c2e20489c4b4d97890f03b, type: 3}
+      propertyPath: indexForBossScene.Array.data[0]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5513850055734595547, guid: 42b111e899c2e20489c4b4d97890f03b, type: 3}
+      propertyPath: indexForBossScene.Array.data[1]
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6820872453537031780, guid: 42b111e899c2e20489c4b4d97890f03b, type: 3}
       propertyPath: m_Name

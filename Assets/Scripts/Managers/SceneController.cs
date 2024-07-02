@@ -32,7 +32,7 @@ public class SceneController : MonoBehaviour
     float lastPosition = 0f;
     void Start()
     {
-        loadedSceneIndexes.Add(0); //pierwsza za³adowana scena to 0
+        loadedSceneIndexes.Add(1); //pierwsza za³adowana scena to 0
         StartCoroutine(InitializeFloorsCoroutine()); //zacznij losowanie indexow do konkretnych poziomow
     }
 
@@ -49,7 +49,7 @@ public class SceneController : MonoBehaviour
     {
         int floorSize = UnityEngine.Random.Range(minFloorSize, maxFloorSize);
         floorSizes[floor] = floorSize;
-        List<int> availableIndexes = new List<int> { 1, 2, 3 }; // Dostêpne indeksy do wylosowania
+        List<int> availableIndexes = new List<int> { 2,3,4}; // Dostêpne indeksy do wylosowania
         List<int> generatedIndexes = new List<int>();
         ShuffleList(availableIndexes);
         for (int i = 0; i < floorSize; i++)
@@ -61,6 +61,7 @@ public class SceneController : MonoBehaviour
         {
             int shopPosition = UnityEngine.Random.Range(1, floorSize - 1);
             generatedIndexes.Insert(shopPosition, shopSceneIndex);
+            Debug.Log("Shop position: " + shopPosition);
             shopInsertedFloors.Add(floor);
         }
 
